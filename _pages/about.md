@@ -61,9 +61,9 @@ Vessel Segmentation](https://arxiv.org/pdf/2401.06224.pdf)
 
 - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020** -->
 # 🎖 scientific research experience
--*2023.7-2024.5* Defect detection on workpiece surfaces based on computer vision. (supervised by [Mengqi Ji](https://scholar.google.com/citations?user=tHXXQ1EAAAAJ&hl=zh-CN)) in [Institute of Artificial Intelligence](https://iai.buaa.edu.cn/), Beihang University, Beijing, China
--*2023.7-2024.3* Huawei Rise Intelligence Programme(昇腾众智). (supervised by [Si Liu](https://sites.google.com/site/siliuhome/home)) in [Institute of Artificial Intelligence](https://iai.buaa.edu.cn/), Beihang University, Beijing, China
-
+- *2023.7-2024.5* Defect detection on workpiece surfaces based on computer vision. (supervised by [Mengqi Ji](https://scholar.google.com/citations?user=tHXXQ1EAAAAJ&hl=zh-CN)) in [Institute of Artificial Intelligence](https://iai.buaa.edu.cn/), Beihang University, Beijing, China
+- *2023.7-2024.3* Huawei Rise Intelligence Programme(昇腾众智). (supervised by [Si Liu](https://sites.google.com/site/siliuhome/home)) in [Institute of Artificial Intelligence](https://iai.buaa.edu.cn/), Beihang University, Beijing, China
+- 
 
 
 # 🎖 Honors and Awards
