@@ -75,9 +75,9 @@ Vessel Segmentation](https://arxiv.org/pdf/2401.06224.pdf)
 - *2023.5* 2023 National Student Innovation and Entrepreneurship Training Programme Projects Passed with Merit in the Initial Audit
 - *2023.3* Third Prize of Beihang Modelling Competition
 # 📖 Educations
-- *2022.09 - present*, M.Eng. (supervised by [Chengwei Pan](https://scholar.google.com/citations?user=7i1dqbEAAAAJ&hl=en)) in [Institute of Artificial Intelligence](https://iai.buaa.edu.cn/), Beihang University, Beijing, China
-- *Fall 2023*, Design and Analysis of Algorithms, Teaching Assistant, Beihang University
-- *2018.09 - 2022.06*, B.Eng. (supervised by [Cao Peng](https://scholar.google.com/citations?user=0OfgZSsAAAAJ&hl=zh-CN)) in School of Computer Science and Engineering, Northeastern University, Shenyang, China
+- *2022.09 - present*, B.Eng.In [Institute of Automation Science and Electrical Engineering](https://dept3.buaa.edu.cn/), Beihang University, Beijing, China
+<!-- - *Fall 2023*, Design and Analysis of Algorithms, Teaching Assistant, Beihang University -->
+
 
 <!-- # 💬 Invited Talks
 - *2023.12*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
