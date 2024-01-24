@@ -17,11 +17,13 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-He is presently pursuing his Master's degree at Beihang University, mentored by Professor [Chengwei Pan](https://scholar.google.com/citations?user=7i1dqbEAAAAJ&hl=en), with a research focus on advancing the application of AI in healthcare.
+He entered Beihang University in 2022 to pursue his undergraduate bachelor's degree, and is currently a sophomore
 
-His research interest also includes computer vision and large language model. He has published many papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=jQSagnIAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
+His research interests also include machine learning, computer vision, large-scale language modelling, automation and cluster intelligence (currently in an exploratory phase)
 
-If you are interested in joining the project or collaborating, please send me an email (buaa42wxy@gmail.com).
+<!-- His research interest also includes computer vision and large language model. He has published many papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=jQSagnIAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. -->
+
+If you are interested in joining the project or collaborating, please send me an email (jeix782@gmail.com).
 
 
 
