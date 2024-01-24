@@ -74,6 +74,8 @@ Vessel Segmentation](https://arxiv.org/pdf/2401.06224.pdf)
 - *2023.10* Beihang Second Class Academic Excellence Scholarship
 - *2023.5* 2023 National Student Innovation and Entrepreneurship Training Programme Projects Passed with Merit in the Initial Audit
 - *2023.3* Third Prize of Beihang Modelling Competition
+
+
 # 📖 Educations
 - *2022.09 - present*, B.Eng.In [Institute of Automation Science and Electrical Engineering](https://dept3.buaa.edu.cn/), Beihang University, Beijing, China
 <!-- - *Fall 2023*, Design and Analysis of Algorithms, Teaching Assistant, Beihang University -->
