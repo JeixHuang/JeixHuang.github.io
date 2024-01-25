@@ -69,11 +69,12 @@ Vessel Segmentation](https://arxiv.org/pdf/2401.06224.pdf)
 
 
 # 🎖 Honors and Awards
-- *2023.12* Second Prize in the National Mathematics Competition for University Students
-- *2023.11* Third Prize in the National University Physics Competition for University Students
-- *2023.10* Beihang Second Class Academic Excellence Scholarship
+- *2023.12* 2nd Prize in the National Mathematics Competition for University Students
+- *2023.11* 3rd Prize in the National University Physics Competition for University Students
+- *2023.10* Beihang 2nd Class Academic Excellence Scholarship
+- *2023.5* 2nd Prize of Feng Ru Cup (A reinforcement learning based motion state monitoring system)
 - *2023.5* 2023 National Student Innovation and Entrepreneurship Training Programme Projects Passed with Merit in the Initial Audit
-- *2023.3* Third Prize of Beihang Modelling Competition
+- *2023.3* 3rd Prize of Beihang Modelling Competition
 
 
 # 📖 Educations
