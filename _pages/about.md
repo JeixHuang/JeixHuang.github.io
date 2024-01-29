@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-He entered Beihang University in 2022 to pursue his undergraduate bachelor's degree, and is currently a sophomore
+He has been enrolled in BUAA since 2022 for his Bachelor's Degree and is currently a sophomore ranked in the top 5% (5-/150) of his grade, has secured a guaranteed place in his school and is interested in pursuing a guaranteed (2026 intake) Master's Degree or Direct PhD place in September 2025 with the opportunity to further his education.
 
 His research interests also include machine learning, computer vision, large-scale language modelling, automation and cluster intelligence (currently in an exploratory phase)
 
@@ -72,6 +72,8 @@ Vessel Segmentation](https://arxiv.org/pdf/2401.06224.pdf)
 - *2023.12* 2nd Prize in the National Mathematics Competition for University Students
 - *2023.11* 3rd Prize in the National University Physics Competition for University Students
 - *2023.10* Beihang 2nd Class Academic Excellence Scholarship
+- *2023.9* Head of the Special Research and Development Department of the Association for Self-Control
+- *2023.9* Served as Vice President of Academic Support for the Class of 2022 Student Senate
 - *2023.8* 2nd Prize in 2023 International Chinese-English Translation Competition
 - *2023.5* 2nd Prize of Feng Ru Cup (A reinforcement learning based motion state monitoring system)
 - *2023.5* 2023 National Student Innovation and Entrepreneurship Training Programme Projects Passed with Merit in the Initial Audit
