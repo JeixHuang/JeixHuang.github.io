@@ -69,7 +69,7 @@ Vessel Segmentation](https://arxiv.org/pdf/2401.06224.pdf)
 
 
 # 🎖 Honors and Awards
-- *2024.2* 1
+- *2024.2* 
 - *2023.12* 2nd Prize in the National Mathematics Competition for University Students
 - *2023.11* 3rd Prize in the National University Physics Competition for University Students
 - *2023.10* Beihang 2nd Class Academic Excellence Scholarship
