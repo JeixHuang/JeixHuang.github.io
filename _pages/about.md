@@ -52,7 +52,7 @@ Xingrun Xing, Li Du, **Xinyuan Wang**, Xianlin Zeng,Yequan Wang, Zheng Zhang, Ji
 [Leveraging Frequency Domain Learning in 3D
 Vessel Segmentation](https://arxiv.org/pdf/2401.06224.pdf)
 
-<!-- **Xinyuan Wang**, Chengwei Pan, Hongming Dai, Gangming Zhao, Jinpeng Li, Xiao Zhang, Yizhou Yu -->
+**Xinyuan Wang**, Chengwei Pan, Hongming Dai, Gangming Zhao, Jinpeng Li, Xiao Zhang, Yizhou Yu
 </div>
 </div>
 
