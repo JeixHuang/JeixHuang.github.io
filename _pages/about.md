@@ -95,4 +95,5 @@ Vessel Segmentation](https://arxiv.org/pdf/2401.06224.pdf)
 - *2023.7-2024.5* Defect detection on workpiece surfaces based on computer vision. (supervised by [Mengqi Ji](https://scholar.google.com/citations?user=tHXXQ1EAAAAJ&hl=zh-CN)) in [Institute of Artificial Intelligence](https://iai.buaa.edu.cn/), Beihang University, Beijing, China
 - *2023.7-2024.3* Huawei Rise Intelligence Programme(昇腾众智). (supervised by [Si Liu](https://sites.google.com/site/siliuhome/home)) in [Institute of Artificial Intelligence](https://iai.buaa.edu.cn/), Beihang University, Beijing, China
 - *2023.11-2024.4* Attacks on the medical multimodal macromodel. (supervised by [Chengwei Pan](https://scholar.google.com/citations?user=7i1dqbEAAAAJ&hl=en)) in [Institute of Artificial Intelligence](https://iai.buaa.edu.cn/), Beihang University, Beijing, China
+- 
 <!-- - *2023.02 - 2023.08*, [BAAI](https://www.baai.ac.cn/), China. He was a research n in the Cognitive Large-Scale Model Group mentored by [Xin Jiang](https://scholar.google.com/citations?user=3mqJwa8AAAAJ&hl=zh-CN) and [Yequan Wang](https://www.wangyequan.com/). -->
