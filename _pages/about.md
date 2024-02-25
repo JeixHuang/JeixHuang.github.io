@@ -78,6 +78,8 @@ Vessel Segmentation](https://arxiv.org/pdf/2401.06224.pdf)
 - *2023.9* Served as Vice President of Academic Support for the Class of 2022 Student Senate
 - *2023.9* Appointed as a tutor and crosstalk instructor for mathematical analysis at Shie College, Beihang University
 - *2023.9* Appointed as a tutor and crosstalk instructor for computer programming at Shie College, Beihang University
+- *2023.9* Appointed as a tutor and crosstalk instructor for linear algebra at Shie College, Beihang University
+- *2023.8* Appointed as a mentor for linear algebra at Shie College, Beihang University
 - *2023.8* 2nd Prize in 2023 International Chinese-English Translation Competition
 - *2023.5* 2nd Prize of Feng Ru Cup (A reinforcement learning based motion state monitoring system)
 - *2023.5* 2023 National Student Innovation and Entrepreneurship Training Programme Projects Passed with Merit in the Initial Audit
