@@ -69,19 +69,26 @@ Vessel Segmentation](https://arxiv.org/pdf/2401.06224.pdf)
 
 
 # 🎖 Honors and Awards
-- *2023.12* 2nd Prize in the National Mathematics Competition for University Students
-- *2023.11* 3rd Prize in the National University Physics Competition for University Students
-- *2023.10* Beihang 2nd Class Academic Excellence Scholarship
-- *2023.9* Head of the Special Research and Development Department of the Association for Self-Control
-- *2023.9* Served as Vice President of Academic Support for the Class of 2022 Student Senate
-- *2023.9* Appointed as a tutor and crosstalk instructor for mathematical analysis at Shie College, Beihang University
-- *2023.9* Appointed as a tutor and crosstalk instructor for computer programming at Shie College, Beihang University
-- *2023.9* Appointed as a tutor and crosstalk instructor for linear algebra at Shie College, Beihang University
-- *2023.8* Appointed as a mentor for linear algebra at Shie College, Beihang University
-- *2023.8* 2nd Prize in 2023 International Chinese-English Translation Competition
-- *2023.5* 2nd Prize of Feng Ru Cup (A reinforcement learning based motion state monitoring system)
-- *2023.5* 2023 National Student Innovation and Entrepreneurship Training Programme Projects Passed with Merit in the Initial Audit
-- *2023.3* 3rd Prize of Beihang Modelling Competition
+
+### schoolwork
+- <span style="color:blue">*2023.10* Beihang 2nd Class Academic Excellence Scholarship</span>
+
+### competition &  academe
+- <span style="color:green">*2023.12* 2nd Prize in the National Mathematics Competition for University Students</span>
+- <span style="color:green">*2023.11* 3rd Prize in the National University Physics Competition for University Students</span>
+- <span style="color:green">*2023.8* 2nd Prize in 2023 International Chinese-English Translation Competition</span>
+- <span style="color:green">*2023.5* 2nd Prize of Feng Ru Cup (A reinforcement learning based motion state monitoring system)</span>
+- <span style="color:green">*2023.3* 3rd Prize of Beihang Modelling Competition</span>
+
+### Representation & other
+- <span style="color:orange">*2023.9* Head of the Special Research and Development Department of the Association for Self-Control</span>
+- <span style="color:orange">*2023.9* Served as Vice President of Academic Support for the Class of 2022 Student Senate</span>
+- <span style="color:orange">*2023.9* Appointed as a tutor and crosstalk instructor for mathematical analysis at Shie College, Beihang University</span>
+- <span style="color:orange">*2023.9* Appointed as a tutor and crosstalk instructor for computer programming at Shie College, Beihang University</span>
+- <span style="color:orange">*2023.9* Appointed as a tutor and crosstalk instructor for linear algebra at Shie College, Beihang University</span>
+- <span style="color:orange">*2023.8* Appointed as a mentor for linear algebra at Shie College, Beihang University</span>
+- <span style="color:orange">*2023.5* 2023 National Student Innovation and Entrepreneurship Training Programme Projects Passed with Merit in the Initial Audit</span>
+
 
 
 # 📖 Educations
