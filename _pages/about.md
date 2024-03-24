@@ -79,15 +79,16 @@ Vessel Segmentation](https://arxiv.org/pdf/2401.06224.pdf)
 - <span style="color:blue">*2023.3* 3rd Prize of Beihang Modelling Competition</span>
 
 ### Representation & other
-- <span style="color:darkpurple">*2024.3* Appointed as a tutor and crosstalk instructor for physiotherapy at Shie College, Beihang University</span>
-- <span style="color:darkpurple">*2024.3* Appointed as a tutor and crosstalk instructor for data structure at Shie College, Beihang University</span>
-- <span style="color:darkpurple">*2023.9* Head of the Special Research and Development Department of the Association for Self-Control</span>
-- <span style="color:darkpurple">*2023.9* Served as Vice President of Academic Support for the Class of 2022 Student Senate</span>
-- <span style="color:darkpurple">*2023.9* Appointed as a tutor and crosstalk instructor for mathematical analysis at Shie College, Beihang University</span>
-- <span style="color:darkpurple">*2023.9* Appointed as a tutor and crosstalk instructor for computer programming at Shie College, Beihang University</span>
-- <span style="color:darkpurple">*2023.9* Appointed as a tutor and crosstalk instructor for linear algebra at Shie College, Beihang University</span>
-- <span style="color:darkpurple">*2023.8* Appointed as a mentor for linear algebra at Shie College, Beihang University</span>
-- <span style="color:darkpurple">*2023.5* 2023 National Student Innovation and Entrepreneurship Training Programme Projects Passed with Merit in the Initial Audit</span>
+- <span style="color:blue">*2023.9* Appointed as a tutor and crosstalk instructor for physiotherapy at Shie College, Beihang University</span>
+- <span style="color:blue">*2024.3* Appointed as a tutor and crosstalk instructor for data structure at Shie College, Beihang University</span>
+- <span style="color:blue">*2023.9* Head of the Special Research and Development Department of the Association for Self-Control</span>
+- <span style="color:blue">*2023.9* Served as Vice President of Academic Support for the Class of 2022 Student Senate</span>
+- <span style="color:blue">*2023.9* Appointed as a tutor and crosstalk instructor for mathematical analysis at Shie College, Beihang University</span>
+- <span style="color:blue">*2023.9* Appointed as a tutor and crosstalk instructor for computer programming at Shie College, Beihang University</span>
+- <span style="color:blue">*2023.9* Appointed as a tutor and crosstalk instructor for linear algebra at Shie College, Beihang University</span>
+- <span style="color:blue">*2023.8* Appointed as a mentor for linear algebra at Shie College, Beihang University</span>
+- <span style="color:blue">*2023.5* 2023 National Student Innovation and Entrepreneurship Training Programme Projects Passed with Merit in the Initial Audit</span>
+
 
 
 
