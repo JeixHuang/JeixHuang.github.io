@@ -72,7 +72,7 @@ Vessel Segmentation](https://arxiv.org/pdf/2401.06224.pdf)
 
 ### schoolwork & competition &  academe
 - <span style="color:blue">*2023.12* 2nd Prize in the National Mathematics Competition for University Students</span>
-- <span style="color:blue">*2023.10* Beihang 2nd Class Academic Excellence Scholarship</span>
+- <span style="color:blue">*2023.10* Beihang 2nd Class Academic Excellence Scholarship(Top 5% of the total 1,400 students in the information major category)</span>
 - <span style="color:blue">*2023.11* 3rd Prize in the National University Physics Competition for University Students</span>
 - <span style="color:blue">*2023.8* 2nd Prize in 2023 International Chinese-English Translation Competition</span>
 - <span style="color:blue">*2023.5* 2nd Prize of Feng Ru Cup (A reinforcement learning based motion state monitoring system)</span>
