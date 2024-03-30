@@ -98,9 +98,8 @@ Vessel Segmentation](https://arxiv.org/pdf/2401.06224.pdf)
 <!-- - *Fall 2023*, Design and Analysis of Algorithms, Teaching Assistant, Beihang University -->
 
 
-<!-- # 💬 Invited Talks
-- *2023.12*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/) -->
+# 💬 Academic activity
+- *2024.1*, Basic Modelling 2023 Academic Conference,Multi-modal large model sub-field. 
 
 # 💻 Internships & Scientific research experience
 - *2023.7-2024.5* Defect detection on workpiece surfaces based on computer vision. (supervised by [Mengqi Ji](https://scholar.google.com/citations?user=tHXXQ1EAAAAJ&hl=zh-CN)) in [Institute of Artificial Intelligence](https://iai.buaa.edu.cn/), Beihang University, Beijing, China
