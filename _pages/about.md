@@ -19,7 +19,7 @@ redirect_from:
 
 He has been enrolled in BUAA since 2022 for his Bachelor's Degree and is currently a sophomore ranked in the top 5% of his grade, has secured a guaranteed place in his school and is interested in pursuing a guaranteed (2026 intake) Master's Degree or Direct PhD place in September 2025 with the opportunity to further his education.
 
-His research interests also include machine learning, computer vision, large-scale language modelling, automation and cluster intelligence (currently in an exploratory phase)
+His research interests also include machine learning, computer vision, multi-modal large language models（MLLM）, automation and cluster intelligence 
 
 <!-- His research interest also includes computer vision and large language model. He has published many papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=jQSagnIAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. -->
 
