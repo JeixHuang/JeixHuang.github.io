@@ -34,7 +34,7 @@ If you are interested in joining the project or collaborating, please send me an
 # 📝 Publications 
 
 <div class='paper-box'><div class='paper-box-image'>
-<div><div class="badge">AAAI 2024</div><img src='../images/projects/111.png' alt="sym" width="80%"></div>
+<div><div class="badge">ACMMM 2024</div><img src='../images/projects/111.png' alt="sym" width="80%"></div>
 </div>
 <div class='paper-box-text' markdown="1">
 
