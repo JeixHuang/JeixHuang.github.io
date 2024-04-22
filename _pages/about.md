@@ -19,7 +19,7 @@ redirect_from:
 
 He has been studying at BUAA since 2022, working towards his Bachelor's Degree. Currently a sophomore, he ranks in the top 5% of his grade. He has already secured a guaranteed place for further studies and is keen on pursuing a Master's Degree or a direct PhD starting in September 2025, under the 2026 intake.
 
-His research interests also include  multi-modal large language models（MLLM）,Medical multimodality, machine learning and computer vision.
+His research interests also include  multi-modal large language models（MLLM）,Medical multimodality,LLM Safety, machine learning and computer vision.
 
 <!-- His research interest also includes computer vision and large language model. He has published many papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=jQSagnIAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. -->
 
