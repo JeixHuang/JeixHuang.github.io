@@ -38,8 +38,7 @@ If you are interested in joining the project or collaborating, please send me an
 </div>
 <div class='paper-box-text' markdown="1">
 
-[	Jailbreaking Attack on Medical MLLM: Establishing a Benchmark and Cross-Optimization Method]
-
+- <span style="color:blue">Jailbreaking Attack on Medical MLLM: Establishing a Benchmark and Cross-Optimization Method</span>
  **Xijie Huang**, Xinyuan Wang, Hantao Zhang, Yuhan Duan, Rong Fan, Hao Wang, Caixin Kang, Chengwei Pan
 </div>
 </div>
