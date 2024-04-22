@@ -69,6 +69,7 @@ Vessel Segmentation](https://arxiv.org/pdf/2401.06224.pdf)
 # 🎖 Honors and Awards
 
 ### schoolwork & competition & academe
+- <span style="color:gray">*2024.4* 1nd Prize in Beihang Robotics Competition</span>
 - <span style="color:gray">*2023.12* 2nd Prize in the National Mathematics Competition for University Students</span>
 - <span style="color:gray">*2023.10* Beihang 2nd Class Academic Excellence Scholarship(Top 5% of the total 1,400 students in the information major category)</span>
 - <span style="color:gray">*2023.11* 3rd Prize in the National University Physics Competition for University Students</span>
