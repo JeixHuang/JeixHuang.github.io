@@ -28,25 +28,23 @@ If you are interested in joining the project or collaborating, please send me an
 
 
 # 🔥 News
-- *2024.01*: &nbsp;🎉🎉 [BiPFT(accepted by AAAI 2024) was reported by BAAI](https://mp.weixin.qq.com/s/ibBaWCdDcF2pA-Ug9XH1gQ). 
-- *2023.12*: &nbsp;🎉🎉 [BiPFT was accepted by AAAI 2024](https://arxiv.org/pdf/2312.08937.pdf).
-- *2023.10*: &nbsp;🎉🎉 [Fseg was accepted by BIBM 2023](https://mp.weixin.qq.com/s/ibBaWCdDcF2pA-Ug9XH1gQ). 
+- *2024.04*: &nbsp;🎉🎉 [A new article submission to ACM MM]
+
 
 # 📝 Publications 
 
 <div class='paper-box'><div class='paper-box-image'>
-<div><div class="badge">AAAI 2024</div><img src='../images/projects/BiPFT.png' alt="sym" width="80%"></div>
+<div><div class="badge">AAAI 2024</div><img src='../images/projects/111.png' alt="sym" width="80%"></div>
 </div>
 <div class='paper-box-text' markdown="1">
 
-[BiPFT:  Binary Pre-trained Foundation Transformer with Low-rank Estimation of
-Binarization Residual Polynomials](https://arxiv.org/pdf/2312.08937.pdf)
+[	Jailbreaking Attack on Medical MLLM: Establishing a Benchmark and Cross-Optimization Method]
 
-Xingrun Xing, Li Du, **Xinyuan Wang**, Xianlin Zeng,Yequan Wang, Zheng Zhang, Jiajun Zhang
+ **Xijie Huang**, Xinyuan Wang, Hantao Zhang, Yuhan Duan, Rong Fan, Hao Wang, Caixin Kang, Chengwei Pan
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">BIBM 2023</div><img src='../images/projects/Fseg.png' alt="sym" width="80%"></div></div>
+<!-- <div class='paper-box'><div class='paper-box-image'><div><div class="badge">BIBM 2023</div><img src='../images/projects/Fseg.png' alt="sym" width="80%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Leveraging Frequency Domain Learning in 3D
@@ -54,7 +52,7 @@ Vessel Segmentation](https://arxiv.org/pdf/2401.06224.pdf)
 
 **Xinyuan Wang**, Chengwei Pan, Hongming Dai, Gangming Zhao, Jinpeng Li, Xiao Zhang, Yizhou Yu
 </div>
-</div>
+</div> -->
 
 <!-- [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
