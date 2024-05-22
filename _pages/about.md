@@ -78,8 +78,9 @@ Vessel Segmentation](https://arxiv.org/pdf/2401.06224.pdf)
 - <span style="color:gray">*2023.3* 3rd Prize of Beihang Modelling Competition</span>
 
 ### Representation & other
-- <span style="color:gray">*2023.9* Appointed as a tutor and crosstalk instructor for physical science at Shie College, Beihang University</span>
+- <span style="color:gray">*2024.5* Second place in Beihang Fencing League</span>
 - <span style="color:gray">*2024.3* Appointed as a tutor and crosstalk instructor for data structure at Shie College, Beihang University</span>
+- - <span style="color:gray">*2023.9* Appointed as a tutor and crosstalk instructor for physical science at Shie College, Beihang University</span>
 - <span style="color:gray">*2023.9* Head of the Special Research and Development Department of the Association for Self-Control</span>
 - <span style="color:gray">*2023.9* Served as Vice President of Academic Support for the Class of 2022 Student Senate</span>
 - <span style="color:gray">*2023.9* Appointed as a tutor and crosstalk instructor for mathematical analysis at Shie College, Beihang University</span>
