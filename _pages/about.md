@@ -68,6 +68,8 @@ Vessel Segmentation](https://arxiv.org/pdf/2401.06224.pdf)
 
 # 🎖 Honors and Awards
 
+
+
 ### schoolwork & competition & academe
 - <span style="color:gray">*2024.4* 1nd Prize in Beihang Robotics Competition</span>
 - <span style="color:gray">*2023.12* 2nd Prize in the National Mathematics Competition for University Students</span>
@@ -80,7 +82,7 @@ Vessel Segmentation](https://arxiv.org/pdf/2401.06224.pdf)
 ### Representation & other
 - <span style="color:gray">*2024.5* Second place in Beihang Fencing League</span>
 - <span style="color:gray">*2024.3* Appointed as a tutor and crosstalk instructor for data structure at Shie College, Beihang University</span>
-- - <span style="color:gray">*2023.9* Appointed as a tutor and crosstalk instructor for physical science at Shie College, Beihang University</span>
+- <span style="color:gray">*2023.9* Appointed as a tutor and crosstalk instructor for physical science at Shie College, Beihang University</span>
 - <span style="color:gray">*2023.9* Head of the Special Research and Development Department of the Association for Self-Control</span>
 - <span style="color:gray">*2023.9* Served as Vice President of Academic Support for the Class of 2022 Student Senate</span>
 - <span style="color:gray">*2023.9* Appointed as a tutor and crosstalk instructor for mathematical analysis at Shie College, Beihang University</span>
@@ -103,7 +105,8 @@ Vessel Segmentation](https://arxiv.org/pdf/2401.06224.pdf)
 - *2024.1*, Basic Modelling 2023 Academic Conference,Multi-modal large language models (MLLMs) sub-field. 
 
 # 💻 Internships & Scientific research experience
-- *2023.11-2024.4* Huawei Rise Intelligence Programme(昇腾众智). (supervised by [Si Liu](https://sites.google.com/site/siliuhome/home)) in [Institute of Artificial Intelligence](https://iai.buaa.edu.cn/), Beihang University, Beijing, China
+- *2024.05 - present*, [Tsinghua University](https://www.tsinghua.edu.cn/), China. He was a intern undergraduate in Professor [Minlie Huang](https://coai.cs.tsinghua.edu.cn/hml)'s group at Tsinghua University, focusing on the safety issues of Multimodal Large Language Models (MLLMs).
+- *2023.11-2024.4*, [Huawei](https://www.huawei.com/cn/),Beijing,China.He was an undergraduate intern in the Professor Huawei Rise Intelligence Programme (昇腾众智), supervised by [Si Liu](https://sites.google.com/site/siliuhome/home) in [Institute of Artificial Intelligence](https://iai.buaa.edu.cn/), Beihang University, Beijing, China
 - *2023.11-2024.4* Attacks on the medical MLLM. (supervised by [Chengwei Pan](https://scholar.google.com/citations?user=7i1dqbEAAAAJ&hl=en)) in [Institute of Artificial Intelligence](https://iai.buaa.edu.cn/), Beihang University, Beijing, China
 - *2024.1-2024.4* Modular Control Design for Miniature Omnidirectional Multi-Rotor Blimp: Integration and Validation. (supervised by [Yixin Zhang](https://scholar.google.com/citations?user=7i1dqbEAAAAJ&hl=en)) in [Institute of Automation Science and Electrical Engineering](https://dept3.buaa.edu.cn/), Beihang University, Beijing, China
 - *2023.7-2024.3* Defect detection on workpiece surfaces based on computer vision. (supervised by [Mengqi Ji](https://scholar.google.com/citations?user=tHXXQ1EAAAAJ&hl=zh-CN)) in [Institute of Artificial Intelligence](https://iai.buaa.edu.cn/), Beihang University, Beijing, China
