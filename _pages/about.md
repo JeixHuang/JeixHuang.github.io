@@ -108,3 +108,8 @@ Vessel Segmentation](https://arxiv.org/pdf/2401.06224.pdf)
 - *2024.1-2024.4* Modular Control Design for Miniature Omnidirectional Multi-Rotor Blimp: Integration and Validation. (supervised by [Yixin Zhang](https://scholar.google.com/citations?user=7i1dqbEAAAAJ&hl=en)) in [Institute of Automation Science and Electrical Engineering](https://dept3.buaa.edu.cn/), Beihang University, Beijing, China
 - *2023.7-2024.3* Defect detection on workpiece surfaces based on computer vision. (supervised by [Mengqi Ji](https://scholar.google.com/citations?user=tHXXQ1EAAAAJ&hl=zh-CN)) in [Institute of Artificial Intelligence](https://iai.buaa.edu.cn/), Beihang University, Beijing, China
 <!-- - *2023.02 - 2023.08*, [BAAI](https://www.baai.ac.cn/), China. He was a research n in the Cognitive Large-Scale Model Group mentored by [Xin Jiang](https://scholar.google.com/citations?user=3mqJwa8AAAAJ&hl=zh-CN) and [Yequan Wang](https://www.wangyequan.com/). -->
+
+
+# 🌍 Website Visiting Map
+
+<script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=ItepywghaB7DpioDsZd9QS7Q8t6BfxyDtA3DlM0OKgM&cl=ffffff&w=a"></script>
