@@ -27,7 +27,6 @@ His strengths lie in his excellent mindset, ample self-motivation, passion for r
 <!-- # 🎖 Honors and Awards
 - *2024.05* [Neurips 2024](https://neurips.cc/Conferences/2024) reviewer
  -->
-- 
 <!-- His research interest also includes computer vision and large language model. He has published many papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=jQSagnIAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. -->
 
 If you are interested in joining the project or collaborating, please send me an email (jeix782@gmail.com).
