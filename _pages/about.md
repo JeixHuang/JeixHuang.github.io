@@ -19,8 +19,15 @@ redirect_from:
 
 He has been studying at BUAA since 2022, working towards his Bachelor's Degree. Currently a sophomore, he ranks in the top 5% of his grade. He has already secured a guaranteed place for further studies and is keen on pursuing a Master's Degree or a direct PhD starting in September 2025, under the 2026 intake.
 
-His research interests also include  multi-modal large language models（MLLM）,Medical multimodality,LLM Safety, machine learning and computer vision.
+His research interests also include Multimodal, Embodied-ai and safety.
 
+His strengths lie in his excellent mindset, ample self-motivation, passion for research, and strong planning abilities.
+
+
+<!-- # 🎖 Honors and Awards
+- *2024.05* [Neurips 2024](https://neurips.cc/Conferences/2024) reviewer
+ -->
+- 
 <!-- His research interest also includes computer vision and large language model. He has published many papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=jQSagnIAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. -->
 
 If you are interested in joining the project or collaborating, please send me an email (jeix782@gmail.com).
@@ -28,6 +35,7 @@ If you are interested in joining the project or collaborating, please send me an
 
 
 # 🔥 News
+- *2024.04*: &nbsp;🎉🎉 [A new article submission to NeurIPS 2024]
 - *2024.04*: &nbsp;🎉🎉 [A new article submission to ACM MM]
 
 
@@ -91,6 +99,14 @@ Vessel Segmentation](https://arxiv.org/pdf/2401.06224.pdf)
 - <span style="color:gray">*2023.8* Appointed as a mentor for linear algebra at Shie College, Beihang University</span>
 - <span style="color:gray">*2023.5* 2023 National Student Innovation and Entrepreneurship Training Programme Projects Passed with Merit in the Initial Audit</span>
 
+<!-- # 🎖 Honors and Awards
+- *2024.05* [Neurips 2024](https://neurips.cc/Conferences/2024) reviewer
+- *2024.05* [ACM MM 2024](https://2024.acmmm.org/) reviewer
+- *2024.04* Outstanding graduate student, Beihang University
+- *2023.11* [Student Union President](https://iai.buaa.edu.cn/info/1011/2924.htm), Institute of Artificial Intelligence, Beihang University
+- *2023.08* 2st-Class Scholarship, Beihang University
+- *2023.0* [Mentor and Tutor](https://mp.weixin.qq.com/s/EgRv-WxUEUq_sCSDsjBKgA), World Choir Games 2023🎵
+- *2022* Rank 3/120 in École Centrale de Pékin -->
 
 
 
