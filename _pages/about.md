@@ -56,7 +56,7 @@ If you are interested in joining the project or collaborating, please send me an
 
 [Cross-Modality Jailbreak and Mismatched Attacks on Medical Multimodal Large Language Models](https://arxiv.org/pdf/2405.20775)
 
-**Xijie Huang**, Xinyuan Wang, Hantao Zhang, Jiawen Xi, Jingkun An, Hao Wang, Chengwei Pan
+**Xijie Huang**, [Xinyuan Wang](https://scholar.google.com/citations?hl=en&user=jQSagnIAAAAJ), Hantao Zhang, Jiawen Xi, Jingkun An, Hao Wang, [Chengwei Pan](https://scholar.google.com/citations?user=7i1dqbEAAAAJ&hl=en)
 </div>
 </div>
 
