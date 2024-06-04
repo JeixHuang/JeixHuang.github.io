@@ -34,13 +34,13 @@ If you are interested in joining the project or collaborating, please send me an
 
 
 # 🔥 News
-- *2024.04*: &nbsp;🎉🎉 [A new article submission to NeurIPS 2024]
-- *2024.04*: &nbsp;🎉🎉 [A new article submission to ACM MM]
+- *2024.06*: &nbsp;🎉🎉 [O2M-attack](https://arxiv.org/pdf/2405.20775) github repo released <a href='https://github.com/dirtycomputer/O2M_attack'><img src="https://img.shields.io/github/stars/dirtycomputer/O2M_attack"></a>.
+- *2024.05*: &nbsp;🎉🎉 [A new article submission to NeurIPS 2024](https://arxiv.org/pdf/2405.20775)
 
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'>
+<!-- <div class='paper-box'><div class='paper-box-image'>
 <div><div class="badge">ACMMM 2024</div><img src='../images/projects/111.png' alt="sym" width="80%"></div>
 </div>
 <div class='paper-box-text' markdown="1">
@@ -49,17 +49,16 @@ If you are interested in joining the project or collaborating, please send me an
 
  **Xijie Huang**, Xinyuan Wang, Hantao Zhang, Yuhan Duan, Rong Fan, Hao Wang, Caixin Kang, Chengwei Pan
 </div>
-</div>
+</div> -->
 
-<!-- <div class='paper-box'><div class='paper-box-image'><div><div class="badge">BIBM 2023</div><img src='../images/projects/Fseg.png' alt="sym" width="80%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">BIBM 2023</div><img src='../images/projects/O2M-attack.png' alt="sym" width="80%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Leveraging Frequency Domain Learning in 3D
-Vessel Segmentation](https://arxiv.org/pdf/2401.06224.pdf)
+[Cross-Modality Jailbreak and Mismatched Attacks on Medical Multimodal Large Language Models](https://arxiv.org/pdf/2405.20775)
 
-**Xinyuan Wang**, Chengwei Pan, Hongming Dai, Gangming Zhao, Jinpeng Li, Xiao Zhang, Yizhou Yu
+**Xijie Huang**, Xinyuan Wang, Hantao Zhang, Jiawen Xi, Jingkun An, Hao Wang, Chengwei Pan
 </div>
-</div> -->
+</div>
 
 <!-- [**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
