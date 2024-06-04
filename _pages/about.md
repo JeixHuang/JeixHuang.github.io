@@ -51,7 +51,7 @@ If you are interested in joining the project or collaborating, please send me an
 </div>
 </div> -->
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">BIBM 2023</div><img src='../images/projects/O2M-attack.png' alt="sym" width="80%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arxiv release</div><img src='../images/projects/O2M-attack.png' alt="sym" width="80%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Cross-Modality Jailbreak and Mismatched Attacks on Medical Multimodal Large Language Models](https://arxiv.org/pdf/2405.20775)
