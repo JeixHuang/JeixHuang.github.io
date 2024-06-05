@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-He has been studying at Beihang University since 2022, working towards his Bachelor's Degree. Currently a sophomore, he ranks in the top 5% of his grade. He has already secured a guaranteed place for further studies and is keen on pursuing a Master's Degree or a direct PhD starting in September 2025, under the 2026 intake.
+He has been studying at Beihang University since 2022, working towards his Bachelor's Degree. Currently a sophomore, he ranks in the top 5% of his grade. He has already secured a guaranteed place for further studies and is keen on pursuing a Master's Degree or a direct PhD starting in September 2026(26 Fall).
 
 His research interests also include Multimodal, Embodied-ai, Robotics and Safety.
 
