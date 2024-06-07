@@ -20,7 +20,7 @@ redirect_from:
 He has been studying at Beihang University since 2022, working towards his Bachelor's Degree. Currently a sophomore, he ranks in the top 5% of his grade. He has already secured a guaranteed place for further studies and is keen on pursuing a Master's Degree or a direct PhD starting in September 2026(26 Fall).
 
 His research interests also include Multimodal, Embodied-ai, Robotics and Safety.
-
+He has published many papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?hl=zh-CN&user=pL5W9z4AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
 His strengths lie in his excellent mindset, ample self-motivation, passion for research, and strong planning abilities.
 
 
@@ -29,8 +29,7 @@ His strengths lie in his excellent mindset, ample self-motivation, passion for r
  -->
 <!-- His research interest also includes computer vision and large language model. He has published many papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=jQSagnIAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. -->
 
-If you are interested in joining the project or collaborating, please send me an email (jeix782@gmail.com).
-
+He is currently engaged in academic collaborations with THU, PKU, NUS, and HKU, among others. If you are interested in joining the project or exploring collaboration opportunities, please contact him via email at jeix782@gmail.com.
 
 
 # 🔥 News
