@@ -21,7 +21,7 @@ He has been studying at Beihang University since 2022, working towards his Bache
 
 His research interests also include Multimodal, Embodied-ai, Robotics and Safety.
 
-He has published many papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?hl=zh-CN&user=pL5W9z4AAAAJ'>.
+<!-- He has published many papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?hl=zh-CN&user=pL5W9z4AAAAJ'>. -->
 
 His strengths lie in his excellent mindset, ample self-motivation, passion for research, and strong planning abilities.
 
