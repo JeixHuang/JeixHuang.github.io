@@ -70,7 +70,7 @@ He is presently involved in academic collaborations with institutions such as TH
 - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020** -->
 <!-- # 🎖 scientific research experience
 - *2023.7-2024.5* Defect detection on workpiece surfaces based on computer vision. (supervised by [Mengqi Ji](https://scholar.google.com/citations?user=tHXXQ1EAAAAJ&hl=zh-CN)) in [Institute of Artificial Intelligence](https://iai.buaa.edu.cn/), Beihang University, Beijing, China
-- *2023.7-2024.3* Huawei Rise Intelligence Programme(昇腾众智). (supervised by [Si Liu](https://sites.google.com/site/siliuhome/home)) in [Institute of Artificial Intelligence](https://iai.buaa.edu.cn/), Beihang University, Beijing, China
+- *2023.7-2024.3* Huawei Rise Intelligence Programme(昇腾众智). (supervised by [Si Liu](https://scholar.google.com/citations?hl=en&user=-QtVtNEAAAAJ) in [Institute of Artificial Intelligence](https://iai.buaa.edu.cn/), Beihang University, Beijing, China
 - *2023.11-2024.4* Attacks on the medical multimodal macromodel. (supervised by [Chengwei Pan](https://scholar.google.com/citations?user=7i1dqbEAAAAJ&hl=en)) in [Institute of Artificial Intelligence](https://iai.buaa.edu.cn/), Beihang University, Beijing, China -->
 
 
