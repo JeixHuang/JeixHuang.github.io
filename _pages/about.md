@@ -33,6 +33,9 @@ His strengths lie in his excellent mindset, ample self-motivation, passion for r
 
 He is presently involved in academic collaborations with institutions such as THU, PKU, NUS, and HKU, among others. If you are interested in joining the project or exploring collaboration opportunities, please reach out to him via email at jeix782@gmail.com.
 
+# Resume
+[XIjie Huang's Resume](../resume/cv.pdf)
+
 
 # 🔥 News
 - *2024.06*: &nbsp;🎉🎉 [O2M_attack](https://arxiv.org/abs/2405.20775) dataset 3MAD-Tiny-1K released [![3MAD-Tiny-1K](../images/dataset-on-hf-sm.svg)](https://huggingface.co/datasets/MedMLLM-attack/3MAD-Tiny-1K) 3MAD-66K released [![3MAD-66K](../images/dataset-on-hf-sm.svg)](https://huggingface.co/datasets/MedMLLM-attack/3MAD-66K)
