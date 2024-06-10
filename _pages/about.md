@@ -33,8 +33,8 @@ His strengths lie in his excellent mindset, ample self-motivation, passion for r
 
 He is presently involved in academic collaborations with institutions such as THU, PKU, NUS, and HKU, among others. If you are interested in joining the project or exploring collaboration opportunities, please reach out to him via email at jeix782@gmail.com.
 
-# Resume
-[XIjie Huang's Resume](../resume/cv.pdf)
+# 📜 Resume
+[Xijie Huang's Resume](../resume/cv.pdf)
 
 
 # 🔥 News
@@ -77,7 +77,7 @@ He is presently involved in academic collaborations with institutions such as TH
 - *2023.11-2024.4* Attacks on the medical multimodal macromodel. (supervised by [Chengwei Pan](https://scholar.google.com/citations?user=7i1dqbEAAAAJ&hl=en)) in [Institute of Artificial Intelligence](https://iai.buaa.edu.cn/), Beihang University, Beijing, China -->
 
 
-# 🎖 Honors and Awards
+# 🏆 Honors and Awards
 
 ## Schoolwork & Competitions
 - <span style="color:blue">*2024.4* 1st Prize in Beihang Robotics Competition</span>
