@@ -34,7 +34,7 @@ His strengths lie in his excellent mindset, ample self-motivation, passion for r
 He is presently involved in academic collaborations with institutions such as THU, PKU, NUS, and HKU, among others. If you are interested in joining the project or exploring collaboration opportunities, please reach out to him via email at jeix782@gmail.com.
 
 # 📜 Resume
-[Xijie Huang's Resume](../resume/cv.pdf)
+[Xijie Huang's Resume](../hxj_cv)
 
 
 # 🔥 News
