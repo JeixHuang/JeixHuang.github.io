@@ -75,25 +75,24 @@ He is presently involved in academic collaborations with institutions such as TH
 - *2023.11-2024.4* Attacks on the medical multimodal macromodel. (supervised by [Chengwei Pan](https://scholar.google.com/citations?user=7i1dqbEAAAAJ&hl=en)) in [Institute of Artificial Intelligence](https://iai.buaa.edu.cn/), Beihang University, Beijing, China -->
 
 
-# 🏆 Honors and Awards
+# 🏆 Honors
 
-## Schoolwork & Competitions
-- <span style="color:blue">*2024.4* 1st Prize in Beihang Robotics Competition</span>
-- <span style="color:blue">*2023.10* Beihang 2nd Class Academic Excellence Scholarship (Top 5% of 1,400 students in the information major category)</span>
+- <span style="color:gray">*2024.5* Second place (2/188) in Beihang Fencing League</span>
+- <span style="color:gray">*2024.4* 1st Prize (1/50) in Beihang Robotics Competition</span>
 - <span style="color:gray">*2023.12* 2nd Prize in the National Mathematics Competition for University Students</span>
 - <span style="color:gray">*2023.11* 3rd Prize in the National University Physics Competition for University Students</span>
-- <span style="color:gray">*2023.8* 2nd Prize in 2023 International Chinese-English Translation Competition</span>
-- <span style="color:gray">*2023.5* 2nd Prize of Feng Ru Cup (A reinforcement learning based motion state monitoring system)</span>
-- <span style="color:gray">*2023.3* 3rd Prize of Beihang Modelling Competition</span>
-
-## Representation & Other
-- <span style="color:blue">*2024.5* Second place in Beihang Fencing League</span>
-- <span style="color:blue">*2023.9* Served as Vice President of Academic Support for the Class of 2022 Student Senate</span>
-- <span style="color:gray">*2024.3* Appointed as a tutor and crosstalk instructor for data structure at Shie College, Beihang University</span>
-- <span style="color:gray">*2023.9* Appointed as a tutor and crosstalk instructor for physical science, mathematical analysis, computer programming, and linear algebra at Shie College, Beihang University</span>
-- <span style="color:gray">*2023.9* Head of the Special Research and Development Department of the Association for Self-Control</span>
-- <span style="color:gray">*2023.8* Appointed as a mentor for linear algebra at Shie College, Beihang University</span>
+- <span style="color:gray">*2023.10* Beihang 2nd Class Academic Excellence Scholarship (Top 5% of 1,400 students in the information major category)</span>
+- <span style="color:gray">*2023.5* 2nd Prize (24/1304) of Feng Ru Cup (A reinforcement learning based motion state monitoring system)</span>
 - <span style="color:gray">*2023.5* 2023 National Student Innovation and Entrepreneurship Training Programme Projects Passed with Merit in the Initial Audit</span>
+- <span style="color:gray">*2023.3* 3rd Prize (15/200+) of Beihang Modelling Competition</span>
+
+# 👔 Appointment
+
+- <span style="color:gray">*2024.3* Appointed as a tutor and crosstalk instructor for data structure at Shie College, Beihang University</span>
+- <span style="color:gray">*2023.9* Served as Vice President of Academic Support for the Class of 2022 Student Senate</span>
+- <span style="color:gray">*2023.9* Appointed as a tutor and crosstalk instructor for physical science, mathematical analysis, computer programming, and linear algebra at Shie College, Beihang University</span>
+- <span style="color:gray">*2023.9* Head of the Special Research and Development Department of the Association for Automatic-Control</span>
+- <span style="color:gray">*2023.8* Appointed as a mentor for linear algebra at Shie College, Beihang University</span>
 
 <!-- # 🎖 Honors and Awards
 - *2024.05* [Neurips 2024](https://neurips.cc/Conferences/2024) reviewer
