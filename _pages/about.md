@@ -43,22 +43,22 @@ He is presently involved in academic collaborations with institutions such as [P
 
 # 📝 Publications 
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arxiv release</div><img src='../images/projects/SynthVLM.png' alt="sym" width="80%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[SynthVLM: High-Efficiency and High-Quality Synthetic Data for Vision Language Models](https://arxiv.org/pdf/2405.20775)
+
+Zheng Liu, Hao Liang, **Xijie Huang**, Wentao Xiong, Qinhan Yu, Linzhuang Sun, Chong Chen, Conghui He, [Bin Cui](https://scholar.google.com/citations?user=IJAU8KoAAAAJ&hl=zh-CN), [Wentao Zhang](https://scholar.google.com/citations?user=JE4VON0AAAAJ&hl=zh-CN)
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">arxiv release</div><img src='../images/projects/Synth-Empathy.png' alt="sym" width="80%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Synth-Empathy: Towards High-Quality Synthetic Empathy Data](https://arxiv.org/pdf/2405.20775)
 
-Zheng Liu, Hao Liang, **Xijie Huang**, Wentao Xiong, Qinhan Yu, Linzhuang Sun, Chong Chen, Conghui He♣, Bin Cui, Wentao Zhang
-
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arxiv release</div><img src='../images/projects/O2M-attack.png' alt="sym" width="80%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[SynthVLM: High-Efficiency and High-Quality Synthetic Data for Vision Language Models](https://arxiv.org/pdf/2405.20775)
-
-**Xijie Huang**, [Xinyuan Wang](https://scholar.google.com/citations?hl=en&user=jQSagnIAAAAJ), Hantao Zhang, Jiawen Xi, Jingkun An, Hao Wang, [Chengwei Pan](https://scholar.google.com/citations?user=7i1dqbEAAAAJ&hl=en)
+Hao Liang, Linzhuang Sun, Jingxuan Wei, **Xijie Huang**, Linkun Sun, Bihui Yu, Conghui He, [Wentao Zhang](https://scholar.google.com/citations?user=JE4VON0AAAAJ&hl=zh-CN)
 </div>
 </div>
 
@@ -67,7 +67,7 @@ Zheng Liu, Hao Liang, **Xijie Huang**, Wentao Xiong, Qinhan Yu, Linzhuang Sun, C
 
 [KeyVideoLLM: Towards Large-scale Video Keyframe Selection](https://arxiv.org/pdf/2405.20775)
 
-Hao Liang, Jiapeng Li, Tianyi Bai, **Xijie Huang**, Chong Chen, Conghui He, Bin Cui‡, Wentao Zhang
+Hao Liang, Jiapeng Li, Tianyi Bai, **Xijie Huang**, Chong Chen, Conghui He, [Bin Cui](https://scholar.google.com/citations?user=IJAU8KoAAAAJ&hl=zh-CN), [Wentao Zhang](https://scholar.google.com/citations?user=JE4VON0AAAAJ&hl=zh-CN)
 </div>
 </div>
 
