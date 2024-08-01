@@ -36,8 +36,8 @@ He is presently involved in academic collaborations with institutions such as [P
 
 
 # 🔥 News
-- *2024.08*: &nbsp;🎉🎉 [Synth-Empathy: Towards High-Quality Synthetic Empathy Data](https://arxiv.org/pdf/2405.20775) github repo released <a href='https://github.com/Aurora-slz/Synth-Empathy'><img src="https://img.shields.io/github/stars/Aurora-slz/Synth-Empathy"></a>.
-- *2024.08*: &nbsp;🎉🎉 [SynthVLM: High-Efficiency and High-Quality Synthetic Data for Vision Language Models](https://arxiv.org/pdf/2405.20775) github repo released <a href='https://github.com/starriver030515/SynthVLM'><img src="https://img.shields.io/github/stars/starriver030515/SynthVLM"></a>.
+- *2024.08*: &nbsp;🎉🎉 [Synth-Empathy: Towards High-Quality Synthetic Empathy Data](https://arxiv.org/pdf/2407.21669) github repo released <a href='https://github.com/Aurora-slz/Synth-Empathy'><img src="https://img.shields.io/github/stars/Aurora-slz/Synth-Empathy"></a>.
+- *2024.08*: &nbsp;🎉🎉 [SynthVLM: High-Efficiency and High-Quality Synthetic Data for Vision Language Models](https://arxiv.org/pdf/2407.20756) github repo released <a href='https://github.com/starriver030515/SynthVLM'><img src="https://img.shields.io/github/stars/starriver030515/SynthVLM"></a>.
 - *2024.05*: &nbsp;🎉🎉 3 new articles submission to SIGKDD 2025: [SynthVLM: High-Efficiency and High-Quality Synthetic Data for Vision Language Models](https://arxiv.org/pdf/2405.20775),[KeyVideoLLM: Towards Large-scale Video Keyframe Selection](https://arxiv.org/pdf/2405.20775),[Synth-Empathy: Towards High-Quality Synthetic Empathy Data](https://arxiv.org/pdf/2405.20775)
 - *2024.06*: &nbsp;🎉🎉 [O2M_attack](https://arxiv.org/abs/2405.20775) dataset 3MAD-Tiny-1K released [![3MAD-Tiny-1K](../images/dataset-on-hf-sm.svg)](https://huggingface.co/datasets/MedMLLM-attack/3MAD-Tiny-1K) 3MAD-66K released [![3MAD-66K](../images/dataset-on-hf-sm.svg)](https://huggingface.co/datasets/MedMLLM-attack/3MAD-66K)
 - *2024.06*: &nbsp;🎉🎉 [O2M_attack](https://arxiv.org/abs/2405.20775) github repo released <a href='https://github.com/dirtycomputer/O2M_attack'><img src="https://img.shields.io/github/stars/dirtycomputer/O2M_attack"></a>.
@@ -49,7 +49,7 @@ He is presently involved in academic collaborations with institutions such as [P
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">arxiv release</div><img src='../images/projects/SynthVLM.png' alt="sym" width="80%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[SynthVLM: High-Efficiency and High-Quality Synthetic Data for Vision Language Models](https://arxiv.org/pdf/2405.20775)
+[SynthVLM: High-Efficiency and High-Quality Synthetic Data for Vision Language Models](https://arxiv.org/pdf/2407.20756)
 
 Zheng Liu, Hao Liang, **Xijie Huang**, Wentao Xiong, Qinhan Yu, Linzhuang Sun, Chong Chen, Conghui He, [Bin Cui](https://scholar.google.com/citations?user=IJAU8KoAAAAJ&hl=zh-CN), [Wentao Zhang](https://scholar.google.com/citations?user=JE4VON0AAAAJ&hl=zh-CN)
 
@@ -59,7 +59,7 @@ Zheng Liu, Hao Liang, **Xijie Huang**, Wentao Xiong, Qinhan Yu, Linzhuang Sun, C
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">arxiv release</div><img src='../images/projects/Synth-Empathy.png' alt="sym" width="80%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Synth-Empathy: Towards High-Quality Synthetic Empathy Data](https://arxiv.org/pdf/2405.20775)
+[Synth-Empathy: Towards High-Quality Synthetic Empathy Data](https://arxiv.org/pdf/2407.21669)
 
 Hao Liang, Linzhuang Sun, Jingxuan Wei, **Xijie Huang**, Linkun Sun, Bihui Yu, Conghui He, [Wentao Zhang](https://scholar.google.com/citations?user=JE4VON0AAAAJ&hl=zh-CN)
 </div>
@@ -68,7 +68,7 @@ Hao Liang, Linzhuang Sun, Jingxuan Wei, **Xijie Huang**, Linkun Sun, Bihui Yu, C
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">arxiv release</div><img src='../images/projects/KeyVideoLLM.png' alt="sym" width="80%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[KeyVideoLLM: Towards Large-scale Video Keyframe Selection](https://arxiv.org/pdf/2405.20775)
+[KeyVideoLLM: Towards Large-scale Video Keyframe Selection](https://arxiv.org/pdf/2407.03104)
 
 Hao Liang, Jiapeng Li, Tianyi Bai, **Xijie Huang**, Chong Chen, Conghui He, [Bin Cui](https://scholar.google.com/citations?user=IJAU8KoAAAAJ&hl=zh-CN), [Wentao Zhang](https://scholar.google.com/citations?user=JE4VON0AAAAJ&hl=zh-CN)
 </div>
