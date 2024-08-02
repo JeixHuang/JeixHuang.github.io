@@ -85,7 +85,7 @@ Hao Liang, Jiapeng Li, Tianyi Bai, **Xijie Huang**, Chong Chen, Conghui He, [Bin
 
 
 
-# 🏆 Honors
+# 🏆 Honors and Awards
 
 - <span style="color:gray">*2024.5* Second place (2/188) in Beihang Fencing League</span>
 - <span style="color:gray">*2024.4* 1st Prize (1/50) in Beihang Robotics Competition</span>
@@ -113,10 +113,10 @@ Hao Liang, Jiapeng Li, Tianyi Bai, **Xijie Huang**, Chong Chen, Conghui He, [Bin
 <!-- - *Fall 2023*, Design and Analysis of Algorithms, Teaching Assistant, Beihang University -->
 
 
-# 💬 Academic activity
-- *2024.1*, Basic Modelling 2023 Academic Conference,Multi-modal large language models (MLLMs) sub-field. 
+# 💬 Invited Talks
+<!-- - *2024.1*, Basic Modelling 2023 Academic Conference,Multi-modal large language models (MLLMs) sub-field.  -->
 
-# 💻 Internships & Scientific research experience
+# 💻 Internships
 <!-- - *2024.07 - present*, [Princeton](https://www.princeton.edu/),USA. He was an online intern undergraduate in Assistant Professor [Kaifeng Lyu](https://kaifeng.ac/)'s group, focusing on research related to alignment in RLHF technology and superalignment.
 - *2024.07 - present*, [SBU](https://www.stonybrook.edu/),USA. He was an online intern undergraduate in Assistant Professor [Chenyu You](http://chenyuyou.me/)'s group, focusing on research related to the intersection of medical imaging and AI. -->
 - *2024.01 - 2024.6*, [Tsinghua University](https://www.tsinghua.edu.cn/),[Beihang University](https://www.buaa.edu.cn/),Beijing，China. He was a intern undergraduate in Professor [Minlie Huang](https://coai.cs.tsinghua.edu.cn/hml)'s group at Tsinghua University(supervised by [Chengwei Pan](https://scholar.google.com/citations?user=7i1dqbEAAAAJ&hl=en)), focusing on the safety issues of Multimodal Large Language Models (MLLMs).
