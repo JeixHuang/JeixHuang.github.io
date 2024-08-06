@@ -36,6 +36,7 @@ He is presently involved in academic collaborations with institutions such as [P
 
 
 # 🔥 News
+- *2024.08*: &nbsp;🎉🎉 A new article submission to AAAI 2025: [AGFSync](https://arxiv.org/pdf/2403.13352)
 - *2024.08*: &nbsp;🎉🎉 [Synth-Empathy: Towards High-Quality Synthetic Empathy Data](https://arxiv.org/pdf/2407.21669) github repo released <a href='https://github.com/Aurora-slz/Synth-Empathy'><img src="https://img.shields.io/github/stars/Aurora-slz/Synth-Empathy"></a>.
 - *2024.08*: &nbsp;🎉🎉 [SynthVLM: High-Efficiency and High-Quality Synthetic Data for Vision Language Models](https://arxiv.org/pdf/2407.20756) github repo released <a href='https://github.com/starriver030515/SynthVLM'><img src="https://img.shields.io/github/stars/starriver030515/SynthVLM"></a>.
 - *2024.08*: &nbsp;🎉🎉 3 new articles submission to SIGKDD 2025: [SynthVLM](https://arxiv.org/pdf/2407.20756),[KeyVideoLLM](https://arxiv.org/pdf/2407.03104),[Synth-Empathy](https://arxiv.org/pdf/2407.21669)
@@ -45,6 +46,16 @@ He is presently involved in academic collaborations with institutions such as [P
 
 
 # 📝 Publications 
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arxiv release</div><img src='../images/projects/AGFSync.png' alt="sym" width="80%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[AGFSync: Leveraging AI Feedback for Preference Optimization in Text-to-Image Generation](https://arxiv.org/pdf/2403.13352)
+
+[Jingkun An](https://scholar.google.com/citations?hl=zh-CN&user=gtoavQoAAAAJ), [Yinghao Zhu](https://scholar.google.com/citations?user=LYrsSoEAAAAJ&hl=zh-CN), Zongjian Li, Haoran Feng, **Xijie Huang**, Bohua Chen, Yemin Shi, [Chengwei Pan](https://scholar.google.com/citations?user=7i1dqbEAAAAJ&hl=en)
+
+</div>
+</div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">arxiv release</div><img src='../images/projects/SynthVLM.png' alt="sym" width="80%"></div></div>
 <div class='paper-box-text' markdown="1">
