@@ -21,15 +21,9 @@ He has been studying at Beihang University since 2022, working towards his Bache
 
 His research interests also include Multimodal, Aligment, Safety,Data-centric AI.He has published many papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=pL5W9z4AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
 
-<!-- He has published many papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?hl=zh-CN&user=pL5W9z4AAAAJ'>. -->
 
 His strengths lie in his excellent mindset, ample self-motivation, passion for research, and strong planning abilities.
 
-
-<!-- # 🎖 Honors and Awards
-- *2024.05* [Neurips 2024](https://neurips.cc/Conferences/2024) reviewer
- -->
-<!-- His research interest also includes computer vision and large language model. He has published many papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=jQSagnIAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. -->
 
 He is presently involved in academic collaborations with institutions such as [Princeton](https://www.princeton.edu/), [UC Berkeley](https://www.berkeley.edu/), [SBU](https://www.stonybrook.edu/), [THU](https://www.tsinghua.edu.cn/en/), [PKU](https://www.pku.edu.cn/), [NUS](https://nus.edu.sg/), [HKU](https://www.hku.hk/), [Shanghai-AI-Laboratory](https://www.shlab.org.cn/), and [Huawei](https://www.huawei.com/en/), among others. If you are interested in joining the project or exploring collaboration opportunities, please reach out to him via email at jeix782@gmail.com.
 
