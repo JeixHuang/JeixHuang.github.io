@@ -19,7 +19,8 @@ redirect_from:
 
 He has been studying at Beihang University since 2022, working towards his Bachelor's Degree. Currently a sophomore, he ranks in the top 5% of his grade. He has already secured a guaranteed place for further studies and is keen on pursuing a Master's Degree or a direct PhD starting in September 2026(26 Fall).
 
-His research interests also include Multimodal, Aligment, Safety,Data-centric AI.He has published many papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=pL5W9z4AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
+His research interests also include Multimodal, Aligment, Safety,Data-centric AI.
+<!-- He has published many papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=pL5W9z4AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. -->
 
 
 His strengths lie in his excellent mindset, ample self-motivation, passion for research, and strong planning abilities.
