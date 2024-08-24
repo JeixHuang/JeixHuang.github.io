@@ -116,7 +116,7 @@ Hao Liang, Jiapeng Li, Tianyi Bai, **Xijie Huang**, Chong Chen, Conghui He, [Bin
 # 📖 Educations
 - *2022.09 - present*, B.Eng.In [Institute of Automation Science and Electrical Engineering](https://dept3.buaa.edu.cn/), Beihang University, Beijing, China
 <!-- - *Fall 2023*, Design and Analysis of Algorithms, Teaching Assistant, Beihang University -->
-- *2021.09 - 2022.06*, P.Sci.In [l'École Centrale de Pékin](https://ecpkn.buaa.edu.cn/), Beijing, China
+- *2021.09 - 2022.06*, P.Sci.In [l'École Centrale de Pékin](https://ecpknfr.buaa.edu.cn/), Beijing, China
 
 # 💬 Invited Talks
 <!-- - *2024.1*, Basic Modelling 2023 Academic Conference,Multi-modal large language models (MLLMs) sub-field.  -->
