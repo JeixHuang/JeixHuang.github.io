@@ -17,16 +17,16 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-He has been studying at Beihang University since 2022, working towards his Bachelor's Degree. Currently a sophomore, he ranks in the top 5% of his grade. He has already secured a guaranteed place for further studies and is keen on pursuing a Master's Degree or a direct PhD starting in September 2026(26 Fall).
+I have been studying at Beihang University since 2022, working towards my Bachelor's Degree. Currently a sophomore, I rank in the top 5% of my class. I have already secured a guaranteed place for further studies and am eager to pursue a Master's Degree or a direct PhD starting in September 2026 (Fall 2026).
 
-His research interests also include Multimodal, Aligment, Safety,Data-centric AI.
+I have a strong interest in all topics related to AI integrated with mathematical theories and am actively exploring and expanding the boundaries of current AI technology. My efforts are primarily focused on three directions: (1) applying geometric theories from mathematics to AI technology, (2) optimizing and innovating alignment paradigms through game theory, and (3) advancing data-centric AI through representation learning based on embeddings.
 <!-- He has published many papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=pL5W9z4AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. -->
 
 
-His strengths lie in his excellent mindset, ample self-motivation, passion for research, and strong planning abilities.
+<!-- His strengths lie in his excellent mindset, ample self-motivation, passion for research, and strong planning abilities. -->
 
 
-He is presently involved in academic collaborations with institutions such as [Princeton](https://www.princeton.edu/), [UC Berkeley](https://www.berkeley.edu/), [SBU](https://www.stonybrook.edu/), [THU](https://www.tsinghua.edu.cn/en/), [PKU](https://www.pku.edu.cn/), [NUS](https://nus.edu.sg/), and [HKU](https://www.hku.hk/). If you are interested in joining the project or exploring collaboration opportunities, please reach out to him via email at jeix782@gmail.com.
+I'm presently involved in academic collaborations with institutions such as [Princeton](https://www.princeton.edu/), [UC Berkeley](https://www.berkeley.edu/), [SBU](https://www.stonybrook.edu/), [THU](https://www.tsinghua.edu.cn/en/), [PKU](https://www.pku.edu.cn/), [NUS](https://nus.edu.sg/), and [HKU](https://www.hku.hk/). If you are interested in joining the project or exploring collaboration opportunities, please reach out to me via email at jeix782@gmail.com.
 
 <!-- [Shanghai-AI-Laboratory](https://www.shlab.org.cn/), and [Huawei](https://www.huawei.com/en/) -->
 
