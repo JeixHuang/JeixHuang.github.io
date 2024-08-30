@@ -17,7 +17,9 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I have been studying at Beihang University since 2022, working towards my Bachelor's Degree. Currently a sophomore, I rank in the top 5% of my class. I have already secured a guaranteed place for further studies and am eager to pursue a Master's Degree or a direct PhD starting in September 2026 (Fall 2026).
+I have been studying at Beihang University since 2022, working towards my Bachelor's Degree. 
+
+<!-- Currently a sophomore, I rank in the top 5% of my class. I have already secured a guaranteed place for further studies and am eager to pursue a Master's Degree or a direct PhD starting in September 2026 (Fall 2026). -->
 
 I have a strong interest in all topics related to AI integrated with mathematical theories and am actively exploring and expanding the boundaries of current AI technology. My efforts are primarily focused on two directions:   
 (1) Generalize theories in natural sciences and innovatively apply them to the interpretability of AI architecture, technology, security, etc.  
