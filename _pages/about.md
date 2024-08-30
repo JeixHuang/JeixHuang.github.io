@@ -37,6 +37,7 @@ I'm presently involved in academic collaborations with institutions such as [Pri
 
 
 # 🔥 News
+- *2024.08*: &nbsp;🎉🎉 I have founded [MantaAI](https://github.com/MantaAI): Modified Approaches in Natural Sciences to Advance Artificial Intelligence. Researchers from around the world who share the same vision are welcome to join.
 - *2024.08*: &nbsp;🎉🎉 [Synth-Empathy](https://arxiv.org/pdf/2407.21669) github repo released <a href='https://github.com/Aurora-slz/Synth-Empathy'><img src="https://img.shields.io/github/stars/Aurora-slz/Synth-Empathy"></a>.
 - *2024.08*: &nbsp;🎉🎉 [SynthVLM](https://arxiv.org/pdf/2407.20756) github repo released <a href='https://github.com/starriver030515/SynthVLM'><img src="https://img.shields.io/github/stars/starriver030515/SynthVLM"></a>.
 - *2024.06*: &nbsp;🎉🎉 [O2M_attack](https://arxiv.org/abs/2405.20775) dataset 3MAD-Tiny-1K released [![3MAD-Tiny-1K](../images/dataset-on-hf-sm.svg)](https://huggingface.co/datasets/MedMLLM-attack/3MAD-Tiny-1K) 3MAD-66K released [![3MAD-66K](../images/dataset-on-hf-sm.svg)](https://huggingface.co/datasets/MedMLLM-attack/3MAD-66K)
