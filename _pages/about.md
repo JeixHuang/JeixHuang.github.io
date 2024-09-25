@@ -26,7 +26,7 @@ I have a strong interest in all topics related to AI integrated with natural sci
  (1) Generalize theories from natural sciences to enhance model capabilities, including reasoning, generalization, and adaptability. 
 
  (2) Identify and address critical challenges in AI, focusing on improving interpretability of architecture, data and system. 
- 
+
  (3) Integrate insights with machine learning, reinforcement learning, and deep learning for broader downstream applications.
 <!-- He has published many papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=pL5W9z4AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. -->
 
@@ -51,7 +51,7 @@ I'm presently involved in academic collaborations with institutions such as [Pri
 # 📝 Publications 
 
 
-## 🛡️ AI Safety 
+## 🛡️ Trustworthy ML
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">arxiv release</div><img src='../images/projects/O2M-attack.png' alt="sym" width="80%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -64,15 +64,6 @@ I'm presently involved in academic collaborations with institutions such as [Pri
 
 ## 💾 Data Centric Machine Learning
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arxiv release</div><img src='../images/projects/AGFSync.png' alt="sym" width="80%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[AGFSync: Leveraging AI Feedback for Preference Optimization in Text-to-Image Generation](https://arxiv.org/pdf/2403.13352)
-
-[Jingkun An](https://scholar.google.com/citations?hl=zh-CN&user=gtoavQoAAAAJ), [Yinghao Zhu](https://scholar.google.com/citations?user=LYrsSoEAAAAJ&hl=zh-CN), Zongjian Li, Haoran Feng, **Xijie Huang**, Bohua Chen, Yemin Shi, [Chengwei Pan](https://scholar.google.com/citations?user=7i1dqbEAAAAJ&hl=en)
-
-</div>
-</div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">arxiv release</div><img src='../images/projects/SynthVLM.png' alt="sym" width="80%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -99,6 +90,18 @@ Hao Liang, Linzhuang Sun, Jingxuan Wei, **Xijie Huang**, Linkun Sun, Bihui Yu, C
 [KeyVideoLLM: Towards Large-scale Video Keyframe Selection](https://arxiv.org/pdf/2407.03104)
 
 Hao Liang, Jiapeng Li, Tianyi Bai, **Xijie Huang**, Chong Chen, Conghui He, [Bin Cui](https://scholar.google.com/citations?user=IJAU8KoAAAAJ&hl=zh-CN), [Wentao Zhang](https://scholar.google.com/citations?user=JE4VON0AAAAJ&hl=zh-CN)
+</div>
+</div>
+
+
+## 🌀 Diffusion Models
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arxiv release</div><img src='../images/projects/AGFSync.png' alt="sym" width="80%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[AGFSync: Leveraging AI Feedback for Preference Optimization in Text-to-Image Generation](https://arxiv.org/pdf/2403.13352)
+
+[Jingkun An](https://scholar.google.com/citations?hl=zh-CN&user=gtoavQoAAAAJ), [Yinghao Zhu](https://scholar.google.com/citations?user=LYrsSoEAAAAJ&hl=zh-CN), Zongjian Li, Haoran Feng, **Xijie Huang**, Bohua Chen, Yemin Shi, [Chengwei Pan](https://scholar.google.com/citations?user=7i1dqbEAAAAJ&hl=en)
+
 </div>
 </div>
 
