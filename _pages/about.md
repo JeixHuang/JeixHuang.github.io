@@ -17,6 +17,8 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
+Hi 🤗, I'm Xijie Huang (Chinese: 黄希杰; French: Victor Jeix Huang).
+
 I have been studying at Beihang University since 2022, working towards my Bachelor's Degree. 
 
 <!-- Currently a sophomore, I rank in the top 5% of my class. I have already secured a guaranteed place for further studies and am eager to pursue a Master's Degree or a direct PhD starting in September 2026 (Fall 2026). -->
