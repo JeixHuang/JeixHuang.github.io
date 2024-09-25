@@ -53,6 +53,7 @@ I'm presently involved in academic collaborations with institutions such as [Pri
 
 ## 🛡️ Trustworthy ML
 
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">arxiv release</div><img src='../images/projects/O2M-attack.png' alt="sym" width="80%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -61,6 +62,7 @@ I'm presently involved in academic collaborations with institutions such as [Pri
 **Xijie Huang**, [Xinyuan Wang](https://scholar.google.com/citations?hl=en&user=jQSagnIAAAAJ), Hantao Zhang, Jiawen Xi, Jingkun An, Hao Wang, [Chengwei Pan](https://scholar.google.com/citations?user=7i1dqbEAAAAJ&hl=en)
 </div>
 </div>
+
 
 ## 💾 Data Centric Machine Learning
 
@@ -95,6 +97,8 @@ Hao Liang, Jiapeng Li, Tianyi Bai, **Xijie Huang**, Chong Chen, Conghui He, [Bin
 
 
 ## 🌀 Diffusion Models
+
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">arxiv release</div><img src='../images/projects/AGFSync.png' alt="sym" width="80%"></div></div>
 <div class='paper-box-text' markdown="1">
 
