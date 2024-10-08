@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Hi 🤗, I'm Xijie Huang (Chinese: 黄希杰; French: Victor Jeix Huang).
+Hi 🤗, I'm Shea-Jay Huang (Chinese: 黄希杰(Xijie Huang); French: Victor Ché-Jay Huang).
 
 I have been studying at Beihang University since 2022, working towards my Bachelor's Degree. 
 
