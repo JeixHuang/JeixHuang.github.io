@@ -6,7 +6,7 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "Shea-Jay Huang"
+title                    : "Victor Shea-Jay Huang"
 # description              : "Applying for 26Fall Master or PhD"
 repository               : "JeixHuang/JeixHuang.github.io"
 google_scholar_stats_use_cdn : true
@@ -21,7 +21,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "Shea-Jay Huang"
+  name             : "Victor Shea-Jay Huang"
   avatar           : "images/android-chrome-512x512.png"
   bio              : "Beihang University"
   location         : "Beijing, China"
