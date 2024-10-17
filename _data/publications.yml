@@ -50,7 +50,7 @@ main:
     conference: Arxiv Preprint
     pdf: https://arxiv.org/pdf/2407.03104
     arxiv: https://arxiv.org/abs/2407.03104
-    code: 
+    code: https://github.com/dirtycomputer/O2M_attack
     bibtex: ./assets/files/KeyVideoLLM.txt
     image: ./assets/files/KeyVideoLLM.png
     notes: Preprint
@@ -61,7 +61,7 @@ main:
     conference: Arxiv Preprint
     pdf: https://arxiv.org/pdf/2403.13352
     arxiv: https://arxiv.org/abs/2403.13352
-    code: 
+    code: https://github.com/dirtycomputer/O2M_attack
     bibtex: ./assets/files/AGFSync.txt
     image: ./assets/files/AGFSync.png
     notes: Preprint
