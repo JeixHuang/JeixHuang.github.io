@@ -1,0 +1,6 @@
+@article{wang2024blackdan,
+  title={BlackDAN: A Black-Box Multi-Objective Approach for Effective and Contextual Jailbreaking of Large Language Models},
+  author={Wang, Xinyuan and Huang, Victor Shea-Jay and Chen, Renmiao and Wang, Hao and Pan, Chengwei and Sha, Lei and Huang, Minlie},
+  journal={arXiv preprint arXiv:2410.09804},
+  year={2024}
+}

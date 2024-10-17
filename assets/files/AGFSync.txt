@@ -1,0 +1,6 @@
+@article{an2024agfsync,
+  title={AGFSync: Leveraging AI-Generated Feedback for Preference Optimization in Text-to-Image Generation},
+  author={An, Jingkun and Zhu, Yinghao and Li, Zongjian and Feng, Haoran and Huang, Xijie and Chen, Bohua and Shi, Yemin and Pan, Chengwei},
+  journal={arXiv preprint arXiv:2403.13352},
+  year={2024}
+}

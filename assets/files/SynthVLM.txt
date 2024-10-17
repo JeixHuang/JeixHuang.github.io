@@ -1,0 +1,6 @@
+@article{liu2024synthvlm,
+  title={SynthVLM: High-Efficiency and High-Quality Synthetic Data for Vision Language Models},
+  author={Liu, Zheng and Liang, Hao and Huang, Xijie and Xiong, Wentao and Yu, Qinhan and He, Conghui and Cui, Bin and Zhang, Wentao},
+  journal={arXiv preprint arXiv:2407.20756},
+  year={2024}
+}

@@ -1,0 +1,6 @@
+@article{liang2024keyvideollm,
+  title={KeyVideoLLM: Towards Large-scale Video Keyframe Selection},
+  author={Liang, Hao and Li, Jiapeng and Bai, Tianyi and Huang, Xijie and Chen, Chong and He, Conghui and Cui, Bin and Zhang, Wentao},
+  journal={arXiv preprint arXiv:2407.03104},
+  year={2024}
+}

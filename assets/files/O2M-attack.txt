@@ -1,0 +1,6 @@
+@article{huang2024medical,
+  title={Medical MLLM is Vulnerable: Cross-Modality Jailbreak and Mismatched Attacks on Medical Multimodal Large Language Models},
+  author={Huang, Xijie and Wang, Xinyuan and Zhang, Hantao and Xi, Jiawen and An, Jingkun and Wang, Hao and Pan, Chengwei},
+  journal={arXiv preprint arXiv:2405.20775},
+  year={2024}
+}
