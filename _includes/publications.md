@@ -36,7 +36,7 @@ The code is written in Markdown and is intended to be used in a website or web p
   </div>
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
       <div class="title"><a href="{{ link.pdf }}">{{ link.title }}</a></div>
-      <div class="author">{{ link.authors }}</div>
+      <div class="author">{{ link.authors }}
       <div class="periodical"><em>{{ link.conference }}</em>
       </div>
     <div class="links">
