@@ -1,7 +1,7 @@
 main:
 
   - title: 'BlackDAN: A Black-Box Multi-Objective Approach for Effective and Contextual Jailbreaking of Large Language Models'
-    authors: Xinyuan Wang*, <strong>Victor Shea-Jay Huang*<strong>, Renmiao Chen, Hao Wang, Chengwei Pan, Lei Sha, Minlie Huang
+    authors: Xinyuan Wang*, <strong>Victor Shea-Jay Huang*</strong>, Renmiao Chen, Hao Wang, Chengwei Pan, Lei Sha, Minlie Huang
     conference_short: Arxiv
     conference: Arxiv Preprint
     pdf: https://arxiv.org/pdf/2410.09804
@@ -12,7 +12,7 @@ main:
     notes: Preprint
 
   - title: 'Medical MLLM is Vulnerable: Cross-Modality Jailbreak and Mismatched Attacks on Medical Multimodal Large Language Models'
-    authors: <strong>Victor Shea-Jay Huang<strong>, Xinyuan Wang, Hantao Zhang, Jiawen Xi, Jingkun An, Hao Wang, Chengwei Pan
+    authors: <strong>Victor Shea-Jay Huang</strong>, Xinyuan Wang, Hantao Zhang, Jiawen Xi, Jingkun An, Hao Wang, Chengwei Pan
     conference_short: Arxiv
     conference: Arxiv Preprint
     pdf: https://arxiv.org/pdf/2405.20775
@@ -23,7 +23,7 @@ main:
     notes: Preprint
 
   - title: 'SynthVLM: High-Efficiency and High-Quality Synthetic Data for Vision Language Models'
-    authors: Zheng Liu, Hao Liang, <strong>Victor Shea-Jay Huang<strong>, Wentao Xiong, Qinhan Yu, Linzhuang Sun, Chong Chen, Conghui He, Bin Cui, Wentao Zhang
+    authors: Zheng Liu, Hao Liang, <strong>Victor Shea-Jay Huang</strong>, Wentao Xiong, Qinhan Yu, Linzhuang Sun, Chong Chen, Conghui He, Bin Cui, Wentao Zhang
     conference_short: Arxiv
     conference: Arxiv Preprint
     pdf: https://arxiv.org/pdf/2407.20756
@@ -34,7 +34,7 @@ main:
     notes: Preprint
 
   - title: 'Synth-Empathy: Towards High-Quality Synthetic Empathy Data'
-    authors: Hao Liang, Linzhuang Sun, Jingxuan Wei, <strong>Victor Shea-Jay Huang<strong>, Linkun Sun, Bihui Yu, Conghui He, Wentao Zhang
+    authors: Hao Liang, Linzhuang Sun, Jingxuan Wei, <strong>Victor Shea-Jay Huang</strong>, Linkun Sun, Bihui Yu, Conghui He, Wentao Zhang
     conference_short: Arxiv
     conference: Arxiv Preprint
     pdf: https://arxiv.org/pdf/2407.21669
@@ -45,7 +45,7 @@ main:
     notes: Preprint
 
   - title: 'KeyVideoLLM: Towards Large-scale Video Keyframe Selection'
-    authors: Zheng Liu, Hao Liang, <strong>Victor Shea-Jay Huang<strong>, Wentao Xiong, Qinhan Yu, Linzhuang Sun, Chong Chen, Conghui He, Bin Cui, Wentao Zhang
+    authors: Zheng Liu, Hao Liang, <strong>Victor Shea-Jay Huang</strong>, Wentao Xiong, Qinhan Yu, Linzhuang Sun, Chong Chen, Conghui He, Bin Cui, Wentao Zhang
     conference_short: Arxiv
     conference: Arxiv Preprint
     pdf: https://arxiv.org/pdf/2407.03104
@@ -56,7 +56,7 @@ main:
     notes: Preprint
 
   - title: 'AGFSync: Leveraging AI Feedback for Preference Optimization in Text-to-Image Generation'
-    authors: Jingkun An, Yinghao Zhu, Zongjian Li, Haoran Feng, <strong>Victor Shea-Jay Huang<strong>, Bohua Chen,Yemin Shi, Chengwei Pan
+    authors: Jingkun An, Yinghao Zhu, Zongjian Li, Haoran Feng, <strong>Victor Shea-Jay Huang</strong>, Bohua Chen,Yemin Shi, Chengwei Pan
     conference_short: Arxiv
     conference: Arxiv Preprint
     pdf: https://arxiv.org/pdf/2403.13352
