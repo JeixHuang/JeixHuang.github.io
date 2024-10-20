@@ -6,7 +6,7 @@
 <br />
 <!-- <strong>Office Location:</strong> Centre de Nanosciences et de Nanotechnologies
 <br /> -->
-<strong>Email:</strong> </email>jeix782@gmail.com</email>
+<strong>Email:</strong> jeix782@gmail.com
 <br />
 <strong>Wechat:</strong> jeix782
 <br />
