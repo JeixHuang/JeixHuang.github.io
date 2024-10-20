@@ -9,6 +9,7 @@ layout: homepage
 Hi 🤗, I'm Victor Shea-Jay Huang (Chinese: 黄希杰(Xijie Huang); French: Victor Ché-Jay Huang).
 
 <!-- I am a recent graduate from [Beihang University](https://ev.buaa.edu.cn/) and is currently working as a research assitant intern at [Peking University](https://www.pku.edu.cn/), under the mentorship of Prof. [Wentao Zhang](https://scholar.google.com/citations?user=JE4VON0AAAAJ&hl=zh-CN) and advisement of Prof. [Bin Cui](https://scholar.google.com/citations?user=IJAU8KoAAAAJ&hl=zh-CN).  -->
+## Research Interest
 
 I have a strong interest in all topics related to AI integrated with natural scientific theories and am actively exploring and expanding the boundaries of current AI technology. My efforts are primarily focused on 3 directions: 
  
