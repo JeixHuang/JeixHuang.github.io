@@ -32,6 +32,7 @@ I'm presently involved in academic collaborations with institutions such as [Pri
 
 {% include_relative _includes/news.md %}
 
+{% include_relative _includes/contact.md %}
+
 {% include_relative _includes/publications.md %}
 
-{% include_relative _includes/contact.md %}
