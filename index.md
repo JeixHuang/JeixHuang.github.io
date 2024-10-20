@@ -30,10 +30,10 @@ I'm presently involved in academic collaborations with institutions such as [Pri
 - **B.Eng.**, 2022 - 2026, In [Institute of Automation Science and Electrical Engineering](https://dept3.buaa.edu.cn/), Beihang University, Beijing, China
 - **B.Sci.**, 2021 - 2022, In [l'École Centrale de Pékin](https://ecpknfr.buaa.edu.cn/), Beijing, China
 
-## Contact
+<!-- ## Contact
 - **Email:** jeix782@gmail.com
 
-- **Wechat:** jeix782
+- **Wechat:** jeix782 -->
 
 {% include_relative _includes/news.md %}
 
