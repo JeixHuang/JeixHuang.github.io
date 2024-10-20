@@ -31,5 +31,7 @@ I'm presently involved in academic collaborations with institutions such as [Pri
 - **B.Sci.**, 2021 - 2022, In [l'École Centrale de Pékin](https://ecpknfr.buaa.edu.cn/), Beijing, China
 
 {% include_relative _includes/news.md %}
+
 {% include_relative _includes/publications.md %}
+
 {% include_relative _includes/contact.md %}
