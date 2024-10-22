@@ -13,9 +13,9 @@ Hi 🤗, I'm Victor Shea-Jay Huang (Chinese: 黄希杰(Xijie Huang); French: Vic
 
 I have a strong interest in all topics related to AI integrated with natural scientific theories and am actively exploring and expanding the boundaries of current AI technology. My efforts are primarily focused on 3 directions: 
  
-- **Trustworthy ML:** Identify and address critical challenges in trustworthy AI, focusing on improving interpretability, Safety, Privacy，etc. 
+- **Trustworthy ML:** Identify and address critical challenges in trustworthy AI, focusing on improving interpretability, safety, privacy, etc. 
 
-- **Natural Science:** Generalize theories from natural sciences to enhance model capabilities, including reasoning, generalization, and adaptability. 
+- **Science Augmented AI:** Generalize theories from natural sciences, such as geometry and biology, as well as social sciences, including organizational behavior and cognitive psychology, to enhance model capabilities in reasoning, generalization, and adaptability.
 
 - **AI+X:** Integrate insights with machine learning, reinforcement learning, and deep learning for broader downstream applications.
 
