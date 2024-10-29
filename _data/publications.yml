@@ -23,7 +23,7 @@ main:
     notes: Preprint
 
   - title: 'Document Parsing Unveiled: Techniques, Challenges, and Prospects for Structured Information Extraction'
-    authors: Qintong Zhang, <strong>Victor Shea-Jay Huang</strong>, Bin Wang, Junyuan Zhang, Zhengren Wang, Hao Liang, Shawn Wang, Matthieu Lin, Conghui He, Wentao Zhang
+    authors: Qintong Zhang*, <strong>Victor Shea-Jay Huang*</strong>, Bin Wang, Junyuan Zhang, Zhengren Wang, Hao Liang, Shawn Wang, Matthieu Lin, Conghui He, Wentao Zhang
     conference_short: Arxiv
     conference: Arxiv Preprint
     pdf: https://arxiv.org/pdf/2410.21169
