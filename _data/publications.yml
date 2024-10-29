@@ -22,6 +22,17 @@ main:
     image: ./assets/files/O2M-attack.png
     notes: Preprint
 
+  - title: 'Document Parsing Unveiled: Techniques, Challenges, and Prospects for Structured Information Extraction'
+    authors: Qintong Zhang, <strong>Victor Shea-Jay Huang</strong>, Bin Wang, Junyuan Zhang, Zhengren Wang, Hao Liang, Shawn Wang, Matthieu Lin, Conghui He, Wentao Zhang
+    conference_short: Arxiv
+    conference: Arxiv Preprint
+    pdf: https://arxiv.org/pdf/2410.21169
+    arxiv: https://arxiv.org/abs/2410.21169
+    # code: https://github.com/dirtycomputer/O2M_attack
+    bibtex: ./assets/files/Document.txt
+    image: ./assets/files/Document.png
+    notes: Preprint
+
   - title: 'SynthVLM: High-Efficiency and High-Quality Synthetic Data for Vision Language Models'
     authors: Zheng Liu, Hao Liang, <strong>Victor Shea-Jay Huang</strong>, Wentao Xiong, Qinhan Yu, Linzhuang Sun, Chong Chen, Conghui He, Bin Cui, Wentao Zhang
     conference_short: Arxiv
@@ -50,7 +61,7 @@ main:
     conference: Arxiv Preprint
     pdf: https://arxiv.org/pdf/2407.03104
     arxiv: https://arxiv.org/abs/2407.03104
-    code: https://github.com/dirtycomputer/O2M_attack
+    # code: https://github.com/dirtycomputer/O2M_attack
     bibtex: ./assets/files/KeyVideoLLM.txt
     image: ./assets/files/KeyVideoLLM.png
     notes: Preprint
@@ -61,7 +72,7 @@ main:
     conference: Arxiv Preprint
     pdf: https://arxiv.org/pdf/2403.13352
     arxiv: https://arxiv.org/abs/2403.13352
-    code: https://github.com/dirtycomputer/O2M_attack
+    # code: https://github.com/dirtycomputer/O2M_attack
     bibtex: ./assets/files/AGFSync.txt
     image: ./assets/files/AGFSync.png
     notes: Preprint
