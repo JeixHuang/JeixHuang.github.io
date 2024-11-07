@@ -1,16 +1,5 @@
 main:
 
-  - title: 'BlackDAN: A Black-Box Multi-Objective Approach for Effective and Contextual Jailbreaking of Large Language Models'
-    authors: Xinyuan Wang*, <strong>Victor Shea-Jay Huang*</strong>, Renmiao Chen, Hao Wang, Chengwei Pan, Lei Sha, Minlie Huang
-    conference_short: Arxiv
-    conference: Arxiv Preprint
-    pdf: https://arxiv.org/pdf/2410.09804
-    arxiv: https://arxiv.org/abs/2410.09804
-    code: https://github.com/MantaAI/BlackDAN
-    bibtex: ./assets/files/Blackdan.txt
-    image: ./assets/files/Blackdan.png
-    notes: Preprint
-
   - title: 'Medical MLLM is Vulnerable: Cross-Modality Jailbreak and Mismatched Attacks on Medical Multimodal Large Language Models'
     authors: <strong>Victor Shea-Jay Huang</strong>, Xinyuan Wang, Hantao Zhang, Jiawen Xi, Jingkun An, Hao Wang, Chengwei Pan
     conference_short: Arxiv
@@ -33,15 +22,26 @@ main:
     image: ./assets/files/Document.png
     notes: Preprint
 
-  - title: 'SynthVLM: High-Efficiency and High-Quality Synthetic Data for Vision Language Models'
-    authors: Zheng Liu, Hao Liang, <strong>Victor Shea-Jay Huang</strong>, Wentao Xiong, Qinhan Yu, Linzhuang Sun, Chong Chen, Conghui He, Bin Cui, Wentao Zhang
+  - title: 'BlackDAN: A Black-Box Multi-Objective Approach for Effective and Contextual Jailbreaking of Large Language Models'
+    authors: Xinyuan Wang*, <strong>Victor Shea-Jay Huang*</strong>, Renmiao Chen, Hao Wang, Chengwei Pan, Lei Sha, Minlie Huang
     conference_short: Arxiv
     conference: Arxiv Preprint
-    pdf: https://arxiv.org/pdf/2407.20756
-    arxiv: https://arxiv.org/abs/2407.20756
-    code: https://github.com/starriver030515/SynthVLM
-    bibtex: ./assets/files/SynthVLM.txt
-    image: ./assets/files/SynthVLM.png
+    pdf: https://arxiv.org/pdf/2410.09804
+    arxiv: https://arxiv.org/abs/2410.09804
+    code: https://github.com/MantaAI/BlackDAN
+    bibtex: ./assets/files/Blackdan.txt
+    image: ./assets/files/Blackdan.png
+    notes: Preprint
+
+  - title: 'AGFSync: Leveraging AI Feedback for Preference Optimization in Text-to-Image Generation'
+    authors: Jingkun An, Yinghao Zhu, Zongjian Li, Haoran Feng, <strong>Victor Shea-Jay Huang</strong>, Bohua Chen,Yemin Shi, Chengwei Pan
+    conference_short: Arxiv
+    conference: Arxiv Preprint
+    pdf: https://arxiv.org/pdf/2403.13352
+    arxiv: https://arxiv.org/abs/2403.13352
+    # code: https://github.com/dirtycomputer/O2M_attack
+    bibtex: ./assets/files/AGFSync.txt
+    image: ./assets/files/AGFSync.png
     notes: Preprint
 
   - title: 'Synth-Empathy: Towards High-Quality Synthetic Empathy Data'
@@ -55,6 +55,17 @@ main:
     image: ./assets/files/Synth-Empathy.png
     notes: Preprint
 
+  - title: 'SynthVLM: High-Efficiency and High-Quality Synthetic Data for Vision Language Models'
+    authors: Zheng Liu, Hao Liang, <strong>Victor Shea-Jay Huang</strong>, Wentao Xiong, Qinhan Yu, Linzhuang Sun, Chong Chen, Conghui He, Bin Cui, Wentao Zhang
+    conference_short: Arxiv
+    conference: Arxiv Preprint
+    pdf: https://arxiv.org/pdf/2407.20756
+    arxiv: https://arxiv.org/abs/2407.20756
+    code: https://github.com/starriver030515/SynthVLM
+    bibtex: ./assets/files/SynthVLM.txt
+    image: ./assets/files/SynthVLM.png
+    notes: Preprint
+
   - title: 'KeyVideoLLM: Towards Large-scale Video Keyframe Selection'
     authors: Zheng Liu, Hao Liang, <strong>Victor Shea-Jay Huang</strong>, Wentao Xiong, Qinhan Yu, Linzhuang Sun, Chong Chen, Conghui He, Bin Cui, Wentao Zhang
     conference_short: Arxiv
@@ -64,15 +75,4 @@ main:
     # code: https://github.com/dirtycomputer/O2M_attack
     bibtex: ./assets/files/KeyVideoLLM.txt
     image: ./assets/files/KeyVideoLLM.png
-    notes: Preprint
-
-  - title: 'AGFSync: Leveraging AI Feedback for Preference Optimization in Text-to-Image Generation'
-    authors: Jingkun An, Yinghao Zhu, Zongjian Li, Haoran Feng, <strong>Victor Shea-Jay Huang</strong>, Bohua Chen,Yemin Shi, Chengwei Pan
-    conference_short: Arxiv
-    conference: Arxiv Preprint
-    pdf: https://arxiv.org/pdf/2403.13352
-    arxiv: https://arxiv.org/abs/2403.13352
-    # code: https://github.com/dirtycomputer/O2M_attack
-    bibtex: ./assets/files/AGFSync.txt
-    image: ./assets/files/AGFSync.png
     notes: Preprint
