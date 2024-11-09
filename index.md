@@ -20,6 +20,8 @@ I have a strong interest in all topics related to AI integrated with natural sci
 
 - **AI+X:** Integrate insights with machine learning, reinforcement learning, and deep learning for broader downstream applications.
 
+Welcome to my YouTube channel [@VSJH2003](https://youtube.com/@VSJH2003)! 🎉 Here, I share my passion for the intersection of AI and natural sciences, with videos covering math, physics, AI, and cognitive psychology—join me for paper discussions, trending topic updates, and insights into my work as we explore the future of science and technology together!
+
 ## Collaboration
 
 I'm presently involved in academic collaborations with institutions such as [Princeton](https://www.princeton.edu/), [UC Berkeley](https://www.berkeley.edu/), [SBU](https://www.stonybrook.edu/), [EPFL](https://www.epfl.ch/en/), [THU](https://www.tsinghua.edu.cn/en/), [PKU](https://www.pku.edu.cn/), [NUS](https://nus.edu.sg/), [HKU](https://www.hku.hk/), [ShLab](https://www.shlab.org.cn/) ,and [Baichuan AI](https://www.baichuan-ai.com/home). If you are interested in joining the project or exploring collaboration opportunities, please reach out to me via email at jeix782@gmail.com.
