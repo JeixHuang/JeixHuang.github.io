@@ -42,4 +42,4 @@ I'm presently involved in academic collaborations with institutions such as [Pri
 
 {% include_relative _includes/publications.md %}
 
-<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=sp8jpn_teE_fZyG8NJ7MEQbIoFBt4iMsEoKRx-DvkSw&cl=ffffff&w=a"></script>
+<!-- <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=sp8jpn_teE_fZyG8NJ7MEQbIoFBt4iMsEoKRx-DvkSwcl=ffffff&w=a"></script> -->
