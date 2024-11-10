@@ -33,6 +33,10 @@ I'm presently involved in academic collaborations with institutions such as [Pri
 - **B.Eng.**, 2022 - 2026, In [Institute of Automation Science and Electrical Engineering](https://dept3.buaa.edu.cn/), Beihang University, Beijing, China
 - **B.Sci.**, 2021 - 2022, In [l'École Centrale de Pékin](https://ecpknfr.buaa.edu.cn/), Beijing, China
 
+## Services
+
+- Conference Reviewer: KDD 2025
+
 <!-- ## Contact
 - **Email:** jeix782@gmail.com
 
@@ -44,6 +48,6 @@ I'm presently involved in academic collaborations with institutions such as [Pri
 
 <!-- <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=sp8jpn_teE_fZyG8NJ7MEQbIoFBt4iMsEoKRx-DvkSwcl=ffffff&w=a"></script> -->
 
-## Services
+<!-- ## Services
 
-- Conference Reviewer: KDD 2025
+- Conference Reviewer: KDD 2025 -->
