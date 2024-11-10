@@ -9,7 +9,7 @@ main:
     code: https://github.com/dirtycomputer/O2M_attack
     bibtex: ./assets/files/O2M-attack.txt
     image: ./assets/files/O2M-attack.png
-    notes: Preprint
+    notes: Under review.
 
   - title: 'Document Parsing Unveiled: Techniques, Challenges, and Prospects for Structured Information Extraction'
     authors: Qintong Zhang*, <strong>Victor Shea-Jay Huang*</strong>, Bin Wang, Junyuan Zhang, Zhengren Wang, Hao Liang, Shawn Wang, Matthieu Lin, Conghui He, Wentao Zhang
@@ -31,7 +31,7 @@ main:
     code: https://github.com/MantaAI/BlackDAN
     bibtex: ./assets/files/Blackdan.txt
     image: ./assets/files/Blackdan.png
-    notes: Preprint
+    notes: Under review.
 
   - title: 'AGFSync: Leveraging AI Feedback for Preference Optimization in Text-to-Image Generation'
     authors: Jingkun An, Yinghao Zhu, Zongjian Li, Haoran Feng, <strong>Victor Shea-Jay Huang</strong>, Bohua Chen,Yemin Shi, Chengwei Pan
@@ -42,7 +42,7 @@ main:
     # code: https://github.com/dirtycomputer/O2M_attack
     bibtex: ./assets/files/AGFSync.txt
     image: ./assets/files/AGFSync.png
-    notes: Preprint
+    notes: Under review.
 
   - title: 'Synth-Empathy: Towards High-Quality Synthetic Empathy Data'
     authors: Hao Liang, Linzhuang Sun, Jingxuan Wei, <strong>Victor Shea-Jay Huang</strong>, Linkun Sun, Bihui Yu, Conghui He, Wentao Zhang
@@ -53,7 +53,7 @@ main:
     code: https://github.com/Aurora-slz/Synth-Empathy
     bibtex: ./assets/files/Synth-Empathy.txt
     image: ./assets/files/Synth-Empathy.png
-    notes: Preprint
+    notes: Under review.
 
   - title: 'SynthVLM: High-Efficiency and High-Quality Synthetic Data for Vision Language Models'
     authors: Zheng Liu, Hao Liang, <strong>Victor Shea-Jay Huang</strong>, Wentao Xiong, Qinhan Yu, Linzhuang Sun, Chong Chen, Conghui He, Bin Cui, Wentao Zhang
@@ -64,7 +64,7 @@ main:
     code: https://github.com/starriver030515/SynthVLM
     bibtex: ./assets/files/SynthVLM.txt
     image: ./assets/files/SynthVLM.png
-    notes: Preprint
+    notes: Under review.
 
   - title: 'KeyVideoLLM: Towards Large-scale Video Keyframe Selection'
     authors: Zheng Liu, Hao Liang, <strong>Victor Shea-Jay Huang</strong>, Wentao Xiong, Qinhan Yu, Linzhuang Sun, Chong Chen, Conghui He, Bin Cui, Wentao Zhang
@@ -75,4 +75,4 @@ main:
     # code: https://github.com/dirtycomputer/O2M_attack
     bibtex: ./assets/files/KeyVideoLLM.txt
     image: ./assets/files/KeyVideoLLM.png
-    notes: Preprint
+    notes: Under review.
