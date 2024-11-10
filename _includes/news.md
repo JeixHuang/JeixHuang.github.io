@@ -10,4 +10,3 @@
 <!-- <li><strong>[Jun. 2024]</strong> 🎉🎉 <span style="color:#f59ab2"><a href="https://arxiv.org/abs/2405.20775">O2M_attack</a></span> dataset 3MAD-Tiny-1K released <a href="https://huggingface.co/datasets/MedMLLM-attack/3MAD-Tiny-1K"><img src="../images/dataset-on-hf-sm.svg"></a> 3MAD-66K released <a href="https://huggingface.co/datasets/MedMLLM-attack/3MAD-66K"><img src="../images/dataset-on-hf-sm.svg"></a>.</li> -->
 <li><strong>[Jun. 2024]</strong> 🎉🎉 <span style="color:#f59ab2"><a href="https://arxiv.org/abs/2405.20775">O2M_attack</a></span> github repo released <a href='https://github.com/dirtycomputer/O2M_attack'><img src="https://img.shields.io/github/stars/dirtycomputer/O2M_attack"></a>.</li>
 </ul>
-Welcome to my YouTube channel [@VSJH2003](https://youtube.com/@VSJH2003)!
