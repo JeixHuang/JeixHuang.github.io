@@ -44,6 +44,16 @@ main:
     image: ./assets/files/AGFSync.png
     notes: Under review.
 
+  - title: 'Trans4D: Realistic Geometry-Aware Transition for Compositional Text-to-4D Synthesis'
+    authors: Bohan Zeng, Ling Yang, Siyu Li, Jiaming Liu, Zixiang Zhang, <strong>Victor Shea-Jay Huang</strong>, Juanxi Tian, Kaixin Zhu, yongzhen.gyz, Fu-Yun Wang, Minkai Xu, Stefano Ermon, Wentao Zhang
+    conference_short: Arxiv
+    conference: Arxiv Preprint
+    pdf: https://arxiv.org/pdf/2410.07155
+    arxiv: https://arxiv.org/abs/2410.07155
+    bibtex: ./assets/files/TRANS4D.txt
+    image: ./assets/files/TRANS4D.png
+    notes: Under review.
+
   - title: 'Synth-Empathy: Towards High-Quality Synthetic Empathy Data'
     authors: Hao Liang, Linzhuang Sun, Jingxuan Wei, <strong>Victor Shea-Jay Huang</strong>, Linkun Sun, Bihui Yu, Conghui He, Wentao Zhang
     conference_short: Arxiv

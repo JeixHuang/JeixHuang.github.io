@@ -36,9 +36,9 @@
   
 </ul> -->
 
-<h1 id="services"></h1>
+<h1 id="Services"></h1>
 
-<h2 style="margin: 30px 0px 10px;">services</h2>
+<h2 style="margin: 30px 0px 10px;">Services</h2>
 
 <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
     <tbody>

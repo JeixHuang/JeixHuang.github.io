@@ -1,0 +1,6 @@
+@article{zeng2024trans4d,
+  title={Trans4D: Realistic Geometry-Aware Transition for Compositional Text-to-4D Synthesis},
+  author={Zeng, Bohan and Yang, Ling and Li, Siyu and Liu, Jiaming and Zhang, Zixiang and Huang, Victor Shea-Jay and Tian, Juanxi and Zhu, Kaixin and Guo, Yongzhen and Wang, Fu-Yun and others},
+  journal={arXiv preprint arXiv:2410.07155},
+  year={2024}
+}
