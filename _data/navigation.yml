@@ -1,17 +1,20 @@
 main:
 
-  - title: "Contact"
-    url: ./#contact 
-    right: true 
+  # - title: "Contact"
+  #   url: ./#contact 
+  #   right: true 
 
-  - title: "Conferences & Events"
-    url: ./#conferences
+  # - title: "Conferences & Events"
+  #   url: ./#conferences
 
   - title: "Publications"
     url: ./#publications
 
-  - title: "Projects"
-    url: ./#projects
+  - title: "Services"
+    url: ./#services
+
+  # - title: "Projects"
+  #   url: ./#projects
 
   - title: "News"
     url: ./#news

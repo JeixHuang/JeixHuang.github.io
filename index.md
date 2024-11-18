@@ -29,10 +29,6 @@ I'm presently involved in academic collaborations with institutions such as [Pri
 
 
 
-## Education
-- **B.Eng.**, 2022 - 2026, In [Institute of Automation Science and Electrical Engineering](https://dept3.buaa.edu.cn/), Beihang University, Beijing, China
-- **B.Sci.**, 2021 - 2022, In [l'École Centrale de Pékin](https://ecpknfr.buaa.edu.cn/), Beijing, China
-
 <!-- ## Services
 
 - Conference Reviewer: KDD 2025 -->
@@ -45,6 +41,10 @@ I'm presently involved in academic collaborations with institutions such as [Pri
 {% include_relative _includes/news.md %}
 
 {% include_relative _includes/services.md %}
+
+## Education
+- **B.Eng.**, 2022 - 2026, In [Institute of Automation Science and Electrical Engineering](https://dept3.buaa.edu.cn/), Beihang University, Beijing, China
+- **B.Sci.**, 2021 - 2022, In [l'École Centrale de Pékin](https://ecpknfr.buaa.edu.cn/), Beijing, China
 
 
 {% include_relative _includes/publications.md %}
