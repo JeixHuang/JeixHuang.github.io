@@ -9,6 +9,7 @@ main:
 
   - title: "Publications"
     url: ./#publications
+    right: true 
 
   - title: "Services"
     url: ./#services
