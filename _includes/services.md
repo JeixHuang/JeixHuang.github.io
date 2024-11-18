@@ -1,4 +1,4 @@
-<h1 id="services"></h1>
+<!-- <h1 id="services"></h1>
 
 <h2 style="margin: 60px 0px 10px;">Services</h2>
 
@@ -34,4 +34,22 @@
 <ul style="margin:0 0 20px;">
   <li><a href="https://www.computer.org/csdl/journal/tp"><autocolor>...</autocolor></a></li>
   
-</ul>
+</ul> -->
+
+<h1 id="services"></h1>
+
+<h2 style="margin: 30px 0px 10px;">services</h2>
+
+<table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
+    <tbody>
+        <tr>
+            <td>
+                <sectionheading>&nbsp;&nbsp;Reviewership</sectionheading>
+            </td>
+        </tr>
+        <tr>
+            <td width="20%" valign="center" align="center"><img style="display: inline" width="100%" src="../img/cvpr2025.svg"></td>
+            <td width="20%" valign="center" align="center"><img style="display: inline" width="100%" src="../img/KDD25.png"></td>
+        </tr>
+    </tbody>
+</table>
