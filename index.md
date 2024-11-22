@@ -14,13 +14,13 @@ I am an undergraduate student at [Beihang University](https://ev.buaa.edu.cn/), 
 
 I have a strong interest in all topics related to AI integrated with natural scientific theories and am actively exploring and expanding the boundaries of current AI technology. My efforts are primarily focused on 3 directions: 
  
-- **Trustworthy ML:** Identify and address critical challenges in trustworthy AI, focusing on improving interpretability, safety, privacy, etc. 
+- **Trustworthy AI:** Identify and address critical challenges in trustworthy AI, focusing on improving interpretability, safety, privacy, etc. 
 
-- **Science Augmented AI:** Generalize theories from natural sciences, such as geometry and biology, as well as social sciences, including organizational behavior and cognitive psychology, to enhance model capabilities in reasoning, generalization, and adaptability.
+- **LLM:** Focused on core LLM advancements, including reasoning, scaling laws, and foundational research to push technological boundaries.
 
-- **AI+X:** Integrate insights with machine learning, reinforcement learning, and deep learning for broader downstream applications.
+- **Multimodal:** Centered on cross-modal alignment, perception, fusion, and efficient multimodal technologies for enhanced performance and integration.
 
-Welcome to my YouTube channel [@VSJH2003](https://youtube.com/@VSJH2003)! 🎉 Here, I share my passion for the intersection of AI and natural sciences, with videos covering math, physics, AI, and cognitive psychology—join me for paper discussions, trending topic updates, and insights into my work as we explore the future of science and technology together!
+<!-- Welcome to my YouTube channel [@VSJH2003](https://youtube.com/@VSJH2003)! 🎉 Here, I share my passion for the intersection of AI and natural sciences, with videos covering math, physics, AI, and cognitive psychology—join me for paper discussions, trending topic updates, and insights into my work as we explore the future of science and technology together! -->
 
 ## Collaboration
 
