@@ -6,10 +6,18 @@ main:
 
   # - title: "Conferences & Events"
   #   url: ./#conferences
+  - title: "Collaborations"
+    url: ./#collaborations
+    right: true 
+
+  - title: "Bio"
+    url: ./#about-me
+    
+  - title: "News"
+    url: ./#news
 
   - title: "Publications"
     url: ./#publications
-    right: true 
 
   - title: "Services"
     url: ./#services
@@ -17,11 +25,6 @@ main:
   # - title: "Projects"
   #   url: ./#projects
 
-  - title: "News"
-    url: ./#news
 
   # - title: "Blogs"
   #   url: ./blog/
-
-  - title: "Bio"
-    url: ./#about-me
