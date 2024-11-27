@@ -43,6 +43,16 @@ main:
     image: ./assets/files/BeyondSight.png
     notes: Under review.
 
+  - title: 'Towards Precise Scaling Laws for Video Diffusion Transformers'
+    authors: Yuanyang Yin, Yaqi Zhao, Mingwu Zheng, Ke Lin, Jiarong Ou, Rui Chen, <strong>Victor Shea-Jay Huang</strong>, Jiahao Wang, Xin Tao, Pengfei Wan, Di ZHANG, Baoqun Yin, Wentao Zhang, Kun Gai
+    conference_short: Arxiv
+    conference: Arxiv Preprint
+    pdf: https://arxiv.org/pdf/2411.17470
+    arxiv: https://arxiv.org/abs/2411.17470
+    bibtex: ./assets/files/scaling.txt
+    image: ./assets/files/scaling.png
+    notes: Under review.
+
   - title: 'AGFSync: Leveraging AI Feedback for Preference Optimization in Text-to-Image Generation'
     authors: Jingkun An, Yinghao Zhu, Zongjian Li, Haoran Feng, <strong>Victor Shea-Jay Huang</strong>, Bohua Chen,Yemin Shi, Chengwei Pan
     conference_short: Arxiv
