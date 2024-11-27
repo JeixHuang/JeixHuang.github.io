@@ -33,6 +33,16 @@ main:
     image: ./assets/files/Blackdan.png
     notes: Under review.
 
+  - title: 'Beyond Sight: Towards Cognitive Alignment in LVLM via Enriched Visual Knowledge'
+    authors: Yaqi Zhao, Yuanyang Yin, Lin Li, Mingan Lin, <strong>Victor Shea-Jay Huang</strong>, Siwei Chen, Weipeng Chen, Baoqun Yin, Zenan Zhou, Wentao Zhang
+    conference_short: Arxiv
+    conference: Arxiv Preprint
+    pdf: https://arxiv.org/pdf/2411.16824
+    arxiv: https://arxiv.org/abs/2411.16824
+    bibtex: ./assets/files/BeyondSight.txt
+    image: ./assets/files/BeyondSight.png
+    notes: Under review.
+
   - title: 'AGFSync: Leveraging AI Feedback for Preference Optimization in Text-to-Image Generation'
     authors: Jingkun An, Yinghao Zhu, Zongjian Li, Haoran Feng, <strong>Victor Shea-Jay Huang</strong>, Bohua Chen,Yemin Shi, Chengwei Pan
     conference_short: Arxiv
