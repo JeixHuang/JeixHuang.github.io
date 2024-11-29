@@ -39,7 +39,7 @@ I have a strong interest in all topics related to AI integrated with natural sci
 
 {% include_relative _includes/news.md %}
 
-{% include_relative _includes/services.md %}
+
 
 
 
