@@ -1,0 +1,6 @@
+@article{zhao2024beyond,
+  title={Beyond Sight: Towards Cognitive Alignment in LVLM via Enriched Visual Knowledge},
+  author={Zhao, Yaqi and Yin, Yuanyang and Li, Lin and Lin, Mingan and Huang, Victor Shea-Jay and Chen, Siwei and Chen, Weipeng and Yin, Baoqun and Zhou, Zenan and Zhang, Wentao},
+  journal={arXiv preprint arXiv:2411.16824},
+  year={2024}
+}

@@ -1,0 +1,6 @@
+@article{yin2024towards,
+  title={Towards Precise Scaling Laws for Video Diffusion Transformers},
+  author={Yin, Yuanyang and Zhao, Yaqi and Zheng, Mingwu and Lin, Ke and Ou, Jiarong and Chen, Rui and Huang, Victor Shea-Jay and Wang, Jiahao and Tao, Xin and Wan, Pengfei and others},
+  journal={arXiv preprint arXiv:2411.17470},
+  year={2024}
+}
