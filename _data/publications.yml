@@ -2,14 +2,14 @@ main:
 
   - title: 'Medical MLLM is Vulnerable: Cross-Modality Jailbreak and Mismatched Attacks on Medical Multimodal Large Language Models'
     authors: <strong>Victor Shea-Jay Huang</strong>, Xinyuan Wang, Hantao Zhang, Jiawen Xi, Jingkun An, Hao Wang, Chengwei Pan
-    conference_short: Arxiv
-    conference: Arxiv Preprint
+    conference_short: AAAI
+    conference: AAAI 2025
     pdf: https://arxiv.org/pdf/2405.20775
     arxiv: https://arxiv.org/abs/2405.20775
     code: https://github.com/dirtycomputer/O2M_attack
     bibtex: ./assets/files/O2M-attack.txt
     image: ./assets/files/O2M-attack.png
-    notes: Under review.
+    notes: Published
 
   - title: 'Document Parsing Unveiled: Techniques, Challenges, and Prospects for Structured Information Extraction'
     authors: Qintong Zhang*, <strong>Victor Shea-Jay Huang*</strong>, Bin Wang, Junyuan Zhang, Zhengren Wang, Hao Liang, Shawn Wang, Matthieu Lin, Conghui He, Wentao Zhang
