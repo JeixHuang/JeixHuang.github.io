@@ -4,8 +4,7 @@
 
 <ul>
 <li><strong>[Dec. 2024]</strong> 🎉🎉 I've been accepted into the AAAI-25 Student Scholarship!</li>
-<li><strong>[Dec. 2024]</strong> 🎉🎉 Our paper <span style="color:#f59ab2"><a href="https://arxiv.org/pdf/2405.20775">Medical MLLM is Vulnerable</a></span> has been accepted to AAAI 2025!</li>
-<li><strong>[Dec. 2024]</strong> 🎉🎉 Our paper <span style="color:#f59ab2"><a href="https://arxiv.org/pdf/2403.13352">AGFSync</a></span> has been accepted to AAAI 2025!</li>
+<li><strong>[Dec. 2024]</strong> 🎉🎉 Our papers <span style="color:#f59ab2"><a href="https://arxiv.org/pdf/2405.20775"> and <span style="color:#f59ab2"><a href="https://arxiv.org/pdf/2403.13352">AGFSync</a></span>Medical MLLM is Vulnerable</a></span> have been accepted to AAAI 2025!</li>
 <li><strong>[Nov. 2024]</strong> 🎉🎉 Welcome to my YouTube channel <span style="color:#f59ab2"><a href="https://youtube.com/@VSJH2003">@VSJH2003</a></span>!</li>
 <li><strong>[Aug. 2024]</strong> 🎉🎉 I have founded <span style="color:#f59ab2"><a href="https://github.com/MantaAI">MantaAI</a></span>: Modified Approaches in Natural Sciences to Advance Artificial Intelligence. Researchers from around the world who share the same vision are welcome to join.</li>
 <!-- <li><strong>[Aug. 2024]</strong> 🎉🎉 <span style="color:#f59ab2"><a href="https://arxiv.org/pdf/2407.21669">Synth-Empathy</a></span> github repo released <a href='https://github.com/Aurora-slz/Synth-Empathy'><img src="https://img.shields.io/github/stars/Aurora-slz/Synth-Empathy"></a>.</li>
