@@ -14,12 +14,13 @@ I am an undergraduate student at [Beihang University](https://ev.buaa.edu.cn/), 
 ## Research Interest
 
 I have a strong interest in all topics related to AI integrated with natural scientific theories and am actively exploring and expanding the boundaries of current AI technology. My efforts are primarily focused on 3 directions: 
- 
-- **Trustworthy AI:** Identify and address critical challenges in trustworthy AI, focusing on improving interpretability, safety, privacy, etc. 
 
 - **LLM:** Focused on core LLM advancements, including reasoning, scaling laws, and foundational research to push technological boundaries.
 
-- **Multimodal:** Centered on cross-modal alignment, perception, fusion, and efficient multimodal technologies for enhanced performance and integration.
+- **Multimodal:** Centered on cross-modal alignment, perception, fusion, and efficient multimodal technologies for enhanced performance and integration. 
+
+- **Trustworthy AI:** Identify and address critical challenges in trustworthy AI, focusing on improving interpretability, safety, privacy, etc.  
+
 
 <!-- Welcome to my YouTube channel [@VSJH2003](https://youtube.com/@VSJH2003)! 🎉 Here, I share my passion for the intersection of AI and natural sciences, with videos covering math, physics, AI, and cognitive psychology—join me for paper discussions, trending topic updates, and insights into my work as we explore the future of science and technology together! -->
 
@@ -54,6 +55,7 @@ I'm presently involved in academic collaborations with institutions such as [Pri
 {% include_relative _includes/publications.md %}
 
 <!-- <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=sp8jpn_teE_fZyG8NJ7MEQbIoFBt4iMsEoKRx-DvkSwcl=ffffff&w=a"></script> -->
+
 
 <!-- ## Services
 
