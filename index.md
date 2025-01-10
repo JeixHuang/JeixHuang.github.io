@@ -15,9 +15,10 @@ I am an undergraduate student at [Beihang University](https://ev.buaa.edu.cn/), 
 
 I have a strong interest in all topics related to AI integrated with natural scientific theories and am actively exploring and expanding the boundaries of current AI technology. My efforts are primarily focused on 3 directions: 
 
-- **LLM:** Focused on core LLM advancements, including reasoning, scaling laws, and foundational research to push technological boundaries.
 
-- **Multimodal:** Centered on cross-modal alignment, perception, fusion, and efficient multimodal technologies for enhanced performance and integration. 
+- **Multimodal:** Centered on generation, cross-modal alignment, perception, fusion, and efficient multimodal technologies for enhanced performance and integration. 
+
+- **LLM:** Focused on core LLM advancements, including reasoning, scaling laws, and foundational research to push technological boundaries.
 
 - **Trustworthy AI:** Identify and address critical challenges in trustworthy AI, focusing on improving interpretability, safety, privacy, etc.  
 
