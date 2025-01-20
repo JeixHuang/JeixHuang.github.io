@@ -48,7 +48,7 @@
             </td>
         </tr>
         <tr>
-            <td width="20%" valign="center" align="center"><img style="display: inline" width="100%" src="../img/cvpr2025.svg"></td>
+            <!-- <td width="20%" valign="center" align="center"><img style="display: inline" width="100%" src="../img/cvpr2025.svg"></td> -->
             <td width="20%" valign="center" align="center"><img style="display: inline" width="100%" src="../img/KDD25.png"></td>
         </tr>
     </tbody>
