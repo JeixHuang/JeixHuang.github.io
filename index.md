@@ -53,6 +53,10 @@ I have a strong interest in all topics related to AI integrated with natural sci
 
 I'm presently involved in academic collaborations with institutions such as [Princeton](https://www.princeton.edu/), [UC Berkeley](https://www.berkeley.edu/), [SBU](https://www.stonybrook.edu/), [EPFL](https://www.epfl.ch/en/), [THU](https://www.tsinghua.edu.cn/en/), [PKU](https://www.pku.edu.cn/), [NUS](https://nus.edu.sg/), [HKU](https://www.hku.hk/), [ShLab](https://www.shlab.org.cn/) ,and [Baichuan AI](https://www.baichuan-ai.com/home). If you are interested in joining the project or exploring collaboration opportunities, please reach out to me via email at jeix782@gmail.com.
 
+## Invited Talks
+- 2025.1, Beijing, China. [AI Time Youth PhD Talk-AAAI 2025](./img/aitime2025.jpg)
+
+
 {% include_relative _includes/services.md %}
 
 {% include_relative _includes/publications.md %}
