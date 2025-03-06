@@ -3,7 +3,7 @@
 <h2 style="margin: 30px 0px 10px;">News</h2>
 
 <ul>
-<li><strong>[Dec. 2024]</strong> 🎉🎉 I've been accepted into the SMC Student Scholarship!</li>
+<li><strong>[Feb. 2025]</strong> 🎉🎉 I've been accepted into the SMC Student Scholarship!</li>
 <li><strong>[Feb. 2025]</strong> 🎉🎉 Our 2 papers <span style="color:#f59ab2"><a href="https://arxiv.org/pdf/2411.16824">Beyond Sight</a></span> and <span style="color:#f59ab2"><a href="https://arxiv.org/pdf/2411.17470">Scaling Laws for Video DiT</a></span> have been accepted to CVPR 2025!(CCF-A, Acceptance ratio 22.1%)</li>
 <li><strong>[Dec. 2024]</strong> 🎉🎉 <span style="color:#f59ab2"><a href="https://github.com/thu-coai/AISafetyLab">AISafetyLab</a></span> github repo released <a href='https://github.com/thu-coai/AISafetyLab'><img src="https://img.shields.io/github/stars/thu-coai/AISafetyLab"></a>.</li>
 <li><strong>[Dec. 2024]</strong> 🎉🎉 I've been accepted into the AAAI-25 Student Scholarship!</li>
