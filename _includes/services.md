@@ -49,6 +49,7 @@
         </tr>
         <tr>
             <td width="20%" valign="center" align="center"><img style="display: inline" width="100%" src="../img/iccv2025.png"></td>
+            <td width="20%" valign="center" align="center"><img style="display: inline" width="100%" src="../img/acmm2025.png"></td>
             <td width="20%" valign="center" align="center"><img style="display: inline" width="100%" src="../img/KDD25.png"></td>
         </tr>
     </tbody>
