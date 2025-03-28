@@ -78,6 +78,16 @@ main:
     image: ./assets/files/Blackdan.png
     notes: Under review.
 
+  - title: 'Vision-to-Music Generation: A Survey'
+    authors: Zhaokai Wang, Chenxi Bao, Le Zhuo, Jingrui Han, Yang Yue, Yihong Tang, <strong>Victor Shea-Jay Huang</strong>, Yue Liao
+    conference_short: Arxiv
+    conference: Arxiv Preprint
+    pdf: https://arxiv.org/pdf/2503.21254
+    arxiv: https://arxiv.org/abs/2503.21254
+    code: https://github.com/wzk1015/Awesome-Vision-to-Music-Generation
+    # bibtex: ./assets/files/Blackdan.txt
+    image: ./assets/files/V2M.png
+    notes: Under review.
 
   - title: 'Trans4D: Realistic Geometry-Aware Transition for Compositional Text-to-4D Synthesis'
     authors: Bohan Zeng, Ling Yang, Siyu Li, Jiaming Liu, Zixiang Zhang, <strong>Victor Shea-Jay Huang</strong>, Juanxi Tian, Kaixin Zhu, yongzhen.gyz, Fu-Yun Wang, Minkai Xu, Stefano Ermon, Wentao Zhang
