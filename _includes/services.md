@@ -44,7 +44,7 @@
     <tbody>
         <tr>
             <td>
-                <sectionheading>&nbsp;&nbsp;Reviewership</sectionheading>
+                <sectionheading>&nbsp;&nbsp;Conference Reviewers</sectionheading>
             </td>
         </tr>
         <tr>
