@@ -16,7 +16,7 @@ If the publication has citation information available, it is displayed within a 
 The code is written in Markdown and is intended to be used in a website or web page to display a list of publications.
 
 -->
-<h1 id="publications"></h1>
+<!-- <h1 id="publications"></h1>
 
 <h2 style="margin: 30px 0px -15px;">Publications <temp style="font-size:15px;">[</temp><a href="https://scholar.google.com/citations?hl=en&user=pL5W9z4AAAAJ" target="_blank" style="font-size:15px;">Google Scholar</a><temp style="font-size:15px;">]</temp></h2>
 
@@ -85,4 +85,265 @@ The code is written in Markdown and is intended to be used in a website or web p
 
 <br>
 
-{% endfor %}
+{% endfor %} -->
+
+
+<h1 id="publications"></h1>
+
+<h2 style="margin: 30px 0px -15px;">Publications <temp style="font-size:15px;">[</temp><a href="https://scholar.google.com/citations?hl=en&user=pL5W9z4AAAAJ" target="_blank" style="font-size:15px;">Google Scholar</a><temp style="font-size:15px;">]</temp></h2>
+
+<!-- 添加分类按钮 -->
+<div id="pub-tabs" class="tabs" style="margin: 20px 0;">
+  <button class="tab-button active" data-category="Selected">Selected</button>
+  <button class="tab-button" data-category="Multimodal">Multimodal</button>
+  <button class="tab-button" data-category="LLM">LLM</button>
+  <button class="tab-button" data-category="Trustworthy">Trustworthy AI</button>
+</div>
+
+<div class="publications">
+  <ol class="bibliography" id="pub-list">
+    <!-- 默认显示Selected类别的文章 -->
+    {% for link in site.data.publication_Selected.main %}
+    <li class="publication-item" data-category="Selected">
+      <div class="pub-row">
+        <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+          <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" style="width=100;height=40%">
+          <abbr class="badge">{{ link.conference_short }}</abbr>
+        </div>
+        <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+          <div class="title"><a href="{{ link.pdf }}">{{ link.title }}</a></div>
+          <div class="author">{{ link.authors }}</div>
+          <div class="periodical"><em>{{ link.conference }}</em></div>
+          <div class="links">
+            {% if link.pdf %} 
+            <a href="{{ link.pdf }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+            {% endif %}
+            {% if link.code %} 
+            <a href="{{ link.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+            {% endif %}
+            {% if link.arxiv %} 
+            <a href="{{ link.arxiv }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Arxiv</a>
+            {% endif %}
+            {% if link.bibtex %} 
+            <a href="{{ link.bibtex }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">BibTex</a>
+            {% endif %}
+            {% if link.notes %} 
+            <strong> <i style="color:#e74d3c">{{ link.notes }}</i></strong>
+            {% endif %}
+            {% if link.others %} 
+            {{ link.others }}
+            {% endif %}
+            {% if link.citation %} 
+            <strong> <a style="color:#e74d3c; font-weight:600"> • <i class="total_citation" data-citation="{{ link.citation }}"></i> <i style="color:#e74d3c; font-weight:600"> Citations </i></a></strong>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </li>
+    <br>
+    {% endfor %}
+
+    <!-- Multimodal类别的文章 -->
+    {% for link in site.data.publication_Multimodal.main %}
+    <li class="publication-item" data-category="Multimodal" style="display: none;">
+      <div class="pub-row">
+        <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+          <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" style="width=100;height=40%">
+          <abbr class="badge">{{ link.conference_short }}</abbr>
+        </div>
+        <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+          <div class="title"><a href="{{ link.pdf }}">{{ link.title }}</a></div>
+          <div class="author">{{ link.authors }}</div>
+          <div class="periodical"><em>{{ link.conference }}</em></div>
+          <div class="links">
+            {% if link.pdf %} 
+            <a href="{{ link.pdf }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+            {% endif %}
+            {% if link.code %} 
+            <a href="{{ link.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+            {% endif %}
+            {% if link.arxiv %} 
+            <a href="{{ link.arxiv }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Arxiv</a>
+            {% endif %}
+            {% if link.bibtex %} 
+            <a href="{{ link.bibtex }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">BibTex</a>
+            {% endif %}
+            {% if link.notes %} 
+            <strong> <i style="color:#e74d3c">{{ link.notes }}</i></strong>
+            {% endif %}
+            {% if link.others %} 
+            {{ link.others }}
+            {% endif %}
+            {% if link.citation %} 
+            <strong> <a style="color:#e74d3c; font-weight:600"> • <i class="total_citation" data-citation="{{ link.citation }}"></i> <i style="color:#e74d3c; font-weight:600"> Citations </i></a></strong>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </li>
+    <br>
+    {% endfor %}
+
+    <!-- LLM类别的文章 -->
+    {% for link in site.data.publication_LLM.main %}
+    <li class="publication-item" data-category="LLM" style="display: none;">
+      <div class="pub-row">
+        <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+          <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" style="width=100;height=40%">
+          <abbr class="badge">{{ link.conference_short }}</abbr>
+        </div>
+        <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+          <div class="title"><a href="{{ link.pdf }}">{{ link.title }}</a></div>
+          <div class="author">{{ link.authors }}</div>
+          <div class="periodical"><em>{{ link.conference }}</em></div>
+          <div class="links">
+            {% if link.pdf %} 
+            <a href="{{ link.pdf }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+            {% endif %}
+            {% if link.code %} 
+            <a href="{{ link.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+            {% endif %}
+            {% if link.arxiv %} 
+            <a href="{{ link.arxiv }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Arxiv</a>
+            {% endif %}
+            {% if link.bibtex %} 
+            <a href="{{ link.bibtex }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">BibTex</a>
+            {% endif %}
+            {% if link.notes %} 
+            <strong> <i style="color:#e74d3c">{{ link.notes }}</i></strong>
+            {% endif %}
+            {% if link.others %} 
+            {{ link.others }}
+            {% endif %}
+            {% if link.citation %} 
+            <strong> <a style="color:#e74d3c; font-weight:600"> • <i class="total_citation" data-citation="{{ link.citation }}"></i> <i style="color:#e74d3c; font-weight:600"> Citations </i></a></strong>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </li>
+    <br>
+    {% endfor %}
+
+    <!-- Trustworthy AI类别的文章 -->
+    {% for link in site.data.publication_Trustworthy.main %}
+    <li class="publication-item" data-category="Trustworthy" style="display: none;">
+      <div class="pub-row">
+        <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
+          <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" style="width=100;height=40%">
+          <abbr class="badge">{{ link.conference_short }}</abbr>
+        </div>
+        <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+          <div class="title"><a href="{{ link.pdf }}">{{ link.title }}</a></div>
+          <div class="author">{{ link.authors }}</div>
+          <div class="periodical"><em>{{ link.conference }}</em></div>
+          <div class="links">
+            {% if link.pdf %} 
+            <a href="{{ link.pdf }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+            {% endif %}
+            {% if link.code %} 
+            <a href="{{ link.code }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
+            {% endif %}
+            {% if link.arxiv %} 
+            <a href="{{ link.arxiv }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Arxiv</a>
+            {% endif %}
+            {% if link.bibtex %} 
+            <a href="{{ link.bibtex }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">BibTex</a>
+            {% endif %}
+            {% if link.notes %} 
+            <strong> <i style="color:#e74d3c">{{ link.notes }}</i></strong>
+            {% endif %}
+            {% if link.others %} 
+            {{ link.others }}
+            {% endif %}
+            {% if link.citation %} 
+            <strong> <a style="color:#e74d3c; font-weight:600"> • <i class="total_citation" data-citation="{{ link.citation }}"></i> <i style="color:#e74d3c; font-weight:600"> Citations </i></a></strong>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </li>
+    <br>
+    {% endfor %}
+  </ol>
+
+  <!-- 引用计数脚本 -->
+  <script>
+    $(document).ready(function() {
+      // 加载引用数据
+      var gsDataBaseUrl = 'https://raw.githubusercontent.com/song-chen1/song-chen1.github.io/';
+      $.getJSON(gsDataBaseUrl + "google-scholar-stats/gs_data.json", function(data) {
+        var citationEles = document.getElementsByClassName('total_citation');
+        Array.prototype.forEach.call(citationEles, function(element) {
+          var citationKey = element.getAttribute('data-citation');
+          if (data['publications'][citationKey]) {
+            var numCitations = data['publications'][citationKey]['num_citations'];
+            element.innerHTML = numCitations;
+          } else {
+            element.innerHTML = 'N/A';
+          }
+        });
+      });
+      
+      // 分类按钮的点击事件
+      $('.tab-button').click(function() {
+        // 更新按钮状态
+        $('.tab-button').removeClass('active');
+        $(this).addClass('active');
+        
+        // 获取选中的类别
+        var category = $(this).data('category');
+        
+        // 隐藏所有文章
+        $('.publication-item').hide();
+        
+        // 显示对应类别的文章
+        $('.publication-item[data-category="' + category + '"]').show();
+      });
+    });
+  </script>
+
+  <!-- 添加CSS样式 -->
+  <style>
+    /* 分类按钮样式 */
+    .tabs {
+      margin: 20px 0;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tab-button {
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      cursor: pointer;
+      border-radius: 6px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .tab-button.active {
+      background-color: #2c3e50;
+      color: #fff;
+      border-color: #2c3e50;
+    }
+
+    .tab-button:hover {
+      background-color: #e0e0e0;
+    }
+
+    /* 响应式调整 */
+    @media (max-width: 600px) {
+      .tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .tab-button {
+        flex: none;
+      }
+    }
+  </style>
+</div>
