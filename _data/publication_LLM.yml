@@ -1,50 +1,5 @@
 main:
 
-  - title: 'Medical MLLM is Vulnerable: Cross-Modality Jailbreak and Mismatched Attacks on Medical Multimodal Large Language Models'
-    authors: <strong>Victor Shea-Jay Huang</strong>, Xinyuan Wang, Hantao Zhang, Yinghao Zhu, Jiawen Xi, Jingkun An, Hao Wang, Hao Liang, Chengwei Pan
-    conference_short: AAAI
-    conference: AAAI 2025
-    pdf: https://arxiv.org/pdf/2405.20775
-    arxiv: https://arxiv.org/abs/2405.20775
-    code: https://github.com/dirtycomputer/O2M_attack
-    bibtex: ./assets/files/O2M-attack.txt
-    image: ./assets/files/O2M-attack.png
-    notes: Published
-
-
-  - title: 'Beyond Sight: Towards Cognitive Alignment in LVLM via Enriched Visual Knowledge'
-    authors: Yaqi Zhao, Yuanyang Yin, Lin Li, Mingan Lin, <strong>Victor Shea-Jay Huang</strong>, Siwei Chen, Weipeng Chen, Baoqun Yin, Zenan Zhou, Wentao Zhang
-    conference_short: CVPR
-    conference: CVPR 2025
-    pdf: https://arxiv.org/pdf/2411.16824
-    arxiv: https://arxiv.org/abs/2411.16824
-    bibtex: ./assets/files/BeyondSight.txt
-    image: ./assets/files/BeyondSight.png
-    notes: Published.
-
-  - title: 'Towards Precise Scaling Laws for Video Diffusion Transformers'
-    authors: Yuanyang Yin, Yaqi Zhao, Mingwu Zheng, Ke Lin, Jiarong Ou, Rui Chen, <strong>Victor Shea-Jay Huang</strong>, Jiahao Wang, Xin Tao, Pengfei Wan, Di ZHANG, Baoqun Yin, Wentao Zhang, Kun Gai
-    conference_short: CVPR
-    conference: CVPR 2025
-    pdf: https://arxiv.org/pdf/2411.17470
-    arxiv: https://arxiv.org/abs/2411.17470
-    bibtex: ./assets/files/scaling.txt
-    image: ./assets/files/scaling.png
-    notes: Published.
-
-
-  - title: 'AGFSync: Leveraging AI Feedback for Preference Optimization in Text-to-Image Generation'
-    authors: Jingkun An, Yinghao Zhu, Zongjian Li, Haoran Feng, <strong>Victor Shea-Jay Huang</strong>, Bohua Chen,Yemin Shi, Chengwei Pan
-    conference_short: AAAI
-    conference: AAAI 2025
-    pdf: https://arxiv.org/pdf/2403.13352
-    arxiv: https://arxiv.org/abs/2403.13352
-    # code: https://github.com/dirtycomputer/O2M_attack
-    bibtex: ./assets/files/AGFSync.txt
-    image: ./assets/files/AGFSync.png
-    notes: Published
-
-
   - title: 'AISafetyLab: A Comprehensive Framework for AI Safety Evaluation and Improvement'
     authors: Zhexin Zhang*, Leqi Lei*, Junxiao Yang*, <strong>Victor Shea-Jay Huang*</strong>, Yida Lu, Shiyao Cui, Renmiao Chen, Qinglin Zhang, Xinyuan Wang, Hao Wang, Hao Li, Xianqi Lei, Chengwei Pan, Lei Sha, Hongning Wang, Minlie Huang
     conference_short: Arxiv
@@ -56,16 +11,6 @@ main:
     image: ./assets/files/aisafetylab.png
     notes: Preprint
 
-  - title: 'Document Parsing Unveiled: Techniques, Challenges, and Prospects for Structured Information Extraction'
-    authors: Qintong Zhang*, <strong>Victor Shea-Jay Huang*</strong>, Bin Wang, Junyuan Zhang, Zhengren Wang, Hao Liang, Shawn Wang, Matthieu Lin, Conghui He, Wentao Zhang
-    conference_short: Arxiv
-    conference: Arxiv Preprint
-    pdf: https://arxiv.org/pdf/2410.21169
-    arxiv: https://arxiv.org/abs/2410.21169
-    # code: https://github.com/dirtycomputer/O2M_attack
-    bibtex: ./assets/files/Document.txt
-    image: ./assets/files/Document.png
-    notes: Preprint
 
   - title: 'BlackDAN: A Black-Box Multi-Objective Approach for Effective and Contextual Jailbreaking of Large Language Models'
     authors: Xinyuan Wang*, <strong>Victor Shea-Jay Huang*</strong>, Renmiao Chen, Hao Wang, Chengwei Pan, Lei Sha, Minlie Huang
@@ -78,26 +23,6 @@ main:
     image: ./assets/files/Blackdan.png
     notes: Under review.
 
-  - title: 'Vision-to-Music Generation: A Survey'
-    authors: Zhaokai Wang, Chenxi Bao, Le Zhuo, Jingrui Han, Yang Yue, Yihong Tang, <strong>Victor Shea-Jay Huang</strong>, Yue Liao
-    conference_short: Arxiv
-    conference: Arxiv Preprint
-    pdf: https://arxiv.org/pdf/2503.21254
-    arxiv: https://arxiv.org/abs/2503.21254
-    code: https://github.com/wzk1015/Awesome-Vision-to-Music-Generation
-    # bibtex: ./assets/files/Blackdan.txt
-    image: ./assets/files/V2M.png
-    notes: Under review.
-
-  - title: 'Trans4D: Realistic Geometry-Aware Transition for Compositional Text-to-4D Synthesis'
-    authors: Bohan Zeng, Ling Yang, Siyu Li, Jiaming Liu, Zixiang Zhang, <strong>Victor Shea-Jay Huang</strong>, Juanxi Tian, Kaixin Zhu, yongzhen.gyz, Fu-Yun Wang, Minkai Xu, Stefano Ermon, Wentao Zhang
-    conference_short: Arxiv
-    conference: Arxiv Preprint
-    pdf: https://arxiv.org/pdf/2410.07155
-    arxiv: https://arxiv.org/abs/2410.07155
-    bibtex: ./assets/files/TRANS4D.txt
-    image: ./assets/files/TRANS4D.png
-    notes: Under review.
 
   - title: 'Synth-Empathy: Towards High-Quality Synthetic Empathy Data'
     authors: Hao Liang, Linzhuang Sun, Jingxuan Wei, <strong>Victor Shea-Jay Huang</strong>, Linkun Sun, Bihui Yu, Conghui He, Wentao Zhang
@@ -110,24 +35,3 @@ main:
     image: ./assets/files/Synth-Empathy.png
     notes: Under review.
 
-  - title: 'SynthVLM: High-Efficiency and High-Quality Synthetic Data for Vision Language Models'
-    authors: Zheng Liu, Hao Liang, <strong>Victor Shea-Jay Huang</strong>, Wentao Xiong, Qinhan Yu, Linzhuang Sun, Chong Chen, Conghui He, Bin Cui, Wentao Zhang
-    conference_short: Arxiv
-    conference: Arxiv Preprint
-    pdf: https://arxiv.org/pdf/2407.20756
-    arxiv: https://arxiv.org/abs/2407.20756
-    code: https://github.com/starriver030515/SynthVLM
-    bibtex: ./assets/files/SynthVLM.txt
-    image: ./assets/files/SynthVLM.png
-    notes: Under review.
-
-  - title: 'KeyVideoLLM: Towards Large-scale Video Keyframe Selection'
-    authors: Zheng Liu, Hao Liang, <strong>Victor Shea-Jay Huang</strong>, Wentao Xiong, Qinhan Yu, Linzhuang Sun, Chong Chen, Conghui He, Bin Cui, Wentao Zhang
-    conference_short: Arxiv
-    conference: Arxiv Preprint
-    pdf: https://arxiv.org/pdf/2407.03104
-    arxiv: https://arxiv.org/abs/2407.03104
-    # code: https://github.com/dirtycomputer/O2M_attack
-    bibtex: ./assets/files/KeyVideoLLM.txt
-    image: ./assets/files/KeyVideoLLM.png
-    notes: Under review.
