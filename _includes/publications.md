@@ -86,4 +86,3 @@ The code is written in Markdown and is intended to be used in a website or web p
 <br>
 
 {% endfor %}
-
