@@ -140,7 +140,6 @@ The code is written in Markdown and is intended to be used in a website or web p
         </div>
       </div>
     </li>
-    <br>
     {% endfor %}
 
     <!-- Multimodal类别的文章 -->
@@ -181,7 +180,6 @@ The code is written in Markdown and is intended to be used in a website or web p
         </div>
       </div>
     </li>
-    <br>
     {% endfor %}
 
     <!-- LLM类别的文章 -->
@@ -222,7 +220,6 @@ The code is written in Markdown and is intended to be used in a website or web p
         </div>
       </div>
     </li>
-    <br>
     {% endfor %}
 
     <!-- Trustworthy AI类别的文章 -->
@@ -263,7 +260,6 @@ The code is written in Markdown and is intended to be used in a website or web p
         </div>
       </div>
     </li>
-    <br>
     {% endfor %}
   </ol>
 
@@ -332,6 +328,27 @@ The code is written in Markdown and is intended to be used in a website or web p
 
     .tab-button:hover {
       background-color: #e0e0e0;
+    }
+    
+    /* 修复留白问题 */
+    .bibliography {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .publication-item {
+      margin-bottom: 20px;
+    }
+    
+    /* 确保列表项不留白 */
+    #pub-list {
+      display: block;
+      margin-top: 20px;
+      list-style-type: none;
+    }
+    
+    #pub-list li {
+      padding-bottom: 10px;
     }
 
     /* 响应式调整 */
