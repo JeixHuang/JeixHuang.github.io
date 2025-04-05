@@ -56,6 +56,9 @@ I'm presently involved in academic collaborations with institutions such as [Pri
 ## Invited Talks
 - 2025.1, Beijing, China. [AI Time Youth PhD Talk-AAAI 2025](./img/aitime2025.jpg)
 
+## Awards (Selected)
+- 2025.2, SMC Scholarship 
+- 2024.12, AAAI 2025 Student Scholarship 
 
 {% include_relative _includes/services.md %}
 
