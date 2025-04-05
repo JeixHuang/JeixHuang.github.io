@@ -10,6 +10,7 @@ Hi 🤗, I'm Victor Shea-Jay Huang (Chinese: 黄希杰(Xijie Huang); French: Vic
 
 I am an undergraduate student at [Beihang University](https://ev.buaa.edu.cn/), expected to graduate in 2026. 
 
+I have published many papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=pL5W9z4AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>(Sept. 2024 - present).
 
 ## Research Interest
 
