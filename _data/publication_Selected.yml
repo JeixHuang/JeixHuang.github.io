@@ -4,7 +4,7 @@ main:
     authors: <strong>Victor Shea-Jay Huang</strong>, Xinyuan Wang, Hantao Zhang, Yinghao Zhu, Jiawen Xi, Jingkun An, Hao Wang, Hao Liang, Chengwei Pan
     conference_short: AAAI
     conference: AAAI 2025
-    pdf: https://arxiv.org/pdf/2405.20775
+    pdf: https://ojs.aaai.org/index.php/AAAI/article/view/32396
     arxiv: https://arxiv.org/abs/2405.20775
     code: https://github.com/dirtycomputer/O2M_attack
     bibtex: ./assets/files/O2M-attack.txt
@@ -37,7 +37,7 @@ main:
     authors: Jingkun An, Yinghao Zhu, Zongjian Li, Haoran Feng, <strong>Victor Shea-Jay Huang</strong>, Bohua Chen,Yemin Shi, Chengwei Pan
     conference_short: AAAI
     conference: AAAI 2025
-    pdf: https://arxiv.org/pdf/2403.13352
+    pdf: https://ojs.aaai.org/index.php/AAAI/article/view/32168
     arxiv: https://arxiv.org/abs/2403.13352
     # code: https://github.com/dirtycomputer/O2M_attack
     bibtex: ./assets/files/AGFSync.txt
