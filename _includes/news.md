@@ -79,17 +79,17 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 16px;
-    height: 16px;
-    background-color: #f59ab2;
-    border-radius: 50%;
+    width: 10px;
+    height: 30px;
+    background-color: #9e9e9e;
+    border-radius: 3px;
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: top 0.1s ease;
   }
   
   .slider-thumb:hover {
-    background-color: #e5809c;
+    background-color: #7e7e7e;
   }
 </style>
 
@@ -217,7 +217,3 @@
     updatePosition(0);
   });
 </script>
-<!-- <li><strong>[Aug. 2024]</strong> 🎉🎉 <span style="color:#f59ab2"><a href="https://arxiv.org/pdf/2407.21669">Synth-Empathy</a></span> github repo released <a href='https://github.com/Aurora-slz/Synth-Empathy'><img src="https://img.shields.io/github/stars/Aurora-slz/Synth-Empathy"></a>.</li>
-<li><strong>[Aug. 2024]</strong> 🎉🎉 <span style="color:#f59ab2"><a href="https://arxiv.org/pdf/2407.20756">SynthVLM</a></span> github repo released <a href='https://github.com/starriver030515/SynthVLM'><img src="https://img.shields.io/github/stars/starriver030515/SynthVLM"></a>.</li> -->
-<!-- <li><strong>[Jun. 2024]</strong> 🎉🎉 <span style="color:#f59ab2"><a href="https://arxiv.org/abs/2405.20775">O2M_attack</a></span> dataset 3MAD-Tiny-1K released <a href="https://huggingface.co/datasets/MedMLLM-attack/3MAD-Tiny-1K"><img src="../images/dataset-on-hf-sm.svg"></a> 3MAD-66K released <a href="https://huggingface.co/datasets/MedMLLM-attack/3MAD-66K"><img src="../images/dataset-on-hf-sm.svg"></a>.</li> -->
-<!-- <li><strong>[Jun. 2024]</strong> 🎉🎉 <span style="color:#f59ab2"><a href="https://arxiv.org/abs/2405.20775">O2M_attack</a></span> github repo released <a href='https://github.com/dirtycomputer/O2M_attack'><img src="https://img.shields.io/github/stars/dirtycomputer/O2M_attack"></a>.</li> -->
