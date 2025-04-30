@@ -49,7 +49,7 @@ main:
     authors: Qintong Zhang*, <strong>Victor Shea-Jay Huang*</strong>, Bin Wang, Junyuan Zhang, Zhengren Wang, Hao Liang, Shawn Wang, Matthieu Lin, Conghui He, Wentao Zhang
     conference_short: Arxiv
     conference: Arxiv Preprint
-    pdf: https://arxiv.org/pdf/2410.21169
+    pdf: https://arxiv.org/pdf/2410.21169v3
     arxiv: https://arxiv.org/abs/2410.21169
     # code: https://github.com/dirtycomputer/O2M_attack
     bibtex: ./assets/files/Document.txt
