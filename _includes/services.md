@@ -68,10 +68,10 @@
             </td>
         </tr>
         <tr>
-            <td width="17%" align="center"><img style="height: 60px;" src="../img/nips2025.png"></td>
-            <td width="17%" align="center"><img style="height: 60px;" src="../img/iccv2025.png"></td>
-            <td width="17%" align="center"><img style="height: 60px;" src="../img/acmm2025-1.png"></td>
-            <td width="17%" align="center"><img style="height: 60px;" src="../img/KDD25.png"></td>
+            <td width="17%" align="center"><img style="height: 50px;" src="../img/nips2025.png"></td>
+            <td width="17%" align="center"><img style="height: 50px;" src="../img/iccv2025.png"></td>
+            <td width="17%" align="center"><img style="height: 50px;" src="../img/acmm2025-1.png"></td>
+            <td width="17%" align="center"><img style="height: 50px;" src="../img/KDD25.png"></td>
         </tr>
     </tbody>
 </table>
