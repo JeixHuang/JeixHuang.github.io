@@ -35,7 +35,7 @@
   <li><a href="https://www.computer.org/csdl/journal/tp"><autocolor>...</autocolor></a></li>
   
 </ul> -->
-
+<!-- 
 <h1 id="Services"></h1>
 
 <h2 style="margin: 30px 0px 10px;">Services</h2>
@@ -48,10 +48,26 @@
             </td>
         </tr>
         <tr>
-            <td width="20%" valign="center" align="center"><img style="display: inline" width="100%" src="../img/nips2025.png"></td>
-            <td width="20%" valign="center" align="center"><img style="display: inline" width="100%" src="../img/iccv2025.png"></td>
-            <td width="20%" valign="center" align="center"><img style="display: inline" width="100%" src="../img/acmm2025-1.png"></td>
-            <td width="20%" valign="center" align="center"><img style="display: inline" width="100%" src="../img/KDD25.png"></td>
+            <td width="15%" valign="center" align="center"><img style="display: inline" width="100%" src="../img/nips2025.png"></td>
+            <td width="15%" valign="center" align="center"><img style="display: inline" width="100%" src="../img/iccv2025.png"></td>
+            <td width="15%" valign="center" align="center"><img style="display: inline" width="100%" src="../img/acmm2025-1.png"></td>
+            <td width="15%" valign="center" align="center"><img style="display: inline" width="100%" src="../img/KDD25.png"></td>
+        </tr>
+    </tbody>
+</table> -->
+
+<table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
+    <tbody>
+        <tr>
+            <td width="15%" valign="center" align="left" colspan="5" style="font-weight: bold; font-size: 18px;">
+                &nbsp;&nbsp;Conference Reviewers
+            </td>
+        </tr>
+        <tr>
+            <td width="17%" align="center"><img style="height: 60px;" src="../img/nips2025.png"></td>
+            <td width="17%" align="center"><img style="height: 60px;" src="../img/iccv2025.png"></td>
+            <td width="17%" align="center"><img style="height: 60px;" src="../img/acmm2025-1.png"></td>
+            <td width="17%" align="center"><img style="height: 60px;" src="../img/KDD25.png"></td>
         </tr>
     </tbody>
 </table>
