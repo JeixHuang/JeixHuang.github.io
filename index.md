@@ -10,6 +10,8 @@ Hi 🤗, I'm Victor Shea-Jay Huang (Chinese: 黄希杰(Xijie Huang); French: Vic
 
 I am an undergraduate student at [Beihang University](https://ev.buaa.edu.cn/), expected to graduate in 2026. 
 
+I previously worked as a research intern at [Shanghai AI Laboratory](https://www.shlab.org.cn) and  [Baichuan AI](https://www.baichuan-ai.com/home).
+
 ## Research Interest
 
 I have a strong interest in all topics related to AI integrated with natural scientific theories and am actively exploring and expanding the boundaries of current AI technology. My efforts are primarily focused on 3 directions: 
