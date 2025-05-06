@@ -36,7 +36,7 @@
   .news-container {
     flex-grow: 1;
     overflow: hidden;
-    max-height: 300px;
+    max-height: 480px;
     position: relative;
   }
   
@@ -60,7 +60,7 @@
   
   .slider-container {
     width: 20px;
-    min-height: 300px;
+    min-height: 480px;
     display: flex;
     justify-content: center;
     align-items: center;
