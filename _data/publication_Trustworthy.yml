@@ -24,6 +24,19 @@ main:
     image: ./assets/files/aisafetylab.png
     notes: Preprint
 
+
+  - title: 'How Should We Enhance the Safety of Large Reasoning Models: An Empirical Study'
+    authors: Zhexin Zhang, Xian Qi Loye, <strong>Victor Shea-Jay Huang</strong>, Junxiao Yang, Qi Zhu, Shiyao Cui, Fei Mi, Lifeng Shang, Yingkang Wang, Hongning Wang, Minlie Huang
+    conference_short: Arxiv
+    conference: Arxiv Preprint
+    pdf: https://arxiv.org/pdf/2505.15404
+    arxiv: https://arxiv.org/abs/2505.15404
+    code: https://github.com/thu-coai/LRM-Safety-Study
+    # bibtex: ./assets/files/Document.txt
+    image: ./assets/files/HowShouldWe.png
+    notes: Preprint
+
+    
   - title: 'BlackDAN: A Black-Box Multi-Objective Approach for Effective and Contextual Jailbreaking of Large Language Models'
     authors: Xinyuan Wang*, <strong>Victor Shea-Jay Huang*</strong>, Renmiao Chen, Hao Wang, Chengwei Pan, Lei Sha, Minlie Huang
     conference_short: Arxiv
