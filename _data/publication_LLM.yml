@@ -12,7 +12,7 @@ main:
     notes: Preprint
 
   - title: 'How Should We Enhance the Safety of Large Reasoning Models: An Empirical Study'
-    authors: Zhexin Zhang, Xian Qi Loye, <strong>Victor Shea-Jay Huang</strong>, Junxiao Yang, Qi Zhu, Shiyao Cui, Fei Mi, Lifeng Shang, Yingkang Wang, Hongning Wang, Minlie Huang
+    authors: Zhexin Zhang*, Xian Qi Loye*, <strong>Victor Shea-Jay Huang</strong>, Junxiao Yang, Qi Zhu, Shiyao Cui, Fei Mi, Lifeng Shang, Yingkang Wang, Hongning Wang, Minlie Huang
     conference_short: Arxiv
     conference: Arxiv Preprint
     pdf: https://arxiv.org/pdf/2505.15404
