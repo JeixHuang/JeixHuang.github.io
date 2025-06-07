@@ -5,6 +5,7 @@
 <div class="news-slider">
   <div class="news-container">
     <ul id="news-list">
+      <li><strong>[Jun. 2025]</strong> 🎉🎉 Our <span style="color:#f59ab2"><a href="https://arxiv.org/pdf/2503.21254">Vision-to-Music Generation</a></span> have been accepted to ISMIR 2025!(Top conferences in music AI)</li>
       <li><strong>[Apr. 2025]</strong> 🎉🎉 <span style="color:#f59ab2"><a href="https://github.com/Alpha-VLLM/Lumina-mGPT-2.0">Lumina-mGPT-2.0</a></span> github repo released <a href='https://github.com/Alpha-VLLM/Lumina-mGPT-2.0'><img src="https://img.shields.io/github/stars/Alpha-VLLM/Lumina-mGPT-2.0"></a>.</li>
       <li><strong>[Mar. 2025]</strong> 🎉🎉 <span style="color:#f59ab2"><a href="https://github.com/wzk1015/Awesome-Vision-to-Music-Generation">Awesome Vision-to-Music</a></span> github repo released <a href='https://github.com/wzk1015/Awesome-Vision-to-Music-Generation'><img src="https://img.shields.io/github/stars/wzk1015/Awesome-Vision-to-Music-Generation"></a>.</li>
       <li><strong>[Feb. 2025]</strong> 🎉🎉 I've been accepted into the SMC Student Scholarship!</li>
