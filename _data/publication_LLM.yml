@@ -24,15 +24,15 @@ main:
 
 
   - title: 'BlackDAN: A Black-Box Multi-Objective Approach for Effective and Contextual Jailbreaking of Large Language Models'
-    authors: Xinyuan Wang*, <strong>Victor Shea-Jay Huang*</strong>, Renmiao Chen, Hao Wang, Chengwei Pan, Lei Sha, Minlie Huang
-    conference_short: Arxiv
-    conference: Arxiv Preprint
+    authors: <strong>Victor Shea-Jay Huang*</strong>, Xinyuan Wang*, Renmiao Chen, Hao Wang, Chengwei Pan, Lei Sha, Minlie Huang
+    conference_short: ICML
+    conference: ICML 2025 Workshop
     pdf: https://arxiv.org/pdf/2410.09804
     arxiv: https://arxiv.org/abs/2410.09804
     code: https://github.com/MantaAI/BlackDAN
     bibtex: ./assets/files/Blackdan.txt
     image: ./assets/files/Blackdan.png
-    notes: Under review.
+    notes: Published
 
 
   - title: 'Synth-Empathy: Towards High-Quality Synthetic Empathy Data'

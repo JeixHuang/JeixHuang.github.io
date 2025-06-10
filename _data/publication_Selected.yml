@@ -11,6 +11,16 @@ main:
     image: ./assets/files/O2M-attack.png
     notes: Published
 
+  - title: 'BlackDAN: A Black-Box Multi-Objective Approach for Effective and Contextual Jailbreaking of Large Language Models'
+    authors: <strong>Victor Shea-Jay Huang*</strong>, Xinyuan Wang*, Renmiao Chen, Hao Wang, Chengwei Pan, Lei Sha, Minlie Huang
+    conference_short: ICML
+    conference: ICML 2025 Workshop
+    pdf: https://arxiv.org/pdf/2410.09804
+    arxiv: https://arxiv.org/abs/2410.09804
+    code: https://github.com/MantaAI/BlackDAN
+    bibtex: ./assets/files/Blackdan.txt
+    image: ./assets/files/Blackdan.png
+    notes: Published
 
   - title: 'Beyond Sight: Towards Cognitive Alignment in LVLM via Enriched Visual Knowledge'
     authors: Yaqi Zhao, Yuanyang Yin, Lin Li, Mingan Lin, <strong>Victor Shea-Jay Huang</strong>, Siwei Chen, Weipeng Chen, Baoqun Yin, Zenan Zhou, Wentao Zhang
