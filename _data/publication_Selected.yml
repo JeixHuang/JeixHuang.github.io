@@ -26,7 +26,7 @@ main:
     authors: Yaqi Zhao, Yuanyang Yin, Lin Li, Mingan Lin, <strong>Victor Shea-Jay Huang</strong>, Siwei Chen, Weipeng Chen, Baoqun Yin, Zenan Zhou, Wentao Zhang
     conference_short: CVPR
     conference: CVPR 2025
-    pdf: https://arxiv.org/pdf/2411.16824
+    pdf: https://openaccess.thecvf.com/content/CVPR2025/papers/Zhao_Beyond_Sight_Towards_Cognitive_Alignment_in_LVLM_via_Enriched_Visual_CVPR_2025_paper.pdf
     arxiv: https://arxiv.org/abs/2411.16824
     bibtex: ./assets/files/BeyondSight.txt
     image: ./assets/files/BeyondSight.png
@@ -36,7 +36,7 @@ main:
     authors: Yuanyang Yin, Yaqi Zhao, Mingwu Zheng, Ke Lin, Jiarong Ou, Rui Chen, <strong>Victor Shea-Jay Huang</strong>, Jiahao Wang, Xin Tao, Pengfei Wan, Di ZHANG, Baoqun Yin, Wentao Zhang, Kun Gai
     conference_short: CVPR
     conference: CVPR 2025
-    pdf: https://arxiv.org/pdf/2411.17470
+    pdf: https://openaccess.thecvf.com/content/CVPR2025/papers/Yin_Towards_Precise_Scaling_Laws_for_Video_Diffusion_Transformers_CVPR_2025_paper.pdf
     arxiv: https://arxiv.org/abs/2411.17470
     bibtex: ./assets/files/scaling.txt
     image: ./assets/files/scaling.png
