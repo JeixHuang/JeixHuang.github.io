@@ -12,6 +12,8 @@ I am an undergraduate student at [Beihang University](https://ev.buaa.edu.cn/), 
 
 I previously worked as a research intern at [Shanghai AI Laboratory](https://www.shlab.org.cn) and  [Baichuan AI](https://www.baichuan-ai.com/home).
 
+If you are interested in joining the project or exploring collaboration opportunities, please reach out to me via email at jeix782@gmail.com.
+
 ## Research Interest
 
 I have a strong interest in all topics related to AI integrated with natural scientific theories and am actively exploring and expanding the boundaries of current AI technology. My efforts are primarily focused on 3 directions: 
@@ -50,9 +52,13 @@ I have a strong interest in all topics related to AI integrated with natural sci
 - **B.Eng.**, 2022 - 2026, In [Institute of Automation Science and Electrical Engineering](https://dept3.buaa.edu.cn/), Beihang University, Beijing, China
 - **B.Sci.**, 2021 - 2022, In [l'École Centrale de Pékin](https://ecpknfr.buaa.edu.cn/), Beijing, China
 
-## Collaborations
+<!-- ## Collaborations
 
-I'm presently involved in academic collaborations with institutions such as [Princeton](https://www.princeton.edu/), [UC Berkeley](https://www.berkeley.edu/), [SBU](https://www.stonybrook.edu/), [EPFL](https://www.epfl.ch/en/), [THU](https://www.tsinghua.edu.cn/en/), [PKU](https://www.pku.edu.cn/), [NUS](https://nus.edu.sg/), [HKU](https://www.hku.hk/), [ShLab](https://www.shlab.org.cn/) ,and [Baichuan AI](https://www.baichuan-ai.com/home). If you are interested in joining the project or exploring collaboration opportunities, please reach out to me via email at jeix782@gmail.com.
+I'm presently involved in academic collaborations with institutions such as [Princeton](https://www.princeton.edu/), [UC Berkeley](https://www.berkeley.edu/), [SBU](https://www.stonybrook.edu/), [EPFL](https://www.epfl.ch/en/), [THU](https://www.tsinghua.edu.cn/en/), [PKU](https://www.pku.edu.cn/), [NUS](https://nus.edu.sg/), [HKU](https://www.hku.hk/), [ShLab](https://www.shlab.org.cn/) ,and [Baichuan AI](https://www.baichuan-ai.com/home).  -->
+
+## Industry Experience
+
+{% include_relative _includes/intern.md %}
 
 ## Invited Talks
 - 2025.1, Beijing, China. [AI Time Youth PhD Talk-AAAI 2025](./img/aitime2025.jpg)
