@@ -37,7 +37,7 @@
       <img src="../img/SHailab.png" alt="Shanghai AI Laboratory" style="height: 60px; object-fit: contain;">
     </td>
     <td valign="top" style="padding: 20px;">
-      <p style="margin: 0;"><strong>Jan 2025 - May, <em>OpenGVLab</em></strong></p>
+      <p style="margin: 0;"><strong>Jan 2025 - May 2025, <em>OpenGVLab</em></strong></p>
       <p style="margin: 0;">Research intern. <em>Shanghai, China</em></p>
     </td>
   </tr>
