@@ -46,7 +46,7 @@
       <img src="../img/baichuan.png" alt="Baichuan AI" style="height: 60px; object-fit: contain;">
     </td>
     <td valign="top" style="padding: 20px;">
-      <p style="margin: 0;"><strong>Sep 2024 - Dec 2024, <em>Multimodal Learning</em></strong></p>
+      <p style="margin: 0;"><strong>Sep 2024 - Dec 2024 </strong></p>
       <p style="margin: 0;">Research intern. <em>Beijing, China</em></p>
     </td>
   </tr>
