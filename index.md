@@ -19,7 +19,7 @@ If you are interested in joining the project or exploring collaboration opportun
 I have a strong interest in all topics related to AI integrated with natural scientific theories and am actively exploring and expanding the boundaries of current AI technology. My efforts are primarily focused on 3 directions: 
 
 
-- **Multimodal:** Centered on generation, cross-modal alignment, perception, fusion, and efficient multimodal technologies for enhanced performance and integration. 
+- **Multimodal:** Centered on generative model, multimodal learning, and efficient multimodal technologies for enhanced performance and integration. 
 
 - **LLM:** Focused on core LLM advancements, including reasoning, scaling laws, and foundational research to push technological boundaries.
 
