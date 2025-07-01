@@ -37,7 +37,7 @@
       <img src="../img/bytedance.png" alt="Bytedance" style="height: 60px; object-fit: contain;">
     </td>
     <td valign="top" style="padding: 20px;">
-      <p style="margin: 0;"><strong>July 2025 - Present, <em>Tiktok</em></strong></p>
+      <p style="margin: 0;"><strong>July 2025 - Present, <em>TikTok</em></strong></p>
       <p style="margin: 0;">Research intern. <em>Beijing, China</em></p>
     </td>
   </tr>
