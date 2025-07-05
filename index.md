@@ -10,7 +10,7 @@ Hi 🤗, I'm Victor Shea-Jay Huang (Chinese: 黄希杰(Xijie Huang); French: Vic
 
 I am an undergraduate student at [Beihang University](https://ev.buaa.edu.cn/), expected to graduate in 2026. 
 
-I am currently a research intern at [ByteDance TikTok](https://www.bytedance.com/en/). Previously, I worked as a research intern at [Shanghai AI Laboratory](https://www.shlab.org.cn) and  [Baichuan AI](https://www.baichuan-ai.com/home).
+<!-- I am currently a research intern at [ByteDance TikTok](https://www.bytedance.com/en/). Previously, I worked as a research intern at [Shanghai AI Laboratory](https://www.shlab.org.cn) and  [Baichuan AI](https://www.baichuan-ai.com/home). -->
 
 If you are interested in joining the project or exploring collaboration opportunities, please reach out to me via email at jeix782@gmail.com.
 
