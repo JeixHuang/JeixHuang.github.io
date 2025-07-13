@@ -32,7 +32,7 @@
 <!-- </table> --> 
 
 <table width="100%" cellspacing="0" cellpadding="10" style="border-collapse: collapse;">
-  <!-- <tr>
+  <tr>
     <td width="25%" align="center" valign="top" style="padding: 20px;">
       <img src="../img/bytedance.png" alt="Bytedance" style="height: 60px; object-fit: contain;">
     </td>
@@ -40,7 +40,7 @@
       <p style="margin: 0;"><strong>July 2025 - Present, <em>TikTok</em></strong></p>
       <p style="margin: 0;">Research intern. <em>Beijing, China</em></p>
     </td>
-  </tr> -->
+  </tr>
   <tr>
     <td width="25%" align="center" valign="top" style="padding: 20px;">
       <img src="../img/SHailab.png" alt="Shanghai AI Laboratory" style="height: 60px; object-fit: contain;">
