@@ -3,7 +3,7 @@
 
 <table>
   <tbody>
-    <span style="color:#f59ab2">Conference Reviewers</span>
+    <!-- Conference Reviewers -->
     <tr>
       <td class="section-title" colspan="2">&nbsp;&nbsp;Conference Reviewers</td>
     </tr>
