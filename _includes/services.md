@@ -10,10 +10,10 @@
     <tr>
       <td colspan="2">
         <ul>
-          <li>NeurIPS 2025</li>
-          <li>ICCV 2025</li>
-          <li>ACM MM 2024,2025</li>
-          <li>KDD 2025,2026</li>
+          <li>Conference on Neural Information Processing Systems(NeurIPS) 2025</li>
+          <li>International Conference on Computer Vision(ICCV) 2025</li>
+          <li>ACM International Conference on Multimedia(ACMM) 2024,2025</li>
+          <li>ACM SIGKDD Conference on Knowledge Discovery and Data Mining(KDD) 2025,2026</li>
         </ul>
       </td>
     </tr>
