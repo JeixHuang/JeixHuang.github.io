@@ -1,7 +1,7 @@
 main:
 
   - title: 'AISafetyLab: A Comprehensive Framework for AI Safety Evaluation and Improvement'
-    authors: Zhexin Zhang*, Leqi Lei*, Junxiao Yang*, <strong>Victor Shea-Jay Huang*</strong>, Yida Lu, Shiyao Cui, Renmiao Chen, Qinglin Zhang, Xinyuan Wang, Hao Wang, Hao Li, Xianqi Lei, Chengwei Pan, Lei Sha, Hongning Wang, Minlie Huang
+    authors: Zhexin Zhang*, Leqi Lei*, Junxiao Yang*, <strong>Shea-Jay Huang*</strong>, Yida Lu, Shiyao Cui, Renmiao Chen, Qinglin Zhang, Xinyuan Wang, Hao Wang, Hao Li, Xianqi Lei, Chengwei Pan, Lei Sha, Hongning Wang, Minlie Huang
     conference_short: Arxiv
     conference: Arxiv Preprint
     pdf: https://arxiv.org/pdf/2502.16776
@@ -12,7 +12,7 @@ main:
     notes: Preprint
 
   - title: 'How Should We Enhance the Safety of Large Reasoning Models: An Empirical Study'
-    authors: Zhexin Zhang*, Xian Qi Loye*, <strong>Victor Shea-Jay Huang</strong>, Junxiao Yang, Qi Zhu, Shiyao Cui, Fei Mi, Lifeng Shang, Yingkang Wang, Hongning Wang, Minlie Huang
+    authors: Zhexin Zhang*, Xian Qi Loye*, <strong>Shea-Jay Huang</strong>, Junxiao Yang, Qi Zhu, Shiyao Cui, Fei Mi, Lifeng Shang, Yingkang Wang, Hongning Wang, Minlie Huang
     conference_short: Arxiv
     conference: Arxiv Preprint
     pdf: https://arxiv.org/pdf/2505.15404
@@ -24,7 +24,7 @@ main:
 
 
   - title: 'BlackDAN: A Black-Box Multi-Objective Approach for Effective and Contextual Jailbreaking of Large Language Models'
-    authors: <strong>Victor Shea-Jay Huang*</strong>, Xinyuan Wang*, Renmiao Chen, Hao Wang, Chengwei Pan, Lei Sha, Minlie Huang
+    authors: <strong>Shea-Jay Huang*</strong>, Xinyuan Wang*, Renmiao Chen, Hao Wang, Chengwei Pan, Lei Sha, Minlie Huang
     conference_short: ICML
     conference: ICML 2025 Workshop
     pdf: https://arxiv.org/pdf/2410.09804
@@ -36,7 +36,7 @@ main:
 
 
   - title: 'Synth-Empathy: Towards High-Quality Synthetic Empathy Data'
-    authors: Hao Liang, Linzhuang Sun, Jingxuan Wei, <strong>Victor Shea-Jay Huang</strong>, Linkun Sun, Bihui Yu, Conghui He, Wentao Zhang
+    authors: Hao Liang, Linzhuang Sun, Jingxuan Wei, <strong>Shea-Jay Huang</strong>, Linkun Sun, Bihui Yu, Conghui He, Wentao Zhang
     conference_short: Arxiv
     conference: Arxiv Preprint
     pdf: https://arxiv.org/pdf/2407.21669

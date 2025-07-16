@@ -1,7 +1,7 @@
 main:
 
   - title: 'Medical MLLM is Vulnerable: Cross-Modality Jailbreak and Mismatched Attacks on Medical Multimodal Large Language Models'
-    authors: <strong>Victor Shea-Jay Huang</strong>, Xinyuan Wang, Hantao Zhang, Yinghao Zhu, Jiawen Xi, Jingkun An, Hao Wang, Hao Liang, Chengwei Pan
+    authors: <strong>Shea-Jay Huang</strong>, Xinyuan Wang, Hantao Zhang, Yinghao Zhu, Jiawen Xi, Jingkun An, Hao Wang, Hao Liang, Chengwei Pan
     conference_short: AAAI
     conference: AAAI 2025
     pdf: https://arxiv.org/pdf/2405.20775
@@ -14,7 +14,7 @@ main:
 
 
   - title: 'AISafetyLab: A Comprehensive Framework for AI Safety Evaluation and Improvement'
-    authors: Zhexin Zhang*, Leqi Lei*, Junxiao Yang*, <strong>Victor Shea-Jay Huang*</strong>, Yida Lu, Shiyao Cui, Renmiao Chen, Qinglin Zhang, Xinyuan Wang, Hao Wang, Hao Li, Xianqi Lei, Chengwei Pan, Lei Sha, Hongning Wang, Minlie Huang
+    authors: Zhexin Zhang*, Leqi Lei*, Junxiao Yang*, <strong>Shea-Jay Huang*</strong>, Yida Lu, Shiyao Cui, Renmiao Chen, Qinglin Zhang, Xinyuan Wang, Hao Wang, Hao Li, Xianqi Lei, Chengwei Pan, Lei Sha, Hongning Wang, Minlie Huang
     conference_short: Arxiv
     conference: Arxiv Preprint
     pdf: https://arxiv.org/pdf/2502.16776
@@ -26,7 +26,7 @@ main:
 
 
   - title: 'How Should We Enhance the Safety of Large Reasoning Models: An Empirical Study'
-    authors: Zhexin Zhang*, Xian Qi Loye*, <strong>Victor Shea-Jay Huang</strong>, Junxiao Yang, Qi Zhu, Shiyao Cui, Fei Mi, Lifeng Shang, Yingkang Wang, Hongning Wang, Minlie Huang
+    authors: Zhexin Zhang*, Xian Qi Loye*, <strong>Shea-Jay Huang</strong>, Junxiao Yang, Qi Zhu, Shiyao Cui, Fei Mi, Lifeng Shang, Yingkang Wang, Hongning Wang, Minlie Huang
     conference_short: Arxiv
     conference: Arxiv Preprint
     pdf: https://arxiv.org/pdf/2505.15404
@@ -38,7 +38,7 @@ main:
 
     
   - title: 'BlackDAN: A Black-Box Multi-Objective Approach for Effective and Contextual Jailbreaking of Large Language Models'
-    authors: Xinyuan Wang*, <strong>Victor Shea-Jay Huang*</strong>, Renmiao Chen, Hao Wang, Chengwei Pan, Lei Sha, Minlie Huang
+    authors: Xinyuan Wang*, <strong>Shea-Jay Huang*</strong>, Renmiao Chen, Hao Wang, Chengwei Pan, Lei Sha, Minlie Huang
     conference_short: Arxiv
     conference: Arxiv Preprint
     pdf: https://arxiv.org/pdf/2410.09804

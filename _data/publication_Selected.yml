@@ -1,7 +1,7 @@
 main:
 
   - title: 'Medical MLLM is Vulnerable: Cross-Modality Jailbreak and Mismatched Attacks on Medical Multimodal Large Language Models'
-    authors: <strong>Victor Shea-Jay Huang</strong>, Xinyuan Wang, Hantao Zhang, Yinghao Zhu, Jiawen Xi, Jingkun An, Hao Wang, Hao Liang, Chengwei Pan
+    authors: <strong>Shea-Jay Huang</strong>, Xinyuan Wang, Hantao Zhang, Yinghao Zhu, Jiawen Xi, Jingkun An, Hao Wang, Hao Liang, Chengwei Pan
     conference_short: AAAI
     conference: AAAI 2025
     pdf: https://ojs.aaai.org/index.php/AAAI/article/view/32396
@@ -12,7 +12,7 @@ main:
     notes: Published
 
   - title: 'BlackDAN: A Black-Box Multi-Objective Approach for Effective and Contextual Jailbreaking of Large Language Models'
-    authors: <strong>Victor Shea-Jay Huang*</strong>, Xinyuan Wang*, Renmiao Chen, Hao Wang, Chengwei Pan, Lei Sha, Minlie Huang
+    authors: <strong>Shea-Jay Huang*</strong>, Xinyuan Wang*, Renmiao Chen, Hao Wang, Chengwei Pan, Lei Sha, Minlie Huang
     conference_short: ICML
     conference: ICML 2025 NewInML Workshop
     pdf: https://arxiv.org/pdf/2410.09804
@@ -23,7 +23,7 @@ main:
     notes: Published
 
   - title: 'Beyond Sight: Towards Cognitive Alignment in LVLM via Enriched Visual Knowledge'
-    authors: Yaqi Zhao, Yuanyang Yin, Lin Li, Mingan Lin, <strong>Victor Shea-Jay Huang</strong>, Siwei Chen, Weipeng Chen, Baoqun Yin, Zenan Zhou, Wentao Zhang
+    authors: Yaqi Zhao, Yuanyang Yin, Lin Li, Mingan Lin, <strong>Shea-Jay Huang</strong>, Siwei Chen, Weipeng Chen, Baoqun Yin, Zenan Zhou, Wentao Zhang
     conference_short: CVPR
     conference: CVPR 2025
     pdf: https://openaccess.thecvf.com/content/CVPR2025/papers/Zhao_Beyond_Sight_Towards_Cognitive_Alignment_in_LVLM_via_Enriched_Visual_CVPR_2025_paper.pdf
@@ -33,7 +33,7 @@ main:
     notes: Published.
 
   - title: 'Towards Precise Scaling Laws for Video Diffusion Transformers'
-    authors: Yuanyang Yin, Yaqi Zhao, Mingwu Zheng, Ke Lin, Jiarong Ou, Rui Chen, <strong>Victor Shea-Jay Huang</strong>, Jiahao Wang, Xin Tao, Pengfei Wan, Di ZHANG, Baoqun Yin, Wentao Zhang, Kun Gai
+    authors: Yuanyang Yin, Yaqi Zhao, Mingwu Zheng, Ke Lin, Jiarong Ou, Rui Chen, <strong>Shea-Jay Huang</strong>, Jiahao Wang, Xin Tao, Pengfei Wan, Di ZHANG, Baoqun Yin, Wentao Zhang, Kun Gai
     conference_short: CVPR
     conference: CVPR 2025
     pdf: https://openaccess.thecvf.com/content/CVPR2025/papers/Yin_Towards_Precise_Scaling_Laws_for_Video_Diffusion_Transformers_CVPR_2025_paper.pdf
@@ -44,7 +44,7 @@ main:
 
 
   - title: 'AGFSync: Leveraging AI Feedback for Preference Optimization in Text-to-Image Generation'
-    authors: Jingkun An, Yinghao Zhu, Zongjian Li, Haoran Feng, <strong>Victor Shea-Jay Huang</strong>, Bohua Chen,Yemin Shi, Chengwei Pan
+    authors: Jingkun An, Yinghao Zhu, Zongjian Li, Haoran Feng, <strong>Shea-Jay Huang</strong>, Bohua Chen,Yemin Shi, Chengwei Pan
     conference_short: AAAI
     conference: AAAI 2025
     pdf: https://ojs.aaai.org/index.php/AAAI/article/view/32168
@@ -55,7 +55,7 @@ main:
     notes: Published
 
   - title: 'Vision-to-Music Generation: A Survey'
-    authors: Zhaokai Wang, Chenxi Bao, Le Zhuo, Jingrui Han, Yang Yue, Yihong Tang, <strong>Victor Shea-Jay Huang</strong>, Yue Liao
+    authors: Zhaokai Wang, Chenxi Bao, Le Zhuo, Jingrui Han, Yang Yue, Yihong Tang, <strong>Shea-Jay Huang</strong>, Yue Liao
     conference_short: ISMIR
     conference: ISMIR 2025
     pdf: https://arxiv.org/pdf/2503.21254
