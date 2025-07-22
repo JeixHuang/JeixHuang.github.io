@@ -22,6 +22,17 @@ main:
     image: ./assets/files/Blackdan.png
     notes: Published
 
+  - title: 'AISafetyLab: A Comprehensive Framework for AI Safety Evaluation and Improvement'
+    authors: Zhexin Zhang*, Leqi Lei*, Junxiao Yang*, <strong>Shea-Jay Huang*</strong>, Yida Lu, Shiyao Cui, Renmiao Chen, Qinglin Zhang, Xinyuan Wang, Hao Wang, Hao Li, Xianqi Lei, Chengwei Pan, Lei Sha, Hongning Wang, Minlie Huang
+    conference_short: Arxiv
+    conference: Arxiv Preprint
+    pdf: https://arxiv.org/pdf/2502.16776
+    arxiv: https://arxiv.org/abs/2502.16776
+    code: https://github.com/thu-coai/AISafetyLab
+    # bibtex: ./assets/files/Document.txt
+    image: ./assets/files/aisafetylab.png
+    notes: Preprint
+    
   - title: 'Beyond Sight: Towards Cognitive Alignment in LVLM via Enriched Visual Knowledge'
     authors: Yaqi Zhao, Yuanyang Yin, Lin Li, Mingan Lin, <strong>Shea-Jay Huang</strong>, Siwei Chen, Weipeng Chen, Baoqun Yin, Zenan Zhou, Wentao Zhang
     conference_short: CVPR
