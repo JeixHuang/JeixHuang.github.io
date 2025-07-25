@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Research Mindmap</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      overflow: hidden;
-      background: #f3f4f6;
-    }
+<style>
     svg {
-      width: 100vw;
+      width: 100%;
       height: 100vh;
     }
     .link {
@@ -49,10 +38,9 @@
       pointer-events: none;
     }
   </style>
-</head>
-<body>
+  
   <svg></svg>
-
+  
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script>
     const nodes = [
@@ -75,7 +63,7 @@
       { id: "BlackDAN", title: "BlackDAN", conf: "ICML 2025 Workshop", url: "https://arxiv.org/abs/2410.09804" },
       { id: "Synth-Empathy", title: "Synth-Empathy", url: "https://arxiv.org/abs/2407.21669" }
     ];
-
+  
     const links = [
       { source: "Work", target: "Multimodal Learning" },
       { source: "Work", target: "Generative Model" },
@@ -99,10 +87,10 @@
       { source: "LLM", target: "BlackDAN" },
       { source: "LLM", target: "Synth-Empathy" }
     ];
-
+  
     const width = window.innerWidth;
     const height = window.innerHeight;
-
+  
     const svg = d3.select("svg");
     const defs = svg.append("defs");
     defs.append("linearGradient")
@@ -118,21 +106,21 @@
       .append("stop")
       .attr("offset", d => d.offset)
       .attr("stop-color", d => d.color);
-
+  
     const g = svg.append("g");
     let focusedNode = null;
-
+  
     const simulation = d3.forceSimulation(nodes)
       .force("link", d3.forceLink(links).id(d => d.id).distance(140))
       .force("charge", d3.forceManyBody().strength(-400))
       .force("center", d3.forceCenter(width / 2, height / 2));
-
+  
     const link = g.append("g")
       .selectAll("line")
       .data(links)
       .join("line")
       .attr("class", "link");
-
+  
     const node = g.append("g")
       .selectAll("g")
       .data(nodes)
@@ -140,10 +128,9 @@
       .attr("class", "node")
       .call(drag(simulation))
       .on("click", handleClick);
-
-    node.append("circle")
-      .attr("r", 6);
-
+  
+    node.append("circle").attr("r", 6);
+  
     node.append("text")
       .attr("x", 10)
       .attr("dy", "0.35em")
@@ -156,17 +143,17 @@
         }
         return d.id;
       });
-
+  
     simulation.on("tick", () => {
       link
         .attr("x1", d => d.source.x)
         .attr("y1", d => d.source.y)
         .attr("x2", d => d.target.x)
         .attr("y2", d => d.target.y);
-
+  
       node.attr("transform", d => `translate(${d.x},${d.y})`);
     });
-
+  
     function drag(simulation) {
       return d3.drag()
         .on("start", (event, d) => {
@@ -184,43 +171,39 @@
           d.fy = null;
         });
     }
-
+  
     function handleClick(event, clicked) {
       if (clicked.group !== "field") return;
-
+  
       const related = new Set();
       related.add(clicked.id);
       links.forEach(l => {
         if (l.source.id === clicked.id) related.add(l.target.id);
         if (l.target.id === clicked.id) related.add(l.source.id);
       });
-
+  
       const zoom = d3.zoom().on("zoom", e => g.attr("transform", e.transform));
       svg.call(zoom);
-
+  
       if (focusedNode === clicked.id) {
-        // Reset view
         node.classed("fade", false);
         link.classed("fade", false);
         focusedNode = null;
         svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
       } else {
-        // Focus on this node
         node.classed("fade", d => !related.has(d.id));
         link.classed("fade", d => !(related.has(d.source.id) && related.has(d.target.id)));
         focusedNode = clicked.id;
-
+  
         const scale = 1.8;
         const x = clicked.x;
         const y = clicked.y;
         const dx = width / 2 - scale * x;
         const dy = height / 2 - scale * y;
-
+  
         svg.transition()
           .duration(800)
           .call(zoom.transform, d3.zoomIdentity.translate(dx, dy).scale(scale));
       }
     }
   </script>
-</body>
-</html>
