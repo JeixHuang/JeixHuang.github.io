@@ -1,48 +1,226 @@
-<!-- _includes/research.html -->
-<div style="font-family: sans-serif; max-width: 100%; overflow-x: auto;">
-    <h2 style="font-size: 20px; font-weight: bold; margin-bottom: 16px;">Research Directions</h2>
-    <ul style="list-style: none; padding-left: 0;">
-      <li>
-        <span>Work</span>
-        <ul>
-          <li>
-            <span>Multimodal Learning</span>
-            <ul>
-              <li><a href="https://arxiv.org/abs/2405.20775" target="_blank">Medical MLLM is Vulnerable (AAAI 2025)</a></li>
-              <li><a href="https://arxiv.org/abs/2411.16824" target="_blank">Beyond Sight (CVPR 2025)</a></li>
-              <li><a href="https://arxiv.org/abs/2410.21169" target="_blank">Document Parsing Unveiled</a></li>
-              <li><a href="https://arxiv.org/abs/2503.21254" target="_blank">Vision-to-Music Survey</a></li>
-              <li><a href="https://arxiv.org/abs/2407.20756" target="_blank">SynthVLM</a></li>
-              <li><a href="https://arxiv.org/abs/2407.03104" target="_blank">KeyVideoLLM</a></li>
-            </ul>
-          </li>
-          <li>
-            <span>Generative Model</span>
-            <ul>
-              <li><a href="https://arxiv.org/abs/2411.17470" target="_blank">Scaling Laws for Video Diffusion Transformers (CVPR 2025)</a></li>
-              <li><a href="https://arxiv.org/abs/2403.13352" target="_blank">AGFSync (AAAI 2025)</a></li>
-              <li><a href="https://arxiv.org/abs/2410.07155" target="_blank">Trans4D</a></li>
-            </ul>
-          </li>
-          <li>
-            <span>Trustworthy AI</span>
-            <ul>
-              <li><a href="https://arxiv.org/abs/2405.20775" target="_blank">Medical MLLM is Vulnerable (AAAI 2025)</a></li>
-              <li><a href="https://arxiv.org/abs/2502.16776" target="_blank">AISafetyLab</a></li>
-              <li><a href="https://arxiv.org/abs/2505.15404" target="_blank">LRM Safety Study</a></li>
-              <li><a href="https://arxiv.org/abs/2410.09804" target="_blank">BlackDAN (ICML 2025 Workshop)</a></li>
-            </ul>
-          </li>
-          <li>
-            <span>LLM</span>
-            <ul>
-              <li><a href="https://arxiv.org/abs/2502.16776" target="_blank">AISafetyLab</a></li>
-              <li><a href="https://arxiv.org/abs/2505.15404" target="_blank">LRM Safety Study</a></li>
-              <li><a href="https://arxiv.org/abs/2410.09804" target="_blank">BlackDAN (ICML 2025 Workshop)</a></li>
-              <li><a href="https://arxiv.org/abs/2407.21669" target="_blank">Synth-Empathy</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Research Mindmap</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      overflow: hidden;
+      background: #f3f4f6;
+    }
+    svg {
+      width: 100vw;
+      height: 100vh;
+    }
+    .link {
+      stroke: url(#gradient);
+      stroke-width: 1.8px;
+      stroke-opacity: 0.5;
+    }
+    .node circle {
+      fill: #4f46e5;
+      stroke: #fff;
+      stroke-width: 1.5px;
+      filter: drop-shadow(0 1px 3px rgba(0,0,0,0.1));
+      transition: r 0.3s ease;
+    }
+    .node:hover circle {
+      r: 9;
+      fill: #6366f1;
+    }
+    .node text {
+      font-size: 13px;
+      pointer-events: none;
+    }
+    .paper-title {
+      fill: #2563eb;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .paper-conf {
+      fill: #9333ea;
+      font-size: 12px;
+      font-style: italic;
+    }
+    .fade {
+      opacity: 0.07;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <svg></svg>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script>
+    const nodes = [
+      { id: "Work", group: "root" },
+      { id: "Multimodal Learning", group: "field" },
+      { id: "Generative Model", group: "field" },
+      { id: "Trustworthy AI", group: "field" },
+      { id: "LLM", group: "field" },
+      { id: "Medical MLLM", title: "Medical MLLM is Vulnerable", conf: "AAAI 2025", url: "https://arxiv.org/abs/2405.20775" },
+      { id: "Beyond Sight", title: "Beyond Sight", conf: "CVPR 2025", url: "https://arxiv.org/abs/2411.16824" },
+      { id: "Document Parsing", title: "Document Parsing Unveiled", url: "https://arxiv.org/abs/2410.21169" },
+      { id: "Vision-to-Music", title: "Vision-to-Music Survey", url: "https://arxiv.org/abs/2503.21254" },
+      { id: "SynthVLM", title: "SynthVLM", url: "https://arxiv.org/abs/2407.20756" },
+      { id: "KeyVideoLLM", title: "KeyVideoLLM", url: "https://arxiv.org/abs/2407.03104" },
+      { id: "Scaling Laws", title: "Scaling Laws for Video Diffusion Transformers", conf: "CVPR 2025", url: "https://arxiv.org/abs/2411.17470" },
+      { id: "AGFSync", title: "AGFSync", conf: "AAAI 2025", url: "https://arxiv.org/abs/2403.13352" },
+      { id: "Trans4D", title: "Trans4D", url: "https://arxiv.org/abs/2410.07155" },
+      { id: "AISafetyLab", title: "AISafetyLab", url: "https://arxiv.org/abs/2502.16776" },
+      { id: "LRM Safety", title: "LRM Safety Study", url: "https://arxiv.org/abs/2505.15404" },
+      { id: "BlackDAN", title: "BlackDAN", conf: "ICML 2025 Workshop", url: "https://arxiv.org/abs/2410.09804" },
+      { id: "Synth-Empathy", title: "Synth-Empathy", url: "https://arxiv.org/abs/2407.21669" }
+    ];
+
+    const links = [
+      { source: "Work", target: "Multimodal Learning" },
+      { source: "Work", target: "Generative Model" },
+      { source: "Work", target: "Trustworthy AI" },
+      { source: "Work", target: "LLM" },
+      { source: "Multimodal Learning", target: "Medical MLLM" },
+      { source: "Multimodal Learning", target: "Beyond Sight" },
+      { source: "Multimodal Learning", target: "Document Parsing" },
+      { source: "Multimodal Learning", target: "Vision-to-Music" },
+      { source: "Multimodal Learning", target: "SynthVLM" },
+      { source: "Multimodal Learning", target: "KeyVideoLLM" },
+      { source: "Generative Model", target: "Scaling Laws" },
+      { source: "Generative Model", target: "AGFSync" },
+      { source: "Generative Model", target: "Trans4D" },
+      { source: "Trustworthy AI", target: "Medical MLLM" },
+      { source: "Trustworthy AI", target: "AISafetyLab" },
+      { source: "Trustworthy AI", target: "LRM Safety" },
+      { source: "Trustworthy AI", target: "BlackDAN" },
+      { source: "LLM", target: "AISafetyLab" },
+      { source: "LLM", target: "LRM Safety" },
+      { source: "LLM", target: "BlackDAN" },
+      { source: "LLM", target: "Synth-Empathy" }
+    ];
+
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    const svg = d3.select("svg");
+    const defs = svg.append("defs");
+    defs.append("linearGradient")
+      .attr("id", "gradient")
+      .attr("x1", "0%").attr("x2", "100%")
+      .attr("y1", "0%").attr("y2", "0%")
+      .selectAll("stop")
+      .data([
+        { offset: "0%", color: "#60a5fa" },
+        { offset: "100%", color: "#c084fc" }
+      ])
+      .enter()
+      .append("stop")
+      .attr("offset", d => d.offset)
+      .attr("stop-color", d => d.color);
+
+    const g = svg.append("g");
+    let focusedNode = null;
+
+    const simulation = d3.forceSimulation(nodes)
+      .force("link", d3.forceLink(links).id(d => d.id).distance(140))
+      .force("charge", d3.forceManyBody().strength(-400))
+      .force("center", d3.forceCenter(width / 2, height / 2));
+
+    const link = g.append("g")
+      .selectAll("line")
+      .data(links)
+      .join("line")
+      .attr("class", "link");
+
+    const node = g.append("g")
+      .selectAll("g")
+      .data(nodes)
+      .join("g")
+      .attr("class", "node")
+      .call(drag(simulation))
+      .on("click", handleClick);
+
+    node.append("circle")
+      .attr("r", 6);
+
+    node.append("text")
+      .attr("x", 10)
+      .attr("dy", "0.35em")
+      .html(d => {
+        if (d.url) {
+          return `
+            <tspan class="paper-title" onclick="window.open('${d.url}', '_blank')">${d.title}</tspan>
+            ${d.conf ? `<tspan class="paper-conf"> (${d.conf})</tspan>` : ''}
+          `;
+        }
+        return d.id;
+      });
+
+    simulation.on("tick", () => {
+      link
+        .attr("x1", d => d.source.x)
+        .attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x)
+        .attr("y2", d => d.target.y);
+
+      node.attr("transform", d => `translate(${d.x},${d.y})`);
+    });
+
+    function drag(simulation) {
+      return d3.drag()
+        .on("start", (event, d) => {
+          if (!event.active) simulation.alphaTarget(0.3).restart();
+          d.fx = d.x;
+          d.fy = d.y;
+        })
+        .on("drag", (event, d) => {
+          d.fx = event.x;
+          d.fy = event.y;
+        })
+        .on("end", (event, d) => {
+          if (!event.active) simulation.alphaTarget(0);
+          d.fx = null;
+          d.fy = null;
+        });
+    }
+
+    function handleClick(event, clicked) {
+      if (clicked.group !== "field") return;
+
+      const related = new Set();
+      related.add(clicked.id);
+      links.forEach(l => {
+        if (l.source.id === clicked.id) related.add(l.target.id);
+        if (l.target.id === clicked.id) related.add(l.source.id);
+      });
+
+      const zoom = d3.zoom().on("zoom", e => g.attr("transform", e.transform));
+      svg.call(zoom);
+
+      if (focusedNode === clicked.id) {
+        // Reset view
+        node.classed("fade", false);
+        link.classed("fade", false);
+        focusedNode = null;
+        svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
+      } else {
+        // Focus on this node
+        node.classed("fade", d => !related.has(d.id));
+        link.classed("fade", d => !(related.has(d.source.id) && related.has(d.target.id)));
+        focusedNode = clicked.id;
+
+        const scale = 1.8;
+        const x = clicked.x;
+        const y = clicked.y;
+        const dx = width / 2 - scale * x;
+        const dy = height / 2 - scale * y;
+
+        svg.transition()
+          .duration(800)
+          .call(zoom.transform, d3.zoomIdentity.translate(dx, dy).scale(scale));
+      }
+    }
+  </script>
+</body>
+</html>
