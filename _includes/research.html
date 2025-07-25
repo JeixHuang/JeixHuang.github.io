@@ -6,13 +6,14 @@
       height: 80vh;
       margin-top: 2rem;
       margin-bottom: 2rem;
-      overflow: hidden;
+      overflow: auto;
     }
   
     svg {
       width: 100%;
       max-width: 1000px;
       height: 100%;
+      border: 1px solid transparent;
     }
   
     .link {
@@ -58,7 +59,7 @@
   </style>
   
   <div id="mindmap-container">
-    <svg></svg>
+    <svg viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet"></svg>
   </div>
   
   <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -108,11 +109,10 @@
       { source: "LLM", target: "Synth-Empathy" }
     ];
   
-    const container = document.getElementById("mindmap-container");
-    const width = container.clientWidth;
-    const height = container.clientHeight;
-  
     const svg = d3.select("svg");
+    const width = +svg.attr("viewBox").split(" ")[2];
+    const height = +svg.attr("viewBox").split(" ")[3];
+  
     const defs = svg.append("defs");
     defs.append("linearGradient")
       .attr("id", "gradient")
@@ -129,12 +129,12 @@
       .attr("stop-color", d => d.color);
   
     const g = svg.append("g");
-    let focusedNode = null;
   
     const simulation = d3.forceSimulation(nodes)
-      .force("link", d3.forceLink(links).id(d => d.id).distance(140))
-      .force("charge", d3.forceManyBody().strength(-400))
-      .force("center", d3.forceCenter(width / 2, height / 2));
+      .force("link", d3.forceLink(links).id(d => d.id).distance(120))
+      .force("charge", d3.forceManyBody().strength(-300))
+      .force("center", d3.forceCenter(width / 2, height / 2))
+      .force("collision", d3.forceCollide().radius(40));
   
     const link = g.append("g")
       .selectAll("line")
@@ -186,8 +186,15 @@
         .attr("x2", d => d.target.x)
         .attr("y2", d => d.target.y);
   
-      node.attr("transform", d => `translate(${d.x},${d.y})`);
+      node.attr("transform", d => {
+        // 限制节点在 viewBox 内
+        d.x = Math.max(20, Math.min(width - 20, d.x));
+        d.y = Math.max(20, Math.min(height - 20, d.y));
+        return `translate(${d.x},${d.y})`;
+      });
     });
+  
+    let focusedNode = null;
   
     function handleClick(event, clicked) {
       if (clicked.group !== "field") return;
@@ -212,11 +219,9 @@
         link.classed("fade", d => !(related.has(d.source.id) && related.has(d.target.id)));
         focusedNode = clicked.id;
   
-        const scale = 1.8;
-        const x = clicked.x;
-        const y = clicked.y;
-        const dx = width / 2 - scale * x;
-        const dy = height / 2 - scale * y;
+        const scale = 1.6;
+        const dx = width / 2 - scale * clicked.x;
+        const dy = height / 2 - scale * clicked.y;
   
         svg.transition()
           .duration(800)
