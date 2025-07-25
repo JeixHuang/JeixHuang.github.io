@@ -1,13 +1,26 @@
 <style>
+    #mindmap-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+  
     svg {
       width: 100%;
-      height: 100vh;
+      max-width: 1000px;
+      height: 100%;
     }
+  
     .link {
       stroke: url(#gradient);
       stroke-width: 1.8px;
       stroke-opacity: 0.5;
     }
+  
     .node circle {
       fill: #4f46e5;
       stroke: #fff;
@@ -15,31 +28,38 @@
       filter: drop-shadow(0 1px 3px rgba(0,0,0,0.1));
       transition: r 0.3s ease;
     }
+  
     .node:hover circle {
       r: 9;
       fill: #6366f1;
     }
+  
     .node text {
       font-size: 13px;
       pointer-events: none;
     }
+  
     .paper-title {
       fill: #2563eb;
       text-decoration: underline;
       cursor: pointer;
     }
+  
     .paper-conf {
       fill: #9333ea;
       font-size: 12px;
       font-style: italic;
     }
+  
     .fade {
       opacity: 0.07;
       pointer-events: none;
     }
   </style>
   
-  <svg></svg>
+  <div id="mindmap-container">
+    <svg></svg>
+  </div>
   
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script>
@@ -88,8 +108,9 @@
       { source: "LLM", target: "Synth-Empathy" }
     ];
   
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+    const container = document.getElementById("mindmap-container");
+    const width = container.clientWidth;
+    const height = container.clientHeight;
   
     const svg = d3.select("svg");
     const defs = svg.append("defs");
@@ -126,7 +147,21 @@
       .data(nodes)
       .join("g")
       .attr("class", "node")
-      .call(drag(simulation))
+      .call(d3.drag()
+        .on("start", (event, d) => {
+          if (!event.active) simulation.alphaTarget(0.3).restart();
+          d.fx = d.x;
+          d.fy = d.y;
+        })
+        .on("drag", (event, d) => {
+          d.fx = event.x;
+          d.fy = event.y;
+        })
+        .on("end", (event, d) => {
+          if (!event.active) simulation.alphaTarget(0);
+          d.fx = null;
+          d.fy = null;
+        }))
       .on("click", handleClick);
   
     node.append("circle").attr("r", 6);
@@ -153,24 +188,6 @@
   
       node.attr("transform", d => `translate(${d.x},${d.y})`);
     });
-  
-    function drag(simulation) {
-      return d3.drag()
-        .on("start", (event, d) => {
-          if (!event.active) simulation.alphaTarget(0.3).restart();
-          d.fx = d.x;
-          d.fy = d.y;
-        })
-        .on("drag", (event, d) => {
-          d.fx = event.x;
-          d.fy = event.y;
-        })
-        .on("end", (event, d) => {
-          if (!event.active) simulation.alphaTarget(0);
-          d.fx = null;
-          d.fy = null;
-        });
-    }
   
     function handleClick(event, clicked) {
       if (clicked.group !== "field") return;
