@@ -74,7 +74,7 @@ Below is an interactive star map that categorizes my research work by research d
 
 {% include_relative _includes/research.html %}
 
-{% include_relative _includes/publications.md %}
+<!-- {% include_relative _includes/publications.md %} -->
 
 <!-- <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=sp8jpn_teE_fZyG8NJ7MEQbIoFBt4iMsEoKRx-DvkSwcl=ffffff&w=a"></script> -->
 
