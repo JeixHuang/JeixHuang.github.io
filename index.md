@@ -6,7 +6,8 @@ layout: homepage
 
 <h2 style="margin: 60px 0px 10px;">Short Bio</h2>
 
-Hi 🤗, I'm Shea-Jay Huang (Chinese: 黄希杰(Xi-jie Huang); French: Ché-Jay Huang).
+<!-- Hi 🤗, I'm Shea-Jay Huang (Chinese: 黄希杰(Xi-jie Huang); French: Ché-Jay Huang). -->
+Hi 🤗, I'm Shea-Jay Huang.
 
 I am an undergraduate student at [Beihang University](https://ev.buaa.edu.cn/), expected to graduate in 2026. 
 
