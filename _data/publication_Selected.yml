@@ -65,6 +65,18 @@ main:
     image: ./assets/files/AGFSync.png
     notes: Published
 
+  - title: 'JPS: Jailbreak Multimodal Large Language Models with Collaborative Visual Perturbation and Textual Steering'
+    authors: Renmiao Chen, Shiyao Cui, Xuancheng Huang, Chengwei Pan, Victor Shea-Jay Huang, QingLin Zhang, Xuan Ouyang, Zhexin Zhang, Hongning Wang, Minlie Huang
+    conference_short: ACMMM
+    conference: ACMMM 2025
+    pdf: https://arxiv.org/pdf/2508.05087
+    arxiv: https://arxiv.org/abs/2508.05087
+    code: https://github.com/thu-coai/JPS
+    # bibtex: ./assets/files/Blackdan.txt
+    image: ./assets/files/JPS.png
+    notes: Published
+  
+
   - title: 'Vision-to-Music Generation: A Survey'
     authors: Zhaokai Wang, Chenxi Bao, Le Zhuo, Jingrui Han, Yang Yue, Yihong Tang, <strong>Shea-Jay Huang</strong>, Yue Liao
     conference_short: ISMIR

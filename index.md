@@ -68,13 +68,13 @@ I'm presently involved in academic collaborations with institutions such as [Pri
 - 2024.12, AAAI 2025 Student Scholarship 
 
 {% include_relative _includes/services.md %}
-## Reseach Direction
+<!-- ## Reseach Direction
 
 Below is an interactive star map that categorizes my research work by research direction. Click on field nodes to zoom in and explore the map; click again to return to the full view. You can also click on leaf node paper titles to access the corresponding links.
 
-{% include_relative _includes/research.html %}
+{% include_relative _includes/research.html %} -->
 
-<!-- {% include_relative _includes/publications.md %} -->
+{% include_relative _includes/publications.md %}
 
 <!-- <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=sp8jpn_teE_fZyG8NJ7MEQbIoFBt4iMsEoKRx-DvkSwcl=ffffff&w=a"></script> -->
 
