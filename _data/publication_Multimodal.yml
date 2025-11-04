@@ -1,7 +1,7 @@
 main:
 
   - title: 'Medical MLLM is Vulnerable: Cross-Modality Jailbreak and Mismatched Attacks on Medical Multimodal Large Language Models'
-    authors: <strong>Shea-Jay Huang</strong>, Xinyuan Wang, Hantao Zhang, Yinghao Zhu, Jiawen Xi, Jingkun An, Hao Wang, Hao Liang, Chengwei Pan
+    authors: <strong>Victor Shea-Jay Huang</strong>, Xinyuan Wang, Hantao Zhang, Yinghao Zhu, Jiawen Xi, Jingkun An, Hao Wang, Hao Liang, Chengwei Pan
     conference_short: AAAI
     conference: AAAI 2025
     pdf: https://arxiv.org/pdf/2405.20775
@@ -13,7 +13,7 @@ main:
 
 
   - title: 'Beyond Sight: Towards Cognitive Alignment in LVLM via Enriched Visual Knowledge'
-    authors: Yaqi Zhao, Yuanyang Yin, Lin Li, Mingan Lin, <strong>Shea-Jay Huang</strong>, Siwei Chen, Weipeng Chen, Baoqun Yin, Zenan Zhou, Wentao Zhang
+    authors: Yaqi Zhao, Yuanyang Yin, Lin Li, Mingan Lin, <strong>Victor Shea-Jay Huang</strong>, Siwei Chen, Weipeng Chen, Baoqun Yin, Zenan Zhou, Wentao Zhang
     conference_short: CVPR
     conference: CVPR 2025
     pdf: https://arxiv.org/pdf/2411.16824
@@ -23,7 +23,7 @@ main:
     notes: Published.
 
   - title: 'Towards Precise Scaling Laws for Video Diffusion Transformers'
-    authors: Yuanyang Yin, Yaqi Zhao, Mingwu Zheng, Ke Lin, Jiarong Ou, Rui Chen, <strong>Shea-Jay Huang</strong>, Jiahao Wang, Xin Tao, Pengfei Wan, Di ZHANG, Baoqun Yin, Wentao Zhang, Kun Gai
+    authors: Yuanyang Yin, Yaqi Zhao, Mingwu Zheng, Ke Lin, Jiarong Ou, Rui Chen, <strong>Victor Shea-Jay Huang</strong>, Jiahao Wang, Xin Tao, Pengfei Wan, Di ZHANG, Baoqun Yin, Wentao Zhang, Kun Gai
     conference_short: CVPR
     conference: CVPR 2025
     pdf: https://arxiv.org/pdf/2411.17470
@@ -34,7 +34,7 @@ main:
 
 
   - title: 'AGFSync: Leveraging AI Feedback for Preference Optimization in Text-to-Image Generation'
-    authors: Jingkun An, Yinghao Zhu, Zongjian Li, Haoran Feng, <strong>Shea-Jay Huang</strong>, Bohua Chen,Yemin Shi, Chengwei Pan
+    authors: Jingkun An, Yinghao Zhu, Zongjian Li, Haoran Feng, <strong>Victor Shea-Jay Huang</strong>, Bohua Chen,Yemin Shi, Chengwei Pan
     conference_short: AAAI
     conference: AAAI 2025
     pdf: https://arxiv.org/pdf/2403.13352
@@ -46,7 +46,7 @@ main:
 
 
   - title: 'Document Parsing Unveiled: Techniques, Challenges, and Prospects for Structured Information Extraction'
-    authors: Qintong Zhang*, <strong>Shea-Jay Huang*</strong>, Bin Wang, Junyuan Zhang, Zhengren Wang, Hao Liang, Shawn Wang, Matthieu Lin, Conghui He, Wentao Zhang
+    authors: Qintong Zhang*, <strong>Victor Shea-Jay Huang*</strong>, Bin Wang, Junyuan Zhang, Zhengren Wang, Hao Liang, Shawn Wang, Matthieu Lin, Conghui He, Wentao Zhang
     conference_short: Arxiv
     conference: Arxiv Preprint
     pdf: https://arxiv.org/pdf/2410.21169v3
@@ -58,7 +58,7 @@ main:
 
 
   - title: 'Vision-to-Music Generation: A Survey'
-    authors: Zhaokai Wang, Chenxi Bao, Le Zhuo, Jingrui Han, Yang Yue, Yihong Tang, <strong>Shea-Jay Huang</strong>, Yue Liao
+    authors: Zhaokai Wang, Chenxi Bao, Le Zhuo, Jingrui Han, Yang Yue, Yihong Tang, <strong>Victor Shea-Jay Huang</strong>, Yue Liao
     conference_short: Arxiv
     conference: Arxiv Preprint
     pdf: https://arxiv.org/pdf/2503.21254
@@ -69,7 +69,7 @@ main:
     notes: Under review.
 
   - title: 'Trans4D: Realistic Geometry-Aware Transition for Compositional Text-to-4D Synthesis'
-    authors: Bohan Zeng, Ling Yang, Siyu Li, Jiaming Liu, Zixiang Zhang, <strong>Shea-Jay Huang</strong>, Juanxi Tian, Kaixin Zhu, yongzhen.gyz, Fu-Yun Wang, Minkai Xu, Stefano Ermon, Wentao Zhang
+    authors: Bohan Zeng, Ling Yang, Siyu Li, Jiaming Liu, Zixiang Zhang, <strong>Victor Shea-Jay Huang</strong>, Juanxi Tian, Kaixin Zhu, yongzhen.gyz, Fu-Yun Wang, Minkai Xu, Stefano Ermon, Wentao Zhang
     conference_short: Arxiv
     conference: Arxiv Preprint
     pdf: https://arxiv.org/pdf/2410.07155
@@ -80,7 +80,7 @@ main:
 
 
   - title: 'SynthVLM: High-Efficiency and High-Quality Synthetic Data for Vision Language Models'
-    authors: Zheng Liu, Hao Liang, <strong>Shea-Jay Huang</strong>, Wentao Xiong, Qinhan Yu, Linzhuang Sun, Chong Chen, Conghui He, Bin Cui, Wentao Zhang
+    authors: Zheng Liu, Hao Liang, <strong>Victor Shea-Jay Huang</strong>, Wentao Xiong, Qinhan Yu, Linzhuang Sun, Chong Chen, Conghui He, Bin Cui, Wentao Zhang
     conference_short: Arxiv
     conference: Arxiv Preprint
     pdf: https://arxiv.org/pdf/2407.20756
@@ -91,7 +91,7 @@ main:
     notes: Under review.
 
   - title: 'KeyVideoLLM: Towards Large-scale Video Keyframe Selection'
-    authors: Zheng Liu, Hao Liang, <strong>Shea-Jay Huang</strong>, Wentao Xiong, Qinhan Yu, Linzhuang Sun, Chong Chen, Conghui He, Bin Cui, Wentao Zhang
+    authors: Zheng Liu, Hao Liang, <strong>Victor Shea-Jay Huang</strong>, Wentao Xiong, Qinhan Yu, Linzhuang Sun, Chong Chen, Conghui He, Bin Cui, Wentao Zhang
     conference_short: Arxiv
     conference: Arxiv Preprint
     pdf: https://arxiv.org/pdf/2407.03104
