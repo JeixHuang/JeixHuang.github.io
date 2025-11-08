@@ -1,5 +1,16 @@
 main:
 
+  - title: 'TIDE : Temporal-Aware Sparse Autoencoders for Interpretable Diffusion Transformers in Image Generation'
+    authors: <strong>Victor Shea-Jay Huang</strong>, Le Zhuo, Yi Xin, Zhaokai Wang, Fu-Yun Wang, Yuchi Wang, Renrui Zhang, Peng Gao, Hongsheng Li
+    conference_short: AAAI
+    conference: AAAI 2026
+    pdf: https://arxiv.org/pdf/2503.07050
+    arxiv: https://arxiv.org/abs/2503.07050
+    # code: https://github.com/dirtycomputer/O2M_attack
+    bibtex: ./assets/files/tide.txt
+    image: ./assets/files/tide.png
+    notes: Published
+    
   - title: 'Medical MLLM is Vulnerable: Cross-Modality Jailbreak and Mismatched Attacks on Medical Multimodal Large Language Models'
     authors: <strong>Victor Shea-Jay Huang</strong>, Xinyuan Wang, Hantao Zhang, Yinghao Zhu, Jiawen Xi, Jingkun An, Hao Wang, Hao Liang, Chengwei Pan
     conference_short: AAAI

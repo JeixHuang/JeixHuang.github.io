@@ -4,7 +4,7 @@ main:
     authors: <strong>Victor Shea-Jay Huang</strong>, Le Zhuo, Yi Xin, Zhaokai Wang, Fu-Yun Wang, Yuchi Wang, Renrui Zhang, Peng Gao, Hongsheng Li
     conference_short: AAAI
     conference: AAAI 2026
-    # pdf: https://ojs.aaai.org/index.php/AAAI/article/view/32396
+    pdf: https://arxiv.org/pdf/2503.07050
     arxiv: https://arxiv.org/abs/2503.07050
     # code: https://github.com/dirtycomputer/O2M_attack
     bibtex: ./assets/files/tide.txt
