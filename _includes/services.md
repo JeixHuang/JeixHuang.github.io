@@ -11,6 +11,7 @@
       <td colspan="2">
         <ul>
           <li>Conference on Neural Information Processing Systems(NeurIPS) 2025</li>
+          <li>The IEEE/CVF Conference on Computer Vision and Pattern Recognition(CVPR) 2026</li>
           <li>International Conference on Computer Vision(ICCV) 2025</li>
           <li>Association for Computational Linguistics(ACL) 2025</li>
           <li>The Association for the Advancement of Artificial Intelligence(AAAI) 2025,2026</li>
