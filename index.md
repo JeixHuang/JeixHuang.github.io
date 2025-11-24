@@ -9,7 +9,7 @@ layout: homepage
 <!-- Hi 🤗, I'm Victor Shea-Jay Huang (Chinese: 黄希杰(Xi-jie Huang); French: Ché-Jay Huang). -->
 Hi 🤗, I'm Victor Shea-Jay Huang.
 
-I am an undergraduate student at [Beihang University](https://ev.buaa.edu.cn/), expected to graduate in 2026. 
+I will be joining the [Multimedia Laboratory (MMLab)](https://mmlab.ie.cuhk.edu.hk/) at the Chinese University of Hong Kong (CUHK) as an incoming Ph.D. student in Fall 2026.
 
 <!-- I am currently a research intern at [ByteDance TikTok](https://www.bytedance.com/en/).  -->
 Previously, I worked as a research intern at [ByteDance TikTok](https://www.bytedance.com/en/), [Shanghai AI Laboratory](https://www.shlab.org.cn) and  [Baichuan AI](https://www.baichuan-ai.com/home).
@@ -51,6 +51,7 @@ I have a strong interest in all topics related to AI integrated with natural sci
 
 
 ## Education
+- **Incoming Phd**, 2026, In [Multimedia Laboratory (MMLab)](https://mmlab.ie.cuhk.edu.hk/), The Chinese University of Hong Kong, Hong Kong, China
 - **B.Eng.**, 2022 - 2026, In [Institute of Automation Science and Electrical Engineering](https://dept3.buaa.edu.cn/), Beihang University, Beijing, China
 - **B.Sci.**, 2021 - 2022, In [l'École Centrale de Pékin](https://ecpknfr.buaa.edu.cn/), Beijing, China
 
