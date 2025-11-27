@@ -9,7 +9,7 @@ layout: homepage
 <!-- Hi 🤗, I'm Victor Shea-Jay Huang (Chinese: 黄希杰(Xi-jie Huang); French: Ché-Jay Huang). -->
 Hi 🤗, I'm Victor Shea-Jay Huang.
 
-I will be joining the [Multimedia Laboratory (MMLab)](https://mmlab.ie.cuhk.edu.hk/) at the Chinese University of Hong Kong (CUHK) as an incoming Ph.D. student in Fall 2026.
+I will be joining the [Multimedia Laboratory (MMLab)](https://mmlab.ie.cuhk.edu.hk/) at the Chinese University of Hong Kong (CUHK) as an incoming Ph.D. student in Fall 2026, supervised by [Prof. Hongsheng Li](https://www.ee.cuhk.edu.hk/~hsli/).
 
 <!-- I am currently a research intern at [ByteDance TikTok](https://www.bytedance.com/en/).  -->
 Previously, I worked as a research intern at [ByteDance TikTok](https://www.bytedance.com/en/), [Shanghai AI Laboratory](https://www.shlab.org.cn) and  [Baichuan AI](https://www.baichuan-ai.com/home).
@@ -59,9 +59,9 @@ I have a strong interest in all topics related to AI integrated with natural sci
 
 I'm presently involved in academic collaborations with institutions such as [Princeton](https://www.princeton.edu/), [UC Berkeley](https://www.berkeley.edu/), [SBU](https://www.stonybrook.edu/), [EPFL](https://www.epfl.ch/en/), [THU](https://www.tsinghua.edu.cn/en/), [PKU](https://www.pku.edu.cn/), [NUS](https://nus.edu.sg/), [HKU](https://www.hku.hk/), [ShLab](https://www.shlab.org.cn/) ,and [Baichuan AI](https://www.baichuan-ai.com/home).  -->
 
-## Industry Experience
+<!-- ## Industry Experience
 
-{% include_relative _includes/intern.md %}
+{% include_relative _includes/intern.md %} -->
 
 ## Invited Talks
 - 2025.1, Beijing, China. [AI Time Youth PhD Talk-AAAI 2025](./img/aitime2025.jpg)
