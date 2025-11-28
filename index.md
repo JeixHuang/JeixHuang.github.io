@@ -16,16 +16,17 @@ Previously, I worked as a research intern at [ByteDance TikTok](https://www.byte
 
 If you are interested in joining the project or exploring collaboration opportunities, please reach out to me via email at jeix782@gmail.com.
 
-## Research Interest
+## Research Interest 
 
-I have a strong interest in all topics related to AI integrated with natural scientific theories and am actively exploring and expanding the boundaries of current AI technology. My efforts are primarily focused on 3 directions: 
+- **Multimodal:** VLM, Omni-models, Unified Understanding–Generation
 
+- **Generation:** Diffusion, Text-to-Image, Text-to-Video
 
-- **Multimodal:** Centered on generative model, multimodal learning, and efficient multimodal technologies for enhanced performance and integration. 
+- **Embodied AI:** VLA, World Models
 
-- **LLM:** Focused on core LLM advancements, including reasoning, scaling laws, and foundational research to push technological boundaries.
+- **LLM:** Reinforcement Learning, Reasoning
 
-- **Trustworthy AI:** Identify and address critical challenges in trustworthy AI, focusing on improving interpretability, safety, privacy, etc.  
+- **Trustworthy AI:** Interpretability, Robustness, Safety, Acceleration
 
 
 <!-- Welcome to my YouTube channel [@VSJH2003](https://youtube.com/@VSJH2003)! 🎉 Here, I share my passion for the intersection of AI and natural sciences, with videos covering math, physics, AI, and cognitive psychology—join me for paper discussions, trending topic updates, and insights into my work as we explore the future of science and technology together! -->
