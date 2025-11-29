@@ -20,7 +20,7 @@ If you are interested in joining the project or exploring collaboration opportun
 
 - **Multimodal:** VLM, Omni-models, Unified Understanding–Generation
 
-- **Generation:** Diffusion, Text-to-Image, Text-to-Video
+- **Generation:** Diffusion, Image, Video
 
 - **Embodied AI:** VLA, World Models
 
