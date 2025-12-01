@@ -60,9 +60,9 @@ If you are interested in joining the project or exploring collaboration opportun
 ## Invited Talks
 - 2025.1, Beijing, China. [AI Time Youth PhD Talk-AAAI 2025](./img/aitime2025.jpg)
 
-## Selected Awards
+<!-- ## Selected Awards
 - 2025.2, SMC Scholarship 
-- 2024.12, AAAI 2025 Student Scholarship 
+- 2024.12, AAAI 2025 Student Scholarship  -->
 
 {% include_relative _includes/services.md %}
 <!-- ## Reseach Direction
