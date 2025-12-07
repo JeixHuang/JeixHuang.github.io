@@ -57,8 +57,8 @@ If you are interested in joining the project or exploring collaboration opportun
 - **B.Sci.**, 2021 - 2022, In [l'École Centrale de Pékin](https://ecpknfr.buaa.edu.cn/), Beijing, China
 
 
-## Invited Talks
-- 2025.1, Beijing, China. [AI Time Youth PhD Talk-AAAI 2025](./img/aitime2025.jpg)
+<!-- ## Invited Talks
+- 2025.1, Beijing, China. [AI Time Youth PhD Talk-AAAI 2025](./img/aitime2025.jpg) -->
 
 <!-- ## Selected Awards
 - 2025.2, SMC Scholarship 
