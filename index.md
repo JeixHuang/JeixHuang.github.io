@@ -51,10 +51,10 @@ If you are interested in joining the project or exploring collaboration opportun
 
 
 
-## Education
+<!-- ## Education
 - **Incoming Phd**, 2026, In [Multimedia Laboratory (MMLab)](https://mmlab.ie.cuhk.edu.hk/), The Chinese University of Hong Kong, Hong Kong, China
 - **B.Eng.**, 2022 - 2026, In [Institute of Automation Science and Electrical Engineering](https://dept3.buaa.edu.cn/), Beihang University, Beijing, China
-- **B.Sci.**, 2021 - 2022, In [l'École Centrale de Pékin](https://ecpknfr.buaa.edu.cn/), Beijing, China
+- **B.Sci.**, 2021 - 2022, In [l'École Centrale de Pékin](https://ecpknfr.buaa.edu.cn/), Beijing, China -->
 
 
 <!-- ## Invited Talks
