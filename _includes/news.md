@@ -5,6 +5,7 @@
 <div class="news-slider">
   <div class="news-container">
     <ul id="news-list">
+      <li><strong>[Dec. 2025]</strong> 🏆 I've been accepted into the CATIC Scholarship!</li>
       <li><strong>[Nov. 2025]</strong> 🎉 Our <span style="color:#f59ab2"><a href="https://arxiv.org/abs/2503.07050">TIDE</a></span> have been accepted to AAAI 2026!(CCF-A, Acceptance ratio 17.6%)</li>
       <li><strong>[Jun. 2025]</strong> 🎉 Our <span style="color:#f59ab2"><a href="https://arxiv.org/pdf/2508.05087">JPS</a></span> have been accepted to ACM MM 2025!(CCF-A)</li>
       <li><strong>[Jun. 2025]</strong> 🎉 Our <span style="color:#f59ab2"><a href="https://arxiv.org/pdf/2503.21254">Vision-to-Music Generation</a></span> have been accepted to ISMIR 2025!(Top conferences in music AI)</li>
