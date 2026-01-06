@@ -5,13 +5,11 @@
 <div class="news-slider">
   <div class="news-container">
     <ul id="news-list">
-      <li><strong>[Dec. 2025]</strong> 🏆 I've been accepted into the CATIC Scholarship!</li>
       <li><strong>[Nov. 2025]</strong> 🎉 Our <span style="color:#f59ab2"><a href="https://arxiv.org/abs/2503.07050">TIDE</a></span> have been accepted to AAAI 2026!(CCF-A, Acceptance ratio 17.6%)</li>
       <li><strong>[Jun. 2025]</strong> 🎉 Our <span style="color:#f59ab2"><a href="https://arxiv.org/pdf/2508.05087">JPS</a></span> have been accepted to ACM MM 2025!(CCF-A)</li>
       <li><strong>[Jun. 2025]</strong> 🎉 Our <span style="color:#f59ab2"><a href="https://arxiv.org/pdf/2503.21254">Vision-to-Music Generation</a></span> have been accepted to ISMIR 2025!(Top conferences in music AI)</li>
       <li><strong>[Apr. 2025]</strong> 🚀 <span style="color:#f59ab2"><a href="https://github.com/Alpha-VLLM/Lumina-mGPT-2.0">Lumina-mGPT-2.0</a></span> github repo released <a href='https://github.com/Alpha-VLLM/Lumina-mGPT-2.0'><img src="https://img.shields.io/github/stars/Alpha-VLLM/Lumina-mGPT-2.0"></a>.</li>
       <li><strong>[Mar. 2025]</strong> 🚀 <span style="color:#f59ab2"><a href="https://github.com/wzk1015/Awesome-Vision-to-Music-Generation">Awesome Vision-to-Music</a></span> github repo released <a href='https://github.com/wzk1015/Awesome-Vision-to-Music-Generation'><img src="https://img.shields.io/github/stars/wzk1015/Awesome-Vision-to-Music-Generation"></a>.</li>
-      <li><strong>[Feb. 2025]</strong> 🏆 I've been accepted into the SMC Student Scholarship!</li>
       <li><strong>[Feb. 2025]</strong> 🎉 Our 2 papers <span style="color:#f59ab2"><a href="https://arxiv.org/pdf/2411.16824">Beyond Sight</a></span> and <span style="color:#f59ab2"><a href="https://arxiv.org/pdf/2411.17470">Scaling Laws for Video DiT</a></span> have been accepted to CVPR 2025!(CCF-A, Acceptance ratio 22.1%)</li>
       <li><strong>[Jan. 2025]</strong> 🚀 <span style="color:#f59ab2"><a href="https://github.com/thu-coai/AISafetyLab">AISafetyLab</a></span> github repo released <a href='https://github.com/thu-coai/AISafetyLab'><img src="https://img.shields.io/github/stars/thu-coai/AISafetyLab"></a>.</li>
       <li><strong>[Dec. 2024]</strong> 🏆 I've been accepted into the AAAI-25 Student Scholarship!</li>
