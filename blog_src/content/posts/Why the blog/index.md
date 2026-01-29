@@ -3,10 +3,10 @@ title: "Why the blog"
 date: 2026-01-29T12:00:00+08:00
 tags: ["blog"]
 summary: "为什么写这个博客（中文 / English / Français）。"
+slug: "why-the-blog"
 ---
 
-![demo](.//why%20the%20blog.png)
-
+![demo](./why%20the%20blog.png)
 
 ## 中文
 
@@ -19,3 +19,5 @@ I write this blog to explore research questions and technical ideas that I find 
 ## Français
 
 J’écris ce blog pour explorer des questions de recherche et des idées techniques que je trouve intéressantes et dignes d’attention, et pour contribuer à la communauté open source.
+
+
