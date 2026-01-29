@@ -10,6 +10,7 @@
     <tr>
       <td colspan="2">
         <ul>
+          <li>International Conference on Machine Learning(ICML) 2026</li>
           <li>Conference on Neural Information Processing Systems(NeurIPS) 2025</li>
           <li>The IEEE/CVF Conference on Computer Vision and Pattern Recognition(CVPR) 2026</li>
           <li>International Conference on Computer Vision(ICCV) 2025</li>
