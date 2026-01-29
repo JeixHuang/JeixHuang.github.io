@@ -1,0 +1,6 @@
+@article{liang2024synth,
+  title={Synth-Empathy: Towards High-Quality Synthetic Empathy Data},
+  author={Liang, Hao and Sun, Linzhuang and Wei, Jingxuan and Huang, Xijie and Sun, Linkun and Yu, Bihui and He, Conghui and Zhang, Wentao},
+  journal={arXiv preprint arXiv:2407.21669},
+  year={2024}
+}
