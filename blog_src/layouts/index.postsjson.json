@@ -2,11 +2,12 @@
 [
 {{- range $i, $p := $pages -}}
   {{- if $i }},{{ end }}
+  {{- $excerpt := (or $p.Params.summary $p.Summary) | plainify | htmlUnescape | replaceRE "\\s+" " " | trim " " | truncate 160 -}}
   {
     "title": {{ $p.Title | jsonify }},
     "date": {{ $p.Date.Format "2006-01-02" | jsonify }},
     "url": {{ $p.RelPermalink | jsonify }},
-    "excerpt": {{ ($p.Summary | plainify | htmlUnescape | replaceRE "\\s+" " " | trim " " | truncate 160) | jsonify }}
+    "excerpt": {{ $excerpt | jsonify }}
   }
 {{- end -}}
 ]

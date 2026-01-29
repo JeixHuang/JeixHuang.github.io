@@ -3,21 +3,30 @@
 
   <ul class="post-list">
     {{ range where site.RegularPages "Section" "posts" | sort "Date" "desc" }}
+      {{- $excerpt := (or .Params.summary .Summary) | plainify | htmlUnescape | replaceRE "\\s+" " " | trim " " | truncate 180 -}}
       <li class="post-item">
-        <div class="post-meta">
-          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
-          {{ with .Params.tags }}
-            <span class="tags">
-              {{ range . }}
-                <a class="tag" href="{{ (printf "/tags/%s/" (. | urlize)) | relURL }}">#{{ . }}</a>
+        <article class="post-card">
+          <div class="post-card-header">
+            <h2 class="post-title">
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+            <div class="post-meta">
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+              <span class="dot">·</span>
+              <span class="reading">{{ .ReadingTime }} min read</span>
+              {{ with .Params.tags }}
+                <span class="tags">
+                  {{ range . }}
+                    <a class="tag" href="{{ (printf "/tags/%s/" (. | urlize)) | relURL }}">#{{ . }}</a>
+                  {{ end }}
+                </span>
               {{ end }}
-            </span>
+            </div>
+          </div>
+          {{ if $excerpt }}
+            <p class="post-excerpt">{{ $excerpt }}</p>
           {{ end }}
-        </div>
-        <h2 class="post-title">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </h2>
-        <p class="post-excerpt">{{ .Summary | plainify | htmlUnescape }}</p>
+        </article>
       </li>
     {{ end }}
   </ul>
