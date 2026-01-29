@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="180" viewBox="0 0 480 180">
+  <rect x="0" y="0" width="480" height="180" fill="#ffffff"/>
+  <rect x="12" y="12" width="456" height="156" rx="14" fill="#f3f4f6" stroke="#e5e7eb"/>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" fill="#111827">
+    <text x="36" y="62" font-size="18" font-weight="700">Demo Figure (SVG)</text>
+    <text x="36" y="92" font-size="14">This is a tiny, text-based image asset.</text>
+    <text x="36" y="118" font-size="14" fill="#6b7280">Path: ./demo.svg</text>
+  </g>
+  <path d="M36 138 H444" stroke="#d1d5db" stroke-width="2" />
+  <circle cx="120" cy="138" r="6" fill="#2563eb"/>
+  <circle cx="240" cy="138" r="6" fill="#2563eb"/>
+  <circle cx="360" cy="138" r="6" fill="#2563eb"/>
+</svg>
+
+

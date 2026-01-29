@@ -143,6 +143,19 @@ venv.bak/
 # mkdocs documentation
 /site
 
+# --- Static site build outputs (keep main branch clean) ---
+/_site/
+/blog/
+
+# Hugo build/cache (blog source)
+/blog_src/public/
+/blog_src/resources/
+.hugo_build.lock
+
+# Local scratch (if needed)
+/.local/
+/tmp/
+
 # mypy
 .mypy_cache/
 .dmypy.json

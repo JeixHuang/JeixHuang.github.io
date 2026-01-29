@@ -1,0 +1,31 @@
+baseURL = "/blog/"
+languageCode = "zh-cn"
+title = "Blog"
+
+# Keep output paths stable under /blog/
+rssURI = "rss.xml"
+
+[outputFormats.PostsJSON]
+mediaType = "application/json"
+baseName = "posts"
+isPlainText = true
+notAlternative = true
+
+[outputs]
+home = ["HTML", "RSS", "PostsJSON"]
+
+[permalinks]
+posts = "/:year/:month/:day/:slug/"
+
+[taxonomies]
+tag = "tags"
+
+[markup]
+  [markup.highlight]
+    noClasses = true
+    codeFences = true
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+

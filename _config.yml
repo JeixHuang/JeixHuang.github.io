@@ -63,3 +63,9 @@ exclude:
   - README.md
   - LICENSE
   - CNAME
+  # Keep build outputs and blog sources out of the Jekyll site artifact
+  - _site
+  - blog
+  - blog_src
+  - tmp
+  - .local

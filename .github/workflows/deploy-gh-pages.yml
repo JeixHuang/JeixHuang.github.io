@@ -1,0 +1,50 @@
+name: Deploy site (Jekyll + Hugo blog) to gh-pages
+
+on:
+  push:
+    branches: ["main", "master"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.1"
+
+      - name: Build Jekyll (homepage)
+        env:
+          JEKYLL_ENV: production
+        run: |
+          gem install bundler -v 2.4.19
+          bundle lock --add-platform x86_64-linux --add-platform ruby
+          bundle install --jobs 4 --retry 3
+          bundle exec jekyll build --destination _site
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.125.7"
+          extended: true
+
+      - name: Build Hugo (blog) into _site/blog
+        run: |
+          hugo --source blog_src --destination ../_site/blog --minify
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./_site
+          enable_jekyll: false
+
+

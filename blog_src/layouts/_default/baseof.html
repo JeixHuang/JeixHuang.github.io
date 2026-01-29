@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+    <meta name="color-scheme" content="light dark" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ "rss.xml" | relURL }}" />
+    <link rel="stylesheet" href="{{ "assets/style.css" | relURL }}" />
+
+    <!-- KaTeX (math) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div class="brand">
+          <a class="brand-link" href="{{ "/" | relURL }}">Blog</a>
+        </div>
+        <nav class="nav">
+          <a href="{{ "/" | relURL }}">Latest</a>
+          <a href="{{ "/tags/" | relURL }}">Tags</a>
+          <a href="{{ "/archive/" | relURL }}">Archive</a>
+          <a href="{{ "rss.xml" | relURL }}">RSS</a>
+          <a href="/" rel="noopener">Home</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      {{ block "main" . }}{{ end }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© {{ now.Format "2006" }}</small>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        if (typeof renderMathInElement !== 'function') return;
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false }
+          ],
+          throwOnError: false
+        });
+      });
+    </script>
+  </body>
+</html>
+
+
