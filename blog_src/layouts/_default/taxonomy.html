@@ -2,7 +2,7 @@
   <h1 class="page-title">Tag: {{ .Title }}</h1>
 
   <ul class="post-list">
-    {{ range .Pages | sort "Date" "desc" }}
+    {{ range .Pages.ByDate.Reverse }}
       <li class="post-item">
         <div class="post-meta">
           <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>

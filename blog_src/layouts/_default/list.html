@@ -1,8 +1,8 @@
 {{ define "main" }}
-  <h1 class="page-title">Latest Posts</h1>
+  <h1 class="page-title">{{ .Title }}</h1>
 
   <ul class="post-list">
-    {{ range (where site.RegularPages "Section" "posts").ByDate.Reverse }}
+    {{ range .Pages.ByDate.Reverse }}
       {{- $excerpt := (or .Params.summary .Summary) | plainify | htmlUnescape | replaceRE "\\s+" " " | trim " " | truncate 180 -}}
       <li class="post-item">
         <article class="post-card">

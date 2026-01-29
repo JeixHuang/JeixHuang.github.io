@@ -1,7 +1,7 @@
 {{ define "main" }}
   <h1 class="page-title">Archive</h1>
 
-  {{ $pages := where site.RegularPages "Section" "posts" | sort "Date" "desc" }}
+  {{ $pages := (where site.RegularPages "Section" "posts").ByDate.Reverse }}
   {{ range $pages.GroupByDate "2006" }}
     <section class="archive-year">
       <h2 class="archive-year-title">{{ .Key }}</h2>
