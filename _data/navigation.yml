@@ -14,7 +14,7 @@ main:
     url: ./#news
 
   - title: "Blog"
-    url: ./blog/
+    url: /blog/
 
   - title: "Bio"
     url: ./#about-me
