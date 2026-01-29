@@ -1,4 +1,4 @@
-{{- $pages := where site.RegularPages "Section" "posts" | sort "Date" "desc" -}}
+{{- $pages := (where site.RegularPages "Section" "posts").ByDate.Reverse -}}
 [
 {{- range $i, $p := $pages -}}
   {{- if $i }},{{ end }}
