@@ -29,6 +29,22 @@ If you are interested in joining the project or exploring collaboration opportun
 - **Trustworthy AI:** Interpretability, Robustness, Safety, Acceleration
 
 
+
+
+
+
+<!-- ## Services
+
+- Conference Reviewer: KDD 2025 -->
+
+<!-- ## Contact
+- **Email:** jeix782@gmail.com
+
+- **Wechat:** jeix782 -->
+
+{% include_relative _includes/news.md %}
+
+
 <!-- Welcome to my YouTube channel [@VSJH2003](https://youtube.com/@VSJH2003)! 🎉 Here, I share my passion for the intersection of AI and natural sciences, with videos covering math, physics, AI, and cognitive psychology—join me for paper discussions, trending topic updates, and insights into my work as we explore the future of science and technology together! -->
 
 <section id="latest-posts" data-posts-url="{{ "/blog/posts.json" | relative_url }}" style="margin-top: 32px;">
@@ -51,22 +67,6 @@ If you are interested in joining the project or exploring collaboration opportun
   </style>
   <script src="{{ "/assets/js/latest-posts.js" | relative_url }}" defer></script>
 </section>
-
-
-
-
-
-
-<!-- ## Services
-
-- Conference Reviewer: KDD 2025 -->
-
-<!-- ## Contact
-- **Email:** jeix782@gmail.com
-
-- **Wechat:** jeix782 -->
-
-{% include_relative _includes/news.md %}
 
 
 
