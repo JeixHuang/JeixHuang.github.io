@@ -147,7 +147,7 @@ main {
   grid-template-columns: 190px minmax(0, 1fr);
   gap: 42px;
   align-items: end;
-  padding: 20px 0 8px;
+  padding: 16px 0 0;
 }
 
 .profile {
@@ -301,7 +301,11 @@ main {
 }
 
 section {
-  padding-top: 26px;
+  padding-top: 24px;
+}
+
+.content-stack > section:first-child {
+  padding-top: 20px;
 }
 
 .section-rule {
@@ -541,7 +545,8 @@ section {
 .blog-card,
 .project-card,
 .publication-card,
-.contact-band {
+.contact-band,
+.service-card {
   min-width: 0;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -586,7 +591,6 @@ section {
 }
 
 .project-card.featured-project {
-  grid-column: 1 / -1;
   background: var(--ochre-soft);
 }
 
@@ -742,6 +746,27 @@ section {
   color: var(--muted);
 }
 
+.service-card {
+  padding: 18px;
+}
+
+.service-card h3 {
+  margin: 0 0 10px;
+  font-size: 19px;
+  line-height: 1.2;
+}
+
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 18px;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
 @media (max-width: 920px) {
   .page {
     width: min(760px, 100%);
@@ -785,7 +810,8 @@ section {
   .blog-grid,
   .project-grid,
   .publication-grid,
-  .contact-band {
+  .contact-band,
+  .service-card {
     width: min(354px, 100%);
     max-width: 354px;
     min-width: 0;
@@ -797,7 +823,7 @@ section {
     grid-template-columns: 1fr;
     gap: 18px;
     align-items: start;
-    padding-top: 18px;
+    padding-top: 14px;
   }
 
   .avatar {
@@ -876,5 +902,9 @@ section {
   .contact-band {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .service-list {
+    grid-template-columns: 1fr;
   }
 }
