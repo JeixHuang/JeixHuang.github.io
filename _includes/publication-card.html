@@ -1,0 +1,32 @@
+{% assign link = include.link %}
+{% assign primary_link = link.pdf | default: link.arxiv | default: link.code %}
+{% assign image_path = link.image | replace: './', '/' %}
+<article class="publication-card{% if include.hidden == true %} is-hidden selected-extra{% endif %}">
+  <div class="pub-image">
+    <img src="{{ image_path | relative_url }}" alt="{{ link.title }}">
+    <span class="venue">{{ link.conference_short }}</span>
+  </div>
+  <div class="pub-copy">
+    <h3><a href="{{ primary_link }}">{{ link.title }}</a></h3>
+    <p class="authors">{{ link.authors }}</p>
+    <p class="periodical">{{ link.conference }}</p>
+    <div class="pub-links">
+      {% if link.pdf %}
+      <a href="{{ link.pdf }}">PDF</a>
+      {% endif %}
+      {% if link.arxiv %}
+      <a href="{{ link.arxiv }}">Arxiv</a>
+      {% endif %}
+      {% if link.code %}
+      <a href="{{ link.code }}">Code</a>
+      {% endif %}
+      {% if link.bibtex %}
+      {% assign bibtex_path = link.bibtex | replace: './', '/' %}
+      <a href="{{ bibtex_path | relative_url }}">BibTex</a>
+      {% endif %}
+      {% if link.notes %}
+      <span class="note">{{ link.notes }}</span>
+      {% endif %}
+    </div>
+  </div>
+</article>

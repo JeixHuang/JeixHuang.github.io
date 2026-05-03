@@ -1,223 +1,345 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
-    <title>{{ site.title }}'s Homepage</title>
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="description" content="{{ site.title }}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}">
     <meta name="keywords" content="{{ site.keywords }}">
-
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ site.title }} | {{ site.affiliation }}">
+    <meta property="og:title" content="{{ site.title }}">
     <meta property="og:url" content="{{ site.canonical }}">
-    <meta property="og:site_name" content="{{ site.title }} | {{ site.affiliation }}">
+    <meta property="og:site_name" content="{{ site.title }}">
     <meta property="og:description" content="{{ site.description }}">
-    <meta property="og:locale" content="default">
     <meta property="og:image" content="{{ site.avatar }}">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{{ site.title }} | {{ site.affiliation }}">
+    <meta name="twitter:title" content="{{ site.title }}">
     <meta name="twitter:description" content="{{ site.description }}">
     <meta name="twitter:image" content="{{ site.avatar }}">
-
-    <link rel="canonical" href="{{site.canonical}}"/>
-    <link rel="icon" media="(prefers-color-scheme:dark)" href="{{ site.favicon_dark }}" type="image/png" />
-    <link rel="icon" media="(prefers-color-scheme:light)" href="{{ site.favicon }}" type="image/png" />
-    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/pub.css">
-    <link rel="stylesheet" href="./assets/css/nav.css">
-    
-    <script src="./assets/js/github-stars.js"></script>
-    <script type="text/javascript" src="./assets/js/jquery.js"></script>
-    <script src="./assets/js/favicon-switcher.js" type="application/javascript"></script>
-    
-    <script type="text/javascript">
-      function toggle_vis(id) {
-          var e = document.getElementById(id);
-          if (e.style.display == 'none')
-              e.style.display = 'inline';
-          else
-              e.style.display = 'none';
-      }
-   </script>
-
-   <script>
-      function myFunction() {
-      var x = document.getElementById("myLinks");
-      if (x.style.display === "block") {
-        x.style.display = "none";
-      } else {
-        x.style.display = "block";
-      }
-      }
-   </script>
-   
-
+    <link rel="canonical" href="{{ site.canonical }}">
+    <link rel="icon" media="(prefers-color-scheme:dark)" href="{{ site.favicon_dark }}" type="image/png">
+    <link rel="icon" media="(prefers-color-scheme:light)" href="{{ site.favicon }}" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="{{ "/assets/css/homepage-v5.css" | relative_url }}">
+    <script src="{{ "/assets/js/homepage-v5.js" | relative_url }}" defer></script>
+    <script src="{{ "/assets/js/favicon-switcher.js" | relative_url }}" defer></script>
   </head>
   <body>
-    
-    <div class="topnav">
-
-      <a href="{{ site.affiliation_link }}"><img width="190" src="{{ site.affiliation_logo }}"></a>
-
-      <div id="myLinks">
-      {% include navigation.md %}
-      </div>
-
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
-      
-    </div>
-    
-
-    <script src="./assets/js/vanilla-back-to-top.min.js"></script>
-    <script>addBackToTop({
-        backgroundColor: '#fff',
-        innerHTML: 'Back to Top',
-        textColor: '#333'
-      })
-    </script>
-    <style>
-        #back-to-top {
-          border: 1px solid #ccc;
-          border-radius: 0;
-          font-size: 15px;
-          width: 100px;
-          text-align: center;
-          line-height: 30px;
-          height: 30px;
-        }
-    </style>
-    
-    <div class="wrapper">
-      <header>
-        
-        {% if site.avatar %}
-        <a class="image avatar"><img src="{{ site.avatar }}" alt="avatar" /></a>
-        {% endif %}
-
-        <h1>{{ site.title }}</h1>
-
-        {% if site.position %}
-        <position style="font-size:1.10rem;">{{ site.position }}</position>
-        <br>
-        {% endif %}
-        {% if site.subaffiliation %}
-        <a href="{{ site.subaffiliation_link }}" rel="noopener" target="_blank">
-        <autocolor>{{ site.subaffiliation }},</autocolor>
-        </a>
-        <br>
-        {% endif %}
-        {% if site.affiliation %}
-        <a href="{{ site.affiliation_link }}" rel="noopener"><autocolor>{{ site.affiliation }}</autocolor></a>
-        <br>
-        {% endif %}
-        {% if site.address %}
-        <a href="{{ site.address_link }}" rel="noopener"><autocolor>{{ site.address }}</autocolor></a>
-        <br>
-        {% endif %}
-        {% if site.email %}
-        <email>{{ site.email }}</email>
-        {% endif %}
-        {% if site.email2 %}
-        <br>
-        <email>{{ site.email2 }}</email>
-        {% endif %}
-        
-        <br>
-        <br>
-        <div class="social-icons">
-        {% if site.google_scholar %}
-        <a style="margin: 0 5px 0 0" href="{{ site.google_scholar }}">
-          <i class="ai ai-google-scholar" style="font-size:1.2rem"></i>
-        </a>  
-        {% endif %}
-
-        {% if site.cv_link %}
-        <a style="margin: 0 5px 0 0" href="{{ site.cv_link }}">
-          <i class="ai ai-cv" style="font-size:1.3rem;"></i>
-        </a>
-        {% endif %}
-
-        {% if site.github_link %}
-        <a style="margin: 0 5px 0 0" href="{{ site.github_link }}">
-          <i class="fab fa-github"></i>
-        </a>
-        {% endif %}
-
-        {% if site.researchgate %}
-        <a style="margin: 0 5px 0 0" href="{{ site.researchgate }}">
-          <i class="fab fa-researchgate"></i>
-        </a>
-        {% endif %}
-
-        {% if site.linkedin %}
-        <a style="margin: 0 5px 0 0" href="{{ site.linkedin }}">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        {% endif %}
-
-        {% if site.twitter %}
-        <a style="margin: 0 0 0 0" href="{{ site.twitter }}">
-          <i class="fab fa-x-twitter"></i>
-        </a>
-        {% endif %}
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a class="brand" href="{{ "/" | relative_url }}">{{ site.title }}</a>
+        <div class="nav-links">
+          <a href="#timeline">Timeline</a>
+          <a href="#blog">Blog</a>
+          <a href="#projects">Projects</a>
+          <a href="#publications">Publications</a>
+          <a href="#contact">Contact</a>
         </div>
-        <br>
-
-      </header>
-      <section>
-
-      {{ content }}
-
-      <br>
-
-      {% if site.enable_last_update %}
-      <small>Last Update:
-            <script>
-              const monthNames = ["January", "Februray", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
-              ];
-              var modiDate = new Date(document.lastModified);
-              var showAs = modiDate.getDate() + ". " + monthNames[modiDate.getMonth()] + " " + modiDate.getFullYear();
-              document.write(showAs);
-            </script>
-      </small> 
-      {% endif %}
-
-      {% if site.footnote %}
-      <div style="font: 12px/1.2 Crimson Pro, serif">
-        <br>
-        <a href="{{ site.footnote_link }}" rel="noopener">{{ site.footnote }}</a>
       </div>
-      {% endif %}
+    </nav>
 
-      <br>
-      {% if site.clustrmaps_id %}
-      <div style="width:300px; pointer-events: none;">
-        <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=sp8jpn_teE_fZyG8NJ7MEQbIoFBt4iMsEoKRx-DvkSw"></script>
-      {% endif %}
-      
-      </section>
-      <footer>
-        <div style="font: 12px/1.2 Crimson Pro, serif">
-        <p>
-        <small>
-        {% if site.imprint %}
-        <a href="{{ site.imprint }}" rel="noopener"><autocolor>Imprint / Impressum</autocolor></a><br>
-        {% endif %}
-        {% if site.data_protection %}
-        <a href="{{ site.data_protection }}" rel="noopener"><autocolor>Data Protection / Datenschutzhinweis</autocolor></a>
-        {% endif %}
-        </small>
-        </p>
+    <main id="top">
+      <div class="page">
+        <header class="homepage-hero">
+          <aside class="profile" aria-label="Profile">
+            {% assign avatar_path = site.avatar | replace: './', '/' %}
+            <img class="avatar" src="{{ avatar_path | relative_url }}" alt="{{ site.title }} portrait">
+            <div>
+              <h1 class="name">{{ site.title }}</h1>
+              <div class="socials">
+                {% if site.email %}
+                <a class="social-link" href="mailto:{{ site.email }}" aria-label="Email" title="Email">
+                  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                </a>
+                {% endif %}
+                {% if site.google_scholar %}
+                <a class="social-link" href="{{ site.google_scholar }}" aria-label="Google Scholar" title="Google Scholar">
+                  <i class="ai ai-google-scholar" aria-hidden="true"></i>
+                </a>
+                {% endif %}
+                {% if site.github_link %}
+                <a class="social-link" href="{{ site.github_link }}" aria-label="GitHub" title="GitHub">
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
+                </a>
+                {% endif %}
+                {% if site.twitter %}
+                <a class="social-link" href="{{ site.twitter }}" aria-label="X" title="X">
+                  <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                </a>
+                {% endif %}
+              </div>
+            </div>
+          </aside>
+
+          <div class="hero-copy">
+            <p class="eyebrow">Incoming Ph.D. student / MMLab, CUHK / Fall 2026</p>
+            <p class="motto">Do the right thing, the right way, right now.</p>
+            <p class="summary">Hi, I'm Victor Shea-Jay Huang. I will join the Multimedia Laboratory at the Chinese University of Hong Kong in Fall 2026, supervised by Prof. Hongsheng Li. My work spans multimodal generative AI, foundation models, embodied AI, reinforcement learning, and trustworthy AI.</p>
+            <div class="focus-strip" aria-label="Research areas">
+              <span>Multimodal Generative AI</span>
+              <span>Foundation Model</span>
+              <span>Embodied AI</span>
+              <span>Reinforcement Learning</span>
+              <span>Trustworthy AI</span>
+            </div>
+            <div class="cta-row">
+              <a class="button primary" href="#publications">Selected work</a>
+              <a class="button" href="{{ "/blog/" | relative_url }}">Blog</a>
+              <a class="button" href="mailto:{{ site.email }}">Contact</a>
+            </div>
+          </div>
+        </header>
+
+        <div class="content-stack">
+          <section id="timeline">
+            <div class="section-rule">
+              <p class="section-label">Timeline / News</p>
+              <div class="section-line"></div>
+            </div>
+            <div class="timeline-stage">
+              <div class="timeline-viewport" data-timeline-viewport tabindex="0" aria-label="Timeline">
+                <div class="timeline-list">
+                  <article class="timeline-item">
+                    <div class="timeline-date">Fall 2026</div>
+                    <div class="logo-chip logo-cuhk" aria-label="CUHK logo"></div>
+                    <div class="timeline-copy">
+                      <h3>Incoming Ph.D. student at MMLab, CUHK</h3>
+                      <p>Joining the Multimedia Laboratory, supervised by Prof. Hongsheng Li.</p>
+                    </div>
+                  </article>
+                  <article class="timeline-item">
+                    <div class="timeline-date">Apr. 2026</div>
+                    <div class="logo-chip logo-acl" aria-label="ACL logo"></div>
+                    <div class="timeline-copy">
+                      <h3>3 papers accepted to ACL <span class="year-badge">2026</span></h3>
+                      <p>Recent work in safety and reasoning accepted to ACL 2026.</p>
+                    </div>
+                  </article>
+                  <article class="timeline-item">
+                    <div class="timeline-date">Nov. 2025</div>
+                    <div class="logo-chip logo-aaai" aria-label="AAAI logo"></div>
+                    <div class="timeline-copy">
+                      <h3><a href="https://arxiv.org/abs/2503.07050">TIDE</a> accepted to AAAI <span class="year-badge">2026</span></h3>
+                      <p>Temporal-aware sparse autoencoders for interpretable diffusion transformers.</p>
+                    </div>
+                  </article>
+                  <article class="timeline-item">
+                    <div class="timeline-date">Oct. 2025</div>
+                    <div class="logo-chip text-logo">LI</div>
+                    <div class="timeline-copy">
+                      <h3>Li Auto research internship</h3>
+                      <p>Embodied AI and autonomous driving research, starting Oct. 2025.</p>
+                    </div>
+                  </article>
+                  <article class="timeline-item">
+                    <div class="timeline-date">Jun. 2025</div>
+                    <div class="logo-chip logo-bytedance" aria-label="ByteDance logo"></div>
+                    <div class="timeline-copy">
+                      <h3>ByteDance TikTok research internship</h3>
+                      <p>Generative recommendation system research, starting Jun. 2025.</p>
+                    </div>
+                  </article>
+                  <article class="timeline-item">
+                    <div class="timeline-date">Jun. 2025</div>
+                    <div class="logo-chip logo-acmmm" aria-label="ACM MM 2025 logo"></div>
+                    <div class="timeline-copy">
+                      <h3><a href="https://arxiv.org/pdf/2508.05087">JPS</a> accepted to ACM MM <span class="year-badge">2025</span></h3>
+                      <p>Collaborative visual perturbation and textual steering for MLLM jailbreak.</p>
+                    </div>
+                  </article>
+                  <article class="timeline-item">
+                    <div class="timeline-date">Jun. 2025</div>
+                    <div class="logo-chip logo-ismir" aria-label="ISMIR logo"></div>
+                    <div class="timeline-copy">
+                      <h3><a href="https://arxiv.org/pdf/2503.21254">Vision-to-Music Generation</a> accepted to ISMIR <span class="year-badge">2025</span></h3>
+                      <p>A survey on vision-to-music generation.</p>
+                    </div>
+                  </article>
+                  <article class="timeline-item">
+                    <div class="timeline-date">Apr. 2025</div>
+                    <div class="logo-chip logo-lumina" aria-label="Lumina-mGPT-2.0 logo"></div>
+                    <div class="timeline-copy">
+                      <h3><a href="https://github.com/Alpha-VLLM/Lumina-mGPT-2.0">Lumina-mGPT-2.0</a> repo released <a class="inline-badge" href="https://github.com/Alpha-VLLM/Lumina-mGPT-2.0"><img src="https://img.shields.io/github/stars/Alpha-VLLM/Lumina-mGPT-2.0" alt="Lumina-mGPT-2.0 GitHub stars"></a></h3>
+                      <p>Open-source multimodal generative AI project.</p>
+                    </div>
+                  </article>
+                  <article class="timeline-item">
+                    <div class="timeline-date">Mar. 2025</div>
+                    <div class="logo-chip logo-v2m" aria-label="Vision-to-Music logo"></div>
+                    <div class="timeline-copy">
+                      <h3><a href="https://github.com/wzk1015/Awesome-Vision-to-Music-Generation">Awesome Vision-to-Music</a> repo released <a class="inline-badge" href="https://github.com/wzk1015/Awesome-Vision-to-Music-Generation"><img src="https://img.shields.io/github/stars/wzk1015/Awesome-Vision-to-Music-Generation" alt="Awesome Vision-to-Music GitHub stars"></a></h3>
+                      <p>GitHub repository release.</p>
+                    </div>
+                  </article>
+                  <article class="timeline-item">
+                    <div class="timeline-date">Feb. 2025</div>
+                    <div class="logo-chip logo-cvpr" aria-label="CVPR 2025 logo"></div>
+                    <div class="timeline-copy">
+                      <h3>2 papers accepted to CVPR <span class="year-badge">2025</span></h3>
+                      <p><a href="https://arxiv.org/pdf/2411.16824">Beyond Sight</a> and <a href="https://arxiv.org/pdf/2411.17470">Scaling Laws for Video DiT</a>.</p>
+                    </div>
+                  </article>
+                  <article class="timeline-item">
+                    <div class="timeline-date">Jan. 2025</div>
+                    <div class="logo-chip logo-shailab" aria-label="Shanghai AI Laboratory logo"></div>
+                    <div class="timeline-copy">
+                      <h3>Shanghai AI Laboratory research internship</h3>
+                      <p>Generative model research, starting Jan. 2025.</p>
+                    </div>
+                  </article>
+                  <article class="timeline-item">
+                    <div class="timeline-date">Jan. 2025</div>
+                    <div class="logo-chip logo-aisafetylab" aria-label="AISafetyLab logo"></div>
+                    <div class="timeline-copy">
+                      <h3><a href="https://github.com/thu-coai/AISafetyLab">AISafetyLab</a> repo released <a class="inline-badge" href="https://github.com/thu-coai/AISafetyLab"><img src="https://img.shields.io/github/stars/thu-coai/AISafetyLab" alt="AISafetyLab GitHub stars"></a></h3>
+                      <p>Open-source AI safety evaluation and improvement framework.</p>
+                    </div>
+                  </article>
+                  <article class="timeline-item">
+                    <div class="timeline-date">Dec. 2024</div>
+                    <div class="logo-chip logo-aaai" aria-label="AAAI logo"></div>
+                    <div class="timeline-copy">
+                      <h3>AAAI-25 Student Scholarship</h3>
+                      <p>Accepted into the AAAI-25 Student Scholarship.</p>
+                    </div>
+                  </article>
+                  <article class="timeline-item">
+                    <div class="timeline-date">Dec. 2024</div>
+                    <div class="logo-chip logo-aaai" aria-label="AAAI logo"></div>
+                    <div class="timeline-copy">
+                      <h3>2 papers accepted to AAAI <span class="year-badge">2025</span></h3>
+                      <p><a href="https://arxiv.org/pdf/2405.20775">Medical MLLM is Vulnerable</a> and <a href="https://arxiv.org/pdf/2403.13352">AGFSync</a>.</p>
+                    </div>
+                  </article>
+                  <article class="timeline-item">
+                    <div class="timeline-date">Sep. 2024</div>
+                    <div class="logo-chip logo-baichuan" aria-label="Baichuan AI logo"></div>
+                    <div class="timeline-copy">
+                      <h3>Baichuan AI research internship</h3>
+                      <p>Medical LLM research, starting Sep. 2024.</p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+              <input class="timeline-slider" data-timeline-slider type="range" min="0" value="0" step="1" aria-label="Timeline position">
+            </div>
+          </section>
+
+          <section id="blog">
+            <div class="section-rule">
+              <p class="section-label">Blog</p>
+              <div class="section-line"></div>
+            </div>
+            <div class="blog-grid">
+              <article class="blog-card primary">
+                <span class="tag">Post</span>
+                <h3><a href="{{ "/blog/2026/01/29/why-the-blog/" | relative_url }}">Why the blog</a></h3>
+                <p>I write this blog to explore research questions and technical ideas that I find interesting and worth taking seriously.</p>
+              </article>
+              <article class="blog-card secondary">
+                <span class="tag">Index</span>
+                <h3><a href="{{ "/blog/" | relative_url }}">All posts</a></h3>
+                <p>The blog keeps research questions, technical ideas, and open-source notes in one place.</p>
+              </article>
+            </div>
+          </section>
+
+          <section id="projects">
+            <div class="section-rule">
+              <p class="section-label">Projects</p>
+              <div class="section-line"></div>
+            </div>
+            <div class="project-grid">
+              <article class="project-card featured-project">
+                <div class="card-top">
+                  <span class="micro-label">Multimodal Generative AI</span>
+                  <a class="star-badge" href="https://github.com/Alpha-VLLM/Lumina-mGPT-2.0"><img src="https://img.shields.io/github/stars/Alpha-VLLM/Lumina-mGPT-2.0" alt="Lumina-mGPT-2.0 GitHub stars"></a>
+                </div>
+                <h3><a href="https://github.com/Alpha-VLLM/Lumina-mGPT-2.0">Lumina-mGPT-2.0</a></h3>
+                <p>A stand-alone decoder-only autoregressive model trained from scratch, unifying text-to-image, image-pair generation, subject-driven generation, multi-turn image editing, controllable generation, and dense prediction.</p>
+                <div class="project-links"><a href="https://github.com/Alpha-VLLM/Lumina-mGPT-2.0">GitHub</a></div>
+              </article>
+              <article class="project-card">
+                <div class="card-top">
+                  <span class="micro-label">Trustworthy AI</span>
+                  <a class="star-badge" href="https://github.com/thu-coai/AISafetyLab"><img src="https://img.shields.io/github/stars/thu-coai/AISafetyLab" alt="AISafetyLab GitHub stars"></a>
+                </div>
+                <h3><a href="https://github.com/thu-coai/AISafetyLab">AISafetyLab</a></h3>
+                <p>A comprehensive framework for AI safety evaluation and improvement.</p>
+                <div class="project-links">
+                  <a href="https://github.com/thu-coai/AISafetyLab">GitHub</a>
+                  <a href="https://arxiv.org/abs/2502.16776">Paper</a>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="publications">
+            <div class="section-rule">
+              <p class="section-label">Publications</p>
+              <div class="section-line"></div>
+            </div>
+            <div class="publication-head">
+              <p class="pub-count">{{ site.data.publication_Selected.main | size }} selected publications from the current homepage.</p>
+              <div class="pub-tabs" role="tablist" aria-label="Publication categories">
+                <button class="pub-tab active" type="button" data-target="selected">Selected</button>
+                <button class="pub-tab" type="button" data-target="multimodal">Multimodal</button>
+                <button class="pub-tab" type="button" data-target="llm">LLM</button>
+                <button class="pub-tab" type="button" data-target="trustworthy">Trustworthy AI</button>
+              </div>
+            </div>
+
+            <div class="publication-panel active" data-panel="selected">
+              <div class="publication-grid">
+                {% for link in site.data.publication_Selected.main %}
+                {% assign hide_pub = false %}
+                {% if forloop.index > 4 %}
+                {% assign hide_pub = true %}
+                {% endif %}
+                {% include publication-card.html link=link hidden=hide_pub %}
+                {% endfor %}
+              </div>
+              <button class="expand-button" type="button" data-expanded="false">Show all selected publications</button>
+            </div>
+
+            <div class="publication-panel" data-panel="multimodal">
+              <div class="publication-grid">
+                {% for link in site.data.publication_Multimodal.main %}
+                {% include publication-card.html link=link hidden=false %}
+                {% endfor %}
+              </div>
+            </div>
+
+            <div class="publication-panel" data-panel="llm">
+              <div class="publication-grid">
+                {% for link in site.data.publication_LLM.main %}
+                {% include publication-card.html link=link hidden=false %}
+                {% endfor %}
+              </div>
+            </div>
+
+            <div class="publication-panel" data-panel="trustworthy">
+              <div class="publication-grid">
+                {% for link in site.data.publication_Trustworthy.main %}
+                {% include publication-card.html link=link hidden=false %}
+                {% endfor %}
+              </div>
+            </div>
+          </section>
+
+          <section id="contact">
+            <div class="section-rule">
+              <p class="section-label">Contact</p>
+              <div class="section-line"></div>
+            </div>
+            <div class="contact-band">
+              <p>For project ideas, research collaboration, or joining related efforts, reach out by email.</p>
+              <a class="button primary" href="mailto:{{ site.email }}">{{ site.email }}</a>
+            </div>
+          </section>
         </div>
-        <br>
-        <br>
-      </footer>
-    </div>
-    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+      </div>
+    </main>
   </body>
 </html>
