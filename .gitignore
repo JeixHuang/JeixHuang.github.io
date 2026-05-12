@@ -143,9 +143,8 @@ venv.bak/
 # mkdocs documentation
 /site
 
-# --- Static site build outputs (keep main branch clean) ---
+# --- Static site build outputs (keep local Jekyll output clean) ---
 /_site/
-/blog/
 
 # Hugo build/cache (blog source)
 /blog_src/public/

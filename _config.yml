@@ -63,9 +63,8 @@ exclude:
   - README.md
   - LICENSE
   - CNAME
-  # Keep build outputs and blog sources out of the Jekyll site artifact
+  # Keep Hugo blog sources out of the Jekyll site artifact; the generated blog/ directory is published as static output.
   - _site
-  - blog
   - blog_src
   - tmp
   - .local

@@ -17,7 +17,7 @@
               {{ with .Params.tags }}
                 <span class="tags">
                   {{ range . }}
-                    <a class="tag" href="{{ (printf "/tags/%s/" (. | urlize)) | relURL }}">#{{ . }}</a>
+                    <a class="tag" href="{{ (printf "tags/%s/" (. | urlize)) | relURL }}">#{{ . }}</a>
                   {{ end }}
                 </span>
               {{ end }}
@@ -31,5 +31,4 @@
     {{ end }}
   </ul>
 {{ end }}
-
 
