@@ -1,0 +1,149 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Reward Is Not a Universal Interface for Generative Reinforcement Learning | Blog</title>
+<meta name=color-scheme content="light dark"><link rel=alternate type=application/rss+xml title=RSS href=/blog/rss.xml><link rel=stylesheet href=/blog/assets/style.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js crossorigin=anonymous></script></head><body><header class=site-header><div class=container><div class=brand><a class=brand-link href=/blog/>Blog</a></div><nav class=nav><a href=/blog/>Latest</a>
+<a href=/blog/tags/>Tags</a>
+<a href=/blog/archive/>Archive</a>
+<a href=/blog/rss.xml>RSS</a>
+<a href=/ rel=noopener>Home</a></nav></div></header><main class=container><article class=post><header class=post-header><h1 class=post-h1>Reward Is Not a Universal Interface for Generative Reinforcement Learning</h1><div class=post-meta><time datetime=2026-05-12>2026-05-12</time>
+<span class=tags><a class=tag href=/blog/tags/generative-rl/>#generative-rl</a>
+<a class=tag href=/blog/tags/mindrl/>#mindrl</a>
+<a class=tag href=/blog/tags/ctc/>#ctc</a>
+<a class=tag href=/blog/tags/flow-matching/>#flow-matching</a>
+<a class=tag href=/blog/tags/robot-learning/>#robot-learning</a></span></div></header><div class=post-content><blockquote><p>Status: pre-arXiv draft. arXiv: coming soon.</p></blockquote><h2 id=project-thesis>Project Thesis</h2><p><strong>MindRL is a reward-to-update interface controller for generative RL.</strong> The paper starts from a constraint that is easy to hide in autoregressive language models: reward is only a scalar until a policy branch supplies the probability object, score, or controlled surrogate that can turn it into an update.</p><h2 id=tldr>TL;DR</h2><p>Autoregressive language-model RL makes reward look more universal than it is. Every sampled token has an exact softmax probability, so PPO, DPO, GRPO-style token ratios, KL penalties, and token credit assignment have a natural place to attach.</p><p>Modern generative policies do not always expose that interface. Parallel discrete models update many positions at once. Flow and diffusion policies generate continuous, coupled objects such as image/video latents or robot action chunks. Hybrid VLA policies may use AR tokens for plans and a flow head for actions. The reward can still be shared across these branches, but the update path cannot be assumed to be the same.</p><p>MindRL asks the interface question explicitly:</p><blockquote><p>Given a reward, which branch-native object makes this reward a valid update?</p></blockquote><p>For AR branches, the answer can be exact token ratios. For parallel discrete branches, the issue is within-block dependence, measured by Conditional Total Correlation (CTC, not Connectionist Temporal Classification) and controlled by block size or selective serialization. For flow/diffusion branches, the issue is density-ratio tractability and surrogate drift, controlled by path-density evaluation, native surrogates, anchors, clipping, reranking, and branch weights.</p><p>That gives the operating rule of the paper: keep exact branches exact, spend granularity on parallel discrete branches, and spend surrogate and anchor budgets on flow branches.</p><p><img src=./fig1_mindrl_interfaces_overview_20x9_pptx_latest.png alt="MindRL interface overview"></p><p><em>Figure 1. MindRL treats AR tokens, parallel discrete blocks, flow/diffusion outputs, and AR+flow hybrids as different update interfaces. The same reward can be shared, but the score object and control budget must be branch-native.</em></p><h2 id=the-problem-reward-is-not-the-update-interface>The Problem: Reward Is Not the Update Interface</h2><p>An autoregressive language model exposes the object that token-level RL wants. A sampled sequence is decomposed as</p><div class=math-display>$$
+\pi_{\mathrm{AR}}(x_{1:T}\mid C)=\prod_{t=1}^{T}\pi(x_t\mid x_{<t},c). $$ </div><p>This factorization gives per-token probabilities under the old and new policies. Token ratios and KL regularization are not mysterious in this setting; the model already gives the probability object through which reward can act.</p><p>The same instinct becomes fragile once the policy family changes.</p><p>Parallel discrete policies, including masked or diffusion-style language models, can update multiple positions in one step. This reduces sequential depth, but it also hides dependence among the positions committed together. If the model independently commits a block of tokens whose correct values are coupled, the branch is not exposing the joint object the reward would need.</p><p>Flow and diffusion policies have a different failure mode. They preserve smooth, coupled structure over continuous outputs, but they often do not expose cheap endpoint likelihood ratios. A token-style GRPO wrapper can raise reward while also increasing drift, jerk, collision risk, or feasibility failures, because the branch was never optimized through a native continuous-policy score.</p><p>Hybrid AR+flow policies make the boundary explicit. An embodied policy might generate a symbolic plan with AR tokens and a continuous action chunk with a flow head. The plan branch can use exact token credit. The action branch needs a controlled continuous surrogate and anchors. Treating the whole policy as one token sequence erases the part of the model where the update is actually approximate.</p><p>MindRL is built around this boundary.</p><h2 id=theory-backbone>Theory Backbone</h2><p>The formal part of the paper begins with the standard KL-regularized RL objective. For a fixed context \(c\), reference policy \(\pi_0(\cdot\mid c)\), reward \(r(a,c)\), and temperature \(\beta>0\), define</p><div class=math-display>$$
+J_c(\pi)
+=
+\mathbb{E}_{a\sim \pi(\cdot\mid c)}[r(a,c)]
+-
+\beta\,\mathrm{KL}\!\left(\pi(\cdot\mid c)\,\|\,\pi_0(\cdot\mid c)\right).
+$$</div><p>If the policy class were unrestricted, the optimizer would be the soft-optimal policy</p><div class=math-display>$$
+\pi_\beta^\star(a\mid c)
+=
+\frac{\pi_0(a\mid c)\exp(r(a,c)/\beta)}{Z_\beta(c)}.
+$$</div><p>This already changes the question. The reward induces a target distribution. The update is only legitimate if the model family exposes an object that can move toward that target.</p><p>For any restricted policy family \(\mathcal{F}\), the projection-regret identity says</p><div class=math-display>$$
+\max_{\pi} J_c(\pi)-\max_{\pi\in\mathcal{F}}J_c(\pi)
+=
+\beta \min_{q\in\mathcal{F}}
+\mathrm{KL}\!\left(q(\cdot\mid c)\,\|\,\pi_\beta^\star(\cdot\mid c)\right).
+$$</div><p>For this paper, the identity is used as an interface test:</p><ol><li>The reward defines a soft target \(\pi_\beta^\star\).</li><li>A policy branch can only chase that target through the distributional object it exposes.</li><li>If the branch exposes the wrong object, the loss is not only optimization noise; it is an interface mismatch.</li></ol><p>MindRL calls an update <strong>branch-valid</strong> only when the branch supplies either the exact KL-RL score required by its family or a surrogate whose error is explicitly controlled by anchors, clipping, or branch weights.</p><h3 id=barrier-i-parallel-discrete-factorization>Barrier I: Parallel Discrete Factorization</h3><p>Let \(M\) be a set of positions updated in one parallel decision step, and let \(X_M=\{X_i\}_{i\in M}\). A parallel discrete decoder often emits per-position distributions and commits the block independently:</p><div class=math-display>$$
+q(x_M\mid C)=\prod_{i\in M}q_i(x_i\mid C).
+$$</div><p>This product family is computationally attractive, but it cannot represent arbitrary within-block dependence. Under the projection view, the exact RL class regret of the factorized branch is</p><div class=math-display>$$
+\Delta_{\mathrm{RL}}^{\mathrm{fact}}(C)
+=
+\beta
+\min_{q\in\mathcal{Q}_{\mathrm{fact}}}
+\mathrm{KL}\!\left(q(x_M\mid C)\,\|\,\pi_\beta^\star(x_M\mid C)\right).
+$$</div><p>The reverse projection is the quantity tied most directly to RL regret. It is also hard to measure offline, because it depends on the unknown soft-optimal target and a reverse projection onto the product family.</p><p>The measurable companion is the forward projection:</p><div class=math-display>$$
+\Delta_{\mathrm{F}}^{\mathrm{fact}}(C)
+=
+\min_{q\in\mathcal{Q}_{\mathrm{fact}}}
+\mathrm{KL}\!\left(\pi_\beta^\star(x_M\mid C)\,\|\,q(x_M\mid C)\right).
+$$</div><p>Classical information projection gives</p><div class=math-display>$$
+\Delta_{\mathrm{F}}^{\mathrm{fact}}(C)
+=
+\mathrm{CTC}_{\pi_\beta^\star}(X_M\mid C)
+=
+\mathrm{KL}\!\left(
+\pi_\beta^\star(x_M\mid C)
+\,\middle\|\,
+\prod_{i\in M}\pi_\beta^\star(x_i\mid C)
+\right).
+$$</div><p>Equivalently,</p><div class=math-display>$$
+\mathrm{CTC}(X_M\mid C)
+=
+\sum_{i\in M}H(X_i\mid C)-H(X_M\mid C).
+$$</div><p>CTC is zero when the block factorizes and positive when the positions share dependence. It is therefore useful as a barrier diagnostic: it need not equal the reverse RL regret to mark the same zero-barrier boundary. With no within-block dependence, the product interface is acceptable. With strong dependence, independently committing the block is the wrong interface.</p><p>MindRL turns the measurement into a control rule:</p><ul><li>low nCTC permits larger parallel blocks;</li><li>high nCTC shrinks the block;</li><li>very high dependence can trigger selective serialization or AR fallback.</li></ul><p>The practical measurement uses a paired AR reference scorer. For a teacher-forced completion \(x\), block \(M\), and visible context \(C\), the estimator compares the chain-rule joint score against marginal scores:</p><div class=math-display>$$
+\widehat{D}(x;M,C)
+=
+\log p_{\mathrm{ref}}(x_M\mid C)
+-
+\sum_{i\in M}\log p_{\mathrm{ref}}(x_i\mid C).
+$$</div><p>The reported normalized metric is</p><div class=math-display>$$
+\widehat{\mathrm{nCTC}}_{\mathrm{pair}}(x;M,C)
+=
+\frac{\widehat{D}(x;M,C)}{\binom{B}{2}}.
+$$</div><p>During decoding, the true CTC is unavailable. MindRL therefore uses uncertainty proxies computed from the same forward pass. The relevant inequality is</p><div class=math-display>$$
+\mathrm{CTC}(X_M\mid C)\le \sum_{i\in M}H(X_i\mid C).
+$$</div><p>The inequality gives a conservative scheduling direction: high average uncertainty over candidate positions means smaller blocks; low uncertainty allows more parallelism. The schedule used in the paper has the form</p><div class=math-display>$$
+B_t=
+\mathrm{clip}\left(
+\left\lfloor \frac{\alpha}{\bar{u}_t+\epsilon}\right\rfloor,
+1,
+B_{\max}
+\right).
+$$</div><p>Entropy is not treated as a calibrated CTC estimator. It only has to provide a safe direction for granularity: avoid committing many uncertain, likely dependent tokens in one independent step.</p><h3 id=barrier-ii-flow-and-diffusion-tractability>Barrier II: Flow and Diffusion Tractability</h3><p>Flow and diffusion branches present a different obstacle. For an ODE-based flow policy, an action chunk \(a\in\mathbb{R}^d\) is generated by sampling \(x_0\sim p_0\) and integrating</p><div class=math-display>$$
+\frac{dx_t}{dt}=v_\theta(x_t,t,c),\qquad a=x_1.
+$$</div><p>The exact endpoint log density follows the instantaneous change-of-variables formula:</p><div class=math-display>$$
+\log \pi_\theta(a\mid c)
+=
+\log p_0(x_0)
+-
+\int_0^1
+\mathrm{div}_x v_\theta(x_t,t,c)\,dt.
+$$</div><p>This is not a cheap token softmax ratio. PPO/GRPO-style ratios would require path-density evaluation for old and new policies. Exact Jacobian-style evaluation can be expensive in high dimension; stochastic trace estimators reduce cost but introduce variance. The branch may still be trainable, but the score has to be flow-native.</p><p>This is the second barrier:</p><blockquote><p>A flow/diffusion policy is not invalid for RL. Token-style ratios are invalid unless the model exposes a tractable likelihood path or a controlled surrogate.</p></blockquote><p>MindRL keeps two quantities separate:</p><ul><li><strong>Surrogate error:</strong> is the flow-native score close enough to the score the exact ratio would have provided?</li><li><strong>Distributional drift:</strong> even if the surrogate is useful, is the updated branch staying near a reference region where the surrogate remains faithful?</li></ul><p>For a flow branch, let \(\ell_\theta(a,c)\) be the exact log-ratio term required by a PPO/GRPO-style update and \(\widehat{\ell}_\theta(a,c)\) be the exposed surrogate. The update bias is bounded by</p><div class=math-display>$$
+\left|
+\mathbb{E}\!\left[A(a,c)\widehat{\ell}_\theta(a,c)\right]
+-
+\mathbb{E}\!\left[A(a,c)\ell_\theta(a,c)\right]
+\right|
+\le
+\mathbb{E}\!\left[
+|A(a,c)|\,|\widehat{\ell}_\theta(a,c)-\ell_\theta(a,c)|
+\right].
+$$</div><p>Surrogate error therefore becomes a budget rather than a footnote. Large advantage magnitude or large surrogate error should tighten clipping, reduce branch weight, or increase anchor strength.</p><p>Separately, if a branch anchor \(B_\theta(c)\) upper-bounds the relevant KL to the reference policy, then</p><div class=math-display>$$
+\mathbb{E}_c\!\left[
+\mathrm{TV}\!\left(\pi_\theta(\cdot\mid c),\pi_0(\cdot\mid c)\right)
+\right]
+\le
+\sqrt{\frac{1}{2}\mathbb{E}_c[B_\theta(c)]}.
+$$</div><p>The anchor does not make the surrogate exact. It controls drift. Surrogate error and drift are different failure modes, and the controller tracks them separately.</p><h2 id=mindrl-a-barrier-controlled-reward-interface>MindRL: A Barrier-Controlled Reward Interface</h2><p>MindRL represents the policy as a graph of branches. A branch may be an AR token sequence, a parallel token block, a continuous action chunk, an image/video latent branch, or part of a hybrid system. The policy is decomposed as</p><div class=math-display>$$
+\pi_\theta(a\mid c)
+=
+\prod_{b\in\mathcal{B}}
+\pi_{\theta_b}(a_b\mid c,a_{\mathrm{pa}(b)}).
+$$</div><p>Each branch carries a policy specification:</p><div class=math-display>$$
+s_b
+=
+(\text{modality}_b,\text{structure}_b,\text{parents}_b,\text{score availability}_b,\text{anchor}_b).
+$$</div><p>During training or evaluation, MindRL records a barrier profile:</p><div class=math-display>$$
+z_b
+=
+\left(
+\widehat{\mathrm{nCTC}}_b,\,
+\xi_b^{\mathrm{dens}},\,
+\nu_b^{\mathrm{sur}},\,
+\delta_b^{\mathrm{drift}},\,
+\sigma_b^{\mathrm{smooth}}
+\right).
+$$</div><p>Inactive coordinates are unused. AR branches expose exact token likelihoods. Parallel discrete branches report nCTC and block size. Flow branches report density availability, surrogate variance, drift, and smoothness.</p><p>The controller maps this state into an adapter decision:</p><div class=math-display>$$
+d_b^t
+=
+\rho(s_b,z_b^t,m_b^t)
+=
+\left(
+\mathcal{A}_b,\,
+u_b,\,
+\eta_b,\,
+\gamma_b,\,
+\lambda_b
+\right).
+$$</div><p>Here \(\mathcal{A}_b\) is the adapter, \(u_b\) the granularity, \(\eta_b\) the anchor strength, \(\gamma_b\) the structure-cost weight, and \(\lambda_b\) the branch weight.</p><p>The decision has several coordinates:</p><ul><li>high nCTC reduces \(u_b\), serializes critical variables, or routes to AR fallback;</li><li>high surrogate variance reduces \(\lambda_b\) or tightens clipping;</li><li>high drift or jerk increases \(\eta_b\) and \(\gamma_b\);</li><li>exact-ratio branches keep using exact ratios instead of an unnecessary surrogate.</li></ul><p><img src=./overview.png alt="MindRL method overview"></p><p><em>Figure 2. MindRL maps measured barrier profiles into branch-valid update objects and control budgets. The controller selects the score object and also regulates granularity, anchors, clipping, structure costs, and branch weights.</em></p><p>The branch-wise objective is</p><div class=math-display>$$
+\mathcal{J}_{\mathrm{MindRL}}(\theta)
+=
+\sum_{b\in\mathcal{B}}
+\lambda_b
+\mathbb{E}\!\left[\widehat{A}(a,c)\,S_b(a_b,c,a_{\mathrm{pa}(b)})\right]
+-
+\sum_{b\in\mathcal{B}}
+\eta_b
+\mathbb{E}\!\left[B_b(\theta_b;\theta_b^0)\right]
+-
+\sum_{b\in\mathcal{B}}
+\gamma_b
+\mathbb{E}\!\left[C_b(u_b,z_b)\right].
+$$</div><p>The reward is shared; the score objects are branch-specific. This is the design invariant.</p><p>For a hybrid AR+flow policy, this means exact prefix-conditioned ratios for the AR plan tokens and a native, anchored flow surrogate for the continuous action chunk. Score routing alone is not enough: after selecting the score object, the controller still needs to regulate granularity, anchor strength, clipping, and branch weight.</p><h2 id=evidence>Evidence</h2><p>The experiments check the controller in three places: language-side AR/dLLM comparisons, flow/diffusion measurements, and matched AR+flow evaluations.</p><h3 id=language-nctc-predicts-when-parallelism-hurts>Language: nCTC Predicts When Parallelism Hurts</h3><p>The language-side evaluation pairs AR and parallel-discrete policies under the same SFT data, sampling budget, and evaluation protocol. It asks whether high nCTC predicts fixed-block sensitivity, and whether adaptive MindRL-discrete recovers accuracy by reducing dependence-sensitive parallelism.</p><p>With block size \(B=16\), GSM8K, MATH-500, and HumanEval sit around 0.44 to 0.50 nCTC in the reported measurement. Low-dependence controls such as HellaSwag and LAMBADA sit around 0.06 to 0.09.</p><p>Under fixed \(B=8\) decoding, high-dependence tasks suffer much larger gaps. Adaptive MindRL-discrete improves the high-dependence average from 49.7 to 61.2, a gain of +11.5 points, while the low-dependence average stays essentially stable, moving from 81.9 to 82.1.</p><p>This is the pattern the theory predicts. Parallelism is not the problem; committing a dependent block as if it were independent is.</p><h3 id=flow-generation-reward-needs-a-native-continuous-interface>Flow Generation: Reward Needs a Native Continuous Interface</h3><p>For text-to-image and related flow/diffusion settings, the paper separates public reference values from Flow-Factory measurements. The point is narrower than &ldquo;one reward wrapper solves flow generation&rdquo;: flow branches need native score/surrogate objects and explicit reliability budgets.</p><p><img src=./table3_t2i_rank_flow.png alt="Text-to-image evidence summary"></p><p><em>Figure 3. The flow/diffusion evidence keeps public anchors and project measurements separate, and it does not collapse compute, reward, and reliability into one scalar.</em></p><p>A reward-driven update can improve a reward proxy while increasing drift or surrogate variance. MindRL therefore treats reward, drift, and surrogate reliability as separate coordinates. If the reward goes up while the branch drifts away from the reference region, the controller should strengthen anchors, clip harder, lower the branch weight, or rerank more conservatively.</p><h3 id=arflow-score-routing-is-not-enough>AR+Flow: Score Routing Is Not Enough</h3><p>The matched AR+flow evaluations compare behavior cloning / supervised baselines, interface-mismatched token-logprob proxies, reward-driven reranking, anchored flow adapters, score-routing-only MindRL, and the full MindRL-ARFlow controller.</p><p>The important comparison is score routing versus full control. Score routing chooses a more appropriate branch score object, but it does not regulate anchor strength, clipping, drift, surrogate variance, or branch weight. Full MindRL adds those control budgets.</p><p>Under matched protocols, full MindRL improves the task metric over score routing by +0.19 on EO1 AR+flow LIBERO and +0.09 on FLUX.1-dev flow T2I, while accepting lower reward by -0.12 and -0.06 respectively. At the same time, it reduces drift by 0.43 and 0.21, and reduces surrogate variance by 0.15 and 0.06.</p><p>That tradeoff is deliberate. The controller is not chasing raw reward at all costs; it is converting reward into a branch-valid update while keeping the branch inside a more trustworthy interface region.</p><h2 id=what-this-changes>What This Changes</h2><p>The usual post-training story says: define a reward, sample outputs, compute advantages, and update the model. MindRL changes the middle of that sentence.</p><p>The revised version is:</p><blockquote><p>Define a reward, decompose the policy into branches, identify the score object each branch exposes, measure the branch barrier, and only then translate reward into an update.</p></blockquote><p>This matters because generative policies are becoming mixed-interface systems. A single model may contain AR token heads, masked or diffusion-style discrete heads, flow-matching action heads, image/video latent generators, and verifier-guided rerankers. The reward may be shared across them; the update interface is not.</p><p>The clean rule is:</p><ul><li>AR branches should remain exact when exact token ratios are available.</li><li>Parallel discrete branches should spend granularity when dependence is high.</li><li>Flow and diffusion branches should spend surrogate, anchor, clipping, and drift budgets.</li><li>Mixed policies should not pretend that all branches expose the same probability object.</li></ul><h2 id=limitations>Limitations</h2><p>This is a local claim, not a declaration that MindRL solves all generative RL. nCTC measurement still needs a paired AR scorer offline. Flow-matching and behavior-cloning anchors are practical proxies for KL-style control, not complete certificates. The current evidence is strongest for the evaluated language-side dependence setting, decode-time granularity control, flow-generation measurements, and matched AR+flow controller evaluations.</p><p>The broader direction is the part I care about most: reward is not disappearing, but it should stop being treated as the interface. The interface is the branch-native probability object, score, or controlled surrogate that turns reward into a valid update.</p><h2 id=citation>Citation</h2><p>Citation will be added after the arXiv version is available.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bibtex data-lang=bibtex><span style=display:flex><span><span style=color:#a6e22e>@misc</span>{mindrl2026,
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>title</span> = <span style=color:#e6db74>{Reward Is Not a Universal Interface for Generative Reinforcement Learning}</span>,
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>author</span> = <span style=color:#e6db74>{Victor_Shea-Jay_Huang and Benjin Zhu and Hongsheng Li}</span>,
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>year</span> = <span style=color:#e6db74>{2026}</span>,
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>journal</span> = <span style=color:#e6db74>{arXiv preprint arXiv:XXXX.XXXXX}</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></article></main><footer class=site-footer><div class=container><small>© 2026</small></div></footer><script>document.addEventListener("DOMContentLoaded",function(){if(typeof renderMathInElement!="function")return;renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"\\(",right:"\\)",display:!1},{left:"$",right:"$",display:!1}],throwOnError:!1})})</script></body></html>
