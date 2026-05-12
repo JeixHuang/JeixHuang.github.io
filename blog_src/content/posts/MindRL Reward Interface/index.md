@@ -5,15 +5,12 @@ slug: "mindrl-reward-interface"
 tags: ["generative-rl", "mindrl", "ctc", "flow-matching", "robot-learning"]
 summary: "MindRL argues that a reward becomes an RL update only after it passes through the probability object, score, or controlled surrogate exposed by the policy branch."
 arxiv: "TBD_ARXIV_URL"
-status: "pre-arXiv draft"
 math: true
 ---
 
-> Status: pre-arXiv draft. arXiv: coming soon.
-
 ## Project Thesis
 
-**MindRL is a reward-to-update interface controller for generative RL.** The paper starts from a constraint that is easy to hide in autoregressive language models: reward is only a scalar until a policy branch supplies the probability object, score, or controlled surrogate that can turn it into an update.
+**MindRL is a reward-to-update interface controller for generative RL.** MindRL starts from a constraint that is easy to hide in autoregressive language models: reward is only a scalar until a policy branch supplies the probability object, score, or controlled surrogate that can turn it into an update.
 
 ## TL;DR
 
@@ -27,7 +24,7 @@ MindRL asks the interface question explicitly:
 
 For AR branches, the answer can be exact token ratios. For parallel discrete branches, the issue is within-block dependence, measured by Conditional Total Correlation (CTC, not Connectionist Temporal Classification) and controlled by block size or selective serialization. For flow/diffusion branches, the issue is density-ratio tractability and surrogate drift, controlled by path-density evaluation, native surrogates, anchors, clipping, reranking, and branch weights.
 
-That gives the operating rule of the paper: keep exact branches exact, spend granularity on parallel discrete branches, and spend surrogate and anchor budgets on flow branches.
+That gives MindRL its operating rule: keep exact branches exact, spend granularity on parallel discrete branches, and spend surrogate and anchor budgets on flow branches.
 
 ![MindRL interface overview](./fig1_mindrl_interfaces_overview_20x9_pptx_latest.png)
 
@@ -57,7 +54,7 @@ MindRL is built around this boundary.
 
 ## Theory Backbone
 
-The formal part of the paper begins with the standard KL-regularized RL objective. For a fixed context \(c\), reference policy \(\pi_0(\cdot\mid c)\), reward \(r(a,c)\), and temperature \(\beta>0\), define
+MindRL begins from the standard KL-regularized RL objective. For a fixed context \(c\), reference policy \(\pi_0(\cdot\mid c)\), reward \(r(a,c)\), and temperature \(\beta>0\), define
 
 <div class="math-display">
 $$
@@ -92,7 +89,7 @@ $$
 $$
 </div>
 
-For this paper, the identity is used as an interface test:
+MindRL uses the identity as an interface test:
 
 1. The reward defines a soft target \(\pi_\beta^\star\).
 2. A policy branch can only chase that target through the distributional object it exposes.
@@ -199,7 +196,7 @@ $$
 $$
 </div>
 
-The inequality gives a conservative scheduling direction: high average uncertainty over candidate positions means smaller blocks; low uncertainty allows more parallelism. The schedule used in the paper has the form
+The inequality gives a conservative scheduling direction: high average uncertainty over candidate positions means smaller blocks; low uncertainty allows more parallelism. MindRL uses a schedule of the form
 
 <div class="math-display">
 $$
@@ -392,7 +389,7 @@ This is the pattern the theory predicts. Parallelism is not the problem; committ
 
 ### Flow Generation: Reward Needs a Native Continuous Interface
 
-For text-to-image and related flow/diffusion settings, the paper separates public reference values from Flow-Factory measurements. The point is narrower than "one reward wrapper solves flow generation": flow branches need native score/surrogate objects and explicit reliability budgets.
+For text-to-image and related flow/diffusion settings, MindRL separates public reference values from Flow-Factory measurements. The point is narrower than "one reward wrapper solves flow generation": flow branches need native score/surrogate objects and explicit reliability budgets.
 
 ![Text-to-image evidence summary](./table3_t2i_rank_flow.png)
 
@@ -434,8 +431,6 @@ This is a local claim, not a declaration that MindRL solves all generative RL. n
 The broader direction is the part I care about most: reward is not disappearing, but it should stop being treated as the interface. The interface is the branch-native probability object, score, or controlled surrogate that turns reward into a valid update.
 
 ## Citation
-
-Citation will be added after the arXiv version is available.
 
 ```bibtex
 @misc{mindrl2026,
