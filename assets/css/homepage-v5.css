@@ -361,8 +361,8 @@ section {
 .timeline-item {
   min-height: var(--timeline-row-height);
   display: grid;
-  grid-template-columns: 92px 50px minmax(0, 1fr);
-  gap: 14px;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 18px;
   align-items: center;
   padding: 11px 13px;
   border: 1px solid var(--line);
@@ -376,100 +376,6 @@ section {
   font-size: 12px;
   font-weight: 820;
   text-align: right;
-}
-
-.logo-chip {
-  width: 46px;
-  height: 46px;
-  border-radius: 12px;
-  border: 1px solid var(--line-dark);
-  background-color: #fff;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 72%;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.76), 0 4px 12px rgba(50, 39, 22, 0.045);
-}
-
-.logo-cuhk {
-  background-image: url("https://www.cuhk.edu.hk/english/images/cuhk_logo_2x.png");
-  background-size: 540%;
-  background-position: 0% 50%;
-}
-
-.logo-acl {
-  background-image: url("https://aclanthology.org/images/acl-logo-square.svg");
-  background-size: 78%;
-}
-
-.logo-aaai {
-  background-image: url("https://aaai.org/wp-content/uploads/2024/03/AAAI-Logo-Title-FullColor.svg");
-  background-size: 395%;
-  background-position: 0% 50%;
-}
-
-.logo-bytedance {
-  background-image: url("../../img/bytedance.png");
-  background-size: 510%;
-  background-position: 0% 50%;
-}
-
-.logo-shailab {
-  background-image: url("../../img/SHailab.png");
-  background-size: auto 225%;
-  background-position: 50% 0%;
-}
-
-.logo-baichuan {
-  background-image: url("../../img/baichuan.png");
-  background-size: 365%;
-  background-position: 0% 50%;
-}
-
-.logo-cvpr {
-  background-image: url("../../img/cvpr2025.svg");
-  background-size: 92%;
-}
-
-.logo-acmmm {
-  background-image: url("../../img/acmm2025.png");
-  background-size: 185%;
-  background-position: 50% 18%;
-}
-
-.logo-ismir {
-  background-image: url("https://ismir.net/wp-content/uploads/2025/08/ISMIR-logo-vector%402x.png");
-  background-size: 255%;
-  background-position: 50% 50%;
-}
-
-.logo-lumina {
-  background-image: url("https://raw.githubusercontent.com/Alpha-VLLM/Lumina-mGPT-2.0/main/assets/lumina-mgpt-2.0.png");
-  background-size: 210%;
-  background-position: 47% 18%;
-}
-
-.logo-v2m {
-  background-image: url("../../assets/files/V2M.png");
-  background-size: 190%;
-  background-position: 50% 28%;
-}
-
-.logo-aisafetylab {
-  background-image: url("../../assets/files/aisafetylab.png");
-  background-size: 185%;
-  background-position: 50% 18%;
-}
-
-.logo-chip.text-logo {
-  background: #151311;
-  color: #fff;
-  font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 850;
-  letter-spacing: 0.03em;
 }
 
 .timeline-copy {
@@ -865,11 +771,6 @@ section {
 
   .timeline-date {
     text-align: left;
-  }
-
-  .logo-chip {
-    width: 38px;
-    height: 38px;
   }
 
   .section-rule {
