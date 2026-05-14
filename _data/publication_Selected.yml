@@ -1,5 +1,32 @@
 main:
 
+  - title: 'MindVLA-U1: VLA Beats VA with Unified Streaming Architecture for Autonomous Driving'
+    authors: Yuzhou Huang*, Benjin Zhu*, Hengtong Lu, <strong>Victor Shea-Jay Huang</strong>, Haiming Zhang, Wei Chen, Jifeng Dai, Yan Xie, Hongsheng Li
+    conference_short: arXiv
+    conference: arXiv Preprint
+    pdf: https://arxiv.org/pdf/2605.12624
+    arxiv: https://arxiv.org/abs/2605.12624
+    image: ./assets/files/mindvla-u1.png
+    notes: Preprint
+
+  - title: 'Action Emergence from Streaming Intent'
+    authors: Pengfei Jing*, <strong>Victor Shea-Jay Huang</strong>, Hengtong Lu, Jifeng Dai, Yan Xie, Benjin Zhu*
+    conference_short: arXiv
+    conference: arXiv Preprint
+    pdf: https://arxiv.org/pdf/2605.12622
+    arxiv: https://arxiv.org/abs/2605.12622
+    image: ./assets/files/streaming-intent.png
+    notes: Preprint
+
+  - title: 'Driving Intents Amplify Planning-Oriented Reinforcement Learning'
+    authors: Hengtong Lu*, <strong>Victor Shea-Jay Huang*</strong>, Chengmin Yang, Pengfei Jing, Jifeng Dai, Yan Xie, Benjin Zhu*
+    conference_short: arXiv
+    conference: arXiv Preprint
+    pdf: https://arxiv.org/pdf/2605.12625
+    arxiv: https://arxiv.org/abs/2605.12625
+    image: ./assets/files/dial.png
+    notes: Preprint
+
   - title: 'TIDE : Temporal-Aware Sparse Autoencoders for Interpretable Diffusion Transformers in Image Generation'
     authors: <strong>Victor Shea-Jay Huang</strong>, Le Zhuo, Yi Xin, Zhaokai Wang, Fu-Yun Wang, Yuchi Wang, Renrui Zhang, Peng Gao, Hongsheng Li
     conference_short: AAAI
@@ -74,39 +101,3 @@ main:
     bibtex: ./assets/files/scaling.txt
     image: ./assets/files/scaling.png
     notes: Published.
-
-
-  - title: 'AGFSync: Leveraging AI Feedback for Preference Optimization in Text-to-Image Generation'
-    authors: Jingkun An, Yinghao Zhu, Zongjian Li, Haoran Feng, <strong>Victor Shea-Jay Huang</strong>, Bohua Chen,Yemin Shi, Chengwei Pan
-    conference_short: AAAI
-    conference: AAAI 2025
-    pdf: https://ojs.aaai.org/index.php/AAAI/article/view/32168
-    arxiv: https://arxiv.org/abs/2403.13352
-    # code: https://github.com/dirtycomputer/O2M_attack
-    bibtex: ./assets/files/AGFSync.txt
-    image: ./assets/files/AGFSync.png
-    notes: Published
-
-  - title: 'JPS: Jailbreak Multimodal Large Language Models with Collaborative Visual Perturbation and Textual Steering'
-    authors: Renmiao Chen, Shiyao Cui, Xuancheng Huang, Chengwei Pan, Victor Victor Shea-Jay Huang, QingLin Zhang, Xuan Ouyang, Zhexin Zhang, Hongning Wang, Minlie Huang
-    conference_short: ACMMM
-    conference: ACMMM 2025
-    pdf: https://arxiv.org/pdf/2508.05087
-    arxiv: https://arxiv.org/abs/2508.05087
-    code: https://github.com/thu-coai/JPS
-    # bibtex: ./assets/files/Blackdan.txt
-    image: ./assets/files/JPS.png
-    notes: Published
-  
-
-  - title: 'Vision-to-Music Generation: A Survey'
-    authors: Zhaokai Wang, Chenxi Bao, Le Zhuo, Jingrui Han, Yang Yue, Yihong Tang, <strong>Victor Shea-Jay Huang</strong>, Yue Liao
-    conference_short: ISMIR
-    conference: ISMIR 2025
-    pdf: https://arxiv.org/pdf/2503.21254
-    arxiv: https://arxiv.org/abs/2503.21254
-    code: https://github.com/wzk1015/Awesome-Vision-to-Music-Generation
-    # bibtex: ./assets/files/Blackdan.txt
-    image: ./assets/files/V2M.png
-    notes: Published
-  

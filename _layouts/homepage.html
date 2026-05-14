@@ -108,6 +108,13 @@
                     </div>
                   </article>
                   <article class="timeline-item">
+                    <div class="timeline-date">May 2026</div>
+                    <div class="timeline-copy">
+                      <h3>Mind-Omni series released</h3>
+                      <p>Physical intelligence series spanning MindVLA-U1, Streaming Intent, DIAL, MindSim, and MindLabel. <a href="https://mind-omni.github.io/">Project hub</a>.</p>
+                    </div>
+                  </article>
+                  <article class="timeline-item">
                     <div class="timeline-date">Apr. 2026</div>
                     <div class="timeline-copy">
                       <h3>3 papers accepted to ACL <span class="year-badge">2026</span></h3>
@@ -273,6 +280,7 @@
                 <button class="pub-tab active" type="button" data-target="selected">Selected</button>
                 <button class="pub-tab" type="button" data-target="multimodal">Multimodal Generative AI</button>
                 <button class="pub-tab" type="button" data-target="llm">LLM</button>
+                <button class="pub-tab" type="button" data-target="embodied">Embodied AI</button>
                 <button class="pub-tab" type="button" data-target="trustworthy">Trustworthy AI</button>
               </div>
             </div>
@@ -301,6 +309,14 @@
             <div class="publication-panel" data-panel="llm">
               <div class="publication-grid">
                 {% for link in site.data.publication_LLM.main %}
+                {% include publication-card.html link=link hidden=false %}
+                {% endfor %}
+              </div>
+            </div>
+
+            <div class="publication-panel" data-panel="embodied">
+              <div class="publication-grid">
+                {% for link in site.data.publication_Embodied.main %}
                 {% include publication-card.html link=link hidden=false %}
                 {% endfor %}
               </div>
