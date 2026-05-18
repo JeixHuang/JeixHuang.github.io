@@ -36,7 +36,7 @@ An autoregressive language model exposes the object that token-level RL wants. A
 
 <div class="math-display">
 $$
-\pi_{\mathrm{AR}}(x_{1:T}\mid C)=\prod_{t=1}^{T}\pi(x_t\mid x_{<t},C).
+\pi_{\mathrm{AR}}(x_{1:T}\mid C)=\prod_{t=1}^{T}\pi(x_t\mid x_{\lt t},C).
 $$
 </div>
 

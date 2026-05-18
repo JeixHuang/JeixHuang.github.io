@@ -71,7 +71,7 @@
 <p>An autoregressive language model exposes the object that token-level RL wants. A sampled sequence is decomposed as</p>
 <div class="math-display">
 $$
-\pi_{\mathrm{AR}}(x_{1:T}\mid C)=\prod_{t=1}^{T}\pi(x_t\mid x_{<t},C).
+\pi_{\mathrm{AR}}(x_{1:T}\mid C)=\prod_{t=1}^{T}\pi(x_t\mid x_{\lt t},C).
 $$
 </div>
 <p>This factorization gives per-token probabilities under the old and new policies. Token ratios and KL regularization are not mysterious in this setting; the model already gives the probability object through which reward can act.</p>
