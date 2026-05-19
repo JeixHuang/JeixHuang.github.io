@@ -5,7 +5,7 @@ slug: "paper9"
 url: "/en/2026/05/11/generative-models-weekly-2026-05-11/paper9/"
 translationKey: "blogger-weekly-generative-models-2026-05-11-paper9"
 tags: ["generative-models", "multimodal-generation", "diffusion", "weekly"]
-summary: "Problem: Generates street-level 3D scenes from a single satellite image. Method: Satellite-to-street 3D scene generation over geometry, texture, and semantic diversity. Effect: Evaluation spans realism, semantic structure, and perceptual similarity. The effect should be judged by geometry and sem... Insight:..."
+summary: "Problem: Generates street-level 3D scenes from a single satellite image. Method: Satellite-to-street 3D scene generation over geometry, texture, and semantic diversity. Effect: Evaluation spans realism, semantic structure, and perceptual similarity. The effect should be judged by geometry and semantic coverage from satellite input to street-level 3D scene. Insight: 3D generation is expanding from object assets to large scenes conditioned on geography. This can matter for maps, simulation, games,"
 weekly_report: true
 weekly_paper_detail: true
 hide_from_lists: true

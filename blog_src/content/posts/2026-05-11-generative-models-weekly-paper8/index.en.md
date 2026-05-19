@@ -5,7 +5,7 @@ slug: "paper8"
 url: "/en/2026/05/11/generative-models-weekly-2026-05-11/paper8/"
 translationKey: "blogger-weekly-generative-models-2026-05-11-paper8"
 tags: ["generative-models", "multimodal-generation", "diffusion", "weekly"]
-summary: "Problem: Uses a dual-view diffusion framework to speed token generation while preserving autoregressive fidelity. Method: A dual architecture combining autoregressive exactness with diffusion-style parallel generation. Effect: The experiments stress parallel token generation under long context and masked bloc..."
+summary: "Problem: Uses a dual-view diffusion framework to speed token generation while preserving autoregressive fidelity. Method: A dual architecture combining autoregressive exactness with diffusion-style parallel generation. Effect: The experiments stress parallel token generation under long context and masked blocks. The result is about memory / throughput, Insight: Diffusion is spilling beyond visual generation into inference throughput and token-generation efficiency."
 weekly_report: true
 weekly_paper_detail: true
 hide_from_lists: true

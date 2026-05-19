@@ -5,7 +5,7 @@ slug: "paper1"
 url: "/en/2026/05/11/generative-models-weekly-2026-05-11/paper1/"
 translationKey: "blogger-weekly-generative-models-2026-05-11-paper1"
 tags: ["generative-models", "multimodal-generation", "diffusion", "weekly"]
-summary: "Problem: Makes video diffusion useful across different sampling budgets, not only one few-step setting. Method: On-policy flow map distillation to correct trajectory mismatch in consistency distillation. Effect: The experiments target one video model remaining usable across sampling steps. The core result is..."
+summary: "Problem: Makes video diffusion useful across different sampling budgets, not only one few-step setting. Method: On-policy flow map distillation to correct trajectory mismatch in consistency distillation. Effect: The experiments target one video model remaining usable across sampling steps. The core result is step elasticity: quality, latency, and cost become adjustable along the same flow map. Insight: Production video generation needs adjustable quality-latency tradeoffs, not a single benchmark point."
 weekly_report: true
 weekly_paper_detail: true
 hide_from_lists: true

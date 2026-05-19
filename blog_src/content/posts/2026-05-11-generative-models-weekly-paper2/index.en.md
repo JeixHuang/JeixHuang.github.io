@@ -5,7 +5,7 @@ slug: "paper2"
 url: "/en/2026/05/11/generative-models-weekly-2026-05-11/paper2/"
 translationKey: "blogger-weekly-generative-models-2026-05-11-paper2"
 tags: ["generative-models", "multimodal-generation", "diffusion", "weekly"]
-summary: "Problem: Applies GRPO to AR-Diffusion multimodal generation with verifiable rewards. Method: Decompositional verifiable rewards plus GRPO for post-training complex generation. Effect: The effect is not one headline score; the useful signal is progressive self-reflective refinement under complex constrai... In..."
+summary: "Problem: Applies GRPO to AR-Diffusion multimodal generation with verifiable rewards. Method: Decompositional verifiable rewards plus GRPO for post-training complex generation. Effect: The effect is not one headline score; the useful signal is progressive self-reflective refinement under complex constraints. Insight: Multimodal generation is entering RL/post-training, moving from image output to reasoning-aware output. It breaks generation quality into rewardable subgoals,"
 weekly_report: true
 weekly_paper_detail: true
 hide_from_lists: true

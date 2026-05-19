@@ -5,7 +5,7 @@ slug: "paper1"
 url: "/2026/05/11/generative-models-weekly-2026-05-11/paper1/"
 translationKey: "blogger-weekly-generative-models-2026-05-11-paper1"
 tags: ["generative-models", "multimodal-generation", "diffusion", "weekly"]
-summary: "问题: AnyFlow 处理步数弹性：同一个视频 diffusion 在少步、多步采样下都要稳定。 方法: On-policy flow map distillation 重新对齐 teacher 的 probability-flow ODE 轨迹和 student 的... 效果: 实验目标是同一视频模型在不同采样步数下保持可用质量。核心结果是 step elasticity：质量、延迟和成本可以沿同一条 flow map 调节。 Insight: 视频..."
+summary: "问题: AnyFlow 处理步数弹性：同一个视频 diffusion 在少步、多步采样下都要稳定。 方法: On-policy flow map distillation 重新对齐 teacher 的 probability-flow ODE 轨迹和 student 的 consistency sampling 轨迹。 效果: 实验目标是同一视频模型在不同采样步数下保持可用质量。核心结果是 step elasticity：质量、延迟和成本可以沿同一条 flow map 调节。 Insight: 视频模型进入可用阶段后，固定步数的 benchmark 意义变小；真正有价值的是质量、延迟、成本之间的可调曲线。 它把 sampling steps 变成产品侧可以调的旋钮，"
 weekly_report: true
 weekly_paper_detail: true
 hide_from_lists: true

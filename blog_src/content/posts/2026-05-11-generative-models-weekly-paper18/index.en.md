@@ -5,7 +5,7 @@ slug: "paper18"
 url: "/en/2026/05/11/generative-models-weekly-2026-05-11/paper18/"
 translationKey: "blogger-weekly-generative-models-2026-05-11-paper18"
 tags: ["generative-models", "multimodal-generation", "diffusion", "weekly"]
-summary: "Problem: Designs a 3D motion reward for human video generation beyond 2D perceptual rewards. Method: Structured 3D motion reward constraining post-training with body-state signals. Effect: The paper reports clear gains over perceptual, preference-based, and physics-aware reward baselines, which typically rea..."
+summary: "Problem: Designs a 3D motion reward for human video generation beyond 2D perceptual rewards. Method: Structured 3D motion reward constraining post-training with body-state signals. Effect: The paper reports clear gains over perceptual, preference-based, and physics-aware reward baselines, which typically reach only 50-66% agreement with weak Spearman correlation. Insight: Video realism needs physical motion evaluation, not only visual perception."
 weekly_report: true
 weekly_paper_detail: true
 hide_from_lists: true

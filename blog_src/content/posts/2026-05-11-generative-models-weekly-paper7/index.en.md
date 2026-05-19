@@ -5,7 +5,7 @@ slug: "paper7"
 url: "/en/2026/05/11/generative-models-weekly-2026-05-11/paper7/"
 translationKey: "blogger-weekly-generative-models-2026-05-11-paper7"
 tags: ["generative-models", "multimodal-generation", "diffusion", "weekly"]
-summary: "Problem: Moves diffusion/flow modeling from visual continuous spaces into language embeddings. Method: Language flow modeling in continuous embedding space rather than only over discrete tokens. Effect: The experiments probe the generative perplexity / entropy trade-off under CFG scales: stronger guidance low..."
+summary: "Problem: Moves diffusion/flow modeling from visual continuous spaces into language embeddings. Method: Language flow modeling in continuous embedding space rather than only over discrete tokens. Effect: The experiments probe the generative perplexity / entropy trade-off under CFG scales: stronger guidance lowers PPL while tightening diversity. Insight: Flow-style generation is crossing modality boundaries; it is no longer only an image-generation tool. If it holds, language, image,"
 weekly_report: true
 weekly_paper_detail: true
 hide_from_lists: true

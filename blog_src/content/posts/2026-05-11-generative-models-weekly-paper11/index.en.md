@@ -5,7 +5,7 @@ slug: "paper11"
 url: "/en/2026/05/11/generative-models-weekly-2026-05-11/paper11/"
 translationKey: "blogger-weekly-generative-models-2026-05-11-paper11"
 tags: ["generative-models", "multimodal-generation", "diffusion", "weekly"]
-summary: "Problem: Moves presentation generation from static slides to research-grounded multimedia presentation videos. Method: Agentic pipeline for topic framing, research, media assembly, and video delivery. Effect: The benchmark shows coverage across presentation, discussion, interaction, and text/image/GIF/video m..."
+summary: "Problem: Moves presentation generation from static slides to research-grounded multimedia presentation videos. Method: Agentic pipeline for topic framing, research, media assembly, and video delivery. Effect: The benchmark shows coverage across presentation, discussion, interaction, and text/image/GIF/video modules. The result is content-pipeline coverage, not a single model metric. Insight: Generative models are entering compound content systems beyond single images or clips."
 weekly_report: true
 weekly_paper_detail: true
 hide_from_lists: true

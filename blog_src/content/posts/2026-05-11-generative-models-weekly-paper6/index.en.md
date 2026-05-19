@@ -5,7 +5,7 @@ slug: "paper6"
 url: "/en/2026/05/11/generative-models-weekly-2026-05-11/paper6/"
 translationKey: "blogger-weekly-generative-models-2026-05-11-paper6"
 tags: ["generative-models", "multimodal-generation", "diffusion", "weekly"]
-summary: "Problem: Combines real-time autoregressive video extrapolation with consistency-model GRPO. Method: Uses GRPO to reduce the gap between training histories and inference histories. Effect: Results separate the TF / SF trade-off: motion, semantic alignment, and visual fidelity do not peak together. RAVEN is v..."
+summary: "Problem: Combines real-time autoregressive video extrapolation with consistency-model GRPO. Method: Uses GRPO to reduce the gap between training histories and inference histories. Effect: Results separate the TF / SF trade-off: motion, semantic alignment, and visual fidelity do not peak together. RAVEN is valuable because it makes streaming-video distribution shift explicit. Insight: Streaming video generation is becoming a distribution-shift and online reward-optimization problem."
 weekly_report: true
 weekly_paper_detail: true
 hide_from_lists: true

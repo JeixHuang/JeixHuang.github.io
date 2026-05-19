@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <article class="post{{ if .Params.weekly_report }} weekly-post{{ end }}">
+  <article class="post{{ if .Params.weekly_report }} weekly-post{{ end }}{{ if and .Params.weekly_report (not .Params.weekly_paper_detail) }} weekly-overview{{ end }}">
     <header class="post-header">
       {{ if .IsTranslated }}
         <nav class="language-switch" aria-label="Language switch">

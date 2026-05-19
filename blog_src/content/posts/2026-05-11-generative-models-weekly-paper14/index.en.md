@@ -5,7 +5,7 @@ slug: "paper14"
 url: "/en/2026/05/11/generative-models-weekly-2026-05-11/paper14/"
 translationKey: "blogger-weekly-generative-models-2026-05-11-paper14"
 tags: ["generative-models", "multimodal-generation", "diffusion", "weekly"]
-summary: "Problem: Uses history warping for camera-controlled video generation with less dependence on annotated camera videos. Method: Training-free or low-training camera control by using warped history as condition. Effect: One-shot finetuning raises subjective quality from 47.37 to 54.83 and average score from 63.2..."
+summary: "Problem: Uses history warping for camera-controlled video generation with less dependence on annotated camera videos. Method: Training-free or low-training camera control by using warped history as condition. Effect: One-shot finetuning raises subjective quality from 47.37 to 54.83 and average score from 63.26 to 65.64. The concrete result: warped history is a lightweight but useful camera-control interface. Insight: Video control does not only require heavier control branches; temporal conditioning design matters."
 weekly_report: true
 weekly_paper_detail: true
 hide_from_lists: true

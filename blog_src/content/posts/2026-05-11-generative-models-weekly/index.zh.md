@@ -13,7 +13,11 @@ full_read_url: "/blog/2026/05/11/generative-models-weekly-2026-05-11/"
 ---
 
 <section class="weekly-hero-memo">
-  <div class="weekly-kicker">Research Memo · 生成模型</div>
+  <div class="weekly-letter-topline">
+    <span>Research Letter</span>
+    <span>生成模型 · 2026.5.11 - 5.17</span>
+  </div>
+  <h1 class="weekly-letter-title">生成模型周报</h1>
   <div class="weekly-hero-label">本周关键词</div>
   <p class="weekly-hero-thesis">sampling path · tokenizer-VAE · video distillation · 3D correspondence</p>
   <div class="weekly-keyword-grid"><div class="weekly-keyword-card">
@@ -56,8 +60,8 @@ full_read_url: "/blog/2026/05/11/generative-models-weekly-2026-05-11/"
               <div class="weekly-trend-copy">
                 <p class="weekly-trend-axis">path</p>
                 <h3>sampling path</h3>
-                <p>关键词：flow / ODE path / any-step。几篇工作都在把采样轨迹当成可设计对象；语言条件、速度场结构、时间步弹性分别指向成本、延迟和稳定性。</p>
-                <div class="weekly-trend-papers"><span>相关论文</span><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper1/">A01</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper2/">A02</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper3/">A03</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper4/">A04</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper5/">A05</a></div>
+                <p>共同问题：采样轨迹能否从固定步数，变成质量、延迟、稳定性可以同时讨论的路径变量。</p>
+                <div class="weekly-trend-papers"><span>相关论文</span><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper1/">A01</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper3/">A03</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper7/">A07</a></div>
               </div>
             </article>
 <article class="weekly-trend-card">
@@ -65,26 +69,26 @@ full_read_url: "/blog/2026/05/11/generative-models-weekly-2026-05-11/"
               <div class="weekly-trend-copy">
                 <p class="weekly-trend-axis">representation</p>
                 <h3>tokenizer / VAE</h3>
-                <p>关键词：VAE / tokenizer / pixel latent。图像线在补表征债：压缩层的重建、文字、细节保持，会直接限制上层生成模型的可用范围。</p>
-                <div class="weekly-trend-papers"><span>相关论文</span><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper3/">A03</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper5/">A05</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper6/">A06</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper8/">A08</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper10/">A10</a></div>
+                <p>共同问题：压缩层是否保留文字、细节和语义层次；这里的损失会被后续 denoiser 和编辑链路放大。</p>
+                <div class="weekly-trend-papers"><span>相关论文</span><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper10/">A10</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper15/">A15</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper17/">A17</a></div>
               </div>
             </article>
 <article class="weekly-trend-card">
               <div class="weekly-trend-num">03</div>
               <div class="weekly-trend-copy">
                 <p class="weekly-trend-axis">time</p>
-                <h3>video distillation</h3>
-                <p>关键词：few-step / history / causal rollout。视频生成的压力来自连续性；蒸馏、缓存历史、多镜头状态都在处理同一个问题：更低延迟下保住时序结构。</p>
-                <div class="weekly-trend-papers"><span>相关论文</span><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper1/">A01</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper4/">A04</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper6/">A06</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper7/">A07</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper9/">A09</a></div>
+                <h3>video rollout</h3>
+                <p>共同问题：视频模型怎样在少步、流式和多镜头状态下保住时间结构，而非只优化离线短片。</p>
+                <div class="weekly-trend-papers"><span>相关论文</span><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper4/">A04</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper6/">A06</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper12/">A12</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper13/">A13</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper14/">A14</a></div>
               </div>
             </article>
 <article class="weekly-trend-card">
               <div class="weekly-trend-num">04</div>
               <div class="weekly-trend-copy">
                 <p class="weekly-trend-axis">geometry</p>
-                <h3>3D correspondence</h3>
-                <p>关键词：correspondence / tracking / geometry。3D 线关注跨帧、跨视角的一致性；生成物要进入资产链路，首先要能被追踪、复用和对齐。</p>
-                <div class="weekly-trend-papers"><span>相关论文</span><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper5/">A05</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper9/">A09</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper13/">A13</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper18/">A18</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper20/">A20</a></div>
+                <h3>3D geometry / motion</h3>
+                <p>共同问题：生成结果能否被对齐、追踪和复用；3D 线的硬约束来自几何、运动和输入条件的一致性。</p>
+                <div class="weekly-trend-papers"><span>相关论文</span><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper5/">A05</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper9/">A09</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper18/">A18</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper20/">A20</a></div>
               </div>
             </article>
 <article class="weekly-trend-card">
@@ -92,8 +96,8 @@ full_read_url: "/blog/2026/05/11/generative-models-weekly-2026-05-11/"
               <div class="weekly-trend-copy">
                 <p class="weekly-trend-axis">control</p>
                 <h3>reward / evaluation</h3>
-                <p>关键词：GRPO / reward / stress test。评测开始进入训练入口；奖励、benchmark、stress test 用来约束生成质量，也决定哪些样本值得继续放大。</p>
-                <div class="weekly-trend-papers"><span>相关论文</span><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper1/">A01</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper2/">A02</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper4/">A04</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper6/">A06</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper9/">A09</a></div>
+                <p>共同问题：生成质量如何被拆成可优化、可复核的信号；reward 和 benchmark 正在靠近训练入口。</p>
+                <div class="weekly-trend-papers"><span>相关论文</span><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper2/">A02</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper6/">A06</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper18/">A18</a> <a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper19/">A19</a></div>
               </div>
             </article></div>
 </section>
@@ -105,63 +109,60 @@ full_read_url: "/blog/2026/05/11/generative-models-weekly-2026-05-11/"
   </div>
   <div class="weekly-directory"><div class="weekly-directory-head" aria-hidden="true">
           <span>ID</span>
-          <span>Paper</span>
+          <span>Paper / TLDR</span>
           <span>Method</span>
-          <span>TLDR</span>
           <span>详解</span>
         </div>
 <div class="weekly-directory-row" id="a01">
               <span class="weekly-directory-id">A01</span>
               <span class="weekly-directory-main">
                 <strong>AnyFlow: Any-Step Video Diffusion Model with On-Policy Flow Map Distillation</strong>
-                <em>视频 / 时序生成 · 视频模型进入可用阶段后，固定步数的 benchmark 意义变小；真正有价值的是质量、延迟、成本之间的可调曲线。 它把 sampling steps 变成产品侧可以调的旋钮，直接影响实时预览、批量生成和高质量渲染的同模型复用。</em>
-              </span>
-              <span class="weekly-directory-method">On-policy flow map</span>
-              <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
+                <em>视频 / 时序生成</em>
+                <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
               <b>问题</b>
               <em>AnyFlow 处理步数弹性：同一个视频 diffusion 在少步、多步采样下都要稳定。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>方法</b>
-              <em>On-policy flow map distillation 重新对齐 teacher 的 probability-flow ODE 轨迹和 student 的...</em>
+              <em>On-policy flow map distillation 重新对齐 teacher 的 probability-flow ODE 轨迹和 student 的 consistency sampling 轨迹。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>效果</b>
               <em>实验目标是同一视频模型在不同采样步数下保持可用质量。核心结果是 step elasticity：质量、延迟和成本可以沿同一条 flow map 调节。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>Insight</b>
-              <em>视频模型进入可用阶段后，固定步数的 benchmark 意义变小；真正有价值的是质量、延迟、成本之间的可调曲线。 它把 sampling steps 变成产品侧可以...</em>
+              <em>视频模型进入可用阶段后，固定步数的 benchmark 意义变小；真正有价值的是质量、延迟、成本之间的可调曲线。 它把 sampling steps 变成产品侧可以调的旋钮，直接影响实时预览、批量生成和高质量渲染的同模型复用。</em>
             </span></span>
+              </span>
+              <span class="weekly-directory-method">flow map distillation</span>
               <span class="weekly-directory-detail"><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper1/">读详解</a></span>
             </div>
 <div class="weekly-directory-row" id="a02">
               <span class="weekly-directory-id">A02</span>
               <span class="weekly-directory-main">
                 <strong>AlphaGRPO: Unlocking Self-Reflective Multimodal Generation in UMMs via Decompositional Verifiable Reward</strong>
-                <em>图像 / 视觉合成 · 这篇的信号是：多模态生成开始吸收 LLM post-training 的方法论，质量控制从 prompt engineering 进入 reward design。 复杂图像生成常死在隐含意图、组合约束和自我修正；这类 reward 设计会影响下一代统一多模态模型的训练接口。</em>
-              </span>
-              <span class="weekly-directory-method">核心是 decompositiona</span>
-              <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
+                <em>图像 / 视觉合成</em>
+                <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
               <b>问题</b>
               <em>把 GRPO 接入 AR-Diffusion UMM，让模型用可验证子奖励检查复杂多模态生成。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>方法</b>
-              <em>核心是 decompositional verifiable reward：把 reasoning T2I 和 self-reflective refinement...</em>
+              <em>核心是 decompositional verifiable reward：把 reasoning T2I 和 self-reflective refinement 拆成可评分的子目标，再用 GRPO 后训练。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>效果</b>
-              <em>效果重点不在单一榜单数字，而在 self-reflective refinement 能在生成过程中逐步修正复杂约束。更稳妥的读法：这篇验证 reward deco...</em>
+              <em>效果重点不在单一榜单数字，而在 self-reflective refinement 能在生成过程中逐步修正复杂约束。更稳妥的读法：这篇验证 reward decomposition 能进入多模态生成后训练。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>Insight</b>
-              <em>这篇的信号是：多模态生成开始吸收 LLM post-training 的方法论，质量控制从 prompt engineering 进入 reward design...</em>
+              <em>这篇的信号是：多模态生成开始吸收 LLM post-training 的方法论，质量控制从 prompt engineering 进入 reward design。 复杂图像生成常死在隐含意图、组合约束和自我修正；这类 reward 设计会影响下一代统一多模态模型的训练接口。</em>
             </span></span>
+              </span>
+              <span class="weekly-directory-method">verifiable reward</span>
               <span class="weekly-directory-detail"><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper2/">读详解</a></span>
             </div>
 <div class="weekly-directory-row" id="a03">
               <span class="weekly-directory-id">A03</span>
               <span class="weekly-directory-main">
                 <strong>Asymmetric Flow Models</strong>
-                <em>图像 / 视觉合成 · 这里的重点是生成路径的几何：高维数据可能有低维有效结构，velocity 参数化需要尊重这个结构。 它直接连到采样稳定性、步数效率和高分辨率生成的成本，是 sampling path 关键词下的代表性方法之一。</em>
-              </span>
-              <span class="weekly-directory-method">AsymFlow 把 noise p</span>
-              <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
+                <em>图像 / 视觉合成</em>
+                <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
               <b>问题</b>
               <em>用低秩噪声预测处理高维 flow 的速度场负担，保留全维数据预测。</em>
             </span><span class="weekly-directory-tldr-line">
@@ -169,43 +170,43 @@ full_read_url: "/blog/2026/05/11/generative-models-weekly-2026-05-11/"
               <em>AsymFlow 把 noise prediction 限制到低秩子空间，再解析恢复 full-dimensional velocity；网络结构无需大改。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>效果</b>
-              <em>结果围绕 FID / IS 和 clamping sensitivity：AsymFlow 相比 JiT 更稳，低秩 noise prediction 没有牺牲全维...</em>
+              <em>结果围绕 FID / IS 和 clamping sensitivity：AsymFlow 相比 JiT 更稳，低秩 noise prediction 没有牺牲全维数据预测，反而减轻了高维 velocity 的负担。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>Insight</b>
-              <em>这里的重点是生成路径的几何：高维数据可能有低维有效结构，velocity 参数化需要尊重这个结构。 它直接连到采样稳定性、步数效率和高分辨率生成的成本，是 samp...</em>
+              <em>这里的重点是生成路径的几何：高维数据可能有低维有效结构，velocity 参数化需要尊重这个结构。 它直接连到采样稳定性、步数效率和高分辨率生成的成本，是 sampling path 关键词下的代表性方法之一。</em>
             </span></span>
+              </span>
+              <span class="weekly-directory-method">low-rank flow</span>
               <span class="weekly-directory-detail"><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper3/">读详解</a></span>
             </div>
 <div class="weekly-directory-row" id="a04">
               <span class="weekly-directory-id">A04</span>
               <span class="weekly-directory-main">
                 <strong>Causal Forcing++: Scalable Few-Step Autoregressive Diffusion Distillation for Real-Time Interactive Video Generation</strong>
-                <em>视频 / 时序生成 · 实时视频生成的评价坐标是 latency、control granularity、rollout stability。离线 clip 质量只是入口。 它直接决定视频模型能否成为交互工具：用户改动作、镜头或场景时，系统必须在可接受延迟内继续生成。</em>
-              </span>
-              <span class="weekly-directory-method">在 bidirectional te</span>
-              <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
+                <em>视频 / 时序生成</em>
+                <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
               <b>问题</b>
               <em>Causal Forcing++ 把自回归 diffusion distillation 推到 frame-wise、1-2 step 的实时交互视频设置。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>方法</b>
-              <em>在 bidirectional teacher 到 AR student 的蒸馏链路上压低采样步数和响应粒度，目标是 streaming controllable...</em>
+              <em>在 bidirectional teacher 到 AR student 的蒸馏链路上压低采样步数和响应粒度，目标是 streaming controllable rollout。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>效果</b>
-              <em>消融显示 causal CD 在 1/2/4 step 设置下匹配或优于 causal ODE initialization，并把 Stage 2 成本降约 4x...</em>
+              <em>消融显示 causal CD 在 1/2/4 step 设置下匹配或优于 causal ODE initialization，并把 Stage 2 成本降约 4x。结果指向实时视频需要的少步 rollout。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>Insight</b>
-              <em>实时视频生成的评价坐标是 latency、control granularity、rollout stability。离线 clip 质量只是入口。 它直接决定视频...</em>
+              <em>实时视频生成的评价坐标是 latency、control granularity、rollout stability。离线 clip 质量只是入口。 它直接决定视频模型能否成为交互工具：用户改动作、镜头或场景时，系统必须在可接受延迟内继续生成。</em>
             </span></span>
+              </span>
+              <span class="weekly-directory-method">AR diffusion distillation</span>
               <span class="weekly-directory-detail"><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper4/">读详解</a></span>
             </div>
 <div class="weekly-directory-row" id="a05">
               <span class="weekly-directory-id">A05</span>
               <span class="weekly-directory-main">
                 <strong>Pixal3D: Pixel-Aligned 3D Generation from Images</strong>
-                <em>3D / 空间生成 · 3D 生成继续往资产生产靠拢，瓶颈从“形状像”推进到“输入细节能否被忠实绑定到空间”。 商品、角色、IP 资产都依赖这种 fidelity；少了 correspondence，image-to-3D 很难进入可复用生产链路。</em>
-              </span>
-              <span class="weekly-directory-method">围绕 2D-3D correspon</span>
-              <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
+                <em>3D / 空间生成</em>
+                <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
               <b>问题</b>
               <em>Pixal3D 把 image-to-3D 的核心矛盾压到 pixel-level correspondence：输入图像里的细节要在 3D 资产里找得到位置。</em>
             </span><span class="weekly-directory-tldr-line">
@@ -213,21 +214,21 @@ full_read_url: "/blog/2026/05/11/generative-models-weekly-2026-05-11/"
               <em>围绕 2D-3D correspondence 组织几何和外观生成，减少 canonical 3D 空间与输入像素之间的对齐断裂。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>效果</b>
-              <em>评测覆盖 quantitative / qualitative single-view 3D generation，对比代表性 3D 生成方法。正文应抓住一点：pi...</em>
+              <em>评测覆盖 quantitative / qualitative single-view 3D generation，对比代表性 3D 生成方法。正文应抓住一点：pixel-level alignment 被用来提升输入细节到 3D 资产的可追踪性。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>Insight</b>
-              <em>3D 生成继续往资产生产靠拢，瓶颈从“形状像”推进到“输入细节能否被忠实绑定到空间”。 商品、角色、IP 资产都依赖这种 fidelity；少了 correspon...</em>
+              <em>3D 生成继续往资产生产靠拢，瓶颈从“形状像”推进到“输入细节能否被忠实绑定到空间”。 商品、角色、IP 资产都依赖这种 fidelity；少了 correspondence，image-to-3D 很难进入可复用生产链路。</em>
             </span></span>
+              </span>
+              <span class="weekly-directory-method">2D-3D correspondence</span>
               <span class="weekly-directory-detail"><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper5/">读详解</a></span>
             </div>
 <div class="weekly-directory-row" id="a06">
               <span class="weekly-directory-id">A06</span>
               <span class="weekly-directory-main">
                 <strong>RAVEN: Real-time Autoregressive Video Extrapolation with Consistency-model GRPO</strong>
-                <em>视频 / 时序生成 · 实时视频生成的关键问题正在变成 online distribution shift：模型必须学会和自己的输出共处。 它和 AnyFlow、Causal Forcing++ 组成同一条线：短视频 diffusion 的质量优势要转换成可交互、可持续的实时生成。</em>
-              </span>
-              <span class="weekly-directory-method">用 consistency-mode</span>
-              <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
+                <em>视频 / 时序生成</em>
+                <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
               <b>问题</b>
               <em>RAVEN 面向实时流式视频外推，处理 autoregressive rollout 中训练历史和推理历史的分布偏移。</em>
             </span><span class="weekly-directory-tldr-line">
@@ -235,21 +236,21 @@ full_read_url: "/blog/2026/05/11/generative-models-weekly-2026-05-11/"
               <em>用 consistency-model GRPO 优化长程 rollout，让模型在自己生成的历史上继续生成时更稳。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>效果</b>
-              <em>结果把 TF / SF 的取舍拆开：motion、semantic alignment、visual fidelity 很难同时最优。RAVEN 的价值在把 str...</em>
+              <em>结果把 TF / SF 的取舍拆开：motion、semantic alignment、visual fidelity 很难同时最优。RAVEN 的价值在把 streaming video 的分布偏移显式拿出来优化。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>Insight</b>
-              <em>实时视频生成的关键问题正在变成 online distribution shift：模型必须学会和自己的输出共处。 它和 AnyFlow、Causal Forcin...</em>
+              <em>实时视频生成的关键问题正在变成 online distribution shift：模型必须学会和自己的输出共处。 它和 AnyFlow、Causal Forcing++ 组成同一条线：短视频 diffusion 的质量优势要转换成可交互、可持续的实时生成。</em>
             </span></span>
+              </span>
+              <span class="weekly-directory-method">consistency GRPO</span>
               <span class="weekly-directory-detail"><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper6/">读详解</a></span>
             </div>
 <div class="weekly-directory-row" id="a07">
               <span class="weekly-directory-id">A07</span>
               <span class="weekly-directory-main">
                 <strong>ELF: Embedded Language Flows</strong>
-                <em>图像 / 视觉合成 · 这篇值得放在最前面，因为它把 flow 当成生成建模的通用数学对象，而非图像专属技巧。 如果这条线跑通，language / image / video 的 sampling path 可以在同一层比较，多模态模型会少一个概念断层。</em>
-              </span>
-              <span class="weekly-directory-method">在 embedding space </span>
-              <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
+                <em>图像 / 视觉合成</em>
+                <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
               <b>问题</b>
               <em>把 diffusion / flow 的连续建模搬到语言嵌入空间，目标是减少纯离散 token 扩散的接口损耗。</em>
             </span><span class="weekly-directory-tldr-line">
@@ -257,65 +258,65 @@ full_read_url: "/blog/2026/05/11/generative-models-weekly-2026-05-11/"
               <em>在 embedding space 里建模 language flow，再把连续状态映射回 token；关键技术点是连续轨迹和离散输出之间的桥接。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>效果</b>
-              <em>实验主要看 generative perplexity / entropy 随 CFG scale 的取舍：guidance 越强，PPL 会降，但多样性同步收紧...</em>
+              <em>实验主要看 generative perplexity / entropy 随 CFG scale 的取舍：guidance 越强，PPL 会降，但多样性同步收紧。可读结论是 ELF 在语言嵌入空间里确实形成了可调 sampling trade-off。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>Insight</b>
-              <em>这篇值得放在最前面，因为它把 flow 当成生成建模的通用数学对象，而非图像专属技巧。 如果这条线跑通，language / image / video 的 sam...</em>
+              <em>这篇值得放在最前面，因为它把 flow 当成生成建模的通用数学对象，而非图像专属技巧。 如果这条线跑通，language / image / video 的 sampling path 可以在同一层比较，多模态模型会少一个概念断层。</em>
             </span></span>
+              </span>
+              <span class="weekly-directory-method">embedding-space flow</span>
               <span class="weekly-directory-detail"><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper7/">读详解</a></span>
             </div>
 <div class="weekly-directory-row" id="a08">
               <span class="weekly-directory-id">A08</span>
               <span class="weekly-directory-main">
                 <strong>Orthrus: Memory-Efficient Parallel Token Generation via Dual-View Diffusion</strong>
-                <em>图像 / 视觉合成 · diffusion 的价值正在外溢到 token generation。这里的关键词是生成过程并行化：把 diffusion 看成吞吐工具。 它对应部署侧最硬的瓶颈：自回归解码慢。生成建模路线如果能改变 token 生成吞吐，会反过来影响多模态系统架构。</em>
-              </span>
-              <span class="weekly-directory-method">一条视角保留 autoregress</span>
-              <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
+                <em>图像 / 视觉合成</em>
+                <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
               <b>问题</b>
               <em>用 dual-view diffusion 做并行 token 生成，同时保住自回归模型的生成精度。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>方法</b>
-              <em>一条视角保留 autoregressive exactness，另一条视角引入 diffusion-style parallel decoding；重点是吞吐和质量...</em>
+              <em>一条视角保留 autoregressive exactness，另一条视角引入 diffusion-style parallel decoding；重点是吞吐和质量的共同约束。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>效果</b>
-              <em>实验设置强调长上下文与 masked blocks 下的并行 token 生成。结果看 memory / throughput 维度，而非图像质量：dual-vie...</em>
+              <em>实验设置强调长上下文与 masked blocks 下的并行 token 生成。结果看 memory / throughput 维度，而非图像质量：dual-view diffusion 用来减轻自回归生成的部署成本。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>Insight</b>
-              <em>diffusion 的价值正在外溢到 token generation。这里的关键词是生成过程并行化：把 diffusion 看成吞吐工具。 它对应部署侧最硬的瓶颈...</em>
+              <em>diffusion 的价值正在外溢到 token generation。这里的关键词是生成过程并行化：把 diffusion 看成吞吐工具。 它对应部署侧最硬的瓶颈：自回归解码慢。生成建模路线如果能改变 token 生成吞吐，会反过来影响多模态系统架构。</em>
             </span></span>
+              </span>
+              <span class="weekly-directory-method">dual-view diffusion</span>
               <span class="weekly-directory-detail"><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper8/">读详解</a></span>
             </div>
 <div class="weekly-directory-row" id="a09">
               <span class="weekly-directory-id">A09</span>
               <span class="weekly-directory-main">
                 <strong>Sat3DGen: Comprehensive Street-Level 3D Scene Generation from Single Satellite Image</strong>
-                <em>3D / 空间生成 · 3D 生成正在从物体级资产扩展到地理条件场景生成；输入条件从照片进入 satellite map。 地图、仿真、城市数字孪生和游戏场景都会用到这类能力。真正要看的指标是几何可信度、语义覆盖和可导航性。</em>
-              </span>
-              <span class="weekly-directory-method">在 geometry、texture</span>
-              <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
+                <em>3D / 空间生成</em>
+                <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
               <b>问题</b>
               <em>Sat3DGen 从单张卫星图生成街景级 3D scene，连接遥感视角和可漫游空间资产。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>方法</b>
-              <em>在 geometry、texture、semantic diversity 之间做联合建模，处理 building-focused 方法和 proxy-based...</em>
+              <em>在 geometry、texture、semantic diversity 之间做联合建模，处理 building-focused 方法和 proxy-based 方法各自的短板。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>效果</b>
-              <em>评测同时看 realism、semantic structure、perceptual similarity 等指标。它的效果不应只按样例图判断，而要看 satel...</em>
+              <em>评测同时看 realism、semantic structure、perceptual similarity 等指标。它的效果不应只按样例图判断，而要看 satellite input 到 street-level 3D scene 的几何和语义覆盖。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>Insight</b>
-              <em>3D 生成正在从物体级资产扩展到地理条件场景生成；输入条件从照片进入 satellite map。 地图、仿真、城市数字孪生和游戏场景都会用到这类能力。真正要看的指...</em>
+              <em>3D 生成正在从物体级资产扩展到地理条件场景生成；输入条件从照片进入 satellite map。 地图、仿真、城市数字孪生和游戏场景都会用到这类能力。真正要看的指标是几何可信度、语义覆盖和可导航性。</em>
             </span></span>
+              </span>
+              <span class="weekly-directory-method">satellite-to-3D scene</span>
               <span class="weekly-directory-detail"><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper9/">读详解</a></span>
             </div>
 <div class="weekly-directory-row" id="a10">
               <span class="weekly-directory-id">A10</span>
               <span class="weekly-directory-main">
                 <strong>L2P: Unlocking Latent Potential for Pixel Generation</strong>
-                <em>图像 / 视觉合成 · pixel diffusion 回潮的核心在继承已有 latent 模型能力。路线竞争从 architecture 进入 knowledge transfer。 它让 pixel-space 方法重新进入讨论：更直接的像素建模可能带来细节和可控性，但训练成本需要被转移掉。</em>
-              </span>
-              <span class="weekly-directory-method">丢掉 VAE</span>
-              <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
+                <em>图像 / 视觉合成</em>
+                <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
               <b>问题</b>
               <em>L2P 把 latent diffusion 的知识迁移到 pixel diffusion，降低从零训练像素空间模型的成本。</em>
             </span><span class="weekly-directory-tldr-line">
@@ -323,65 +324,65 @@ full_read_url: "/blog/2026/05/11/generative-models-weekly-2026-05-11/"
               <em>丢掉 VAE，采用 large-patch tokenization，并复用预训练 LDM 的中间能力来支撑 pixel-space generation。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>效果</b>
-              <em>在丢掉 VAE 且训练开销较低的设定下，L2P 在 DPG-Bench 报告 86.00。这个数字的意义是：pixel diffusion 可以继承 latent...</em>
+              <em>在丢掉 VAE 且训练开销较低的设定下，L2P 在 DPG-Bench 报告 86.00。这个数字的意义是：pixel diffusion 可以继承 latent model 的能力，而非从零硬训。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>Insight</b>
-              <em>pixel diffusion 回潮的核心在继承已有 latent 模型能力。路线竞争从 architecture 进入 knowledge transfer。 它...</em>
+              <em>pixel diffusion 回潮的核心在继承已有 latent 模型能力。路线竞争从 architecture 进入 knowledge transfer。 它让 pixel-space 方法重新进入讨论：更直接的像素建模可能带来细节和可控性，但训练成本需要被转移掉。</em>
             </span></span>
+              </span>
+              <span class="weekly-directory-method">large-patch tokenization</span>
               <span class="weekly-directory-detail"><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper10/">读详解</a></span>
             </div>
 <div class="weekly-directory-row" id="a11">
               <span class="weekly-directory-id">A11</span>
               <span class="weekly-directory-main">
                 <strong>PresentAgent-2: Towards Generalist Multimodal Presentation Agents</strong>
-                <em>视频 / 时序生成 · 这篇更像系统信号：生成模型的价值从单个 media output 进入复合内容生产链路。 它提示生成模型的落地形态会越来越像 production stack：模型能力、检索、规划、编辑和交付界面必须一起设计。</em>
-              </span>
-              <span class="weekly-directory-method">agentic pipeline 先</span>
-              <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
+                <em>视频 / 时序生成</em>
+                <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
               <b>问题</b>
               <em>把 presentation generation 扩展成端到端视频内容生产：研究、素材组织、多模态媒体和交互交付在一个流程里完成。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>方法</b>
-              <em>agentic pipeline 先聚焦 topic，再做 source research、媒体检索、内容规划和 presentation video assemb...</em>
+              <em>agentic pipeline 先聚焦 topic，再做 source research、媒体检索、内容规划和 presentation video assembly。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>效果</b>
-              <em>benchmark 表明它覆盖 presentation、discussion、interaction、text/image/GIF/video 等多模块。结果重点...</em>
+              <em>benchmark 表明它覆盖 presentation、discussion、interaction、text/image/GIF/video 等多模块。结果重点是内容生产链路覆盖，而非单模型指标。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>Insight</b>
-              <em>这篇更像系统信号：生成模型的价值从单个 media output 进入复合内容生产链路。 它提示生成模型的落地形态会越来越像 production stack：模型...</em>
+              <em>这篇更像系统信号：生成模型的价值从单个 media output 进入复合内容生产链路。 它提示生成模型的落地形态会越来越像 production stack：模型能力、检索、规划、编辑和交付界面必须一起设计。</em>
             </span></span>
+              </span>
+              <span class="weekly-directory-method">presentation video agent</span>
               <span class="weekly-directory-detail"><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper11/">读详解</a></span>
             </div>
 <div class="weekly-directory-row" id="a12">
               <span class="weekly-directory-id">A12</span>
               <span class="weekly-directory-main">
                 <strong>SANA-WM: Efficient Minute-Scale World Modeling with Hybrid Linear Diffusion Transformer</strong>
-                <em>视频 / 时序生成 · 视频 world model 的竞争坐标变清楚了：duration、openness、efficiency、camera control。大模型样片之外，开源可复现很关键。 分钟级生成把时间一致性问题放大，也把成本问题放大；这类模型决定 world model 能否进入研究和产品原型。</em>
-              </span>
-              <span class="weekly-directory-method">Hybrid Linear Diff</span>
-              <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
+                <em>视频 / 时序生成</em>
+                <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
               <b>问题</b>
               <em>SANA-WM 用 2.6B 开源世界模型做分钟级 720p 视频生成，重点放在效率、长时长和相机控制。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>方法</b>
-              <em>Hybrid Linear Diffusion Transformer 结合 frame-wise Gated DeltaNet 和 softmax attenti...</em>
+              <em>Hybrid Linear Diffusion Transformer 结合 frame-wise Gated DeltaNet 和 softmax attention，服务长时长世界建模。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>效果</b>
-              <em>论文报告分钟级生成可降到单 GPU 推理：bidirectional / chunk-causal 版本能放进一张 H100，distilled 版本在 RTX 5...</em>
+              <em>论文报告分钟级生成可降到单 GPU 推理：bidirectional / chunk-causal 版本能放进一张 H100，distilled 版本在 RTX 5090 + NVFP4 下 34 秒生成 1 分钟视频。效果是长视频 world model 的成本门槛下降。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>Insight</b>
-              <em>视频 world model 的竞争坐标变清楚了：duration、openness、efficiency、camera control。大模型样片之外，开源可复现...</em>
+              <em>视频 world model 的竞争坐标变清楚了：duration、openness、efficiency、camera control。大模型样片之外，开源可复现很关键。 分钟级生成把时间一致性问题放大，也把成本问题放大；这类模型决定 world model 能否进入研究和产品原型。</em>
             </span></span>
+              </span>
+              <span class="weekly-directory-method">hybrid linear DiT</span>
               <span class="weekly-directory-detail"><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper12/">读详解</a></span>
             </div>
 <div class="weekly-directory-row" id="a13">
               <span class="weekly-directory-id">A13</span>
               <span class="weekly-directory-main">
                 <strong>CausalCine: Real-Time Autoregressive Generation for Multi-Shot Video Narratives</strong>
-                <em>视频 / 时序生成 · 长视频的核心约束是剪辑语法：镜头要换，语义要走，节奏要持续。单纯 rollout 会带来运动停滞和语义漂移。 这篇和 RAVEN / Causal Forcing++ 放在一起看，能看到实时视频生成正在拆成三件事：低延迟、长程记忆、叙事状态。</em>
-              </span>
-              <span class="weekly-directory-method">把 autoregressive g</span>
-              <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
+                <em>视频 / 时序生成</em>
+                <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
               <b>问题</b>
               <em>CausalCine 面向 multi-shot narrative：实时自回归视频需要处理事件推进、视角变化和镜头切点。</em>
             </span><span class="weekly-directory-tldr-line">
@@ -389,21 +390,21 @@ full_read_url: "/blog/2026/05/11/generative-models-weekly-2026-05-11/"
               <em>把 autoregressive generation 的状态从单一场景延展到 shot-level narrative state，显式维护转场和语义推进。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>效果</b>
-              <em>系统以 14B video generator 为底座，在 8 张 NVIDIA H200 上用 streaming KV caching 跑到 16 FPS。效果...</em>
+              <em>系统以 14B video generator 为底座，在 8 张 NVIDIA H200 上用 streaming KV caching 跑到 16 FPS。效果重点是 multi-shot narrative 的实时自回归接口。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>Insight</b>
-              <em>长视频的核心约束是剪辑语法：镜头要换，语义要走，节奏要持续。单纯 rollout 会带来运动停滞和语义漂移。 这篇和 RAVEN / Causal Forcing+...</em>
+              <em>长视频的核心约束是剪辑语法：镜头要换，语义要走，节奏要持续。单纯 rollout 会带来运动停滞和语义漂移。 这篇和 RAVEN / Causal Forcing++ 放在一起看，能看到实时视频生成正在拆成三件事：低延迟、长程记忆、叙事状态。</em>
             </span></span>
+              </span>
+              <span class="weekly-directory-method">shot-level narrative state</span>
               <span class="weekly-directory-detail"><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper13/">读详解</a></span>
             </div>
 <div class="weekly-directory-row" id="a14">
               <span class="weekly-directory-id">A14</span>
               <span class="weekly-directory-main">
                 <strong>Warp-as-History: Generalizable Camera-Controlled Video Generation from One Training Video</strong>
-                <em>视频 / 时序生成 · 相机控制的难点在时序几何；history 本身可以成为控制接口，减少对重控制分支的依赖。 叙事视频、广告、虚拟场景都需要可控镜头语言；这类方法把 camera control 变成更轻的训练问题。</em>
-              </span>
-              <span class="weekly-directory-method">把 warped history 作</span>
-              <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
+                <em>视频 / 时序生成</em>
+                <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
               <b>问题</b>
               <em>用历史帧 warping 做相机控制，让单个训练视频也能提供可泛化的 camera-conditioned video generation 信号。</em>
             </span><span class="weekly-directory-tldr-line">
@@ -411,43 +412,43 @@ full_read_url: "/blog/2026/05/11/generative-models-weekly-2026-05-11/"
               <em>把 warped history 作为时序条件注入生成过程，降低对大规模 camera-annotated video 的依赖。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>效果</b>
-              <em>one-shot finetuning 的主观质量从 47.37 到 54.83，平均分从 63.26 到 65.64。结论很具体：warped history 是...</em>
+              <em>one-shot finetuning 的主观质量从 47.37 到 54.83，平均分从 63.26 到 65.64。结论很具体：warped history 是一个轻量但有效的 camera control 接口。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>Insight</b>
-              <em>相机控制的难点在时序几何；history 本身可以成为控制接口，减少对重控制分支的依赖。 叙事视频、广告、虚拟场景都需要可控镜头语言；这类方法把 camera co...</em>
+              <em>相机控制的难点在时序几何；history 本身可以成为控制接口，减少对重控制分支的依赖。 叙事视频、广告、虚拟场景都需要可控镜头语言；这类方法把 camera control 变成更轻的训练问题。</em>
             </span></span>
+              </span>
+              <span class="weekly-directory-method">warped history control</span>
               <span class="weekly-directory-detail"><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper14/">读详解</a></span>
             </div>
 <div class="weekly-directory-row" id="a15">
               <span class="weekly-directory-id">A15</span>
               <span class="weekly-directory-main">
                 <strong>Qwen-Image-VAE-2.0 Technical Report</strong>
-                <em>图像 / 视觉合成 · 这篇说明基础图像模型的上限一部分卡在 codec。denoiser 再强，latent 表征丢掉的文字和细节也很难补回。 多语言文字、海报、UI、设计稿都依赖 VAE 质量；这是生成模型进入设计工作流的底层门槛。</em>
-              </span>
-              <span class="weekly-directory-method">高压缩 VAE 加 Global S</span>
-              <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
+                <em>图像 / 视觉合成</em>
+                <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
               <b>问题</b>
               <em>Qwen-Image-VAE-2.0 把注意力放在压缩层：高压缩下保持 reconstruction fidelity 和 diffusability。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>方法</b>
-              <em>高压缩 VAE 加 Global Skip Connections、扩展 latent channels，并用大规模图像和合成渲染数据覆盖 text-rich 场景...</em>
+              <em>高压缩 VAE 加 Global Skip Connections、扩展 latent channels，并用大规模图像和合成渲染数据覆盖 text-rich 场景。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>效果</b>
-              <em>Table 2 报告 Qwen-Image-VAE-2.0 在对应压缩档位达到 SOTA reconstruction fidelity。读法很直接：VAE 质量会...</em>
+              <em>Table 2 报告 Qwen-Image-VAE-2.0 在对应压缩档位达到 SOTA reconstruction fidelity。读法很直接：VAE 质量会限制文字、细节和高分辨率生成上限。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>Insight</b>
-              <em>这篇说明基础图像模型的上限一部分卡在 codec。denoiser 再强，latent 表征丢掉的文字和细节也很难补回。 多语言文字、海报、UI、设计稿都依赖 VA...</em>
+              <em>这篇说明基础图像模型的上限一部分卡在 codec。denoiser 再强，latent 表征丢掉的文字和细节也很难补回。 多语言文字、海报、UI、设计稿都依赖 VAE 质量；这是生成模型进入设计工作流的底层门槛。</em>
             </span></span>
+              </span>
+              <span class="weekly-directory-method">VAE skip connections</span>
               <span class="weekly-directory-detail"><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper15/">读详解</a></span>
             </div>
 <div class="weekly-directory-row" id="a16">
               <span class="weekly-directory-id">A16</span>
               <span class="weekly-directory-main">
                 <strong>Qwen-Image-2.0 Technical Report</strong>
-                <em>图像 / 视觉合成 · 图像模型的竞争点正在从样张审美进入 production capability：文字、排版、编辑一致性和指令遵循。 设计、营销和内容生产最怕文字错、版式漂、局部编辑破坏整体；这篇对应真实工作流里的高频痛点。</em>
-              </span>
-              <span class="weekly-directory-method">以 Qwen3-VL 作为多模态理解</span>
-              <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
+                <em>图像 / 视觉合成</em>
+                <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
               <b>问题</b>
               <em>Qwen-Image-2.0 把高保真生成、精准编辑、长文本渲染、多语言排版和部署效率放进同一个图像模型目标。</em>
             </span><span class="weekly-directory-tldr-line">
@@ -455,21 +456,21 @@ full_read_url: "/blog/2026/05/11/generative-models-weekly-2026-05-11/"
               <em>以 Qwen3-VL 作为多模态理解底座，统一 generation、editing、text rendering 和高分辨率 photorealism。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>效果</b>
-              <em>benchmark 里 Qwen-Image-2.0 报告全局第 9、中文模型第 1。更重要的效果是能力组合：生成、编辑、长文本渲染、多语言排版被放进同一个图像模型...</em>
+              <em>benchmark 里 Qwen-Image-2.0 报告全局第 9、中文模型第 1。更重要的效果是能力组合：生成、编辑、长文本渲染、多语言排版被放进同一个图像模型目标。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>Insight</b>
-              <em>图像模型的竞争点正在从样张审美进入 production capability：文字、排版、编辑一致性和指令遵循。 设计、营销和内容生产最怕文字错、版式漂、局部编辑...</em>
+              <em>图像模型的竞争点正在从样张审美进入 production capability：文字、排版、编辑一致性和指令遵循。 设计、营销和内容生产最怕文字错、版式漂、局部编辑破坏整体；这篇对应真实工作流里的高频痛点。</em>
             </span></span>
+              </span>
+              <span class="weekly-directory-method">Qwen3-VL image model</span>
               <span class="weekly-directory-detail"><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper16/">读详解</a></span>
             </div>
 <div class="weekly-directory-row" id="a17">
               <span class="weekly-directory-id">A17</span>
               <span class="weekly-directory-main">
                 <strong>Beyond the Last Layer: Multi-Layer Representation Fusion for Visual Tokenization</strong>
-                <em>图像 / 视觉合成 · tokenizer/VAE 线里最值得看的是表征分层：最后层语义强，低层细节弱；生成任务需要二者共存。 这会影响 reconstruction、generation quality 和后续 diffusion transformer 的输入质量，是基础设施型改进。</em>
-              </span>
-              <span class="weekly-directory-method">从 frozen vision en</span>
-              <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
+                <em>图像 / 视觉合成</em>
+                <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
               <b>问题</b>
               <em>视觉 tokenizer 取多层表征，而非只取最后一层，保留低层细节和高层语义的共同信息。</em>
             </span><span class="weekly-directory-tldr-line">
@@ -480,18 +481,18 @@ full_read_url: "/blog/2026/05/11/generative-models-weekly-2026-05-11/"
               <em>中间 Phase 2 已达到 rFID 0.47、PSNR 21.79。它说明 tokenizer 取多层特征不是装饰，低层细节和高层语义会直接影响重建和生成底座。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>Insight</b>
-              <em>tokenizer/VAE 线里最值得看的是表征分层：最后层语义强，低层细节弱；生成任务需要二者共存。 这会影响 reconstruction、generation...</em>
+              <em>tokenizer/VAE 线里最值得看的是表征分层：最后层语义强，低层细节弱；生成任务需要二者共存。 这会影响 reconstruction、generation quality 和后续 diffusion transformer 的输入质量，是基础设施型改进。</em>
             </span></span>
+              </span>
+              <span class="weekly-directory-method">multi-layer tokenizer</span>
               <span class="weekly-directory-detail"><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper17/">读详解</a></span>
             </div>
 <div class="weekly-directory-row" id="a18">
               <span class="weekly-directory-id">A18</span>
               <span class="weekly-directory-main">
                 <strong>PhyMotion: Structured 3D Motion Reward for Physics-Grounded Human Video Generation</strong>
-                <em>3D / 空间生成 · 视频生成的人体问题需要物理奖励。画面清晰和姿态漂亮不足以保证运动连续、接触合理、重心可信。 人类动作是视频模型最容易露馅的区域，也是广告、短剧、虚拟人最常见需求；reward 设计会决定后训练上限。</em>
-              </span>
-              <span class="weekly-directory-method">把结构化 3D body state</span>
-              <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
+                <em>3D / 空间生成</em>
+                <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
               <b>问题</b>
               <em>PhyMotion 为 human video generation 设计 3D motion reward，用身体状态、接触和动力学约束补足 2D 感知评分。</em>
             </span><span class="weekly-directory-tldr-line">
@@ -499,21 +500,21 @@ full_read_url: "/blog/2026/05/11/generative-models-weekly-2026-05-11/"
               <em>把结构化 3D body state 引入视频后训练奖励，评分重点落在动作物理性和人体运动可信度。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>效果</b>
-              <em>论文报告它明显优于 perceptual、preference-based、physics-aware reward baselines；这些 baseline 通...</em>
+              <em>论文报告它明显优于 perceptual、preference-based、physics-aware reward baselines；这些 baseline 通常只有 50-66% agreement，Spearman 相关也弱。效果重点是 3D motion reward 更接近人体运动判断。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>Insight</b>
-              <em>视频生成的人体问题需要物理奖励。画面清晰和姿态漂亮不足以保证运动连续、接触合理、重心可信。 人类动作是视频模型最容易露馅的区域，也是广告、短剧、虚拟人最常见需求；r...</em>
+              <em>视频生成的人体问题需要物理奖励。画面清晰和姿态漂亮不足以保证运动连续、接触合理、重心可信。 人类动作是视频模型最容易露馅的区域，也是广告、短剧、虚拟人最常见需求；reward 设计会决定后训练上限。</em>
             </span></span>
+              </span>
+              <span class="weekly-directory-method">3D motion reward</span>
               <span class="weekly-directory-detail"><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper18/">读详解</a></span>
             </div>
 <div class="weekly-directory-row" id="a19">
               <span class="weekly-directory-id">A19</span>
               <span class="weekly-directory-main">
                 <strong>WorldReasonBench: Human-Aligned Stress Testing of Video Generators as Future World-State Predictors</strong>
-                <em>视频 / 时序生成 · video generator 被称为 world simulator 时，评测必须测预测能力。漂亮视频和正确未来是两种能力。 它给视频模型拉出一条更硬的评价线：如果模型要服务 robotics、simulation 或 interactive planning，世界状态一致性必须可测。</em>
-              </span>
-              <span class="weekly-directory-method">human-aligned stre</span>
-              <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
+                <em>视频 / 时序生成</em>
+                <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
               <b>问题</b>
               <em>WorldReasonBench 把视频生成评测改写成 world-state prediction：给定初始状态和动作，检查未来视频是否符合世界演化。</em>
             </span><span class="weekly-directory-tldr-line">
@@ -521,33 +522,35 @@ full_read_url: "/blog/2026/05/11/generative-models-weekly-2026-05-11/"
               <em>human-aligned stress test 直接评估因果、物理、事件推进和状态变化，而非只看画面质量。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>效果</b>
-              <em>效果是评测协议本身：用 video QA、binary judging、4 FPS 处理来测 world-state prediction。它不证明某个 gener...</em>
+              <em>效果是评测协议本身：用 video QA、binary judging、4 FPS 处理来测 world-state prediction。它不证明某个 generator 更强，价值在把“未来是否合理”变成可测对象。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>Insight</b>
-              <em>video generator 被称为 world simulator 时，评测必须测预测能力。漂亮视频和正确未来是两种能力。 它给视频模型拉出一条更硬的评价线：如...</em>
+              <em>video generator 被称为 world simulator 时，评测必须测预测能力。漂亮视频和正确未来是两种能力。 它给视频模型拉出一条更硬的评价线：如果模型要服务 robotics、simulation 或 interactive planning，世界状态一致性必须可测。</em>
             </span></span>
+              </span>
+              <span class="weekly-directory-method">world-state benchmark</span>
               <span class="weekly-directory-detail"><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper19/">读详解</a></span>
             </div>
 <div class="weekly-directory-row" id="a20">
               <span class="weekly-directory-id">A20</span>
               <span class="weekly-directory-main">
                 <strong>TrackCraft3R: Repurposing Video Diffusion Transformers for Dense 3D Tracking</strong>
-                <em>3D / 空间生成 · 生成模型正在成为感知任务的 prior library。视频 diffusion 学到的运动结构，可以反向服务 tracking。 这篇说明 video generation 的中间能力可能比最终样片更有价值：motion prior 能进入 3D understanding 工具链。</em>
-              </span>
-              <span class="weekly-directory-method">用视频生成模型学到的真实运动先验辅助</span>
-              <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
+                <em>3D / 空间生成</em>
+                <span class="weekly-directory-tldr"><span class="weekly-directory-tldr-line">
               <b>问题</b>
-              <em>TrackCraft3R 把 video diffusion transformer 里的 motion prior 复用到 monocular dense 3D...</em>
+              <em>TrackCraft3R 把 video diffusion transformer 里的 motion prior 复用到 monocular dense 3D tracking。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>方法</b>
               <em>用视频生成模型学到的真实运动先验辅助动态 3D 场景理解，连接 per-frame geometry 和 object motion。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>效果</b>
-              <em>实验用带 sparse ground-truth 3D trajectories 的数据集，并评估前 84 帧。结果说明 video diffusion 的 mot...</em>
+              <em>实验用带 sparse ground-truth 3D trajectories 的数据集，并评估前 84 帧。结果说明 video diffusion 的 motion prior 可以迁移到 dense 3D tracking。</em>
             </span><span class="weekly-directory-tldr-line">
               <b>Insight</b>
-              <em>生成模型正在成为感知任务的 prior library。视频 diffusion 学到的运动结构，可以反向服务 tracking。 这篇说明 video gener...</em>
+              <em>生成模型正在成为感知任务的 prior library。视频 diffusion 学到的运动结构，可以反向服务 tracking。 这篇说明 video generation 的中间能力可能比最终样片更有价值：motion prior 能进入 3D understanding 工具链。</em>
             </span></span>
+              </span>
+              <span class="weekly-directory-method">motion prior transfer</span>
               <span class="weekly-directory-detail"><a href="/blog/2026/05/11/generative-models-weekly-2026-05-11/paper20/">读详解</a></span>
             </div></div>
 </section>

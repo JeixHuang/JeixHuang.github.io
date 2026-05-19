@@ -5,7 +5,7 @@ slug: "paper10"
 url: "/en/2026/05/11/generative-models-weekly-2026-05-11/paper10/"
 translationKey: "blogger-weekly-generative-models-2026-05-11-paper10"
 tags: ["generative-models", "multimodal-generation", "diffusion", "weekly"]
-summary: "Problem: Transfers latent-diffusion knowledge into pixel diffusion to avoid training pixel models from scratch. Method: Latent-to-Pixel transfer using pretrained LDMs to build pixel-space models. Effect: With the VAE removed and minimal training overhead, L2P reports 86.00 on DPG-Bench. The point is that pixe..."
+summary: "Problem: Transfers latent-diffusion knowledge into pixel diffusion to avoid training pixel models from scratch. Method: Latent-to-Pixel transfer using pretrained LDMs to build pixel-space models. Effect: With the VAE removed and minimal training overhead, L2P reports 86.00 on DPG-Bench. The point is that pixel diffusion can inherit latent-model capability instead of being trained from scratch. Insight: The return of pixel diffusion depends on inheriting latent-model capability, not brute-force training."
 weekly_report: true
 weekly_paper_detail: true
 hide_from_lists: true

@@ -5,7 +5,7 @@ slug: "paper15"
 url: "/en/2026/05/11/generative-models-weekly-2026-05-11/paper15/"
 translationKey: "blogger-weekly-generative-models-2026-05-11-paper15"
 tags: ["generative-models", "multimodal-generation", "diffusion", "weekly"]
-summary: "Problem: Upgrades the VAE compression layer for reconstruction quality and diffusability. Method: High-compression VAE with Global Skip Connections and expanded latent channels. Effect: Table 2 reports state-of-the-art reconstruction fidelity within the corresponding compression tiers. The read is direct:..."
+summary: "Problem: Upgrades the VAE compression layer for reconstruction quality and diffusability. Method: High-compression VAE with Global Skip Connections and expanded latent channels. Effect: Table 2 reports state-of-the-art reconstruction fidelity within the corresponding compression tiers. The read is direct: VAE quality caps text, detail, and high-resolution generation. Insight: The ceiling is not only the denoiser; the latent codec is core infrastructure. VAE quality affects text rendering, detail fidelity,"
 weekly_report: true
 weekly_paper_detail: true
 hide_from_lists: true

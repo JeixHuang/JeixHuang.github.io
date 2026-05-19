@@ -5,7 +5,7 @@ slug: "paper13"
 url: "/en/2026/05/11/generative-models-weekly-2026-05-11/paper13/"
 translationKey: "blogger-weekly-generative-models-2026-05-11-paper13"
 tags: ["generative-models", "multimodal-generation", "diffusion", "weekly"]
-summary: "Problem: Targets real-time autoregressive generation for multi-shot video narratives. Method: Explicitly handles event progression, viewpoint changes, and shot boundaries. Effect: The system builds on a 14B video generator and runs streaming KV caching on 8 NVIDIA H200 GPUs at 16 FPS. The effect is... Insight..."
+summary: "Problem: Targets real-time autoregressive generation for multi-shot video narratives. Method: Explicitly handles event progression, viewpoint changes, and shot boundaries. Effect: The system builds on a 14B video generator and runs streaming KV caching on 8 NVIDIA H200 GPUs at 16 FPS. The effect is a real-time autoregressive interface for multi-shot narrative. Insight: Long video generation is about shot and narrative structure, not duration alone. This is closer to real film and advertising production."
 weekly_report: true
 weekly_paper_detail: true
 hide_from_lists: true

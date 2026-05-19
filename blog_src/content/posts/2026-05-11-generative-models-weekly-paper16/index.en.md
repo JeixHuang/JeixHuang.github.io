@@ -5,7 +5,7 @@ slug: "paper16"
 url: "/en/2026/05/11/generative-models-weekly-2026-05-11/paper16/"
 translationKey: "blogger-weekly-generative-models-2026-05-11-paper16"
 tags: ["generative-models", "multimodal-generation", "diffusion", "weekly"]
-summary: "Problem: Unifies high-fidelity generation, precise editing, long text rendering, and multilingual typography. Method: Omni-capable image foundation model for generation, editing, text, and deployment. Effect: The benchmark reports Qwen-Image-2.0 at #9 globally and #1 among Chinese models. The larger effect is..."
+summary: "Problem: Unifies high-fidelity generation, precise editing, long text rendering, and multilingual typography. Method: Omni-capable image foundation model for generation, editing, text, and deployment. Effect: The benchmark reports Qwen-Image-2.0 at #9 globally and #1 among Chinese models. The larger effect is capability composition: generation, editing, long-text rendering, Insight: The new bar for image models is controllable production capability beyond aesthetic samples. Text, typography,"
 weekly_report: true
 weekly_paper_detail: true
 hide_from_lists: true

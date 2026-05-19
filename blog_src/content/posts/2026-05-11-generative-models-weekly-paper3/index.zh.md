@@ -5,7 +5,7 @@ slug: "paper3"
 url: "/2026/05/11/generative-models-weekly-2026-05-11/paper3/"
 translationKey: "blogger-weekly-generative-models-2026-05-11-paper3"
 tags: ["generative-models", "multimodal-generation", "diffusion", "weekly"]
-summary: "问题: 用低秩噪声预测处理高维 flow 的速度场负担，保留全维数据预测。 方法: AsymFlow 把 noise prediction 限制到低秩子空间，再解析恢复 full-dimensional velocity；网络结构无需大改。 效果: 结果围绕 FID / IS 和 clamping sensitivity：AsymFlow 相比 JiT 更稳，低秩 noise prediction 没有牺牲全维... Insight: 这里的重点是生成路径..."
+summary: "问题: 用低秩噪声预测处理高维 flow 的速度场负担，保留全维数据预测。 方法: AsymFlow 把 noise prediction 限制到低秩子空间，再解析恢复 full-dimensional velocity；网络结构无需大改。 效果: 结果围绕 FID / IS 和 clamping sensitivity：AsymFlow 相比 JiT 更稳，低秩 noise prediction 没有牺牲全维数据预测，反而减轻了高维 velocity 的负担。 Insight: 这里的重点是生成路径的几何：高维数据可能有低维有效结构，velocity 参数化需要尊重这个结构。 它直接连到采样稳定性、步数效率和高分辨率生成的成本，是 sampling path 关键词下的代表性方法之一。"
 weekly_report: true
 weekly_paper_detail: true
 hide_from_lists: true

@@ -5,7 +5,7 @@ slug: "paper4"
 url: "/en/2026/05/11/generative-models-weekly-2026-05-11/paper4/"
 translationKey: "blogger-weekly-generative-models-2026-05-11-paper4"
 tags: ["generative-models", "multimodal-generation", "diffusion", "weekly"]
-summary: "Problem: Pushes autoregressive diffusion distillation toward lower-latency interactive video generation. Method: Few-step AR diffusion distillation to reduce response granularity and sampling latency. Effect: Ablations show causal CD matches or outperforms causal ODE initialization across 1/2/4-step settings..."
+summary: "Problem: Pushes autoregressive diffusion distillation toward lower-latency interactive video generation. Method: Few-step AR diffusion distillation to reduce response granularity and sampling latency. Effect: Ablations show causal CD matches or outperforms causal ODE initialization across 1/2/4-step settings while reducing Stage 2 cost by about 4x. The result points to few-step rollout for real-time video. Insight: Interactive video generation is judged by latency and controllable rollout, not offline clip scores."
 weekly_report: true
 weekly_paper_detail: true
 hide_from_lists: true

@@ -5,7 +5,7 @@ slug: "paper5"
 url: "/en/2026/05/11/generative-models-weekly-2026-05-11/paper5/"
 translationKey: "blogger-weekly-generative-models-2026-05-11-paper5"
 tags: ["generative-models", "multimodal-generation", "diffusion", "weekly"]
-summary: "Problem: Treats pixel-level alignment as the core issue in image-to-3D generation. Method: Improves image-to-3D geometry and appearance through 2D-3D correspondence. Effect: Evaluation covers quantitative and qualitative single-view 3D generation against representative methods. The important e... Insight: The..."
+summary: "Problem: Treats pixel-level alignment as the core issue in image-to-3D generation. Method: Improves image-to-3D geometry and appearance through 2D-3D correspondence. Effect: Evaluation covers quantitative and qualitative single-view 3D generation against representative methods. The important effect is better traceability from input pixels to the generated 3D asset. Insight: The bottleneck is not just looking 3D, but faithfully preserving the input image. This decides whether image-to-3D can support product,"
 weekly_report: true
 weekly_paper_detail: true
 hide_from_lists: true

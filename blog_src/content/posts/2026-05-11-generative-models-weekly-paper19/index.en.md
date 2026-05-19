@@ -5,7 +5,7 @@ slug: "paper19"
 url: "/en/2026/05/11/generative-models-weekly-2026-05-11/paper19/"
 translationKey: "blogger-weekly-generative-models-2026-05-11-paper19"
 tags: ["generative-models", "multimodal-generation", "diffusion", "weekly"]
-summary: "Problem: Reframes video generation evaluation as world-state prediction stress testing. Method: Human-aligned benchmark testing whether models understand world evolution over time. Effect: The effect is the evaluation protocol: video QA, binary judging, and 4 FPS processing for world-state prediction. It doe..."
+summary: "Problem: Reframes video generation evaluation as world-state prediction stress testing. Method: Human-aligned benchmark testing whether models understand world evolution over time. Effect: The effect is the evaluation protocol: video QA, binary judging, and 4 FPS processing for world-state prediction. It does not prove one generator stronger; it makes future-state plausibility measurable. Insight: Video generation evaluation is shifting from visual appeal to world evolution reasoning."
 weekly_report: true
 weekly_paper_detail: true
 hide_from_lists: true

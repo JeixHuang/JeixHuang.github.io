@@ -5,7 +5,7 @@ slug: "paper12"
 url: "/en/2026/05/11/generative-models-weekly-2026-05-11/paper12/"
 translationKey: "blogger-weekly-generative-models-2026-05-11-paper12"
 tags: ["generative-models", "multimodal-generation", "diffusion", "weekly"]
-summary: "Problem: Introduces a 2.6B open-source world model for minute-scale 720p video with camera control. Method: Hybrid linear diffusion transformer for long-duration, efficient world modeling. Effect: The paper reports minute-scale generation in a single-GPU setting: bidirectional / chunk-causal variants fit in o..."
+summary: "Problem: Introduces a 2.6B open-source world model for minute-scale 720p video with camera control. Method: Hybrid linear diffusion transformer for long-duration, efficient world modeling. Effect: The paper reports minute-scale generation in a single-GPU setting: bidirectional / chunk-causal variants fit in one H100, and the distilled variant generates one minute in 34s on an RTX 5090 with NVFP4. Insight: Video world models are being judged by duration, openness, efficiency, and camera control."
 weekly_report: true
 weekly_paper_detail: true
 hide_from_lists: true

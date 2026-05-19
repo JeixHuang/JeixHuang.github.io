@@ -5,7 +5,7 @@ slug: "paper3"
 url: "/en/2026/05/11/generative-models-weekly-2026-05-11/paper3/"
 translationKey: "blogger-weekly-generative-models-2026-05-11-paper3"
 tags: ["generative-models", "multimodal-generation", "diffusion", "weekly"]
-summary: "Problem: Uses low-rank noise prediction to reduce the burden of high-dimensional flow generation. Method: Asymmetric velocity parameterization: low-rank noise prediction, full-dimensional data prediction. Effect: Results center on FID / IS and clamping sensitivity: AsymFlow is more stable than JiT, suggesting..."
+summary: "Problem: Uses low-rank noise prediction to reduce the burden of high-dimensional flow generation. Method: Asymmetric velocity parameterization: low-rank noise prediction, full-dimensional data prediction. Effect: Results center on FID / IS and clamping sensitivity: AsymFlow is more stable than JiT, suggesting low-rank noise prediction can reduce high-dimensional velocity burden without dropping full-dimensional data… Insight: Flow-model progress is shifting from larger networks toward better geometry of the…"
 weekly_report: true
 weekly_paper_detail: true
 hide_from_lists: true
