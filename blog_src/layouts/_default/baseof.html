@@ -1,11 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ .Site.Language.Lang }}">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="light" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ "rss.xml" | relURL }}" />
+    {{ if .IsTranslated }}
+      {{ range .Translations }}
+        <link rel="alternate" hreflang="{{ .Site.Language.Lang }}" href="{{ .Permalink }}" />
+      {{ end }}
+    {{ end }}
     <link rel="stylesheet" href="{{ "assets/style.css" | relURL }}" />
 
     <!-- KaTeX (math) -->

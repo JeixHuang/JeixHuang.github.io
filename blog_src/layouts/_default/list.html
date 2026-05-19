@@ -2,7 +2,8 @@
   <h1 class="page-title">{{ .Title }}</h1>
 
   <ul class="post-list">
-    {{ range .Pages.ByDate.Reverse }}
+    {{ $pages := partial "public-posts.html" .Pages }}
+    {{ range $pages.ByDate.Reverse }}
       {{- $excerpt := (or .Params.summary .Summary) | plainify | htmlUnescape | replaceRE "\\s+" " " | trim " " | truncate 180 -}}
       <li class="post-item">
         <article class="post-card">
@@ -31,4 +32,3 @@
     {{ end }}
   </ul>
 {{ end }}
-

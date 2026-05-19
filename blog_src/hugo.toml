@@ -1,6 +1,7 @@
 baseURL = "/blog/"
-languageCode = "zh-cn"
 title = "Blog"
+defaultContentLanguage = "zh"
+defaultContentLanguageInSubdir = false
 
 # Keep output paths stable under /blog/
 rssURI = "rss.xml"
@@ -11,11 +12,29 @@ baseName = "posts"
 isPlainText = true
 notAlternative = true
 
+[outputFormats.RSS]
+mediaType = "application/rss+xml"
+baseName = "rss"
+
 [outputs]
 home = ["HTML", "RSS", "PostsJSON"]
 
 [permalinks]
 posts = "/:year/:month/:day/:slug/"
+
+[languages]
+  [languages.zh]
+    locale = "zh-cn"
+    label = "中文"
+    title = "Blog"
+    weight = 1
+  [languages.en]
+    locale = "en-us"
+    label = "English"
+    title = "Blog"
+    weight = 2
+    [languages.en.permalinks]
+      posts = "/:year/:month/:day/:slug/"
 
 [taxonomies]
 tag = "tags"
@@ -32,4 +51,3 @@ tag = "tags"
       [markup.goldmark.extensions.passthrough.delimiters]
         block = [["$$", "$$"], ["\\[", "\\]"]]
         inline = [["\\(", "\\)"]]
-

@@ -1,0 +1,26 @@
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+{{- $pages := partial "public-posts.html" (where site.RegularPages "Section" "posts") -}}
+{{- $pages = $pages.ByDate.Reverse -}}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ with .Title }}{{ . }} on {{ end }}{{ site.Title }}{{ end }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>Recent public posts from {{ site.Title }}</description>
+    <generator>Hugo</generator>
+    <language>{{ site.Language.Lang }}</language>
+    <atom:link href="{{ "rss.xml" | absURL }}" rel="self" type="application/rss+xml" />
+    {{ range first 20 $pages }}
+      {{- $description := (or .Params.summary .Summary) | plainify | htmlUnescape | replaceRE "\\s+" " " -}}
+      {{- $description = replaceRE "不是[^，。；]{1,32}，?而是" "重点是" $description -}}
+      {{- $description = replace $description "而不是" "而非" -}}
+      {{- $description = replace $description "不是" "并非" -}}
+      <item>
+        <title>{{ .Title }}</title>
+        <link>{{ .Permalink }}</link>
+        <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
+        <guid>{{ .Permalink }}</guid>
+        <description>{{ $description | html }}</description>
+      </item>
+    {{ end }}
+  </channel>
+</rss>
