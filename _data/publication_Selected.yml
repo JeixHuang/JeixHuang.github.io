@@ -1,14 +1,5 @@
 main:
 
-  - title: 'MindVLA-U1: VLA Beats VA with Unified Streaming Architecture for Autonomous Driving'
-    authors: Yuzhou Huang*, Benjin Zhu*, Hengtong Lu, <strong>Victor Shea-Jay Huang</strong>, Haiming Zhang, Wei Chen, Jifeng Dai, Yan Xie, Hongsheng Li
-    conference_short: arXiv
-    conference: arXiv Preprint
-    pdf: https://arxiv.org/pdf/2605.12624
-    arxiv: https://arxiv.org/abs/2605.12624
-    image: ./assets/files/mindvla-u1.png
-    notes: Preprint
-
   - title: 'Driving Intents Amplify Planning-Oriented Reinforcement Learning'
     authors: Hengtong Lu*, <strong>Victor Shea-Jay Huang*</strong>, Chengmin Yang, Pengfei Jing, Jifeng Dai, Yan Xie, Benjin Zhu*
     conference_short: arXiv
@@ -62,13 +53,22 @@ main:
 
   - title: 'AISafetyLab: A Comprehensive Framework for AI Safety Evaluation and Improvement'
     authors: Zhexin Zhang*, Leqi Lei*, Junxiao Yang*, <strong>Victor Shea-Jay Huang*</strong>, Yida Lu, Shiyao Cui, Renmiao Chen, Qinglin Zhang, Xinyuan Wang, Hao Wang, Hao Li, Xianqi Lei, Chengwei Pan, Lei Sha, Hongning Wang, Minlie Huang
-    conference_short: Arxiv
-    conference: Arxiv Preprint
+    conference_short: arXiv
+    conference: arXiv Preprint
     pdf: https://arxiv.org/pdf/2502.16776
     arxiv: https://arxiv.org/abs/2502.16776
     code: https://github.com/thu-coai/AISafetyLab
     # bibtex: ./assets/files/Document.txt
     image: ./assets/files/aisafetylab.png
+    notes: Preprint
+
+  - title: 'MindVLA-U1: VLA Beats VA with Unified Streaming Architecture for Autonomous Driving'
+    authors: Yuzhou Huang*, Benjin Zhu*, Hengtong Lu, <strong>Victor Shea-Jay Huang</strong>, Haiming Zhang, Wei Chen, Jifeng Dai, Yan Xie, Hongsheng Li
+    conference_short: arXiv
+    conference: arXiv Preprint
+    pdf: https://arxiv.org/pdf/2605.12624
+    arxiv: https://arxiv.org/abs/2605.12624
+    image: ./assets/files/mindvla-u1.png
     notes: Preprint
 
   - title: 'How Should We Enhance the Safety of Large Reasoning Models: An Empirical Study'
