@@ -1,4 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const timelineList = document.querySelector("[data-timeline-list]");
+  const timelineToggle = document.querySelector("[data-timeline-toggle]");
+  const visibleTimelineItems = 5;
+
+  if (timelineList && timelineToggle) {
+    const timelineItems = Array.from(timelineList.querySelectorAll(".timeline-item"));
+    const hiddenCount = Math.max(0, timelineItems.length - visibleTimelineItems);
+
+    if (hiddenCount === 0) {
+      timelineToggle.hidden = true;
+    } else {
+      timelineToggle.textContent = `Show ${hiddenCount} more news`;
+      timelineToggle.addEventListener("click", () => {
+        const nextExpanded = !timelineList.classList.contains("is-expanded");
+        timelineList.classList.toggle("is-expanded", nextExpanded);
+        timelineToggle.setAttribute("aria-expanded", String(nextExpanded));
+        timelineToggle.textContent = nextExpanded ? "Show fewer news" : `Show ${hiddenCount} more news`;
+      });
+    }
+  }
+
   const publicationTabs = Array.from(document.querySelectorAll(".pub-tab"));
   const publicationPanels = Array.from(document.querySelectorAll(".publication-panel"));
 
