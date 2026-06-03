@@ -654,6 +654,26 @@ section {
   text-decoration: none;
 }
 
+.pub-links a.github-star-badge {
+  gap: 4px;
+  min-height: 23px;
+  padding: 2px 8px;
+  border-color: rgba(14, 109, 102, 0.22);
+  background: rgba(233, 246, 242, 0.62);
+  color: var(--teal);
+}
+
+.github-star-badge::before {
+  content: "\2605";
+  font-size: 10px;
+  line-height: 1;
+}
+
+.github-star-badge.is-loading,
+.github-star-badge.is-error {
+  color: var(--faint);
+}
+
 .note {
   color: var(--red);
 }

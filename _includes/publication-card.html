@@ -19,6 +19,13 @@
       {% endif %}
       {% if link.code %}
       <a href="{{ link.code }}">Code</a>
+      {% if link.code contains "github.com/" %}
+      {% assign github_repo_parts = link.code | replace: "https://github.com/", "" | replace: "http://github.com/", "" | split: "/" %}
+      {% assign github_repo = github_repo_parts[0] | append: "/" | append: github_repo_parts[1] %}
+      <a class="github-star-badge is-loading" href="{{ link.code }}" data-github-stars="{{ github_repo }}" aria-label="{{ github_repo }} GitHub stars">
+        <span data-github-star-count>Stars</span>
+      </a>
+      {% endif %}
       {% endif %}
       {% if link.bibtex %}
       {% assign bibtex_path = link.bibtex | replace: './', '/' %}
