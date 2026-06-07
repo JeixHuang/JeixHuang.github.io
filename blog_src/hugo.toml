@@ -40,6 +40,10 @@ posts = "/:year/:month/:day/:slug/"
 tag = "tags"
 
 [markup]
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+    ordered = false
   [markup.highlight]
     noClasses = true
     codeFences = true

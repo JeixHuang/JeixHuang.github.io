@@ -1,5 +1,7 @@
 {{ define "main" }}
-  <article class="post{{ if .Params.weekly_report }} weekly-post{{ end }}{{ if and .Params.weekly_report (not .Params.weekly_paper_detail) }} weekly-overview{{ end }}">
+  {{ $toc := .TableOfContents }}
+  {{ $hasToc := and (not .Params.disable_toc) (in $toc "<li>") }}
+  <article class="post{{ if $hasToc }} post-with-toc{{ end }}{{ if .Params.weekly_report }} weekly-post{{ end }}{{ if and .Params.weekly_report (not .Params.weekly_paper_detail) }} weekly-overview{{ end }}">
     <header class="post-header">
       {{ if .IsTranslated }}
         <nav class="language-switch" aria-label="Language switch">
@@ -36,9 +38,62 @@
         </div>
       {{ end }}
     </header>
-    <div class="post-content">
-      {{ .Content }}
+    <div class="post-body{{ if $hasToc }} has-toc{{ end }}">
+      {{ if $hasToc }}
+        <aside class="post-toc" aria-label="{{ if eq .Site.Language.Lang "zh" }}文章目录{{ else }}Table of contents{{ end }}">
+          <div class="post-toc-inner">
+            <div class="post-toc-kicker">{{ if eq .Site.Language.Lang "zh" }}目录{{ else }}Contents{{ end }}</div>
+            {{ $toc }}
+          </div>
+        </aside>
+      {{ end }}
+      <div class="post-content">
+        {{ .Content }}
+      </div>
     </div>
+    {{ if $hasToc }}
+      <script>
+        (function () {
+          var links = Array.prototype.slice.call(document.querySelectorAll('.post-toc a[href^="#"]'));
+          var items = links.map(function (link) {
+            var rawId = (link.getAttribute('href') || '').replace(/^#/, '');
+            var id = rawId;
+            try {
+              id = decodeURIComponent(rawId);
+            } catch (error) {}
+            return {
+              link: link,
+              target: document.getElementById(id)
+            };
+          }).filter(function (item) {
+            return item.target;
+          });
+
+          if (!items.length) return;
+
+          function activate(item) {
+            items.forEach(function (entry) {
+              entry.link.classList.toggle('is-active', entry === item);
+            });
+          }
+
+          function updateActive() {
+            var active = items[0];
+            items.forEach(function (item) {
+              if (item.target.getBoundingClientRect().top <= 112) {
+                active = item;
+              }
+            });
+            activate(active);
+          }
+
+          updateActive();
+          window.addEventListener('scroll', updateActive, { passive: true });
+          window.addEventListener('resize', updateActive);
+          window.addEventListener('hashchange', updateActive);
+        })();
+      </script>
+    {{ end }}
     {{ if .Params.weekly_report }}
       <script>
         (function () {
