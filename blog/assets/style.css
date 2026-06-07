@@ -271,6 +271,114 @@ main.container {
   padding: 20px;
 }
 
+.post-with-toc {
+  --toc-width: 220px;
+  --toc-gap: 34px;
+  width: min(1180px, calc(100vw - 44px));
+  margin-right: calc((100% - min(1180px, calc(100vw - 44px))) / 2);
+  margin-left: calc((100% - min(1180px, calc(100vw - 44px))) / 2);
+}
+
+.post-with-toc .post-header {
+  width: min(860px, calc(100% - var(--toc-width) - var(--toc-gap)));
+  margin-left: calc(var(--toc-width) + var(--toc-gap));
+}
+
+.post-body {
+  min-width: 0;
+}
+
+.post-body.has-toc {
+  display: grid;
+  grid-template-columns: var(--toc-width) minmax(0, 860px);
+  gap: var(--toc-gap);
+  align-items: start;
+  margin-top: 18px;
+}
+
+.post-body.has-toc .post-content {
+  margin-top: 0;
+}
+
+.post-toc {
+  position: sticky;
+  top: 78px;
+  max-height: calc(100vh - 96px);
+  min-width: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+.post-toc-inner {
+  padding: 13px 0 15px;
+  border-top: 1px solid var(--line-dark);
+  border-bottom: 1px solid var(--line);
+}
+
+.post-toc-kicker {
+  margin-bottom: 9px;
+  color: var(--teal);
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.post-toc nav,
+.post-toc ul,
+.post-toc li {
+  min-width: 0;
+}
+
+.post-toc ul {
+  display: grid;
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-toc li ul {
+  margin: 2px 0 2px 10px;
+  padding-left: 10px;
+  border-left: 1px solid var(--line);
+}
+
+.post-toc a {
+  display: block;
+  padding: 4px 0 4px 9px;
+  border-left: 2px solid transparent;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 760;
+  line-height: 1.36;
+  text-decoration: none;
+}
+
+.post-toc li li a {
+  color: var(--faint);
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+.post-toc a:hover {
+  color: var(--red);
+}
+
+.post-toc a.is-active {
+  border-left-color: var(--teal);
+  color: var(--ink);
+}
+
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+  scroll-margin-top: 82px;
+}
+
 .weekly-post .post-header {
   margin-bottom: 22px;
   padding-bottom: 18px;
@@ -1506,6 +1614,36 @@ main.container {
 .site-footer .container {
   padding-top: 16px;
   padding-bottom: 18px;
+}
+
+@media (max-width: 980px) {
+  .post-with-toc {
+    width: auto;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .post-with-toc .post-header {
+    width: auto;
+    margin-left: 0;
+  }
+
+  .post-body.has-toc {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 16px;
+  }
+
+  .post-toc {
+    position: relative;
+    top: auto;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .post-toc-inner {
+    padding: 12px 0 13px;
+  }
 }
 
 @media (max-width: 760px) {
