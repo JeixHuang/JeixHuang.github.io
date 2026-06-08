@@ -24,14 +24,14 @@
 html {
   color-scheme: light;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: visible;
   background: var(--paper);
 }
 
 body {
   margin: 0;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: visible;
   color: var(--ink);
   background:
     linear-gradient(90deg, rgba(92, 73, 43, 0.012) 1px, transparent 1px) 0 0 / 38px 38px,
@@ -1617,6 +1617,11 @@ main.container {
 }
 
 @media (max-width: 980px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   .post-with-toc {
     width: auto;
     margin-right: 0;
