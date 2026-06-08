@@ -554,22 +554,20 @@ section {
   isolation: isolate;
   overflow: hidden;
   min-width: 0;
-  padding: 18px 18px 20px;
+  padding: 20px 18px 18px;
   border-top: 2px solid var(--ink);
   border-bottom: 1px solid var(--line-dark);
   background:
-    linear-gradient(135deg, rgba(152, 40, 51, 0.052) 0 1px, transparent 1px 18px),
-    linear-gradient(45deg, rgba(14, 109, 102, 0.046) 0 1px, transparent 1px 22px),
-    linear-gradient(180deg, rgba(255, 252, 245, 0.92), rgba(255, 250, 241, 0.64));
+    linear-gradient(180deg, rgba(255, 252, 245, 0.86), rgba(255, 250, 241, 0.78)),
+    var(--paper-2);
 }
 
 .serpentine-shell::before {
   position: absolute;
-  inset: 0;
+  inset: 0 0 auto;
   z-index: -1;
-  background:
-    linear-gradient(90deg, rgba(85, 69, 45, 0.052) 1px, transparent 1px) 0 0 / 52px 52px,
-    linear-gradient(rgba(85, 69, 45, 0.045) 1px, transparent 1px) 0 0 / 52px 52px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(85, 69, 45, 0.04), rgba(85, 69, 45, 0.2), rgba(85, 69, 45, 0.04));
   content: "";
 }
 
@@ -581,12 +579,12 @@ section {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(18px, 3.5vw, 42px);
   min-width: 0;
-  padding: 8px 0 46px;
+  padding: 6px 0 34px;
 }
 
 .serpentine-row + .serpentine-row {
   margin-top: -1px;
-  padding-top: 42px;
+  padding-top: 34px;
   padding-bottom: 2px;
 }
 
@@ -595,10 +593,8 @@ section {
   top: var(--rail-top);
   right: 24px;
   left: 24px;
-  height: 2px;
-  background:
-    linear-gradient(90deg, rgba(85, 69, 45, 0.08), rgba(24, 21, 18, 0.64), rgba(85, 69, 45, 0.08)),
-    repeating-linear-gradient(90deg, rgba(24, 21, 18, 0.18) 0 1px, transparent 1px 13px);
+  height: 1px;
+  background: linear-gradient(90deg, rgba(85, 69, 45, 0.04), rgba(24, 21, 18, 0.54), rgba(85, 69, 45, 0.04));
   content: "";
 }
 
@@ -606,11 +602,11 @@ section {
   position: absolute;
   top: var(--rail-top);
   right: 24px;
-  bottom: -43px;
+  bottom: -35px;
   width: clamp(34px, 4vw, 52px);
-  border-top: 2px solid rgba(24, 21, 18, 0.58);
-  border-right: 2px solid rgba(24, 21, 18, 0.58);
-  border-bottom: 2px solid rgba(24, 21, 18, 0.58);
+  border-top: 1px solid rgba(24, 21, 18, 0.5);
+  border-right: 1px solid rgba(24, 21, 18, 0.5);
+  border-bottom: 1px solid rgba(24, 21, 18, 0.5);
   border-radius: 0 22px 22px 0;
   content: "";
   pointer-events: none;
@@ -619,12 +615,12 @@ section {
 .serpentine-row--connect-left::after {
   position: absolute;
   top: var(--rail-top);
-  bottom: -43px;
+  bottom: -35px;
   left: 24px;
   width: clamp(34px, 4vw, 52px);
-  border-top: 2px solid rgba(24, 21, 18, 0.58);
-  border-bottom: 2px solid rgba(24, 21, 18, 0.58);
-  border-left: 2px solid rgba(24, 21, 18, 0.58);
+  border-top: 1px solid rgba(24, 21, 18, 0.5);
+  border-bottom: 1px solid rgba(24, 21, 18, 0.5);
+  border-left: 1px solid rgba(24, 21, 18, 0.5);
   border-radius: 22px 0 0 22px;
   content: "";
   pointer-events: none;
@@ -653,29 +649,23 @@ section {
   position: relative;
   display: block;
   min-width: 0;
-  min-height: 136px;
-  padding: 62px 13px 13px;
-  border: 1px solid rgba(85, 69, 45, 0.18);
-  border-radius: 8px;
-  background: rgba(255, 252, 245, 0.76);
-  box-shadow: var(--shadow-soft);
+  min-height: 112px;
+  padding: 58px 2px 8px;
   color: var(--ink);
   text-decoration: none;
-  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  transition: color 160ms ease, transform 160ms ease;
 }
 
 .stop-card::before {
   position: absolute;
   top: 43px;
   left: 26px;
-  height: 19px;
-  border-left: 1px solid rgba(24, 21, 18, 0.28);
+  height: 13px;
+  border-left: 1px solid rgba(24, 21, 18, 0.18);
   content: "";
 }
 
 .stop-card:hover {
-  border-color: rgba(24, 21, 18, 0.32);
-  box-shadow: var(--shadow);
   transform: translateY(-2px);
 }
 
@@ -685,8 +675,8 @@ section {
   left: 0;
   z-index: 2;
   color: var(--faint);
-  font-size: 10.5px;
-  font-weight: 890;
+  font-size: 9.8px;
+  font-weight: 760;
   letter-spacing: 0.08em;
   line-height: 1.2;
   text-transform: uppercase;
@@ -698,32 +688,25 @@ section {
   top: 35px;
   left: 19px;
   z-index: 3;
-  width: 14px;
-  height: 14px;
-  border: 2px solid var(--paper);
+  width: 11px;
+  height: 11px;
+  border: 2px solid var(--teal);
   border-radius: 50%;
-  background: var(--teal);
-  box-shadow: 0 0 0 1px rgba(24, 21, 18, 0.32), 0 0 0 8px rgba(255, 252, 245, 0.72);
+  background: var(--paper);
+  box-shadow: 0 0 0 6px rgba(255, 252, 245, 0.78);
   content: "";
 }
 
 .serpentine-stop--blog .stop-node {
-  background: var(--red);
-}
-
-.serpentine-stop--build .stop-type {
-  color: var(--teal);
-}
-
-.serpentine-stop--blog .stop-type {
-  color: var(--red);
+  border-color: var(--red);
 }
 
 .stop-type {
   display: block;
-  font-size: 9.5px;
-  font-weight: 920;
-  letter-spacing: 0.1em;
+  color: var(--faint);
+  font-size: 8.4px;
+  font-weight: 720;
+  letter-spacing: 0.14em;
   line-height: 1.2;
   text-transform: uppercase;
 }
@@ -731,24 +714,26 @@ section {
 .stop-card strong {
   display: block;
   min-width: 0;
-  margin-top: 5px;
-  font-size: clamp(20px, 2.2vw, 26px);
-  font-weight: 820;
+  margin-top: 4px;
+  font-family: "Bradley Hand", "Noteworthy", "Segoe Print", "Snell Roundhand", var(--serif);
+  font-size: clamp(17px, 1.65vw, 21px);
+  font-style: normal;
+  font-weight: 560;
   letter-spacing: 0;
-  line-height: 1.02;
+  line-height: 1.08;
   overflow-wrap: anywhere;
 }
 
 .stop-card:hover strong {
-  color: var(--teal);
+  color: var(--red);
 }
 
 .stop-note {
   display: block;
-  margin-top: 8px;
+  margin-top: 5px;
   color: var(--muted);
-  font-size: 11.5px;
-  font-weight: 760;
+  font-size: 10px;
+  font-weight: 620;
   letter-spacing: 0.02em;
   line-height: 1.25;
 }
@@ -953,12 +938,12 @@ section {
   }
 
   .stop-card {
-    min-height: 126px;
-    padding: 60px 11px 12px;
+    min-height: 104px;
+    padding: 56px 0 8px;
   }
 
   .stop-card strong {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -1070,11 +1055,7 @@ section {
   }
 
   .serpentine-shell {
-    padding: 13px 12px 14px;
-  }
-
-  .serpentine-shell::before {
-    background-size: 38px 38px;
+    padding: 14px 12px 12px;
   }
 
   .serpentine-shell::after {
@@ -1113,22 +1094,22 @@ section {
 
   .stop-card {
     min-height: 0;
-    padding: 10px 12px 11px;
+    padding: 10px 0 11px;
   }
 
   .stop-date {
     position: static;
     display: block;
-    margin: 0 0 7px;
-    font-size: 10.5px;
+    margin: 0 0 5px;
+    font-size: 9.8px;
   }
 
   .stop-node {
     top: 20px;
     left: -22px;
-    width: 12px;
-    height: 12px;
-    box-shadow: 0 0 0 1px rgba(24, 21, 18, 0.3), 0 0 0 6px rgba(255, 252, 245, 0.82);
+    width: 11px;
+    height: 11px;
+    box-shadow: 0 0 0 6px rgba(255, 252, 245, 0.82);
   }
 
   .stop-card::before {
@@ -1136,7 +1117,8 @@ section {
   }
 
   .stop-card strong {
-    font-size: 21px;
+    font-size: 19px;
+    line-height: 1.05;
   }
 
   .stop-note {
