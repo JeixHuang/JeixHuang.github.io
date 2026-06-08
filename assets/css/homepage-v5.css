@@ -550,6 +550,8 @@ section {
 }
 
 .serpentine-shell {
+  --rail-start-y: 68px;
+  --rail-step-y: 185px;
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -569,6 +571,21 @@ section {
   height: 1px;
   background: linear-gradient(90deg, rgba(85, 69, 45, 0.04), rgba(85, 69, 45, 0.2), rgba(85, 69, 45, 0.04));
   content: "";
+}
+
+.serpentine-shell::after {
+  position: absolute;
+  top: var(--rail-start-y);
+  right: 42px;
+  left: 42px;
+  z-index: 0;
+  height: var(--rail-step-y);
+  border-top: 1px solid rgba(24, 21, 18, 0.46);
+  border-right: 1px solid rgba(24, 21, 18, 0.46);
+  border-bottom: 1px solid rgba(24, 21, 18, 0.46);
+  border-radius: 0 26px 26px 0;
+  content: "";
+  pointer-events: none;
 }
 
 .serpentine-row {
@@ -593,6 +610,7 @@ section {
   top: var(--rail-top);
   right: 24px;
   left: 24px;
+  display: none;
   height: 1px;
   background: linear-gradient(90deg, rgba(85, 69, 45, 0.04), rgba(24, 21, 18, 0.54), rgba(85, 69, 45, 0.04));
   content: "";
@@ -603,6 +621,7 @@ section {
   top: var(--rail-top);
   right: 24px;
   bottom: -35px;
+  display: none;
   width: clamp(34px, 4vw, 52px);
   border-top: 1px solid rgba(24, 21, 18, 0.5);
   border-right: 1px solid rgba(24, 21, 18, 0.5);
@@ -617,6 +636,7 @@ section {
   top: var(--rail-top);
   bottom: -35px;
   left: 24px;
+  display: none;
   width: clamp(34px, 4vw, 52px);
   border-top: 1px solid rgba(24, 21, 18, 0.5);
   border-bottom: 1px solid rgba(24, 21, 18, 0.5);
@@ -671,7 +691,7 @@ section {
 
 .stop-date {
   position: absolute;
-  top: 0;
+  top: 2px;
   left: 0;
   z-index: 2;
   color: var(--faint);
@@ -715,12 +735,12 @@ section {
   display: block;
   min-width: 0;
   margin-top: 4px;
-  font-family: "Bradley Hand", "Noteworthy", "Segoe Print", "Snell Roundhand", var(--serif);
-  font-size: clamp(17px, 1.65vw, 21px);
+  font-family: var(--serif);
+  font-size: clamp(16px, 1.42vw, 18.5px);
   font-style: normal;
-  font-weight: 560;
+  font-weight: 760;
   letter-spacing: 0;
-  line-height: 1.08;
+  line-height: 1.12;
   overflow-wrap: anywhere;
 }
 
@@ -1061,10 +1081,14 @@ section {
   .serpentine-shell::after {
     position: absolute;
     top: 34px;
+    right: auto;
     bottom: 23px;
     left: 24px;
     z-index: 0;
     width: 1px;
+    height: auto;
+    border: 0;
+    border-radius: 0;
     background: linear-gradient(180deg, rgba(24, 21, 18, 0.5), rgba(24, 21, 18, 0.18));
     content: "";
   }
@@ -1117,7 +1141,7 @@ section {
   }
 
   .stop-card strong {
-    font-size: 19px;
+    font-size: 18px;
     line-height: 1.05;
   }
 
