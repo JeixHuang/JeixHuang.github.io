@@ -40,9 +40,9 @@
     </header>
     <div class="post-body{{ if $hasToc }} has-toc{{ end }}">
       {{ if $hasToc }}
-        <aside class="post-toc" aria-label="{{ if eq .Site.Language.Lang "zh" }}文章目录{{ else }}Table of contents{{ end }}">
+        <aside class="post-toc" aria-label="Table of contents">
           <div class="post-toc-inner">
-            <div class="post-toc-kicker">{{ if eq .Site.Language.Lang "zh" }}目录{{ else }}Contents{{ end }}</div>
+            <div class="post-toc-kicker">Contents</div>
             {{ $toc }}
           </div>
         </aside>
