@@ -608,27 +608,31 @@ section {
 .serpentine-row::before {
   position: absolute;
   top: var(--rail-top);
-  right: 24px;
-  left: 24px;
-  display: none;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(85, 69, 45, 0.04), rgba(24, 21, 18, 0.54), rgba(85, 69, 45, 0.04));
+  left: 64%;
+  z-index: 2;
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid rgba(24, 21, 18, 0.58);
+  border-right: 1px solid rgba(24, 21, 18, 0.58);
+  background: transparent;
   content: "";
+  transform: translateY(-50%) rotate(45deg);
 }
 
 .serpentine-row--connect-right::after {
   position: absolute;
-  top: var(--rail-top);
-  right: 24px;
-  bottom: -35px;
-  display: none;
-  width: clamp(34px, 4vw, 52px);
-  border-top: 1px solid rgba(24, 21, 18, 0.5);
+  top: calc(var(--rail-top) + 92px);
+  right: 22px;
+  z-index: 2;
+  display: block;
+  width: 8px;
+  height: 8px;
   border-right: 1px solid rgba(24, 21, 18, 0.5);
   border-bottom: 1px solid rgba(24, 21, 18, 0.5);
-  border-radius: 0 22px 22px 0;
   content: "";
   pointer-events: none;
+  transform: rotate(45deg);
 }
 
 .serpentine-row--connect-left::after {
@@ -644,6 +648,16 @@ section {
   border-radius: 22px 0 0 22px;
   content: "";
   pointer-events: none;
+}
+
+.serpentine-row--reverse::before {
+  right: 36%;
+  left: auto;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid rgba(24, 21, 18, 0.58);
+  border-left: 1px solid rgba(24, 21, 18, 0.58);
+  transform: translateY(-50%) rotate(45deg);
 }
 
 .serpentine-row--reverse {
@@ -1078,6 +1092,19 @@ section {
     padding: 14px 12px 12px;
   }
 
+  .serpentine-shell::before {
+    position: absolute;
+    inset: auto auto 21px 20px;
+    z-index: 2;
+    width: 8px;
+    height: 8px;
+    border-right: 1px solid rgba(24, 21, 18, 0.5);
+    border-bottom: 1px solid rgba(24, 21, 18, 0.5);
+    background: transparent;
+    content: "";
+    transform: rotate(45deg);
+  }
+
   .serpentine-shell::after {
     position: absolute;
     top: 34px;
@@ -1109,6 +1136,10 @@ section {
 
   .serpentine-row::before,
   .serpentine-row::after {
+    display: none;
+  }
+
+  .serpentine-row:last-child::after {
     display: none;
   }
 
