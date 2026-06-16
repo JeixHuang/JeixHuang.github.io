@@ -277,14 +277,6 @@ button {
   line-height: 1.42;
 }
 
-.rail-summary {
-  margin: 16px 0 0;
-  max-width: 252px;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.58;
-}
-
 .socials {
   margin-top: 22px;
   display: flex;
@@ -355,14 +347,6 @@ button {
   border-color: transparent;
 }
 
-.rail-focus {
-  margin-top: 24px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.rail-focus span,
 .card-kicker,
 .section-label,
 .timeline-date,
@@ -372,19 +356,6 @@ button {
 .blog-entry time {
   font-family: var(--sans);
   letter-spacing: 0;
-}
-
-.rail-focus span {
-  display: inline-flex;
-  min-height: 28px;
-  align-items: center;
-  padding: 4px 9px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface-2);
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 720;
 }
 
 .content-column {
@@ -429,7 +400,7 @@ button {
 
 .section-head {
   display: grid;
-  gap: 8px;
+  gap: 0;
   margin-bottom: 18px;
 }
 
