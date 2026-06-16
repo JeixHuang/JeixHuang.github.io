@@ -8,14 +8,14 @@ document.addEventListener("DOMContentLoaded", () => {
     en: {
       showMoreNews: (count) => `Show ${count} more news`,
       showFewerNews: "Show fewer news",
-      showAllPubs: "Show all selected publications",
-      showFewerPubs: "Show fewer selected publications",
+      showAllPubs: "Show all publications",
+      showFewerPubs: "Show fewer publications",
     },
     zh: {
       showMoreNews: (count) => `展开 ${count} 条近况`,
       showFewerNews: "收起近况",
-      showAllPubs: "展开全部代表论文",
-      showFewerPubs: "收起代表论文",
+      showAllPubs: "展开全部论文",
+      showFewerPubs: "收起论文",
     },
   };
 
