@@ -4,13 +4,41 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
-    <meta name="color-scheme" content="light" />
+    <meta name="color-scheme" content="light dark" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ "rss.xml" | relURL }}" />
     {{ if .IsTranslated }}
       {{ range .Translations }}
         <link rel="alternate" hreflang="{{ .Site.Language.Lang }}" href="{{ .Permalink }}" />
       {{ end }}
     {{ end }}
+    <script>
+      (function () {
+        var key = 'jeix-theme-choice';
+        var root = document.documentElement;
+        var choice = 'system';
+
+        try {
+          choice = localStorage.getItem(key) || 'system';
+        } catch (error) {}
+
+        if (choice !== 'light' && choice !== 'dark' && choice !== 'system') {
+          choice = 'system';
+        }
+
+        function resolveTheme(value) {
+          if (value === 'light' || value === 'dark') return value;
+          if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark';
+          }
+          return 'light';
+        }
+
+        var theme = resolveTheme(choice);
+        root.dataset.theme = theme;
+        root.dataset.themeChoice = choice;
+        root.style.colorScheme = theme;
+      })();
+    </script>
     <link rel="stylesheet" href="{{ "assets/style.css" | relURL }}" />
 
     <!-- KaTeX (math) -->
@@ -24,13 +52,20 @@
         <div class="brand">
           <a class="brand-link" href="{{ "" | relURL }}">Blog</a>
         </div>
-        <nav class="nav">
-          <a href="{{ "" | relURL }}">Latest</a>
-          <a href="{{ "tags/" | relURL }}">Tags</a>
-          <a href="{{ "archive/" | relURL }}">Archive</a>
-          <a href="{{ "rss.xml" | relURL }}">RSS</a>
-          <a href="/" rel="noopener">Home</a>
-        </nav>
+        <div class="header-actions">
+          <nav class="nav">
+            <a href="{{ "" | relURL }}">Latest</a>
+            <a href="{{ "tags/" | relURL }}">Tags</a>
+            <a href="{{ "archive/" | relURL }}">Archive</a>
+            <a href="{{ "rss.xml" | relURL }}">RSS</a>
+            <a href="/" rel="noopener">Home</a>
+          </nav>
+          <div class="theme-switch" role="group" aria-label="Theme">
+            <button type="button" data-theme-option="light" aria-label="Use light theme">Light</button>
+            <button type="button" data-theme-option="dark" aria-label="Use dark theme">Dark</button>
+            <button type="button" data-theme-option="system" aria-label="Use system theme">System</button>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -45,6 +80,61 @@
     </footer>
 
     <script>
+      (function () {
+        var key = 'jeix-theme-choice';
+        var root = document.documentElement;
+        var media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+        function storedChoice() {
+          var choice = root.dataset.themeChoice || 'system';
+          try {
+            choice = localStorage.getItem(key) || choice;
+          } catch (error) {}
+          return choice === 'light' || choice === 'dark' || choice === 'system' ? choice : 'system';
+        }
+
+        function resolveTheme(choice) {
+          if (choice === 'light' || choice === 'dark') return choice;
+          return media && media.matches ? 'dark' : 'light';
+        }
+
+        function applyTheme(choice) {
+          var theme = resolveTheme(choice);
+          root.dataset.theme = theme;
+          root.dataset.themeChoice = choice;
+          root.style.colorScheme = theme;
+          document.querySelectorAll('button[data-theme-option]').forEach(function (button) {
+            button.setAttribute('aria-pressed', button.dataset.themeOption === choice ? 'true' : 'false');
+          });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+          applyTheme(storedChoice());
+          document.querySelectorAll('button[data-theme-option]').forEach(function (button) {
+            button.addEventListener('click', function () {
+              var choice = button.dataset.themeOption;
+              try {
+                localStorage.setItem(key, choice);
+              } catch (error) {}
+              applyTheme(choice);
+            });
+          });
+        });
+
+        if (media) {
+          var updateSystemTheme = function () {
+            if (storedChoice() === 'system') {
+              applyTheme('system');
+            }
+          };
+          if (typeof media.addEventListener === 'function') {
+            media.addEventListener('change', updateSystemTheme);
+          } else if (typeof media.addListener === 'function') {
+            media.addListener(updateSystemTheme);
+          }
+        }
+      })();
+
       document.addEventListener('DOMContentLoaded', function () {
         if (typeof renderMathInElement !== 'function') return;
         renderMathInElement(document.body, {

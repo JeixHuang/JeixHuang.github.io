@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{ $toc := .TableOfContents }}
   {{ $hasToc := and (not .Params.disable_toc) (in $toc "<li>") }}
-  <article class="post{{ if $hasToc }} post-with-toc{{ end }}{{ if .Params.weekly_report }} weekly-post{{ end }}{{ if and .Params.weekly_report (not .Params.weekly_paper_detail) }} weekly-overview{{ end }}">
+  <article class="post{{ if $hasToc }} post-with-toc{{ end }}{{ if .Params.weekly_report }} weekly-post{{ end }}{{ if and .Params.weekly_report (not .Params.weekly_paper_detail) }} weekly-overview{{ end }}{{ if .Params.weekly_paper_detail }} weekly-paper-standalone{{ end }}">
     <header class="post-header">
       {{ if .IsTranslated }}
         <nav class="language-switch" aria-label="Language switch">
