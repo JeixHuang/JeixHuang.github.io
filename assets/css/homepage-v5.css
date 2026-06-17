@@ -314,6 +314,12 @@ button {
   padding: 0;
 }
 
+.social-mark {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
 .social-link:hover,
 .button:hover,
 .pub-tab:hover,

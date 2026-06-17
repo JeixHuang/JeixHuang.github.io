@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function applyTheme(choice) {
-    const nextChoice = ["light", "dark", "system"].includes(choice) ? choice : "system";
+    const nextChoice = ["light", "dark", "system"].includes(choice) ? choice : "dark";
     const theme = resolveTheme(nextChoice);
     root.dataset.theme = theme;
     root.dataset.themeChoice = nextChoice;
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll("[data-theme-option]").forEach((button) => {
     button.addEventListener("click", () => {
-      const choice = button.dataset.themeOption || "system";
+      const choice = button.dataset.themeOption || "dark";
       persist(themeKey, choice);
       applyTheme(choice);
     });
@@ -252,6 +252,6 @@ document.addEventListener("DOMContentLoaded", () => {
     expandButton.click();
   }
 
-  applyTheme(readPersisted(themeKey, root.dataset.themeChoice || "system"));
+  applyTheme(readPersisted(themeKey, root.dataset.themeChoice || "dark"));
   applyLocale(readPersisted(localeKey, root.dataset.locale || "en"));
 });

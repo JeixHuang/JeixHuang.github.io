@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-US" data-locale="en" data-theme="light" data-theme-choice="system">
+<html lang="en-US" data-locale="en" data-theme="dark" data-theme-choice="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,15 +26,15 @@
         var themeKey = "jeix-theme-choice";
         var localeKey = "jeix-locale";
         var media = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
-        var themeChoice = "system";
+        var themeChoice = "dark";
         var locale = "en";
 
         try {
-          themeChoice = localStorage.getItem(themeKey) || "system";
+          themeChoice = localStorage.getItem(themeKey) || "dark";
           locale = localStorage.getItem(localeKey) || "en";
         } catch (error) {}
 
-        if (themeChoice !== "light" && themeChoice !== "dark" && themeChoice !== "system") themeChoice = "system";
+        if (themeChoice !== "light" && themeChoice !== "dark" && themeChoice !== "system") themeChoice = "dark";
         if (locale !== "en" && locale !== "zh") locale = "en";
 
         var theme = themeChoice === "system" ? (media && media.matches ? "dark" : "light") : themeChoice;
@@ -100,6 +100,9 @@
           {% if site.twitter %}
           <a class="social-link" href="{{ site.twitter }}" aria-label="X" title="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
           {% endif %}
+          {% if site.xiaohongshu %}
+          <a class="social-link" href="{{ site.xiaohongshu }}" aria-label="Xiaohongshu" title="Xiaohongshu"><span class="social-mark" aria-hidden="true">RED</span></a>
+          {% endif %}
         </div>
       </aside>
 
@@ -143,7 +146,7 @@
             <article class="focus-card">
               <span class="card-kicker">04</span>
               <h3>Trustworthy AI</h3>
-              <p><span data-lang="en">Safety evaluation, robustness, and failure analysis for capable AI systems.</span><span data-lang="zh">面向高能力 AI 系统的安全评测、鲁棒性与失败分析。</span></p>
+              <p><span data-lang="en">Safety, robustness, and failure analysis for capable AI systems.</span><span data-lang="zh">面向高能力 AI 系统的安全性、鲁棒性与失败分析。</span></p>
             </article>
           </div>
         </section>

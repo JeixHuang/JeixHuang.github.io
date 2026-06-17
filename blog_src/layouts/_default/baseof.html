@@ -15,14 +15,14 @@
       (function () {
         var key = 'jeix-theme-choice';
         var root = document.documentElement;
-        var choice = 'system';
+        var choice = 'dark';
 
         try {
-          choice = localStorage.getItem(key) || 'system';
+          choice = localStorage.getItem(key) || 'dark';
         } catch (error) {}
 
         if (choice !== 'light' && choice !== 'dark' && choice !== 'system') {
-          choice = 'system';
+          choice = 'dark';
         }
 
         function resolveTheme(value) {
@@ -86,11 +86,11 @@
         var media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
 
         function storedChoice() {
-          var choice = root.dataset.themeChoice || 'system';
+          var choice = root.dataset.themeChoice || 'dark';
           try {
             choice = localStorage.getItem(key) || choice;
           } catch (error) {}
-          return choice === 'light' || choice === 'dark' || choice === 'system' ? choice : 'system';
+          return choice === 'light' || choice === 'dark' || choice === 'system' ? choice : 'dark';
         }
 
         function resolveTheme(choice) {
