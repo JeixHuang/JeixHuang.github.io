@@ -97,7 +97,7 @@ The code is written in Markdown and is intended to be used in a website or web p
   <button class="tab-button active" data-category="Selected">Selected</button>
   <button class="tab-button" data-category="Multimodal">Multimodal</button>
   <button class="tab-button" data-category="LLM">LLM</button>
-  <button class="tab-button" data-category="Trustworthy">Trustworthy AI</button>
+  <button class="tab-button" data-category="Trustworthy">LLM/Agent</button>
 </div>
 
 <div class="publications">
@@ -222,7 +222,7 @@ The code is written in Markdown and is intended to be used in a website or web p
     </li>
     {% endfor %}
 
-    <!-- Trustworthy AI类别的文章 -->
+    <!-- LLM/Agent类别的文章 -->
     {% for link in site.data.publication_Trustworthy.main %}
     <li class="publication-item" data-category="Trustworthy" style="display: none;">
       <div class="pub-row">
