@@ -1,12 +1,16 @@
 # Basic Information 
 title: Victor Shea-Jay Huang
+affiliation: CUHK
+subaffiliation: Multimedia Laboratory (MMLab)
+affiliation_link: https://www.cuhk.edu.hk/
+subaffiliation_link: https://mmlab.ie.cuhk.edu.hk/
 email: jeix782@gmail.com
 # email2: shujin.wu@outlook.com
 
 # Search Engine Optimization (SEO)
 keywords: xijie huang, Xijie Huang, Victor Shea-Jay Huang, Victor Shea Jay Huang, Victor Ché-Jay Huang, Victor Ché Jay Huang, Victor Shea-Jay Huang, Ché-Jay Huang, Victor Huang, Huang Xijie, Victor Shea Huang, Victor Ché Huang
 canonical: https://jeixhuang.github.io/
-description: Victor Shea-Jay Huang is a Year-1 Ph.D. student whose recent work spans reinforcement learning, multimodal generation, LLM/Agent, and Physical AI.
+description: Victor Shea-Jay Huang is a Year-1 Ph.D. student at MMLab, CUHK. His recent work spans reinforcement learning, multimodal generation, LLM/Agent, and Physical AI.
 
 # The option is used to enable the Johns Hopkins template.
 enable_hopkins_logo: false
