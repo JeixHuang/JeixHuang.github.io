@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en-US" data-locale="en" data-theme="dark" data-theme-choice="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}">
+    <meta name="keywords" content="{{ site.keywords }}">
+    <meta name="color-scheme" content="light dark">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ site.title }}">
+    <meta property="og:url" content="{{ site.canonical }}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:description" content="{{ site.description }}">
+    <meta property="og:image" content="{{ site.avatar }}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ site.title }}">
+    <meta name="twitter:description" content="{{ site.description }}">
+    <meta name="twitter:image" content="{{ site.avatar }}">
+    <link rel="canonical" href="{{ site.canonical }}">
+    <link rel="icon" media="(prefers-color-scheme:dark)" href="{{ site.favicon_dark }}" type="image/png">
+    <link rel="icon" media="(prefers-color-scheme:light)" href="{{ site.favicon }}" type="image/png">
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var themeKey = "jeix-theme-choice";
+        var localeKey = "jeix-locale";
+        var media = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+        var themeChoice = "dark";
+        var locale = "en";
+
+        try {
+          themeChoice = localStorage.getItem(themeKey) || "dark";
+          locale = localStorage.getItem(localeKey) || "en";
+        } catch (error) {}
+
+        if (themeChoice !== "light" && themeChoice !== "dark" && themeChoice !== "system") themeChoice = "dark";
+        if (locale !== "en" && locale !== "zh") locale = "en";
+
+        var theme = themeChoice === "system" ? (media && media.matches ? "dark" : "light") : themeChoice;
+        root.dataset.theme = theme;
+        root.dataset.themeChoice = themeChoice;
+        root.dataset.locale = locale;
+        root.lang = locale === "zh" ? "zh-CN" : "en-US";
+        root.style.colorScheme = theme;
+      })();
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="{{ "/assets/css/homepage-v5.css" | relative_url }}">
+    <script src="{{ "/assets/js/homepage-v5.js" | relative_url }}" defer></script>
+    <script src="{{ "/assets/js/favicon-switcher.js" | relative_url }}" defer></script>
+  </head>
+  <body>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a class="brand" href="{{ "/" | relative_url }}">{{ site.title }}</a>
+        <div class="nav-right">
+          <div class="nav-links">
+            <a href="#research"><span data-lang="en">Research</span><span data-lang="zh">研究</span></a>
+            <a href="#timeline"><span data-lang="en">News</span><span data-lang="zh">近况</span></a>
+            <a href="#publications"><span data-lang="en">Publications</span><span data-lang="zh">论文</span></a>
+            <a href="#blog"><span data-lang="en">Blog</span><span data-lang="zh">博客</span></a>
+            <a href="#contact"><span data-lang="en">Contact</span><span data-lang="zh">联系</span></a>
+          </div>
+          <div class="nav-controls" aria-label="Display controls">
+            <div class="segmented-control" aria-label="Language">
+              <button type="button" data-locale-option="en">EN</button>
+              <button type="button" data-locale-option="zh">中</button>
+            </div>
+            <div class="segmented-control theme-control" aria-label="Theme">
+              <button type="button" data-theme-option="light" aria-label="Light theme"><i class="fa-regular fa-sun" aria-hidden="true"></i></button>
+              <button type="button" data-theme-option="dark" aria-label="Dark theme"><i class="fa-regular fa-moon" aria-hidden="true"></i></button>
+              <button type="button" data-theme-option="system" aria-label="System theme"><i class="fa-solid fa-display" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="site-shell" id="top">
+      <aside class="identity-rail" aria-label="Profile">
+        {% assign avatar_path = site.avatar | replace: './', '/' %}
+        <img class="avatar" src="{{ avatar_path | relative_url }}" alt="{{ site.title }} portrait">
+        <h1 class="name">{{ site.title }}</h1>
+        <p class="role">
+          <span data-lang="en">Ph.D. student, MMLab at CUHK</span>
+          <span data-lang="zh">香港中文大学 MMLab 博士生</span>
+        </p>
+        <div class="socials" aria-label="Profile links">
+          {% if site.email %}
+          <a class="social-link" href="mailto:{{ site.email }}" aria-label="Email" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+          {% endif %}
+          {% if site.google_scholar %}
+          <a class="social-link" href="{{ site.google_scholar }}" aria-label="Google Scholar" title="Google Scholar"><i class="ai ai-google-scholar" aria-hidden="true"></i></a>
+          {% endif %}
+          {% if site.github_link %}
+          <a class="social-link" href="{{ site.github_link }}" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+          {% endif %}
+          {% if site.twitter %}
+          <a class="social-link" href="{{ site.twitter }}" aria-label="X" title="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          {% endif %}
+          {% if site.xiaohongshu %}
+          <a class="social-link" href="{{ site.xiaohongshu }}" aria-label="Xiaohongshu" title="Xiaohongshu"><span class="social-mark" aria-hidden="true">RED</span></a>
+          {% endif %}
+        </div>
+      </aside>
+
+      <div class="content-column">
+        <header class="hero-section">
+          <p class="eyebrow">
+            <span data-lang="en">AI researcher / builder</span>
+            <span data-lang="zh">AI 研究者 / 构建者</span>
+          </p>
+          <p class="summary">
+            <span data-lang="en">I am a Year-1 Ph.D. student at MMLab, CUHK. My recent work spans reinforcement learning, multimodal generation, LLM/Agent, and Physical AI.</span>
+            <span data-lang="zh">我是香港中文大学 MMLab 一年级博士生。近期研究覆盖 Reinforcement Learning、Multimodal Generation、LLM/Agent 与 Physical AI。</span>
+          </p>
+          <div class="cta-row">
+            <a class="button primary" href="#publications"><span data-lang="en">Selected work</span><span data-lang="zh">代表工作</span></a>
+            <a class="button" href="{{ "/blog/" | relative_url }}"><span data-lang="en">Blog</span><span data-lang="zh">博客</span></a>
+            <a class="button" href="mailto:{{ site.email }}"><span data-lang="en">Contact</span><span data-lang="zh">联系</span></a>
+          </div>
+        </header>
+
+        <section id="research" class="section-block">
+          <div class="section-head">
+            <p class="section-label"><span data-lang="en">Research Focus</span><span data-lang="zh">研究主线</span></p>
+          </div>
+          <div class="focus-grid">
+            <article class="focus-card">
+              <span class="card-kicker">01</span>
+              <h3>Reinforcement Learning</h3>
+              <p><span data-lang="en">Reward modeling, policy optimization, and post-training for agents that plan and act.</span><span data-lang="zh">面向会规划、会行动的智能体，研究奖励建模、策略优化与后训练。</span></p>
+            </article>
+            <article class="focus-card">
+              <span class="card-kicker">02</span>
+              <h3>Multimodal Generation</h3>
+              <p><span data-lang="en">Unified generation across language, vision, audio, and video.</span><span data-lang="zh">面向语言、视觉、音频、视频的统一生成。</span></p>
+            </article>
+            <article class="focus-card">
+              <span class="card-kicker">03</span>
+              <h3>LLM/Agent</h3>
+              <p><span data-lang="en">Foundation models, agent reasoning, tool use, and autonomous workflows.</span><span data-lang="zh">面向基础模型、智能体推理、工具使用与自主工作流。</span></p>
+            </article>
+            <article class="focus-card">
+              <span class="card-kicker">04</span>
+              <h3>Physical AI</h3>
+              <p><span data-lang="en">World-action modeling, memory, intent, and control for embodied agents.</span><span data-lang="zh">面向具身智能体的世界-动作建模、记忆、意图与控制。</span></p>
+            </article>
+          </div>
+        </section>
+
+        <section id="timeline" class="section-block">
+          <div class="section-head">
+            <p class="section-label"><span data-lang="en">News</span><span data-lang="zh">近况</span></p>
+          </div>
+          <div class="timeline-stage">
+            <div class="timeline-list" data-timeline-list aria-label="Timeline entries">
+              <article class="timeline-item">
+                <time class="timeline-date" datetime="2026">Fall 2026</time>
+                <div class="timeline-copy">
+                  <div class="timeline-meta">CUHK</div>
+                  <h3><span data-lang="en">Ph.D. student at MMLab, CUHK</span><span data-lang="zh">香港中文大学 MMLab 博士生</span></h3>
+                  <p><span data-lang="en">Beginning my Ph.D. studies at the Multimedia Laboratory.</span><span data-lang="zh">在 Multimedia Laboratory 开始博士阶段学习。</span></p>
+                </div>
+              </article>
+              <article class="timeline-item">
+                <time class="timeline-date" datetime="2026-05">May 2026</time>
+                <div class="timeline-copy">
+                  <div class="timeline-meta">Research release</div>
+                  <h3><span data-lang="en">Mind-Omni series released</span><span data-lang="zh">Mind-Omni 系列发布</span></h3>
+                  <p><span data-lang="en">Physical intelligence series spanning MindVLA-U1, Streaming Intent, DIAL, MindSim, and MindLabel.</span><span data-lang="zh">覆盖 MindVLA-U1、Streaming Intent、DIAL、MindSim 与 MindLabel 的物理智能系列。</span> <a href="https://mind-omni.github.io/">Project hub</a>.</p>
+                </div>
+              </article>
+              <article class="timeline-item">
+                <time class="timeline-date" datetime="2026-04">Apr. 2026</time>
+                <div class="timeline-copy">
+                  <div class="timeline-meta">ACL 2026</div>
+                  <h3><span data-lang="en">Three papers accepted to ACL 2026</span><span data-lang="zh">三篇论文被 ACL 2026 接收</span></h3>
+                </div>
+              </article>
+              <article class="timeline-item">
+                <time class="timeline-date" datetime="2025-11">Nov. 2025</time>
+                <div class="timeline-copy">
+                  <div class="timeline-meta">AAAI 2026</div>
+                  <h3><a href="https://arxiv.org/abs/2503.07050">TIDE</a> <span data-lang="en">accepted to AAAI 2026</span><span data-lang="zh">被 AAAI 2026 接收</span></h3>
+                </div>
+              </article>
+              <article class="timeline-item">
+                <time class="timeline-date" datetime="2025-06">Jun. 2025</time>
+                <div class="timeline-copy">
+                  <div class="timeline-meta">ACM MM 2025 / ISMIR 2025</div>
+                  <h3><a href="https://arxiv.org/pdf/2508.05087">JPS</a> <span data-lang="en">and</span><span data-lang="zh">和</span> <a href="https://arxiv.org/pdf/2503.21254">Vision-to-Music Generation: A Survey</a> <span data-lang="en">accepted</span><span data-lang="zh">被接收</span></h3>
+                </div>
+              </article>
+              <article class="timeline-item">
+                <time class="timeline-date" datetime="2025-04">Apr. 2025</time>
+                <div class="timeline-copy">
+                  <div class="timeline-meta">Open source</div>
+                  <h3><a href="https://github.com/Alpha-VLLM/Lumina-mGPT-2.0">Lumina-mGPT-2.0</a> <span data-lang="en">repo released</span><span data-lang="zh">代码仓库发布</span> <a class="inline-badge" href="https://github.com/Alpha-VLLM/Lumina-mGPT-2.0"><img src="https://img.shields.io/github/stars/Alpha-VLLM/Lumina-mGPT-2.0" alt="Lumina-mGPT-2.0 GitHub stars"></a></h3>
+                </div>
+              </article>
+              <article class="timeline-item">
+                <time class="timeline-date" datetime="2025-03">Mar. 2025</time>
+                <div class="timeline-copy">
+                  <div class="timeline-meta">Open source</div>
+                  <h3><a href="https://github.com/wzk1015/Awesome-Vision-to-Music-Generation">Awesome Vision-to-Music</a> <span data-lang="en">repo released</span><span data-lang="zh">代码仓库发布</span></h3>
+                </div>
+              </article>
+              <article class="timeline-item">
+                <time class="timeline-date" datetime="2025-02">Feb. 2025</time>
+                <div class="timeline-copy">
+                  <div class="timeline-meta">CVPR 2025</div>
+                  <h3><a href="https://arxiv.org/pdf/2411.16824">Beyond Sight</a> <span data-lang="en">and</span><span data-lang="zh">和</span> <a href="https://arxiv.org/pdf/2411.17470">Scaling Laws for Video DiT</a> <span data-lang="en">accepted</span><span data-lang="zh">被接收</span></h3>
+                </div>
+              </article>
+              <article class="timeline-item">
+                <time class="timeline-date" datetime="2025-01">Jan. 2025</time>
+                <div class="timeline-copy">
+                  <div class="timeline-meta">Open source</div>
+                  <h3><a href="https://github.com/thu-coai/AISafetyLab">AISafetyLab</a> <span data-lang="en">repo released</span><span data-lang="zh">代码仓库发布</span></h3>
+                </div>
+              </article>
+              <article class="timeline-item">
+                <time class="timeline-date" datetime="2024-12">Dec. 2024</time>
+                <div class="timeline-copy">
+                  <div class="timeline-meta">Award</div>
+                  <h3>AAAI-25 Student Scholarship</h3>
+                </div>
+              </article>
+              <article class="timeline-item">
+                <time class="timeline-date" datetime="2024-12">Dec. 2024</time>
+                <div class="timeline-copy">
+                  <div class="timeline-meta">AAAI 2025</div>
+                  <h3><a href="https://arxiv.org/pdf/2405.20775">Medical MLLM is Vulnerable</a> <span data-lang="en">and</span><span data-lang="zh">和</span> <a href="https://arxiv.org/pdf/2403.13352">AGFSync</a> <span data-lang="en">accepted</span><span data-lang="zh">被接收</span></h3>
+                </div>
+              </article>
+            </div>
+            <button class="timeline-toggle" type="button" data-timeline-toggle aria-expanded="false"></button>
+          </div>
+        </section>
+
+        <section id="publications" class="section-block">
+          <div class="section-head publication-head">
+            <div>
+              <p class="section-label"><span data-lang="en">Publications</span><span data-lang="zh">论文</span></p>
+            </div>
+            <div class="pub-tabs" role="tablist" aria-label="Publication categories">
+              <button class="pub-tab active" type="button" data-target="selected">Selected</button>
+              <button class="pub-tab" type="button" data-target="multimodal">Multimodal GenAI</button>
+              <button class="pub-tab" type="button" data-target="llm">LLM</button>
+              <button class="pub-tab" type="button" data-target="embodied">Embodied AI</button>
+              <button class="pub-tab" type="button" data-target="trustworthy">LLM/Agent</button>
+            </div>
+          </div>
+          <div class="publication-panel active" data-panel="selected">
+            <div class="publication-grid">
+              {% for link in site.data.publication_Selected.main %}
+              {% assign hide_pub = false %}
+              {% if forloop.index > 4 %}
+              {% assign hide_pub = true %}
+              {% endif %}
+              {% include publication-card.html link=link hidden=hide_pub %}
+              {% endfor %}
+            </div>
+            <button class="expand-button" type="button" data-expanded="false"></button>
+          </div>
+          <div class="publication-panel" data-panel="multimodal">
+            <div class="publication-grid">
+              {% for link in site.data.publication_Multimodal.main %}
+              {% include publication-card.html link=link hidden=false %}
+              {% endfor %}
+            </div>
+          </div>
+          <div class="publication-panel" data-panel="llm">
+            <div class="publication-grid">
+              {% for link in site.data.publication_LLM.main %}
+              {% include publication-card.html link=link hidden=false %}
+              {% endfor %}
+            </div>
+          </div>
+          <div class="publication-panel" data-panel="embodied">
+            <div class="publication-grid">
+              {% for link in site.data.publication_Embodied.main %}
+              {% include publication-card.html link=link hidden=false %}
+              {% endfor %}
+            </div>
+          </div>
+          <div class="publication-panel" data-panel="trustworthy">
+            <div class="publication-grid">
+              {% for link in site.data.publication_Trustworthy.main %}
+              {% include publication-card.html link=link hidden=false %}
+              {% endfor %}
+            </div>
+          </div>
+        </section>
+
+        <section id="blog" class="section-block">
+          <div class="section-head">
+            <p class="section-label"><span data-lang="en">Blog</span><span data-lang="zh">博客</span></p>
+          </div>
+          <div class="blog-timeline" aria-label="Blog posts">
+            <a class="blog-entry" href="{{ "/blog/2026/05/24/late-may-vla-wam-world-model-reading-list-vol-1/" | relative_url }}">
+              <time datetime="2026-05-24">May 24, 2026</time>
+              <div>
+                <span class="card-kicker">Reading list</span>
+                <h3>Late-May VLA / WAM / World Model Reading List Vol. 1</h3>
+                <p><span data-lang="en">A compact batch of VLA, world-action model, and embodied world-model papers.</span><span data-lang="zh">一组关于 VLA、世界-动作模型与具身世界模型的阅读索引。</span></p>
+              </div>
+            </a>
+            <a class="blog-entry" href="{{ "/blog/2026/05/12/mindrl-reward-interface/" | relative_url }}">
+              <time datetime="2026-05-12">May 12, 2026</time>
+              <div>
+                <span class="card-kicker">Project thesis</span>
+                <h3>Reward Is Not a Universal Interface for Generative Reinforcement Learning</h3>
+                <p><span data-lang="en">A note on reward, branch-native score objects, and update interfaces.</span><span data-lang="zh">关于奖励、分支原生 score object 与更新接口的笔记。</span></p>
+              </div>
+            </a>
+            <a class="blog-entry" href="{{ "/blog/2026/01/29/why-the-blog/" | relative_url }}">
+              <time datetime="2026-01-29">Jan 29, 2026</time>
+              <div>
+                <span class="card-kicker">Notes</span>
+                <h3>Why the Blog</h3>
+                <p><span data-lang="en">A short note on keeping research traces public before they become polished work.</span><span data-lang="zh">为什么把尚未打磨成论文的研究痕迹公开留下来。</span></p>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <section id="contact" class="section-block">
+          <div class="section-head">
+            <p class="section-label"><span data-lang="en">Contact</span><span data-lang="zh">联系</span></p>
+          </div>
+          <div class="contact-band">
+            <p><span data-lang="en">For project ideas, research collaboration, or joining related efforts, reach out by email.</span><span data-lang="zh">如果你想交流项目想法、研究合作或参与相关工作，可以通过邮件联系我。</span></p>
+            <a class="button primary" href="mailto:{{ site.email }}">{{ site.email }}</a>
+          </div>
+        </section>
+
+        <section id="academic-service" class="section-block">
+          <div class="section-head">
+            <p class="section-label"><span data-lang="en">Academic Service</span><span data-lang="zh">学术服务</span></p>
+          </div>
+          <div class="service-card">
+            <ul class="service-list">
+              <li>International Conference on Machine Learning (ICML) 2026</li>
+              <li>Conference on Neural Information Processing Systems (NeurIPS) 2025, 2026</li>
+              <li>The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2026</li>
+              <li>International Conference on Computer Vision (ICCV) 2025</li>
+              <li>Association for Computational Linguistics (ACL) 2025</li>
+              <li>The Association for the Advancement of Artificial Intelligence (AAAI) 2025, 2026</li>
+              <li>ACM International Conference on Multimedia (ACM MM) 2024, 2025, 2026</li>
+              <li>ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD) 2025, 2026</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+baseURL = "/blog/"
+title = "Blog"
+defaultContentLanguage = "zh"
+defaultContentLanguageInSubdir = false
+
+# Keep output paths stable under /blog/
+rssURI = "rss.xml"
+
+[outputFormats.PostsJSON]
+mediaType = "application/json"
+baseName = "posts"
+isPlainText = true
+notAlternative = true
+
+[outputFormats.RSS]
+mediaType = "application/rss+xml"
+baseName = "rss"
+
+[outputs]
+home = ["HTML", "RSS", "PostsJSON"]
+
+[permalinks]
+posts = "/:year/:month/:day/:slug/"
+
+[languages]
+  [languages.zh]
+    locale = "zh-cn"
+    label = "中文"
+    title = "Blog"
+    weight = 1
+  [languages.en]
+    locale = "en-us"
+    label = "English"
+    title = "Blog"
+    weight = 2
+    [languages.en.permalinks]
+      posts = "/:year/:month/:day/:slug/"
+
+[taxonomies]
+tag = "tags"
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+    ordered = false
+  [markup.highlight]
+    noClasses = true
+    codeFences = true
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions.passthrough]
+      enable = true
+      [markup.goldmark.extensions.passthrough.delimiters]
+        block = [["$$", "$$"], ["\\[", "\\]"]]
+        inline = [["\\(", "\\)"]]

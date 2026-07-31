@@ -1,0 +1,19 @@
+.DS_Store
+
+# Jekyll
+/_site/
+/.jekyll-cache/
+/.jekyll-metadata
+/.sass-cache/
+/.bundle/
+/vendor/
+
+# Hugo (the blog is generated into _site/blog during deployment)
+/blog/
+/blog_src/public/
+/blog_src/resources/
+**/.hugo_build.lock
+
+# Local work
+/.local/
+/tmp/

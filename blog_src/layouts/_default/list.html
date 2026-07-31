@@ -1,0 +1,34 @@
+{{ define "main" }}
+  <h1 class="page-title">{{ .Title }}</h1>
+
+  <ul class="post-list">
+    {{ $pages := partial "public-posts.html" .Pages }}
+    {{ range $pages.ByDate.Reverse }}
+      {{- $excerpt := (or .Params.summary .Summary) | plainify | htmlUnescape | replaceRE "\\s+" " " | trim " " | truncate 180 -}}
+      <li class="post-item">
+        <article class="post-card">
+          <div class="post-card-header">
+            <h2 class="post-title">
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+            <div class="post-meta">
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+              <span class="dot">·</span>
+              <span class="reading">{{ .ReadingTime }} min read</span>
+              {{ with .Params.tags }}
+                <span class="tags">
+                  {{ range . }}
+                    <a class="tag" href="{{ (printf "tags/%s/" (. | urlize)) | relURL }}">#{{ . }}</a>
+                  {{ end }}
+                </span>
+              {{ end }}
+            </div>
+          </div>
+          {{ if $excerpt }}
+            <p class="post-excerpt">{{ $excerpt }}</p>
+          {{ end }}
+        </article>
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}
