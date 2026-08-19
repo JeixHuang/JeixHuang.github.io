@@ -141,28 +141,29 @@
       <div class="content-column">
         <header class="intro-section">
           <div class="intro-copy">
-            <p class="eyebrow"><span data-lang="en">About</span><span data-lang="zh">关于我</span></p>
-            <p class="intro-lead">
-              <span data-lang="en">I am a Year-1 Ph.D. student at MMLab, CUHK. My recent work spans reinforcement learning, multimodal generation, LLM/Agent, and Physical AI.</span>
-              <span data-lang="zh">我是香港中文大学 MMLab 一年级博士生。近期研究覆盖 Reinforcement Learning、Multimodal Generation、LLM/Agent 与 Physical AI。</span>
-            </p>
+            <p class="eyebrow"><span data-lang="en">Research interests</span><span data-lang="zh">研究兴趣</span></p>
+            <ul class="interest-index" aria-label="Research interests">
+              <li><span class="interest-number">01</span><span>Reinforcement Learning</span></li>
+              <li><span class="interest-number">02</span><span>Multimodal Generation</span></li>
+              <li><span class="interest-number">03</span><span>LLMs &amp; Agents</span></li>
+              <li><span class="interest-number">04</span><span>Physical AI</span></li>
+            </ul>
             <p class="intro-note">
               <span data-lang="en">This homepage is an index of what I read deeply and what I build openly.</span>
-              <span data-lang="zh">这个主页主要索引我认真读过的内容，以及公开做出来的项目。</span>
+              <span data-lang="zh">这里索引我深入读过的内容，以及公开构建的作品。</span>
             </p>
           </div>
-          <div class="intro-emblem" aria-hidden="true">
-            <span class="emblem-orbit"></span>
-            <span class="emblem-label emblem-paper">PAPER</span>
-            <span class="emblem-label emblem-project">PROJECT</span>
-            <div class="emblem-core"><span>READ</span><b>↔</b><span>BUILD</span></div>
+          <div class="intro-sigil" aria-hidden="true">
+            <span class="sigil-axis sigil-axis-x"></span>
+            <span class="sigil-axis sigil-axis-y"></span>
+            <span class="sigil-dot"></span>
+            <span class="sigil-code">R / B</span>
           </div>
         </header>
 
         <section id="writing" class="section-block writing-section">
           <div class="section-head">
             <div>
-              <p class="eyebrow"><span data-lang="en">Primary</span><span data-lang="zh">主要内容</span></p>
               <h2><span data-lang="en">Writing</span><span data-lang="zh">写作</span></h2>
             </div>
             <a class="text-link" href="{{ "/blog/" | relative_url }}">
@@ -171,15 +172,10 @@
             </a>
           </div>
 
-          <p class="section-intro">
-            <span data-lang="en">Two tags, one standard: depth comes from close reading or working code.</span>
-            <span data-lang="zh">两个标签、一个标准：深度来自真正的精读，或真正可运行的代码。</span>
-          </p>
-
           <div class="writing-taxonomy">
             <div class="writing-definitions">
-              <p><span class="taxonomy-tag tag-paper">#paper</span><span data-lang="en">One landmark paper or a focused topic series.</span><span data-lang="zh">一篇经典论文，或一个聚焦 topic 的系列精读。</span></p>
-              <p><span class="taxonomy-tag tag-project">#project</span><span data-lang="en">Open-source code first; the project blog follows. A paper is optional.</span><span data-lang="zh">先完成开源代码，再写项目 Blog；论文是可选的后续形式。</span></p>
+              <span class="taxonomy-item"><span class="taxonomy-tag tag-paper">#paper</span><span data-lang="en">Paper Deep Dive</span><span data-lang="zh">论文精读</span></span>
+              <span class="taxonomy-item"><span class="taxonomy-tag tag-project">#project</span><span data-lang="en">Project Blog</span><span data-lang="zh">项目 Blog</span></span>
             </div>
             <div class="writing-filters" role="group" aria-label="Filter writing by tag" data-writing-filters>
               <button class="is-active" type="button" data-writing-filter="all" aria-pressed="true"><span data-lang="en">All</span><span data-lang="zh">全部</span></button>
@@ -210,14 +206,13 @@
           </div>
           <div class="writing-empty" data-writing-empty hidden>
             <span class="empty-signal" aria-hidden="true">∅</span>
-            <p><span data-lang="en">No public post under this tag yet. A #project post ships only after the code does.</span><span data-lang="zh">这个标签下暂时没有公开文章。#project 只会在代码真正完成后发布。</span></p>
+            <p><span data-lang="en">No public posts under this tag yet.</span><span data-lang="zh">这个标签下暂时没有公开文章。</span></p>
           </div>
         </section>
 
         <section id="projects" class="section-block projects-section">
           <div class="section-head">
             <div>
-              <p class="eyebrow"><span data-lang="en">Secondary</span><span data-lang="zh">次级内容</span></p>
               <h2><span data-lang="en">Code &amp; Projects</span><span data-lang="zh">代码与项目</span></h2>
             </div>
             <a class="text-link" href="{{ site.github_link | escape }}">
@@ -226,17 +221,11 @@
             </a>
           </div>
 
-          <p class="section-intro">
-            <span data-lang="en">Build first. Write the project blog when the repository can carry the argument.</span>
-            <span data-lang="zh">先把代码做出来；当仓库本身足以支撑论点，再写对应的 Project Blog。</span>
-          </p>
-
           <div class="project-grid">
             {% for project in site.data.homepage.projects %}
             <article class="project-card">
               <div class="project-topline">
-                <span class="project-type"><span data-lang="en">{{ project.type_en }}</span><span data-lang="zh">{{ project.type_zh }}</span></span>
-                <span class="project-number">0{{ forloop.index }}</span>
+                <span class="project-number">// 0{{ forloop.index }}</span>
               </div>
               <h3>{{ project.title }}</h3>
               <p><span data-lang="en">{{ project.description_en }}</span><span data-lang="zh">{{ project.description_zh }}</span></p>
