@@ -4,6 +4,7 @@ date: 2026-01-29T12:00:00+08:00
 tags: ["blog"]
 summary: "Why I write this blog."
 slug: "why-the-blog"
+hide_from_lists: true
 ---
 
 ![demo](./why%20the%20blog.png)

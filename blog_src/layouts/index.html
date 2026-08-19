@@ -1,5 +1,10 @@
 {{ define "main" }}
-  <h1 class="page-title">Latest Posts</h1>
+  <header class="blog-index-head">
+    <p class="blog-index-kicker">READ DEEPLY · BUILD OPENLY</p>
+    <h1 class="page-title">Writing</h1>
+    <p class="blog-index-lede">Paper deep dives and project blogs—one grounded in close reading, the other in working open-source code.</p>
+    {{ partial "blog-type-nav.html" . }}
+  </header>
 
   <ul class="post-list">
     {{ $pages := partial "public-posts.html" (where site.RegularPages "Section" "posts") }}

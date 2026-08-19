@@ -2,10 +2,11 @@
 title: "Reward Is Not a Universal Interface for Generative Reinforcement Learning"
 date: 2026-05-12T12:00:00+08:00
 slug: "mindrl-reward-interface"
-tags: ["generative-rl", "mindrl", "ctc", "flow-matching", "robot-learning"]
+tags: ["project", "generative-rl", "mindrl", "ctc", "flow-matching", "robot-learning"]
 summary: "MindRL argues that a reward becomes an RL update only after it passes through the probability object, score, or controlled surrogate exposed by the policy branch."
 arxiv: "TBD_ARXIV_URL"
 math: true
+hide_from_lists: true
 ---
 
 ## Project Thesis

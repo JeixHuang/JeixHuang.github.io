@@ -1,0 +1,6 @@
+{{- $title := lower .Title -}}
+<nav class="blog-type-nav" aria-label="Writing categories">
+  <a class="{{ if .IsHome }}is-active{{ end }}" href="{{ "" | relURL }}">All</a>
+  <a class="type-paper {{ if and (eq .Kind "term") (eq $title "paper") }}is-active{{ end }}" href="{{ "tags/paper/" | relURL }}">#paper</a>
+  <a class="type-project {{ if and (eq .Kind "term") (eq $title "project") }}is-active{{ end }}" href="{{ "tags/project/" | relURL }}">#project</a>
+</nav>

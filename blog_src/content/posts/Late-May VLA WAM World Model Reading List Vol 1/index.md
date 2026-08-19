@@ -2,7 +2,7 @@
 title: "Late-May VLA / WAM / World Model Reading List Vol. 1"
 date: 2026-05-24T09:00:00+08:00
 slug: "late-may-vla-wam-world-model-reading-list-vol-1"
-tags: ["vla", "wam", "world-model", "embodied-ai", "paper-reading"]
+tags: ["paper", "vla", "wam", "world-model", "embodied-ai", "paper-reading"]
 summary: "A compact reading directory for ten late-May papers around VLA, WAM, and embodied world models."
 ---
 

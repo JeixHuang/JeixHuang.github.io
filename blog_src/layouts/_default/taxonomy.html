@@ -1,19 +1,28 @@
 {{ define "main" }}
-  <h1 class="page-title">Tag: {{ .Title }}</h1>
+  <header class="blog-index-head blog-taxonomy-head">
+    <p class="blog-index-kicker">WRITING INDEX</p>
+    <h1 class="page-title">#{{ .Title }}</h1>
+    {{ partial "blog-type-nav.html" . }}
+  </header>
 
   <ul class="post-list">
     {{ $pages := partial "public-posts.html" .Pages }}
-    {{ range $pages.ByDate.Reverse }}
+    {{ if gt (len $pages) 0 }}
+      {{ range $pages.ByDate.Reverse }}
       <li class="post-item">
-        <div class="post-meta">
-          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
-        </div>
-        <h2 class="post-title">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </h2>
-        <p class="post-excerpt">{{ .Summary | plainify | htmlUnescape }}</p>
+        <article class="post-card">
+          <div class="post-meta">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+            <span class="dot">·</span>
+            <span class="reading">{{ .ReadingTime }} min read</span>
+          </div>
+          <h2 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          <p class="post-excerpt">{{ (or .Params.summary .Summary) | plainify | htmlUnescape }}</p>
+        </article>
       </li>
+      {{ end }}
+    {{ else }}
+      <li class="blog-empty-state">No public post in this category yet. Project blogs ship after their code does.</li>
     {{ end }}
   </ul>
 {{ end }}
-
