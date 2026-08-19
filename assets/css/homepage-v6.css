@@ -1,5 +1,7 @@
 :root {
   color-scheme: light;
+  --cursor-x: 76vw;
+  --cursor-y: 18vh;
   --bg: #f3f0e9;
   --surface: #faf8f3;
   --surface-raised: #ffffff;
@@ -16,7 +18,11 @@
   --paper-soft: rgba(164, 101, 31, 0.1);
   --work-accent: #087f75;
   --work-soft: rgba(8, 127, 117, 0.1);
+  --grid-line: rgba(23, 26, 28, 0.045);
+  --ambient-glow: rgba(8, 127, 117, 0.1);
+  --work-glass: rgba(255, 255, 255, 0.52);
   --shadow: 0 12px 32px rgba(36, 31, 23, 0.07);
+  --shadow-deep: 0 26px 80px rgba(36, 31, 23, 0.12);
   --focus: 0 0 0 3px rgba(8, 127, 117, 0.28);
   --radius-sm: 8px;
   --radius: 14px;
@@ -43,7 +49,11 @@ html[data-theme="dark"] {
   --paper-soft: rgba(226, 173, 111, 0.1);
   --work-accent: #76cfc1;
   --work-soft: rgba(118, 207, 193, 0.1);
+  --grid-line: rgba(226, 234, 230, 0.04);
+  --ambient-glow: rgba(118, 207, 193, 0.1);
+  --work-glass: rgba(18, 23, 26, 0.72);
   --shadow: 0 16px 42px rgba(0, 0, 0, 0.22);
+  --shadow-deep: 0 30px 90px rgba(0, 0, 0, 0.38);
   --focus: 0 0 0 3px rgba(118, 207, 193, 0.3);
 }
 
@@ -65,19 +75,46 @@ html[data-locale="zh"] [data-lang="en"] {
 }
 
 body {
+  position: relative;
+  isolation: isolate;
   margin: 0;
   max-width: 100%;
   overflow-x: clip;
   color: var(--text);
   background:
-    radial-gradient(circle at 8% 4%, var(--accent-soft), transparent 27rem),
-    radial-gradient(circle at 92% 18%, var(--paper-soft), transparent 24rem),
-    linear-gradient(115deg, transparent 0 52%, color-mix(in srgb, var(--accent) 2.8%, transparent) 52% 52.15%, transparent 52.15%),
+    radial-gradient(circle at 8% 4%, var(--accent-soft), transparent 29rem),
+    radial-gradient(circle at 92% 18%, var(--paper-soft), transparent 27rem),
+    linear-gradient(115deg, transparent 0 52%, color-mix(in srgb, var(--accent) 3.5%, transparent) 52% 52.14%, transparent 52.14%),
     var(--bg);
   font-family: var(--sans);
   font-size: 16px;
   line-height: 1.65;
   text-rendering: optimizeLegibility;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+body::before {
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 54px 54px;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 82%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 82%);
+  opacity: 0.72;
+}
+
+body::after {
+  background: radial-gradient(460px circle at var(--cursor-x) var(--cursor-y), var(--ambient-glow), transparent 70%);
+  opacity: 0.88;
+  transition: opacity 240ms ease;
 }
 
 h1,
@@ -129,8 +166,9 @@ button {
   top: 0;
   z-index: 100;
   border-bottom: 1px solid var(--border);
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter: blur(18px);
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+  box-shadow: 0 10px 36px color-mix(in srgb, var(--bg) 58%, transparent);
+  backdrop-filter: blur(24px) saturate(1.2);
 }
 
 .nav-inner {
@@ -173,7 +211,9 @@ button {
   font-size: 11px;
   font-weight: 800;
   letter-spacing: -0.04em;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 5%, transparent), 0 0 24px transparent;
   overflow: hidden;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .brand-mark::before {
@@ -183,6 +223,12 @@ button {
   z-index: -1;
   background: conic-gradient(from 0deg, transparent, var(--accent-soft), var(--paper-soft), transparent 72%);
   animation: orbit-spin 9s linear infinite;
+}
+
+.brand:hover .brand-mark {
+  border-color: color-mix(in srgb, var(--accent) 62%, var(--border));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 14%, transparent), 0 0 26px var(--accent-soft);
+  transform: rotate(-6deg) scale(1.04);
 }
 
 .brand-copy {
@@ -202,6 +248,7 @@ button {
 }
 
 .nav-links a {
+  position: relative;
   padding: 7px 9px;
   border-radius: 7px;
   color: var(--muted);
@@ -211,9 +258,27 @@ button {
   transition: color 160ms ease, background 160ms ease;
 }
 
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  right: 9px;
+  bottom: 3px;
+  left: 9px;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 180ms ease;
+}
+
 .nav-links a:hover {
   background: var(--accent-soft);
   color: var(--text);
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .nav-controls {
@@ -225,7 +290,9 @@ button {
   padding: 2px;
   border: 1px solid var(--border);
   border-radius: 9px;
-  background: var(--surface);
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+  box-shadow: inset 0 1px color-mix(in srgb, var(--text) 5%, transparent);
+  backdrop-filter: blur(10px);
 }
 
 .segmented-control button {
@@ -279,22 +346,86 @@ button {
   display: none;
 }
 
-.avatar {
-  display: block;
+.avatar-frame {
+  position: relative;
+  isolation: isolate;
   width: 176px;
   max-width: 100%;
+  aspect-ratio: 1;
+  transition: transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.avatar-frame::before,
+.avatar-frame::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.avatar-frame::before {
+  inset: -8px;
+  z-index: -1;
+  border: 1px solid color-mix(in srgb, var(--accent) 36%, var(--border));
+  border-radius: 30px;
+  background:
+    linear-gradient(135deg, var(--accent-soft), transparent 38%),
+    color-mix(in srgb, var(--surface) 50%, transparent);
+  box-shadow: 0 18px 55px color-mix(in srgb, var(--accent) 12%, transparent);
+  transform: rotate(-1.6deg);
+  transition: border-color 260ms ease, box-shadow 260ms ease, transform 260ms ease;
+}
+
+.avatar-frame::after {
+  top: -13px;
+  right: -13px;
+  width: 34px;
+  height: 34px;
+  border-top: 1px solid var(--accent);
+  border-right: 1px solid var(--accent);
+  opacity: 0.72;
+}
+
+.avatar {
+  display: block;
+  width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
   border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border));
   border-radius: 24px;
   background: var(--surface);
-  box-shadow: var(--shadow), 0 0 0 7px color-mix(in srgb, var(--surface) 72%, transparent);
-  transition: transform 240ms ease, box-shadow 240ms ease;
+  box-shadow: var(--shadow);
 }
 
-.avatar:hover {
-  transform: translateY(-3px) rotate(-0.6deg);
-  box-shadow: var(--shadow), 0 0 0 7px var(--accent-soft), 0 22px 70px var(--accent-soft);
+.avatar-orbit {
+  position: absolute;
+  inset: -17px;
+  z-index: -2;
+  border: 1px dashed color-mix(in srgb, var(--accent) 32%, transparent);
+  border-radius: 36px;
+  opacity: 0.64;
+  animation: avatar-orbit 22s linear infinite;
+}
+
+.avatar-orbit::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 48%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 18px var(--accent);
+}
+
+.avatar-frame:hover {
+  transform: translateY(-5px) rotate(0.5deg);
+}
+
+.avatar-frame:hover::before {
+  border-color: color-mix(in srgb, var(--accent) 62%, var(--border));
+  box-shadow: 0 24px 70px color-mix(in srgb, var(--accent) 20%, transparent);
+  transform: rotate(0deg) scale(1.015);
 }
 
 .identity-copy {
@@ -400,6 +531,7 @@ button {
 }
 
 .intro-section {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 112px;
   gap: clamp(32px, 6vw, 72px);
@@ -407,6 +539,17 @@ button {
   max-width: 860px;
   padding: 13px 0 38px;
   border-bottom: 1px solid var(--border);
+}
+
+.intro-section::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  width: 34%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent));
+  box-shadow: 0 0 14px var(--accent-soft);
 }
 
 .intro-copy {
@@ -434,6 +577,13 @@ button {
   font-size: 13px;
   font-weight: 620;
   letter-spacing: -0.005em;
+  transition: color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.interest-index li:hover {
+  border-color: color-mix(in srgb, var(--accent) 38%, var(--border));
+  color: var(--text);
+  transform: translateX(3px);
 }
 
 .interest-number {
@@ -459,6 +609,7 @@ button {
   font-weight: 520;
   letter-spacing: -0.012em;
   line-height: 1.45;
+  text-shadow: 0 12px 34px color-mix(in srgb, var(--accent) 12%, transparent);
 }
 
 .intro-sigil {
@@ -471,9 +622,13 @@ button {
   background:
     linear-gradient(90deg, transparent 49.5%, var(--border) 49.5% 50.5%, transparent 50.5%),
     linear-gradient(transparent 49.5%, var(--border) 49.5% 50.5%, transparent 50.5%),
-    radial-gradient(circle at center, var(--work-soft), transparent 56%),
-    var(--surface);
-  box-shadow: inset 0 1px color-mix(in srgb, var(--text) 7%, transparent), var(--shadow);
+    radial-gradient(circle at center, var(--work-soft), transparent 62%),
+    color-mix(in srgb, var(--surface) 78%, transparent);
+  box-shadow:
+    inset 0 1px color-mix(in srgb, var(--text) 8%, transparent),
+    inset 0 0 32px color-mix(in srgb, var(--accent) 6%, transparent),
+    var(--shadow-deep);
+  backdrop-filter: blur(14px);
   overflow: hidden;
 }
 
@@ -495,6 +650,26 @@ button {
   opacity: 0.55;
 }
 
+.sigil-ring {
+  position: absolute;
+  border: 1px solid color-mix(in srgb, var(--accent) 46%, transparent);
+  border-radius: 50%;
+}
+
+.sigil-ring-a {
+  inset: 22px;
+  border-top-color: transparent;
+  border-left-color: color-mix(in srgb, var(--paper-accent) 52%, transparent);
+  animation: sigil-orbit 8s linear infinite;
+}
+
+.sigil-ring-b {
+  inset: 32px;
+  border-right-color: transparent;
+  border-bottom-color: color-mix(in srgb, var(--paper-accent) 48%, transparent);
+  animation: sigil-orbit-reverse 5.8s linear infinite;
+}
+
 .sigil-axis-x {
   top: 50%;
   left: 13px;
@@ -510,6 +685,16 @@ button {
   height: calc(100% - 26px);
   background: linear-gradient(transparent, color-mix(in srgb, var(--accent) 80%, transparent), transparent);
   animation: sigil-pulse 4.8s ease-in-out 1.1s infinite;
+}
+
+.sigil-scan {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  width: 24px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 12%, transparent), transparent);
+  transform: skewX(-8deg);
+  animation: sigil-scan 4.2s ease-in-out infinite;
 }
 
 .sigil-dot {
@@ -540,6 +725,24 @@ button {
   to { transform: rotate(360deg); }
 }
 
+@keyframes avatar-orbit {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes sigil-orbit {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes sigil-orbit-reverse {
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes sigil-scan {
+  0%, 100% { left: -28px; opacity: 0; }
+  18%, 82% { opacity: 0.82; }
+  50% { left: calc(100% + 4px); opacity: 0.4; }
+}
+
 @keyframes sigil-pulse {
   0%, 100% { opacity: 0.28; transform: scaleX(0.72); }
   50% { opacity: 0.72; transform: scaleX(1); }
@@ -564,6 +767,11 @@ button {
   font-weight: 580;
   letter-spacing: -0.04em;
   line-height: 0.98;
+  background: linear-gradient(110deg, var(--text) 18%, color-mix(in srgb, var(--accent) 82%, var(--text)) 118%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 22px 52px color-mix(in srgb, var(--accent) 12%, transparent);
 }
 
 .text-link {
@@ -597,27 +805,84 @@ button {
 
 .work-list {
   display: grid;
-  margin-top: 28px;
-  border-top: 1px solid var(--border-strong);
+  gap: 14px;
+  margin-top: 32px;
+  perspective: 1200px;
 }
 
 .work-entry {
+  --spot-x: 72%;
+  --spot-y: 22%;
   position: relative;
+  isolation: isolate;
   display: grid;
-  grid-template-columns: 112px minmax(0, 1fr) 24px;
-  gap: 28px;
+  grid-template-columns: 96px minmax(0, 1fr) 32px;
+  gap: 26px;
   align-items: start;
-  padding: 30px 8px 30px 0;
-  border-bottom: 1px solid var(--border);
+  padding: 28px 24px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--work-glass) 96%, transparent), color-mix(in srgb, var(--surface) 54%, transparent)),
+    var(--surface);
+  box-shadow:
+    inset 0 1px color-mix(in srgb, var(--text) 5%, transparent),
+    0 10px 34px color-mix(in srgb, var(--bg) 72%, transparent);
   color: var(--text);
-  transition: background 160ms ease, padding 160ms ease;
+  overflow: hidden;
+  transform: translateZ(0);
+  transition: border-color 220ms ease, box-shadow 260ms ease, transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.work-entry::before,
+.work-entry::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.work-entry::before {
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(360px circle at var(--spot-x) var(--spot-y), color-mix(in srgb, var(--accent) 16%, transparent), transparent 68%);
+  opacity: 0;
+  transition: opacity 260ms ease;
+}
+
+.work-entry::after {
+  top: -1px;
+  right: -1px;
+  width: 52px;
+  height: 52px;
+  border-top: 1px solid color-mix(in srgb, var(--accent) 54%, transparent);
+  border-right: 1px solid color-mix(in srgb, var(--accent) 54%, transparent);
+  border-radius: 0 18px 0 0;
+  opacity: 0.58;
+  transition: width 260ms ease, height 260ms ease, opacity 260ms ease;
+}
+
+.work-entry > * {
+  position: relative;
+  z-index: 1;
 }
 
 .work-entry:hover {
-  padding-left: 12px;
-  background:
-    linear-gradient(90deg, var(--accent-soft), transparent 74%),
-    linear-gradient(135deg, transparent 0 92%, color-mix(in srgb, var(--accent) 7%, transparent) 92%);
+  border-color: color-mix(in srgb, var(--accent) 46%, var(--border));
+  box-shadow:
+    inset 0 1px color-mix(in srgb, var(--text) 8%, transparent),
+    0 24px 70px color-mix(in srgb, var(--accent) 14%, transparent),
+    0 12px 42px color-mix(in srgb, var(--bg) 70%, transparent);
+  transform: translateY(-5px) scale(1.004);
+}
+
+.work-entry:hover::before {
+  opacity: 1;
+}
+
+.work-entry:hover::after {
+  width: 74px;
+  height: 74px;
+  opacity: 0.92;
 }
 
 .work-sequence {
@@ -631,8 +896,15 @@ button {
 }
 
 .work-index {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0 7px;
+  border: 1px solid color-mix(in srgb, var(--accent) 34%, var(--border));
+  border-radius: 999px;
   color: var(--accent);
-  font-size: 9px;
+  background: var(--accent-soft);
+  font-size: 8px;
   font-weight: 800;
   letter-spacing: 0.08em;
 }
@@ -649,7 +921,7 @@ button {
   margin: 0;
   color: var(--text);
   font-family: var(--serif);
-  font-size: clamp(24px, 2.9vw, 32px);
+  font-size: clamp(25px, 3vw, 34px);
   font-weight: 590;
   letter-spacing: -0.025em;
   line-height: 1.15;
@@ -658,11 +930,12 @@ button {
 .work-title-link {
   color: inherit;
   text-decoration: none;
-  transition: color 160ms ease;
+  transition: color 180ms ease, text-shadow 180ms ease;
 }
 
 .work-title-link:hover {
   color: var(--accent);
+  text-shadow: 0 12px 32px var(--accent-soft);
 }
 
 .work-entry p {
@@ -709,7 +982,8 @@ button {
   border: 1px solid var(--border);
   border-radius: 999px;
   color: var(--text-soft);
-  background: color-mix(in srgb, var(--surface) 72%, transparent);
+  background: color-mix(in srgb, var(--surface) 64%, transparent);
+  box-shadow: inset 0 1px color-mix(in srgb, var(--text) 5%, transparent);
   font-family: var(--mono);
   font-size: 9px;
   font-weight: 780;
@@ -727,16 +1001,24 @@ button {
 
 .entry-arrow {
   display: inline-flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
   color: var(--faint);
-  font-size: 18px;
+  background: color-mix(in srgb, var(--surface) 62%, transparent);
+  font-size: 15px;
   text-decoration: none;
-  transition: color 160ms ease, transform 160ms ease;
+  transition: color 180ms ease, border-color 180ms ease, background 180ms ease, transform 180ms ease;
 }
 
 .work-entry:hover .entry-arrow {
   color: var(--accent);
-  transform: translate(2px, -2px);
+  border-color: color-mix(in srgb, var(--accent) 48%, var(--border));
+  background: var(--accent-soft);
+  transform: translate(2px, -2px) rotate(4deg);
 }
 
 .site-footer {
@@ -754,6 +1036,40 @@ button {
   margin: 0;
 }
 
+::selection {
+  background: color-mix(in srgb, var(--accent) 30%, transparent);
+  color: var(--text);
+}
+
+html[data-motion="ready"] .reveal-target {
+  opacity: 0;
+  filter: blur(7px);
+  clip-path: inset(0 0 14% 0);
+  transition: opacity 560ms ease, filter 620ms ease, clip-path 620ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+html[data-motion="ready"] .reveal-target.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  clip-path: inset(0 0 0 0);
+}
+
+html[data-motion="ready"] .work-entry.reveal-target {
+  transition:
+    opacity 560ms ease calc(var(--entry-i) * 52ms),
+    filter 620ms ease calc(var(--entry-i) * 52ms),
+    clip-path 620ms cubic-bezier(0.2, 0.8, 0.2, 1) calc(var(--entry-i) * 52ms),
+    border-color 220ms ease,
+    box-shadow 260ms ease,
+    transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+html[data-motion="reduced"] .reveal-target {
+  opacity: 1;
+  filter: none;
+  clip-path: none;
+}
+
 @media (max-width: 980px) {
   .nav-inner,
   .site-shell {
@@ -769,8 +1085,11 @@ button {
     gap: 44px;
   }
 
-  .avatar {
+  .avatar-frame {
     width: 148px;
+  }
+
+  .avatar {
     border-radius: 20px;
   }
 
@@ -804,8 +1123,11 @@ button {
     overflow: visible;
   }
 
-  .avatar {
+  .avatar-frame {
     width: 112px;
+  }
+
+  .avatar {
     border-radius: 18px;
   }
 
@@ -850,6 +1172,7 @@ button {
   .work-entry {
     grid-template-columns: 76px minmax(0, 1fr) 22px;
     gap: 14px;
+    padding: 24px 20px;
   }
 
   .site-footer {
@@ -900,6 +1223,7 @@ button {
 
   .work-entry {
     grid-template-columns: minmax(0, 1fr) 22px;
+    padding: 22px 18px;
   }
 
   .work-sequence {
@@ -921,5 +1245,15 @@ button {
     scroll-behavior: auto !important;
     transition-duration: 1ms !important;
     animation-duration: 1ms !important;
+  }
+
+  body::after,
+  .work-entry::before {
+    display: none;
+  }
+
+  .work-entry:hover,
+  .avatar-frame:hover {
+    transform: none;
   }
 }

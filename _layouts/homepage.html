@@ -47,8 +47,8 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="{{ "/assets/css/homepage-v6.css" | relative_url }}?v=e9f5b499">
-    <script src="{{ "/assets/js/homepage-v6.js" | relative_url }}?v=a55032e6" defer></script>
+    <link rel="stylesheet" href="{{ "/assets/css/homepage-v6.css" | relative_url }}?v=34dbc82b">
+    <script src="{{ "/assets/js/homepage-v6.js" | relative_url }}?v=56ed7ef4" defer></script>
     <script src="{{ "/assets/js/favicon-switcher.js" | relative_url }}" defer></script>
   </head>
   <body>
@@ -85,7 +85,10 @@
     <main class="site-shell" id="content">
       <aside class="identity-rail" aria-label="Profile">
         {% assign avatar_path = site.avatar | replace: './', '/' %}
-        <img class="avatar" src="{{ avatar_path | relative_url }}" alt="{{ site.title | escape }} portrait">
+        <div class="avatar-frame">
+          <img class="avatar" src="{{ avatar_path | relative_url }}" alt="{{ site.title | escape }} portrait">
+          <span class="avatar-orbit" aria-hidden="true"></span>
+        </div>
 
         <div class="identity-copy">
           <p class="identity-kicker"><span data-lang="en">Researcher / Builder</span><span data-lang="zh">研究者 / 构建者</span></p>
@@ -153,8 +156,11 @@
             </p>
           </div>
           <div class="intro-sigil" aria-hidden="true">
+            <span class="sigil-ring sigil-ring-a"></span>
+            <span class="sigil-ring sigil-ring-b"></span>
             <span class="sigil-axis sigil-axis-x"></span>
             <span class="sigil-axis sigil-axis-y"></span>
+            <span class="sigil-scan"></span>
             <span class="sigil-dot"></span>
             <span class="sigil-code">R / B</span>
           </div>
@@ -179,7 +185,7 @@
 
           <div class="work-list" aria-label="Selected work">
             {% for item in site.data.homepage.works %}
-            <article class="work-entry">
+            <article class="work-entry" style="--entry-i: {{ forloop.index0 }};">
               <div class="work-sequence">
                 <span class="work-index">// 0{{ forloop.index }}</span>
                 {% if item.date_label %}<time datetime="{{ item.date }}">{{ item.date_label }}</time>{% endif %}

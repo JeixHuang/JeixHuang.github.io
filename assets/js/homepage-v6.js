@@ -3,8 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeKey = "jeix-theme-choice";
   const localeKey = "jeix-locale";
   const media = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+  const reducedMotion = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+  const finePointer = window.matchMedia ? window.matchMedia("(hover: hover) and (pointer: fine)") : null;
   const themeButtons = Array.from(document.querySelectorAll("[data-theme-option]"));
   const localeButtons = Array.from(document.querySelectorAll("[data-locale-option]"));
+  const revealTargets = Array.from(document.querySelectorAll(".identity-rail, .intro-section, .section-head, .work-entry, .site-footer"));
+  const workEntries = Array.from(document.querySelectorAll(".work-entry"));
 
   function readPersisted(key, fallback) {
     try {
@@ -55,6 +59,59 @@ document.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", () => applyLocale(button.dataset.localeOption, true));
   });
 
+  function setupMotion() {
+    const motionIsReduced = reducedMotion && reducedMotion.matches;
+    root.dataset.motion = motionIsReduced ? "reduced" : "ready";
+
+    revealTargets.forEach((target) => target.classList.add("reveal-target"));
+
+    if (motionIsReduced || !("IntersectionObserver" in window)) {
+      revealTargets.forEach((target) => target.classList.add("is-visible"));
+      return;
+    }
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, {
+      rootMargin: "0px 0px -7% 0px",
+      threshold: 0.08,
+    });
+
+    revealTargets.forEach((target) => revealObserver.observe(target));
+  }
+
+  function setupPointerLight() {
+    if ((reducedMotion && reducedMotion.matches) || !(finePointer && finePointer.matches)) return;
+
+    let pointerFrame = 0;
+    let pointerX = window.innerWidth * 0.76;
+    let pointerY = window.innerHeight * 0.18;
+
+    document.addEventListener("pointermove", (event) => {
+      pointerX = event.clientX;
+      pointerY = event.clientY;
+      if (pointerFrame) return;
+
+      pointerFrame = window.requestAnimationFrame(() => {
+        root.style.setProperty("--cursor-x", `${pointerX}px`);
+        root.style.setProperty("--cursor-y", `${pointerY}px`);
+        pointerFrame = 0;
+      });
+    }, { passive: true });
+
+    workEntries.forEach((entry) => {
+      entry.addEventListener("pointermove", (event) => {
+        const bounds = entry.getBoundingClientRect();
+        entry.style.setProperty("--spot-x", `${event.clientX - bounds.left}px`);
+        entry.style.setProperty("--spot-y", `${event.clientY - bounds.top}px`);
+      }, { passive: true });
+    });
+  }
+
   if (media) {
     media.addEventListener("change", () => {
       if (root.dataset.themeChoice === "system") applyTheme("system");
@@ -63,4 +120,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   applyTheme(readPersisted(themeKey, root.dataset.themeChoice || "dark"));
   applyLocale(readPersisted(localeKey, root.dataset.locale || "en"));
+  setupMotion();
+  setupPointerLight();
 });
