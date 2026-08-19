@@ -1,57 +1,64 @@
-writing:
+works:
   - title: Late-May VLA / WAM / World Model Reading List Vol. 1
     date: "2026-05-24"
     date_label: May 24, 2026
     summary_en: A compact reading route through ten late-May papers on VLA, world-action models, memory, and embodied world models.
     summary_zh: 围绕 VLA、世界-动作模型、记忆与具身世界模型，对十篇五月下旬论文建立一条紧凑阅读路线。
-    url: /blog/2026/05/24/late-may-vla-wam-world-model-reading-list-vol-1/
+    primary_url: /blog/2026/05/24/late-may-vla-wam-world-model-reading-list-vol-1/
+    tags: [VLA, WAM, World Model]
+    links:
+      - label_en: Blog
+        label_zh: Blog
+        url: /blog/2026/05/24/late-may-vla-wam-world-model-reading-list-vol-1/
 
   # Hidden from the homepage on 2026-08-17; source retained intentionally.
   # - title: Reward Is Not a Universal Interface for Generative Reinforcement Learning
   #   date: "2026-05-12"
   #   date_label: May 12, 2026
-  #   tag: project
   #   summary_en: A note on reward, branch-native score objects, and update interfaces.
   #   summary_zh: 关于奖励、分支原生 score object 与更新接口的笔记。
-  #   url: /blog/2026/05/12/mindrl-reward-interface/
+  #   primary_url: /blog/2026/05/12/mindrl-reward-interface/
+  #   links:
+  #     - label_en: Blog
+  #       label_zh: Blog
+  #       url: /blog/2026/05/12/mindrl-reward-interface/
 
-projects:
   - title: Mind-Omni
-    type_en: Project hub
-    type_zh: 项目主页
-    description_en: A Physical AI project series spanning streaming VLA, intent-conditioned planning, world simulation, and data engines.
-    description_zh: 覆盖 streaming VLA、意图条件规划、世界模拟与数据引擎的 Physical AI 项目系列。
-    url: https://mind-omni.github.io/
-    cta_en: Visit project
-    cta_zh: 查看项目
+    summary_en: A Physical AI project series spanning streaming VLA, intent-conditioned planning, world simulation, and data engines.
+    summary_zh: 覆盖 streaming VLA、意图条件规划、世界模拟与数据引擎的 Physical AI 项目系列。
+    primary_url: https://mind-omni.github.io/
     tags: [Physical AI, VLA, World Model]
+    links:
+      - label_en: Project
+        label_zh: 项目
+        url: https://mind-omni.github.io/
 
   - title: AISafetyLab
-    type_en: Open-source repository
-    type_zh: 开源代码仓库
-    description_en: A framework for evaluating attacks, defenses, and safety risks across large language models.
-    description_zh: 面向大语言模型攻击、防御与安全风险评测的一体化框架。
-    url: https://github.com/thu-coai/AISafetyLab
-    cta_en: View repository
-    cta_zh: 查看代码
+    summary_en: A framework for evaluating attacks, defenses, and safety risks across large language models.
+    summary_zh: 面向大语言模型攻击、防御与安全风险评测的一体化框架。
+    primary_url: https://github.com/thu-coai/AISafetyLab
     tags: [LLM, Safety, Evaluation]
+    links:
+      - label_en: Repo
+        label_zh: 代码
+        url: https://github.com/thu-coai/AISafetyLab
 
   - title: Awesome Vision-to-Music
-    type_en: Open-source repository
-    type_zh: 开源代码仓库
-    description_en: A curated map of datasets, methods, and evaluation resources for vision-to-music generation.
-    description_zh: 面向 Vision-to-Music Generation 的数据集、方法与评测资源索引。
-    url: https://github.com/wzk1015/Awesome-Vision-to-Music-Generation
-    cta_en: View repository
-    cta_zh: 查看代码
+    summary_en: A curated map of datasets, methods, and evaluation resources for vision-to-music generation.
+    summary_zh: 面向 Vision-to-Music Generation 的数据集、方法与评测资源索引。
+    primary_url: https://github.com/wzk1015/Awesome-Vision-to-Music-Generation
     tags: [Multimodal, Music, Generation]
+    links:
+      - label_en: Repo
+        label_zh: 代码
+        url: https://github.com/wzk1015/Awesome-Vision-to-Music-Generation
 
   - title: Lumina-mGPT 2.0
-    type_en: Open-source repository
-    type_zh: 开源代码仓库
-    description_en: An open multimodal autoregressive model and codebase for unified understanding and generation.
-    description_zh: 用于统一多模态理解与生成的开放自回归模型与代码库。
-    url: https://github.com/Alpha-VLLM/Lumina-mGPT-2.0
-    cta_en: View repository
-    cta_zh: 查看代码
+    summary_en: An open multimodal autoregressive model and codebase for unified understanding and generation.
+    summary_zh: 用于统一多模态理解与生成的开放自回归模型与代码库。
+    primary_url: https://github.com/Alpha-VLLM/Lumina-mGPT-2.0
     tags: [Multimodal, Generation, LLM]
+    links:
+      - label_en: Repo
+        label_zh: 代码
+        url: https://github.com/Alpha-VLLM/Lumina-mGPT-2.0
