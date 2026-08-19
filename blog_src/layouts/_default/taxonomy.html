@@ -2,7 +2,6 @@
   <header class="blog-index-head blog-taxonomy-head">
     <p class="blog-index-kicker">WRITING INDEX</p>
     <h1 class="page-title">#{{ .Title }}</h1>
-    {{ partial "blog-type-nav.html" . }}
   </header>
 
   <ul class="post-list">
@@ -22,7 +21,7 @@
       </li>
       {{ end }}
     {{ else }}
-      <li class="blog-empty-state">No public post in this category yet. Project blogs ship after their code does.</li>
+      <li class="blog-empty-state">No public posts here yet.</li>
     {{ end }}
   </ul>
 {{ end }}

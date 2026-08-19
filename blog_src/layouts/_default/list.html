@@ -18,7 +18,9 @@
               {{ with .Params.tags }}
                 <span class="tags">
                   {{ range . }}
-                    <a class="tag" href="{{ (printf "tags/%s/" (. | urlize)) | relURL }}">#{{ . }}</a>
+                    {{ if and (not (hasPrefix (lower .) "paper")) (not (hasPrefix (lower .) "project")) }}
+                      <a class="tag" href="{{ (printf "tags/%s/" (. | urlize)) | relURL }}">#{{ . }}</a>
+                    {{ end }}
                   {{ end }}
                 </span>
               {{ end }}

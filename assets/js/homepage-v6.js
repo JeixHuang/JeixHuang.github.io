@@ -5,9 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const media = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
   const themeButtons = Array.from(document.querySelectorAll("[data-theme-option]"));
   const localeButtons = Array.from(document.querySelectorAll("[data-locale-option]"));
-  const writingFilterButtons = Array.from(document.querySelectorAll("[data-writing-filter]"));
-  const writingEntries = Array.from(document.querySelectorAll("[data-writing-tag]"));
-  const writingEmpty = document.querySelector("[data-writing-empty]");
 
   function readPersisted(key, fallback) {
     try {
@@ -50,35 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (shouldPersist) persist(localeKey, safeLocale);
   }
 
-  function applyWritingFilter(filter) {
-    const safeFilter = ["all", "paper", "project"].includes(filter) ? filter : "all";
-    let visibleCount = 0;
-
-    writingEntries.forEach((entry) => {
-      const isVisible = safeFilter === "all" || entry.dataset.writingTag === safeFilter;
-      entry.hidden = !isVisible;
-      if (isVisible) visibleCount += 1;
-    });
-
-    writingFilterButtons.forEach((button) => {
-      const isActive = button.dataset.writingFilter === safeFilter;
-      button.classList.toggle("is-active", isActive);
-      button.setAttribute("aria-pressed", String(isActive));
-    });
-
-    if (writingEmpty) writingEmpty.hidden = visibleCount !== 0;
-  }
-
   themeButtons.forEach((button) => {
     button.addEventListener("click", () => applyTheme(button.dataset.themeOption, true));
   });
 
   localeButtons.forEach((button) => {
     button.addEventListener("click", () => applyLocale(button.dataset.localeOption, true));
-  });
-
-  writingFilterButtons.forEach((button) => {
-    button.addEventListener("click", () => applyWritingFilter(button.dataset.writingFilter));
   });
 
   if (media) {
@@ -89,5 +63,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   applyTheme(readPersisted(themeKey, root.dataset.themeChoice || "dark"));
   applyLocale(readPersisted(localeKey, root.dataset.locale || "en"));
-  applyWritingFilter("all");
 });

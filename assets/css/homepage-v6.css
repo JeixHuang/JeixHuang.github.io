@@ -589,7 +589,6 @@ button {
 }
 
 .project-topline,
-.current-writing-head,
 .writing-meta,
 .site-footer {
   display: flex;
@@ -599,104 +598,14 @@ button {
 }
 
 .writing-entry h3,
-.project-card h3,
-.current-writing-head h3 {
+.project-card h3 {
   color: var(--text);
-}
-
-.writing-taxonomy {
-  display: flex;
-  gap: 22px;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 24px;
-  padding: 14px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.writing-definitions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 22px;
-}
-
-.taxonomy-item {
-  display: inline-flex;
-  gap: 9px;
-  align-items: baseline;
-  color: var(--muted);
-  font-size: 11px;
-}
-
-.taxonomy-tag,
-.post-tag {
-  font-family: var(--mono);
-  font-size: 10px;
-  font-weight: 850;
-  letter-spacing: 0.02em;
-}
-
-.tag-paper {
-  color: var(--paper-accent);
-}
-
-.tag-project {
-  color: var(--project-accent);
-}
-
-.writing-filters {
-  display: inline-flex;
-  gap: 3px;
-  padding: 3px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--surface-raised) 86%, transparent);
-}
-
-.writing-filters button {
-  min-height: 30px;
-  padding: 4px 10px;
-  border: 0;
-  border-radius: 999px;
-  background: transparent;
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 9px;
-  font-weight: 800;
-  cursor: pointer;
-  transition: color 160ms ease, background 160ms ease, transform 160ms ease;
-}
-
-.writing-filters button:hover {
-  color: var(--text);
-}
-
-.writing-filters button.is-active {
-  background: var(--text);
-  color: var(--bg);
-  transform: translateY(-1px);
-}
-
-.current-writing-head {
-  margin-top: 36px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--border-strong);
-}
-
-.current-writing-head h3 {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 600;
-}
-
-.quiet-label {
-  color: var(--faint);
 }
 
 .writing-list {
   display: grid;
+  margin-top: 28px;
+  border-top: 1px solid var(--border-strong);
 }
 
 .writing-entry {
@@ -708,7 +617,6 @@ button {
   padding: 25px 7px 25px 0;
   border-bottom: 1px solid var(--border);
   color: var(--text);
-  text-decoration: none;
   transition: background 160ms ease, padding 160ms ease;
 }
 
@@ -727,43 +635,6 @@ button {
   font-size: 10px;
 }
 
-.post-tag {
-  font-weight: 750;
-  line-height: 1.4;
-}
-
-.writing-entry[hidden] {
-  display: none;
-}
-
-.writing-empty {
-  display: grid;
-  grid-template-columns: 36px minmax(0, 1fr);
-  gap: 12px;
-  align-items: center;
-  margin-top: 12px;
-  padding: 18px;
-  border: 1px dashed var(--border-strong);
-  border-radius: var(--radius);
-  color: var(--muted);
-  background: var(--surface);
-}
-
-.writing-empty[hidden] {
-  display: none;
-}
-
-.writing-empty p {
-  margin: 0;
-  font-size: 12px;
-}
-
-.empty-signal {
-  color: var(--project-accent);
-  font-family: var(--mono);
-  font-size: 22px;
-}
-
 .writing-copy {
   min-width: 0;
 }
@@ -777,6 +648,16 @@ button {
   line-height: 1.15;
 }
 
+.writing-title-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.writing-title-link:hover {
+  color: var(--accent);
+}
+
 .writing-entry p {
   margin: 10px 0 0;
   color: var(--muted);
@@ -784,9 +665,35 @@ button {
   line-height: 1.58;
 }
 
+.writing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 16px;
+}
+
+.writing-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 780;
+  letter-spacing: 0.025em;
+  text-decoration: none;
+}
+
+.writing-actions a:hover {
+  color: var(--accent-strong);
+}
+
 .entry-arrow {
+  display: inline-flex;
+  justify-content: flex-end;
   color: var(--faint);
   font-size: 18px;
+  text-decoration: none;
   transition: color 160ms ease, transform 160ms ease;
 }
 
@@ -1048,15 +955,6 @@ button {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 7px 12px;
-  }
-
-  .writing-taxonomy {
-    flex-direction: column;
-    align-items: start;
-  }
-
-  .writing-filters {
-    width: fit-content;
   }
 
   .project-card {

@@ -1,9 +1,7 @@
 {{ define "main" }}
   <header class="blog-index-head">
     <p class="blog-index-kicker">READ DEEPLY · BUILD OPENLY</p>
-    <h1 class="page-title">Writing</h1>
-    <p class="blog-index-lede">Paper deep dives and project blogs—one grounded in close reading, the other in working open-source code.</p>
-    {{ partial "blog-type-nav.html" . }}
+    <h1 class="page-title">Blog</h1>
   </header>
 
   <ul class="post-list">
@@ -23,7 +21,9 @@
               {{ with .Params.tags }}
                 <span class="tags">
                   {{ range . }}
-                    <a class="tag" href="{{ (printf "tags/%s/" (. | urlize)) | relURL }}">#{{ . }}</a>
+                    {{ if and (not (hasPrefix (lower .) "paper")) (not (hasPrefix (lower .) "project")) }}
+                      <a class="tag" href="{{ (printf "tags/%s/" (. | urlize)) | relURL }}">#{{ . }}</a>
+                    {{ end }}
                   {{ end }}
                 </span>
               {{ end }}

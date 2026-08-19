@@ -4,7 +4,8 @@
   <ul class="tag-list">
     {{ range .Data.Terms.Alphabetical }}
       {{ $pages := partial "public-posts.html" .Pages }}
-      {{ if gt (len $pages) 0 }}
+      {{ $term := lower .Page.Title }}
+      {{ if and (gt (len $pages) 0) (not (hasPrefix $term "paper")) (not (hasPrefix $term "project")) }}
       <li class="tag-item">
         <a href="{{ .Page.RelPermalink }}">#{{ .Page.Title }}</a>
         <span class="tag-count">({{ len $pages }})</span>
@@ -13,4 +14,3 @@
     {{ end }}
   </ul>
 {{ end }}
-
