@@ -89,10 +89,19 @@
             activate(active);
           }
 
+          var activeFrame = 0;
+          function requestActiveUpdate() {
+            if (activeFrame) return;
+            activeFrame = window.requestAnimationFrame(function () {
+              updateActive();
+              activeFrame = 0;
+            });
+          }
+
           updateActive();
-          window.addEventListener('scroll', updateActive, { passive: true });
-          window.addEventListener('resize', updateActive);
-          window.addEventListener('hashchange', updateActive);
+          window.addEventListener('scroll', requestActiveUpdate, { passive: true });
+          window.addEventListener('resize', requestActiveUpdate);
+          window.addEventListener('hashchange', requestActiveUpdate);
         })();
       </script>
     {{ end }}

@@ -28,10 +28,12 @@
         var media = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
         var themeChoice = "dark";
         var locale = "en";
+        var motionChoice = "active";
 
         try {
           themeChoice = localStorage.getItem(themeKey) || "dark";
           locale = localStorage.getItem(localeKey) || "en";
+          motionChoice = localStorage.getItem("jeix-motion-choice") || "active";
         } catch (error) {}
 
         if (themeChoice !== "light" && themeChoice !== "dark" && themeChoice !== "system") themeChoice = "dark";
@@ -41,14 +43,16 @@
         root.dataset.theme = theme;
         root.dataset.themeChoice = themeChoice;
         root.dataset.locale = locale;
+        root.dataset.userMotion = motionChoice === "paused" ? "paused" : "active";
         root.lang = locale === "zh" ? "zh-CN" : "en-US";
         root.style.colorScheme = theme;
       })();
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="{{ "/assets/css/homepage-v6.css" | relative_url }}?v=a0429823">
-    <script src="{{ "/assets/js/homepage-v6.js" | relative_url }}?v=3034d883" defer></script>
+    <link rel="stylesheet" href="{{ "/assets/css/homepage-v6.css" | relative_url }}?v=de0d7fd0">
+    <script src="{{ "/assets/js/ambient-field-v1.js" | relative_url }}?v=2d5e18a8" defer></script>
+    <script src="{{ "/assets/js/homepage-v6.js" | relative_url }}?v=a980cb3f" defer></script>
     <script src="{{ "/assets/js/favicon-switcher.js" | relative_url }}" defer></script>
   </head>
   <body>
@@ -77,6 +81,9 @@
               <button type="button" data-theme-option="light" aria-label="Light theme"><i class="fa-regular fa-sun" aria-hidden="true"></i></button>
               <button type="button" data-theme-option="dark" aria-label="Dark theme"><i class="fa-regular fa-moon" aria-hidden="true"></i></button>
               <button type="button" data-theme-option="system" aria-label="System theme"><i class="fa-solid fa-display" aria-hidden="true"></i></button>
+            </div>
+            <div class="segmented-control motion-control" aria-label="Ambient motion">
+              <button type="button" data-motion-toggle aria-label="Pause ambient motion" aria-pressed="false"><span data-motion-icon aria-hidden="true">Ⅱ</span></button>
             </div>
           </div>
         </div>

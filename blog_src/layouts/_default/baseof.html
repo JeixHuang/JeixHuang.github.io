@@ -1,3 +1,4 @@
+{{ $readingField := and .IsPage (eq .Section "posts") }}
 <!doctype html>
 <html lang="{{ .Site.Language.Lang }}">
   <head>
@@ -16,9 +17,11 @@
         var key = 'jeix-theme-choice';
         var root = document.documentElement;
         var choice = 'dark';
+        var motionChoice = 'active';
 
         try {
           choice = localStorage.getItem(key) || 'dark';
+          motionChoice = localStorage.getItem('jeix-motion-choice') || 'active';
         } catch (error) {}
 
         if (choice !== 'light' && choice !== 'dark' && choice !== 'system') {
@@ -36,17 +39,26 @@
         var theme = resolveTheme(choice);
         root.dataset.theme = theme;
         root.dataset.themeChoice = choice;
+        root.dataset.userMotion = motionChoice === 'paused' ? 'paused' : 'active';
         root.style.colorScheme = theme;
       })();
     </script>
-    <link rel="stylesheet" href="{{ "assets/style.css" | relURL }}?v=f9b4a446" />
+    <link rel="stylesheet" href="{{ "assets/style.css" | relURL }}?v=2a5b3b75" />
+    {{ if $readingField }}
+      <script defer src="{{ "/assets/js/ambient-field-v1.js" | relURL }}?v=2d5e18a8"></script>
+    {{ end }}
 
     <!-- KaTeX (math) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
   </head>
-  <body>
+  <body{{ if $readingField }} class="has-reading-field"{{ end }}>
+    {{ if $readingField }}
+      <div class="reading-field-shell" aria-hidden="true">
+        <canvas id="reading-field" class="reading-field" aria-hidden="true"></canvas>
+      </div>
+    {{ end }}
     <header class="site-header">
       <div class="container">
         <div class="brand">
@@ -65,6 +77,9 @@
             <button type="button" data-theme-option="dark" aria-label="Use dark theme">Dark</button>
             <button type="button" data-theme-option="system" aria-label="Use system theme">System</button>
           </div>
+          {{ if $readingField }}
+            <button class="motion-toggle" type="button" data-motion-toggle aria-label="Pause ambient motion" aria-pressed="false"><span data-motion-icon aria-hidden="true">Ⅱ</span></button>
+          {{ end }}
         </div>
       </div>
     </header>
@@ -106,6 +121,7 @@
           document.querySelectorAll('button[data-theme-option]').forEach(function (button) {
             button.setAttribute('aria-pressed', button.dataset.themeOption === choice ? 'true' : 'false');
           });
+          root.dispatchEvent(new CustomEvent('jeix:themechange', { detail: { theme: theme } }));
         }
 
         document.addEventListener('DOMContentLoaded', function () {
