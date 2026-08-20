@@ -20,6 +20,7 @@
   --work-soft: rgba(8, 127, 117, 0.1);
   --grid-line: rgba(23, 26, 28, 0.045);
   --ambient-glow: rgba(8, 127, 117, 0.1);
+  --flow-opacity: 0.46;
   --work-glass: rgba(255, 255, 255, 0.52);
   --shadow: 0 12px 32px rgba(36, 31, 23, 0.07);
   --shadow-deep: 0 26px 80px rgba(36, 31, 23, 0.12);
@@ -51,6 +52,7 @@ html[data-theme="dark"] {
   --work-soft: rgba(118, 207, 193, 0.1);
   --grid-line: rgba(226, 234, 230, 0.04);
   --ambient-glow: rgba(118, 207, 193, 0.1);
+  --flow-opacity: 0.82;
   --work-glass: rgba(18, 23, 26, 0.72);
   --shadow: 0 16px 42px rgba(0, 0, 0, 0.22);
   --shadow-deep: 0 30px 90px rgba(0, 0, 0, 0.38);
@@ -92,6 +94,25 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+.flow-field {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  opacity: var(--flow-opacity);
+  filter: saturate(1.08) contrast(1.03);
+  mix-blend-mode: multiply;
+  transform: translateZ(0);
+}
+
+html[data-theme="dark"] .flow-field {
+  filter: saturate(1.18) contrast(1.08);
+  mix-blend-mode: screen;
+}
+
 body::before,
 body::after {
   content: "";
@@ -109,6 +130,7 @@ body::before {
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 82%);
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 82%);
   opacity: 0.72;
+  animation: grid-drift 38s linear infinite;
 }
 
 body::after {
@@ -169,6 +191,20 @@ button {
   background: color-mix(in srgb, var(--bg) 78%, transparent);
   box-shadow: 0 10px 36px color-mix(in srgb, var(--bg) 58%, transparent);
   backdrop-filter: blur(24px) saturate(1.2);
+}
+
+.site-nav::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0 18%, color-mix(in srgb, var(--accent) 78%, transparent) 44%, color-mix(in srgb, var(--paper-accent) 62%, transparent) 54%, transparent 82% 100%);
+  background-size: 220% 100%;
+  opacity: 0.48;
+  animation: signal-traverse 9s linear infinite;
+  pointer-events: none;
 }
 
 .nav-inner {
@@ -549,7 +585,9 @@ button {
   width: 34%;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--accent));
+  background-size: 240% 100%;
   box-shadow: 0 0 14px var(--accent-soft);
+  animation: signal-traverse 7.6s ease-in-out infinite alternate;
 }
 
 .intro-copy {
@@ -725,6 +763,16 @@ button {
   to { transform: rotate(360deg); }
 }
 
+@keyframes grid-drift {
+  to { background-position: 54px 54px, 54px 54px; }
+}
+
+@keyframes signal-traverse {
+  0% { background-position: 115% 0; opacity: 0.22; }
+  36% { opacity: 0.72; }
+  100% { background-position: -115% 0; opacity: 0.3; }
+}
+
 @keyframes avatar-orbit {
   to { transform: rotate(360deg); }
 }
@@ -767,11 +815,18 @@ button {
   font-weight: 580;
   letter-spacing: -0.04em;
   line-height: 0.98;
-  background: linear-gradient(110deg, var(--text) 18%, color-mix(in srgb, var(--accent) 82%, var(--text)) 118%);
+  background: linear-gradient(110deg, var(--text) 4%, color-mix(in srgb, var(--accent) 86%, var(--text)) 42%, var(--text) 62%, color-mix(in srgb, var(--paper-accent) 72%, var(--text)) 92%);
+  background-size: 230% 100%;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 22px 52px color-mix(in srgb, var(--accent) 12%, transparent);
+  animation: title-current 10s ease-in-out infinite alternate;
+}
+
+@keyframes title-current {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
 }
 
 .text-link {
@@ -864,6 +919,39 @@ button {
 .work-entry > * {
   position: relative;
   z-index: 1;
+}
+
+.work-scan {
+  position: absolute;
+  inset: -55% auto -55% -34%;
+  z-index: 0;
+  width: 22%;
+  border-right: 1px solid color-mix(in srgb, var(--accent) 34%, transparent);
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 9%, transparent) 44%, color-mix(in srgb, var(--accent) 18%, transparent) 72%, transparent);
+  filter: blur(0.2px);
+  opacity: 0;
+  transform: skewX(-18deg);
+  animation: work-signal-scan 11s cubic-bezier(0.32, 0.06, 0.15, 1) calc(var(--entry-i) * -1.6s) infinite;
+  pointer-events: none;
+}
+
+.work-scan::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 14px var(--accent);
+}
+
+@keyframes work-signal-scan {
+  0%, 14% { left: -34%; opacity: 0; }
+  22% { opacity: 0.62; }
+  58% { opacity: 0.28; }
+  70%, 100% { left: 118%; opacity: 0; }
 }
 
 .work-entry:hover {
@@ -1115,6 +1203,14 @@ html[data-motion="reduced"] .reveal-target {
     padding: 28px 0 52px;
   }
 
+  .flow-field {
+    --flow-opacity: 0.34;
+  }
+
+  html[data-theme="dark"] .flow-field {
+    --flow-opacity: 0.58;
+  }
+
   .identity-rail {
     position: static;
     max-height: none;
@@ -1250,6 +1346,10 @@ html[data-motion="reduced"] .reveal-target {
   body::after,
   .work-entry::before {
     display: none;
+  }
+
+  .flow-field {
+    opacity: 0.24;
   }
 
   .work-entry:hover,

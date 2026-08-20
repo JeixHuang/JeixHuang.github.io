@@ -47,11 +47,12 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="{{ "/assets/css/homepage-v6.css" | relative_url }}?v=34dbc82b">
-    <script src="{{ "/assets/js/homepage-v6.js" | relative_url }}?v=56ed7ef4" defer></script>
+    <link rel="stylesheet" href="{{ "/assets/css/homepage-v6.css" | relative_url }}?v=a0429823">
+    <script src="{{ "/assets/js/homepage-v6.js" | relative_url }}?v=3034d883" defer></script>
     <script src="{{ "/assets/js/favicon-switcher.js" | relative_url }}" defer></script>
   </head>
   <body>
+    <canvas class="flow-field" id="flow-field" aria-hidden="true"></canvas>
     <a class="skip-link" href="#content"><span data-lang="en">Skip to content</span><span data-lang="zh">跳到正文</span></a>
 
     <nav class="site-nav" aria-label="Primary navigation">
@@ -186,6 +187,7 @@
           <div class="work-list" aria-label="Selected work">
             {% for item in site.data.homepage.works %}
             <article class="work-entry" style="--entry-i: {{ forloop.index0 }};">
+              <span class="work-scan" aria-hidden="true"></span>
               <div class="work-sequence">
                 <span class="work-index">// 0{{ forloop.index }}</span>
                 {% if item.date_label %}<time datetime="{{ item.date }}">{{ item.date_label }}</time>{% endif %}
