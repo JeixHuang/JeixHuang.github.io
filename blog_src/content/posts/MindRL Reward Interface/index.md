@@ -2,11 +2,10 @@
 title: "Reward Is Not a Universal Interface for Generative Reinforcement Learning"
 date: 2026-05-12T12:00:00+08:00
 slug: "mindrl-reward-interface"
-tags: ["project", "generative-rl", "mindrl", "ctc", "flow-matching", "robot-learning"]
+tags: ["generative-rl", "mindrl", "ctc", "flow-matching", "robot-learning"]
 summary: "MindRL argues that a reward becomes an RL update only after it passes through the probability object, score, or controlled surrogate exposed by the policy branch."
-arxiv: "TBD_ARXIV_URL"
+openreview: "https://openreview.net/forum?id=gbYg6VGblU"
 math: true
-hide_from_lists: true
 ---
 
 ## Project Thesis
@@ -434,10 +433,10 @@ The broader direction is the part I care about most: reward is not disappearing,
 ## Citation
 
 ```bibtex
-@misc{mindrl2026,
+@misc{huang2026reward,
   title = {Reward Is Not a Universal Interface for Generative Reinforcement Learning},
-  author = {Victor_Shea-Jay_Huang and Benjin Zhu and Hongsheng Li},
+  author = {Huang, Victor Shea-Jay and Li, Hongsheng},
   year = {2026},
-  journal = {arXiv preprint arXiv:XXXX.XXXXX}
+  url = {https://openreview.net/forum?id=gbYg6VGblU}
 }
 ```

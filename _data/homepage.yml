@@ -1,27 +1,18 @@
 works:
-  - title: Late-May VLA / WAM / World Model Reading List Vol. 1
-    date: "2026-05-24"
-    date_label: May 24, 2026
-    summary_en: A compact reading route through ten late-May papers on VLA, world-action models, memory, and embodied world models.
-    summary_zh: 围绕 VLA、世界-动作模型、记忆与具身世界模型，对十篇五月下旬论文建立一条紧凑阅读路线。
-    primary_url: /blog/2026/05/24/late-may-vla-wam-world-model-reading-list-vol-1/
-    tags: [VLA, WAM, World Model]
+  - title: Reward Is Not a Universal Interface for Generative Reinforcement Learning
+    date: "2026-05-12"
+    date_label: May 12, 2026
+    summary_en: A note on reward, branch-native score objects, and update interfaces.
+    summary_zh: 关于奖励、分支原生 score object 与更新接口的笔记。
+    primary_url: /blog/2026/05/12/mindrl-reward-interface/
+    tags: [Generative RL, MindRL, Flow Matching]
     links:
       - label_en: Blog
         label_zh: Blog
-        url: /blog/2026/05/24/late-may-vla-wam-world-model-reading-list-vol-1/
-
-  # Hidden from the homepage on 2026-08-17; source retained intentionally.
-  # - title: Reward Is Not a Universal Interface for Generative Reinforcement Learning
-  #   date: "2026-05-12"
-  #   date_label: May 12, 2026
-  #   summary_en: A note on reward, branch-native score objects, and update interfaces.
-  #   summary_zh: 关于奖励、分支原生 score object 与更新接口的笔记。
-  #   primary_url: /blog/2026/05/12/mindrl-reward-interface/
-  #   links:
-  #     - label_en: Blog
-  #       label_zh: Blog
-  #       url: /blog/2026/05/12/mindrl-reward-interface/
+        url: /blog/2026/05/12/mindrl-reward-interface/
+      - label_en: Paper
+        label_zh: 论文
+        url: https://openreview.net/forum?id=gbYg6VGblU
 
   - title: Mind-Omni
     summary_en: A Physical AI project series spanning streaming VLA, intent-conditioned planning, world simulation, and data engines.

@@ -4,6 +4,7 @@ date: 2026-05-24T09:00:00+08:00
 slug: "late-may-vla-wam-world-model-reading-list-vol-1"
 tags: ["paper", "vla", "wam", "world-model", "embodied-ai", "paper-reading"]
 summary: "A compact reading directory for ten late-May papers around VLA, WAM, and embodied world models."
+draft: true
 ---
 
 This is a compact reading directory for ten papers I would prioritize from the late-May VLA / WAM / World Model batch. The common thread is clear: the next step is less about making the action head larger, and more about adding memory, scene state, world rollout, and runtime verification around the policy.
