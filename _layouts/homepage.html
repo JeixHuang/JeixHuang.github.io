@@ -50,7 +50,7 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="{{ "/assets/css/homepage-v6.css" | relative_url }}?v=d9267389">
+    <link rel="stylesheet" href="{{ "/assets/css/homepage-v6.css" | relative_url }}?v=ee1b90fa">
     <script src="{{ "/assets/js/ambient-field-v1.js" | relative_url }}?v=2d5e18a8" defer></script>
     <script src="{{ "/assets/js/homepage-v6.js" | relative_url }}?v=a980cb3f" defer></script>
     <script src="{{ "/assets/js/favicon-switcher.js" | relative_url }}" defer></script>
@@ -182,13 +182,16 @@
             </div>
           </div>
 
-          <div class="work-list" aria-label="Selected work">
+          <div class="work-list" aria-label="Reverse-chronological work stream">
             {% for item in site.data.homepage.works %}
             <article class="work-entry" style="--entry-i: {{ forloop.index0 }};">
-              <span class="work-scan" aria-hidden="true"></span>
+              <span class="work-node" aria-hidden="true"></span>
               <div class="work-sequence">
+                <time datetime="{{ item.date }}">
+                  <span class="work-date">{{ item.date | date: "%m.%d" }}</span>
+                  <span class="work-year">{{ item.date | date: "%Y" }}</span>
+                </time>
                 <span class="work-index">// 0{{ forloop.index }}</span>
-                {% if item.date_label %}<time datetime="{{ item.date }}">{{ item.date_label }}</time>{% endif %}
               </div>
               <div class="work-copy">
                 <h3><a class="work-title-link" href="{{ item.primary_url | escape }}">{{ item.title }}</a></h3>
@@ -207,7 +210,6 @@
                   {% endfor %}
                 </div>
               </div>
-              <a class="entry-arrow" href="{{ item.primary_url | escape }}" aria-label="Open {{ item.title }}">↗</a>
             </article>
             {% endfor %}
           </div>

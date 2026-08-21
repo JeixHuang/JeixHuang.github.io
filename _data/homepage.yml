@@ -1,7 +1,6 @@
 works:
   - title: Reward Is Not a Universal Interface for Generative Reinforcement Learning
     date: "2026-05-12"
-    date_label: May 12, 2026
     summary_en: A note on reward, branch-native score objects, and update interfaces.
     summary_zh: 关于奖励、分支原生 score object 与更新接口的笔记。
     primary_url: /blog/2026/05/12/mindrl-reward-interface/
@@ -15,6 +14,7 @@ works:
         url: https://openreview.net/forum?id=gbYg6VGblU
 
   - title: Mind-Omni
+    date: "2026-05-12"
     summary_en: A Physical AI project series spanning streaming VLA, intent-conditioned planning, world simulation, and data engines.
     summary_zh: 覆盖 streaming VLA、意图条件规划、世界模拟与数据引擎的 Physical AI 项目系列。
     primary_url: https://mind-omni.github.io/
@@ -24,17 +24,19 @@ works:
         label_zh: 项目
         url: https://mind-omni.github.io/
 
-  - title: AISafetyLab
-    summary_en: A framework for evaluating attacks, defenses, and safety risks across large language models.
-    summary_zh: 面向大语言模型攻击、防御与安全风险评测的一体化框架。
-    primary_url: https://github.com/thu-coai/AISafetyLab
-    tags: [LLM, Safety, Evaluation]
+  - title: Lumina-mGPT 2.0
+    date: "2025-04-03"
+    summary_en: An open multimodal autoregressive model and codebase for unified understanding and generation.
+    summary_zh: 用于统一多模态理解与生成的开放自回归模型与代码库。
+    primary_url: https://github.com/Alpha-VLLM/Lumina-mGPT-2.0
+    tags: [Multimodal, Generation, LLM]
     links:
       - label_en: Repo
         label_zh: 代码
-        url: https://github.com/thu-coai/AISafetyLab
+        url: https://github.com/Alpha-VLLM/Lumina-mGPT-2.0
 
   - title: Awesome Vision-to-Music
+    date: "2025-03-24"
     summary_en: A curated map of datasets, methods, and evaluation resources for vision-to-music generation.
     summary_zh: 面向 Vision-to-Music Generation 的数据集、方法与评测资源索引。
     primary_url: https://github.com/wzk1015/Awesome-Vision-to-Music-Generation
@@ -44,12 +46,13 @@ works:
         label_zh: 代码
         url: https://github.com/wzk1015/Awesome-Vision-to-Music-Generation
 
-  - title: Lumina-mGPT 2.0
-    summary_en: An open multimodal autoregressive model and codebase for unified understanding and generation.
-    summary_zh: 用于统一多模态理解与生成的开放自回归模型与代码库。
-    primary_url: https://github.com/Alpha-VLLM/Lumina-mGPT-2.0
-    tags: [Multimodal, Generation, LLM]
+  - title: AISafetyLab
+    date: "2024-10-25"
+    summary_en: A framework for evaluating attacks, defenses, and safety risks across large language models.
+    summary_zh: 面向大语言模型攻击、防御与安全风险评测的一体化框架。
+    primary_url: https://github.com/thu-coai/AISafetyLab
+    tags: [LLM, Safety, Evaluation]
     links:
       - label_en: Repo
         label_zh: 代码
-        url: https://github.com/Alpha-VLLM/Lumina-mGPT-2.0
+        url: https://github.com/thu-coai/AISafetyLab

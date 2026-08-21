@@ -437,6 +437,6 @@ The broader direction is the part I care about most: reward is not disappearing,
   title = {Reward Is Not a Universal Interface for Generative Reinforcement Learning},
   author = {Huang, Victor Shea-Jay and Li, Hongsheng},
   year = {2026},
-  url = {https://openreview.net/forum?id=gbYg6VGblU}
+  url = {arXiv:26xx.xxxxx}
 }
 ```
