@@ -1,17 +1,19 @@
 works:
-  - title: Reward Is Not a Universal Interface for Generative Reinforcement Learning
-    date: "2026-05-12"
-    summary_en: A note on reward, branch-native score objects, and update interfaces.
-    summary_zh: 关于奖励、分支原生 score object 与更新接口的笔记。
-    primary_url: /blog/2026/05/12/mindrl-reward-interface/
-    tags: [Generative RL, MindRL, Flow Matching]
-    links:
-      - label_en: Blog
-        label_zh: Blog
-        url: /blog/2026/05/12/mindrl-reward-interface/
-      - label_en: Paper
-        label_zh: 论文
-        url: https://openreview.net/forum?id=gbYg6VGblU
+  # Hidden from the public homepage on 2026-08-24. Keep this entry as a
+  # reference for a future Blog + Paper work item.
+  # - title: Reward Is Not a Universal Interface for Generative Reinforcement Learning
+  #   date: "2026-05-12"
+  #   summary_en: A note on reward, branch-native score objects, and update interfaces.
+  #   summary_zh: 关于奖励、分支原生 score object 与更新接口的笔记。
+  #   primary_url: /blog/2026/05/12/mindrl-reward-interface/
+  #   tags: [Generative RL, MindRL, Flow Matching]
+  #   links:
+  #     - label_en: Blog
+  #       label_zh: Blog
+  #       url: /blog/2026/05/12/mindrl-reward-interface/
+  #     - label_en: Paper
+  #       label_zh: 论文
+  #       url: https://openreview.net/forum?id=gbYg6VGblU
 
   - title: Mind-Omni
     date: "2026-05-12"
