@@ -1,0 +1,29 @@
+{{- $page := . -}}
+{{- $translations := .AllTranslations -}}
+<nav class="language-switch" aria-label="Language">
+  {{- range sort hugo.Sites "Language.Name" "asc" -}}
+    {{- $language := .Language -}}
+    {{- $target := false -}}
+    {{- range $translations -}}
+      {{- if eq .Language.Name $language.Name -}}
+        {{- $target = . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $label := upper $language.Name -}}
+    {{- $name := $language.Name -}}
+    {{- if eq $language.Name "zh" -}}
+      {{- $label = "中" -}}
+      {{- $name = "中文" -}}
+    {{- else if eq $language.Name "en" -}}
+      {{- $label = "EN" -}}
+      {{- $name = "English" -}}
+    {{- end -}}
+    {{- if eq $language.Name $page.Site.Language.Name -}}
+      <span class="language-current" aria-current="page" aria-label="Current language: {{ $name }}">{{ $label }}</span>
+    {{- else if $target -}}
+      <a href="{{ $target.RelPermalink }}" hreflang="{{ $language.Locale }}" lang="{{ $language.Name }}" aria-label="Switch to {{ $name }}">{{ $label }}</a>
+    {{- else -}}
+      <span class="language-unavailable" aria-disabled="true" aria-label="{{ $name }} translation unavailable" title="{{ $name }} translation unavailable">{{ $label }}</span>
+    {{- end -}}
+  {{- end -}}
+</nav>

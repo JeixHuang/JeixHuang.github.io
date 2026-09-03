@@ -3,14 +3,6 @@
   {{ $hasToc := and (not .Params.disable_toc) (in $toc "<li>") }}
   <article class="post{{ if $hasToc }} post-with-toc{{ end }}{{ if .Params.weekly_report }} weekly-post{{ end }}{{ if and .Params.weekly_report (not .Params.weekly_paper_detail) }} weekly-overview{{ end }}{{ if .Params.weekly_paper_detail }} weekly-paper-standalone{{ end }}">
     <header class="post-header">
-      {{ if .IsTranslated }}
-        <nav class="language-switch" aria-label="Language switch">
-          <span class="language-current">{{ .Site.Language.Label }}</span>
-          {{ range .Translations }}
-            <a href="{{ .RelPermalink }}">{{ .Site.Language.Label }}</a>
-          {{ end }}
-        </nav>
-      {{ end }}
       <h1 class="post-h1">{{ .Title }}</h1>
       <div class="post-meta">
         <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>

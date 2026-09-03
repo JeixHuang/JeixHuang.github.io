@@ -1,0 +1,4 @@
+{{- $number := add .Ordinal 1 -}}
+{{- $noteID := printf "sidenote-%d" $number -}}
+{{- $url := .Get "url" -}}
+<sup class="sidenote-number"><a href="#{{ $noteID }}" aria-label="Reference {{ $number }}">{{ $number }}</a></sup><span id="{{ $noteID }}" class="sidenote" role="note"><span class="sidenote-index" aria-hidden="true">{{ $number }}</span>{{- if $url -}}<a href="{{ $url | safeURL }}" rel="noopener noreferrer">{{ .Inner | markdownify }}</a>{{- else -}}{{ .Inner | markdownify }}{{- end -}}</span>
