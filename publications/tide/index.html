@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en-US" data-locale="en" data-theme="dark" data-theme-choice="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TIDE: Temporal-Aware Sparse Autoencoders for Interpretable Diffusion Transformers in Image Generation · Victor Shea-Jay Huang</title>
+    <meta name="description" content="Victor Shea-Jay Huang is a first-year Ph.D. student at MMLab, CUHK, researching agents and physical AI, with a focus on world models.">
+    <meta name="keywords" content="xijie huang, Xijie Huang, Victor Shea-Jay Huang, Victor Shea Jay Huang, Victor Ché-Jay Huang, Victor Ché Jay Huang, Ché-Jay Huang, Victor Huang, Huang Xijie, Victor Shea Huang, Victor Ché Huang">
+    <meta name="color-scheme" content="light dark">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="TIDE: Temporal-Aware Sparse Autoencoders for Interpretable Diffusion Transformers in Image Generation">
+    <meta property="og:url" content="https://jeixhuang.github.io/publications/tide/">
+    <meta property="og:site_name" content="Victor Shea-Jay Huang">
+    <meta property="og:description" content="Victor Shea-Jay Huang is a first-year Ph.D. student at MMLab, CUHK, researching agents and physical AI, with a focus on world models.">
+    <meta property="og:image" content="/assets/img/avatar-aug-2026.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Victor Shea-Jay Huang">
+    <meta name="twitter:description" content="Victor Shea-Jay Huang is a first-year Ph.D. student at MMLab, CUHK, researching agents and physical AI, with a focus on world models.">
+    <meta name="twitter:image" content="/assets/img/avatar-aug-2026.jpg">
+    <link rel="canonical" href="https://jeixhuang.github.io/publications/tide/">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/assets/img/avatar3.jpg" type="image/png">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/assets/img/avatar3.jpg" type="image/png">
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var themeKey = "jeix-theme-choice";
+        var localeKey = "jeix-locale";
+        var media = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+        var themeChoice = "dark";
+        var locale = "en";
+        var motionChoice = "active";
+
+        try {
+          themeChoice = localStorage.getItem(themeKey) || "dark";
+          locale = localStorage.getItem(localeKey) || "en";
+          motionChoice = localStorage.getItem("jeix-motion-choice") || "active";
+        } catch (error) {}
+
+        if (themeChoice !== "light" && themeChoice !== "dark" && themeChoice !== "system") themeChoice = "dark";
+        if (locale !== "en" && locale !== "zh") locale = "en";
+
+        var theme = themeChoice === "system" ? (media && media.matches ? "dark" : "light") : themeChoice;
+        root.dataset.theme = theme;
+        root.dataset.themeChoice = themeChoice;
+        root.dataset.locale = locale;
+        root.dataset.userMotion = motionChoice === "paused" ? "paused" : "active";
+        root.lang = locale === "zh" ? "zh-CN" : "en-US";
+        root.style.colorScheme = theme;
+      })();
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="/assets/css/homepage-v6.css?v=ee1b90fa">
+    <link rel="stylesheet" href="/assets/css/site-shell.css?v=20261016d">
+    <script src="/assets/js/ambient-field-v1.js?v=20261016d" defer></script>
+    <script src="/assets/js/site-shell.js?v=20261016" defer></script>
+    <script src="/assets/js/homepage-v6.js?v=20261016" defer></script>
+    <script src="/assets/js/favicon-switcher.js" defer></script>
+  </head>
+  <body>
+    <canvas class="flow-field" id="flow-field" aria-hidden="true"></canvas>
+    <a class="skip-link" href="#content"><span data-lang="en">Skip to content</span><span data-lang="zh">跳到正文</span></a>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a class="brand" href="/" aria-label="Victor Shea-Jay Huang home">
+          <span class="brand-mark" aria-hidden="true">VH</span>
+        </a>
+
+        <div class="nav-right">
+          <div class="nav-links">
+            <a href="/#about-me" >About</a>
+            <a href="/publications/" aria-current="page">Publications</a>
+            <a href="/projects/" >Projects</a>
+            <a href="/blog/" data-blog-link>Blog</a>
+          </div>
+
+          <div class="nav-controls" aria-label="Display controls">
+            <div class="segmented-control" aria-label="Language">
+              <button type="button" data-locale-option="en">EN</button>
+              <button type="button" data-locale-option="zh">中</button>
+            </div>
+            <div class="segmented-control theme-control" aria-label="Theme">
+              <button type="button" data-theme-option="light" aria-label="Light theme"><i class="fa-regular fa-sun" aria-hidden="true"></i></button>
+              <button type="button" data-theme-option="dark" aria-label="Dark theme"><i class="fa-regular fa-moon" aria-hidden="true"></i></button>
+              <button type="button" data-theme-option="system" aria-label="System theme"><i class="fa-solid fa-display" aria-hidden="true"></i></button>
+            </div>
+            <div class="segmented-control motion-control" aria-label="Ambient motion">
+              <button type="button" data-motion-toggle aria-label="Pause ambient motion" aria-pressed="false"><span data-motion-icon aria-hidden="true">Ⅱ</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="site-shell" id="content">
+            <aside class="identity-rail" aria-label="Profile">
+        
+        <div class="avatar-frame">
+          <img class="avatar" src="/assets/img/avatar-aug-2026.jpg" alt="Victor Shea-Jay Huang portrait">
+          <span class="avatar-orbit" aria-hidden="true"></span>
+        </div>
+
+        <div class="identity-copy">
+          <p class="name"><a href="/"><span class="name-line">Victor</span> <span class="name-line">Shea-Jay Huang</span></a></p>
+          <p class="role">
+            <span data-lang="en">Year-1 Ph.D. student</span>
+            <span data-lang="zh">一年级博士生</span>
+          </p>
+          <p class="affiliation"><a href="https://mmlab.ie.cuhk.edu.hk/">MMLab</a> · <a href="https://www.cuhk.edu.hk/">CUHK</a></p>
+        </div>
+
+        <nav class="profile-links" aria-label="Profile links">
+          
+          <a href="https://scholar.google.com/citations?hl=zh-CN&amp;user=pL5W9z4AAAAJ">
+            <span class="profile-link-icon"><i class="ai ai-google-scholar" aria-hidden="true"></i></span>
+            <span>Google Scholar</span>
+            <span class="external-mark" aria-hidden="true">↗</span>
+          </a>
+          
+          
+          <a href="https://github.com/JeixHuang">
+            <span class="profile-link-icon"><i class="fa-brands fa-github" aria-hidden="true"></i></span>
+            <span>GitHub</span>
+            <span class="external-mark" aria-hidden="true">↗</span>
+          </a>
+          
+          
+          <a href="https://www.linkedin.com/in/%E5%B8%8C%E6%9D%B0-%E9%BB%84-53a491322/">
+            <span class="profile-link-icon"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></span>
+            <span>LinkedIn</span>
+            <span class="external-mark" aria-hidden="true">↗</span>
+          </a>
+          
+          
+          <a href="https://x.com/Xijie358">
+            <span class="profile-link-icon"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></span>
+            <span>X / Twitter</span>
+            <span class="external-mark" aria-hidden="true">↗</span>
+          </a>
+          
+          
+          <a href="mailto:jeix782@gmail.com">
+            <span class="profile-link-icon"><i class="fa-regular fa-envelope" aria-hidden="true"></i></span>
+            <span>Email</span>
+            <span class="external-mark" aria-hidden="true">↗</span>
+          </a>
+          
+        </nav>
+      </aside>
+
+
+      <div class="content-column">
+        
+<article class="publication-detail">
+  <a class="back-link" href="/publications/">← Publications</a>
+  <header class="detail-heading">
+    <div class="publication-meta"><span class="venue-label">AAAI 2026</span><span class="status-label">Published</span></div>
+    <h1>TIDE: Temporal-Aware Sparse Autoencoders for Interpretable Diffusion Transformers in Image Generation</h1>
+    <p class="publication-authors"><strong>Victor Shea-Jay Huang</strong><sup title="Equal contribution"><span aria-hidden="true">*</span><span class="visually-hidden"> (equal contribution)</span></sup>, Le Zhuo<sup title="Equal contribution"><span aria-hidden="true">*</span><span class="visually-hidden"> (equal contribution)</span></sup>, Yi Xin, Zhaokai Wang, Fu-Yun Wang, Yuchi Wang, Renrui Zhang, Peng Gao, Hongsheng Li</p>
+    <div class="resource-links" aria-label="Paper resources">
+  <a class="resource-link resource-primary" href="https://ojs.aaai.org/index.php/AAAI/article/view/37006">AAAI <span aria-hidden="true">↗</span></a>
+  <a class="resource-link" href="https://arxiv.org/abs/2503.07050">arXiv <span aria-hidden="true">↗</span></a>
+  
+  
+  <a class="resource-link citation-link" href="/publications/tide/#citation">Citation <span aria-hidden="true">↘</span></a>
+</div>
+
+  </header>
+  <figure class="paper-hero"><img src="/assets/files/tide.png" alt="TIDE visualizes spatial, semantic, and class-level sparse features for generated house and bird images."><figcaption>TIDE visualizes spatial, semantic, and class-level sparse features for generated house and bird images.</figcaption></figure>
+  <section class="paper-summary">
+    <h2>TL;DR</h2>
+    <p><span data-lang="en">Temporal-aware sparse autoencoders reveal hierarchical concepts across diffusion timesteps, making diffusion transformers easier to interpret and control.</span><span data-lang="zh">用时间感知的稀疏自编码器提取扩散各时间步中的层次化概念，理解并控制 Diffusion Transformer 的生成过程。</span></p>
+  </section>
+  <section class="citation-section" id="citation">
+    <div class="citation-heading"><h2>Citation</h2><div class="resource-links"><a class="resource-link" href="/assets/citations/tide.bib" download>Download .bib</a><button type="button" class="resource-link" data-copy-citation="paper-citation"><span data-lang="en">Copy BibTeX</span><span data-lang="zh">复制 BibTeX</span></button></div></div>
+    <pre><code id="paper-citation">@article{huang2026tide,
+  title = {{TIDE}: Temporal-Aware Sparse Autoencoders for Interpretable Diffusion Transformers in Image Generation},
+  author = {Huang, Victor Shea-Jay and Zhuo, Le and Xin, Yi and Wang, Zhaokai and Wang, Fu-Yun and Wang, Yuchi and Zhang, Renrui and Gao, Peng and Li, Hongsheng},
+  journal = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume = {40},
+  number = {1},
+  pages = {435--443},
+  year = {2026},
+  doi = {10.1609/aaai.v40i1.37006},
+  url = {https://ojs.aaai.org/index.php/AAAI/article/view/37006}
+}
+</code></pre>
+    <p class="citation-feedback" role="status" aria-live="polite"></p>
+  </section>
+</article>
+
+
+        <footer class="site-footer">
+          <p>© 2026 Victor Shea-Jay Huang</p>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>

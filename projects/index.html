@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en-US" data-locale="en" data-theme="dark" data-theme-choice="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projects · Victor Shea-Jay Huang</title>
+    <meta name="description" content="Victor Shea-Jay Huang is a first-year Ph.D. student at MMLab, CUHK, researching agents and physical AI, with a focus on world models.">
+    <meta name="keywords" content="xijie huang, Xijie Huang, Victor Shea-Jay Huang, Victor Shea Jay Huang, Victor Ché-Jay Huang, Victor Ché Jay Huang, Ché-Jay Huang, Victor Huang, Huang Xijie, Victor Shea Huang, Victor Ché Huang">
+    <meta name="color-scheme" content="light dark">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Projects">
+    <meta property="og:url" content="https://jeixhuang.github.io/projects/">
+    <meta property="og:site_name" content="Victor Shea-Jay Huang">
+    <meta property="og:description" content="Victor Shea-Jay Huang is a first-year Ph.D. student at MMLab, CUHK, researching agents and physical AI, with a focus on world models.">
+    <meta property="og:image" content="/assets/img/avatar-aug-2026.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Victor Shea-Jay Huang">
+    <meta name="twitter:description" content="Victor Shea-Jay Huang is a first-year Ph.D. student at MMLab, CUHK, researching agents and physical AI, with a focus on world models.">
+    <meta name="twitter:image" content="/assets/img/avatar-aug-2026.jpg">
+    <link rel="canonical" href="https://jeixhuang.github.io/projects/">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/assets/img/avatar3.jpg" type="image/png">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/assets/img/avatar3.jpg" type="image/png">
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var themeKey = "jeix-theme-choice";
+        var localeKey = "jeix-locale";
+        var media = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+        var themeChoice = "dark";
+        var locale = "en";
+        var motionChoice = "active";
+
+        try {
+          themeChoice = localStorage.getItem(themeKey) || "dark";
+          locale = localStorage.getItem(localeKey) || "en";
+          motionChoice = localStorage.getItem("jeix-motion-choice") || "active";
+        } catch (error) {}
+
+        if (themeChoice !== "light" && themeChoice !== "dark" && themeChoice !== "system") themeChoice = "dark";
+        if (locale !== "en" && locale !== "zh") locale = "en";
+
+        var theme = themeChoice === "system" ? (media && media.matches ? "dark" : "light") : themeChoice;
+        root.dataset.theme = theme;
+        root.dataset.themeChoice = themeChoice;
+        root.dataset.locale = locale;
+        root.dataset.userMotion = motionChoice === "paused" ? "paused" : "active";
+        root.lang = locale === "zh" ? "zh-CN" : "en-US";
+        root.style.colorScheme = theme;
+      })();
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="/assets/css/homepage-v6.css?v=ee1b90fa">
+    <link rel="stylesheet" href="/assets/css/site-shell.css?v=20261016d">
+    <script src="/assets/js/ambient-field-v1.js?v=20261016d" defer></script>
+    <script src="/assets/js/site-shell.js?v=20261016" defer></script>
+    <script src="/assets/js/homepage-v6.js?v=20261016" defer></script>
+    <script src="/assets/js/favicon-switcher.js" defer></script>
+  </head>
+  <body>
+    <canvas class="flow-field" id="flow-field" aria-hidden="true"></canvas>
+    <a class="skip-link" href="#content"><span data-lang="en">Skip to content</span><span data-lang="zh">跳到正文</span></a>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a class="brand" href="/" aria-label="Victor Shea-Jay Huang home">
+          <span class="brand-mark" aria-hidden="true">VH</span>
+        </a>
+
+        <div class="nav-right">
+          <div class="nav-links">
+            <a href="/#about-me" >About</a>
+            <a href="/publications/" >Publications</a>
+            <a href="/projects/" aria-current="page">Projects</a>
+            <a href="/blog/" data-blog-link>Blog</a>
+          </div>
+
+          <div class="nav-controls" aria-label="Display controls">
+            <div class="segmented-control" aria-label="Language">
+              <button type="button" data-locale-option="en">EN</button>
+              <button type="button" data-locale-option="zh">中</button>
+            </div>
+            <div class="segmented-control theme-control" aria-label="Theme">
+              <button type="button" data-theme-option="light" aria-label="Light theme"><i class="fa-regular fa-sun" aria-hidden="true"></i></button>
+              <button type="button" data-theme-option="dark" aria-label="Dark theme"><i class="fa-regular fa-moon" aria-hidden="true"></i></button>
+              <button type="button" data-theme-option="system" aria-label="System theme"><i class="fa-solid fa-display" aria-hidden="true"></i></button>
+            </div>
+            <div class="segmented-control motion-control" aria-label="Ambient motion">
+              <button type="button" data-motion-toggle aria-label="Pause ambient motion" aria-pressed="false"><span data-motion-icon aria-hidden="true">Ⅱ</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="site-shell" id="content">
+            <aside class="identity-rail" aria-label="Profile">
+        
+        <div class="avatar-frame">
+          <img class="avatar" src="/assets/img/avatar-aug-2026.jpg" alt="Victor Shea-Jay Huang portrait">
+          <span class="avatar-orbit" aria-hidden="true"></span>
+        </div>
+
+        <div class="identity-copy">
+          <p class="name"><a href="/"><span class="name-line">Victor</span> <span class="name-line">Shea-Jay Huang</span></a></p>
+          <p class="role">
+            <span data-lang="en">Year-1 Ph.D. student</span>
+            <span data-lang="zh">一年级博士生</span>
+          </p>
+          <p class="affiliation"><a href="https://mmlab.ie.cuhk.edu.hk/">MMLab</a> · <a href="https://www.cuhk.edu.hk/">CUHK</a></p>
+        </div>
+
+        <nav class="profile-links" aria-label="Profile links">
+          
+          <a href="https://scholar.google.com/citations?hl=zh-CN&amp;user=pL5W9z4AAAAJ">
+            <span class="profile-link-icon"><i class="ai ai-google-scholar" aria-hidden="true"></i></span>
+            <span>Google Scholar</span>
+            <span class="external-mark" aria-hidden="true">↗</span>
+          </a>
+          
+          
+          <a href="https://github.com/JeixHuang">
+            <span class="profile-link-icon"><i class="fa-brands fa-github" aria-hidden="true"></i></span>
+            <span>GitHub</span>
+            <span class="external-mark" aria-hidden="true">↗</span>
+          </a>
+          
+          
+          <a href="https://www.linkedin.com/in/%E5%B8%8C%E6%9D%B0-%E9%BB%84-53a491322/">
+            <span class="profile-link-icon"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></span>
+            <span>LinkedIn</span>
+            <span class="external-mark" aria-hidden="true">↗</span>
+          </a>
+          
+          
+          <a href="https://x.com/Xijie358">
+            <span class="profile-link-icon"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></span>
+            <span>X / Twitter</span>
+            <span class="external-mark" aria-hidden="true">↗</span>
+          </a>
+          
+          
+          <a href="mailto:jeix782@gmail.com">
+            <span class="profile-link-icon"><i class="fa-regular fa-envelope" aria-hidden="true"></i></span>
+            <span>Email</span>
+            <span class="external-mark" aria-hidden="true">↗</span>
+          </a>
+          
+        </nav>
+      </aside>
+
+
+      <div class="content-column">
+        <header class="collection-heading">
+  <h1>Projects</h1>
+</header>
+<div class="project-list">
+  
+  <article class="project-card" id="mind-omni">
+    <a class="project-figure" href="https://mind-omni.github.io/" aria-label="Mind-Omni">
+      <img src="/assets/projects/mind-omni-overview.png" alt="Mind-Omni overview connecting MindLabel, MindVLA-U1, Streaming Intent, DIAL, MindSim, and AnyScene" loading="lazy" width="640" height="400">
+    </a>
+    <div class="project-copy">
+      <h2><a href="https://mind-omni.github.io/">Mind-Omni</a></h2>
+      <p><span data-lang="en">A Physical AI project series spanning streaming VLA, intent-conditioned planning, world simulation, and data engines.</span><span data-lang="zh">覆盖 streaming VLA、意图条件规划、世界模拟与数据引擎的 Physical AI 项目系列。</span></p>
+      <div class="resource-links"><a class="resource-link" href="https://mind-omni.github.io/">Project <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </article>
+  
+  <article class="project-card" id="lumina-mgpt-2-0">
+    <a class="project-figure" href="https://github.com/Alpha-VLLM/Lumina-mGPT-2.0" aria-label="Lumina-mGPT 2.0">
+      <img src="/assets/projects/lumina-mgpt-2-architecture.png" alt="Lumina-mGPT 2.0 decoder-only architecture for text and reference-image conditioned generation" loading="lazy" width="640" height="400">
+    </a>
+    <div class="project-copy">
+      <h2><a href="https://github.com/Alpha-VLLM/Lumina-mGPT-2.0">Lumina-mGPT 2.0</a></h2>
+      <p><span data-lang="en">An open autoregressive model for image generation, editing, and visual prediction.</span><span data-lang="zh">面向图像生成、编辑与视觉预测的开放自回归模型。</span></p>
+      <div class="resource-links"><a class="resource-link" href="https://github.com/Alpha-VLLM/Lumina-mGPT-2.0">Code <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </article>
+  
+  <article class="project-card" id="awesome-vision-to-music">
+    <a class="project-figure" href="https://github.com/wzk1015/Awesome-Vision-to-Music-Generation" aria-label="Awesome Vision-to-Music">
+      <img src="/assets/files/V2M.png" alt="Vision-to-music overview of datasets, generation methods, evaluation, and challenges" loading="lazy" width="640" height="400">
+    </a>
+    <div class="project-copy">
+      <h2><a href="https://github.com/wzk1015/Awesome-Vision-to-Music-Generation">Awesome Vision-to-Music</a></h2>
+      <p><span data-lang="en">A curated map of datasets, methods, and evaluation resources for vision-to-music generation.</span><span data-lang="zh">面向 Vision-to-Music Generation 的数据集、方法与评测资源索引。</span></p>
+      <div class="resource-links"><a class="resource-link" href="https://github.com/wzk1015/Awesome-Vision-to-Music-Generation">Code <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </article>
+  
+  <article class="project-card" id="aisafetylab">
+    <a class="project-figure" href="https://github.com/thu-coai/AISafetyLab" aria-label="AISafetyLab">
+      <img src="/assets/files/aisafetylab.png" alt="AISafetyLab framework connecting model attacks, defenses, and safety evaluation" loading="lazy" width="640" height="400">
+    </a>
+    <div class="project-copy">
+      <h2><a href="https://github.com/thu-coai/AISafetyLab">AISafetyLab</a></h2>
+      <p><span data-lang="en">A framework for evaluating attacks, defenses, and safety risks across large language models.</span><span data-lang="zh">面向大语言模型攻击、防御与安全风险评测的一体化框架。</span></p>
+      <div class="resource-links"><a class="resource-link" href="https://github.com/thu-coai/AISafetyLab">Code <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </article>
+  
+</div>
+
+
+        <footer class="site-footer">
+          <p>© 2026 Victor Shea-Jay Huang</p>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>
