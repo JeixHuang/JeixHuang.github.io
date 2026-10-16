@@ -1,6 +1,7 @@
 {{ $profile := hugo.Data.profile }}
 <div class="avatar-frame">
   <img class="avatar" src="{{ $profile.avatar }}" alt="{{ $profile.title }} portrait" />
+  <span class="avatar-orbit" aria-hidden="true"></span>
 </div>
 <div class="identity-copy">
   <p class="name"><a href="/"><span class="name-line">{{ index (split $profile.title " ") 0 }}</span> <span class="name-line">{{ strings.TrimPrefix "Victor " $profile.title }}</span></a></p>

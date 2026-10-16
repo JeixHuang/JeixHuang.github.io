@@ -179,7 +179,7 @@
     }
 
     function measureProtectors() {
-      var nodes = Array.prototype.slice.call(document.querySelectorAll(".avatar-frame, .identity-copy, .profile-links, .intro-copy, .work-entry"));
+      var nodes = Array.prototype.slice.call(document.querySelectorAll(".avatar-frame, .identity-copy, .profile-links, .intro-copy, .work-entry, .collection-heading, .publication-card, .project-card, .post-card, .post-header, .post-content, .post-toc"));
       protectors = nodes.map(function (node) {
         var rect = node.getBoundingClientRect();
         return {
@@ -187,7 +187,7 @@
           y: rect.top,
           width: rect.width,
           height: rect.height,
-          strength: node.classList.contains("work-entry") ? 0.82 : 0.74,
+          strength: node.matches(".work-entry, .publication-card, .project-card, .post-card, .post-content") ? 0.82 : 0.74,
         };
       });
     }

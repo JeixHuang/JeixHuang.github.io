@@ -60,8 +60,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" />
     <link rel="stylesheet" href="{{ "assets/style.css" | relURL }}?v=9d62f5a1" />
     <link rel="stylesheet" href="/assets/css/homepage-v6.css?v=ee1b90fa" />
-    <link rel="stylesheet" href="/assets/css/site-shell.css?v=20261016b" />
+    <link rel="stylesheet" href="/assets/css/site-shell.css?v=20261016c" />
     <link rel="stylesheet" href="{{ "assets/blog-shell.css" | relURL }}?v=20261016b" />
+    <script defer src="/assets/js/ambient-field-v1.js?v=20261016c"></script>
     <script defer src="{{ "assets/blog-shell.js" | relURL }}?v=20261016"></script>
 
     <!-- KaTeX (math) -->
@@ -70,6 +71,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
   </head>
   <body class="blog-site{{ if $readingField }} blog-reading{{ end }}">
+    <canvas class="flow-field" id="flow-field" aria-hidden="true"></canvas>
     <a class="skip-link" href="#content">Skip to content</a>
     <nav class="site-nav" aria-label="Primary navigation">
       <div class="nav-inner">
@@ -88,6 +90,9 @@
               <button type="button" data-theme-option="light" aria-label="Light theme"><i class="fa-regular fa-sun" aria-hidden="true"></i></button>
               <button type="button" data-theme-option="dark" aria-label="Dark theme"><i class="fa-regular fa-moon" aria-hidden="true"></i></button>
               <button type="button" data-theme-option="system" aria-label="System theme"><i class="fa-solid fa-display" aria-hidden="true"></i></button>
+            </div>
+            <div class="segmented-control motion-control" aria-label="Ambient motion">
+              <button type="button" data-motion-toggle aria-label="Pause ambient motion" aria-pressed="false"><span data-motion-icon aria-hidden="true">Ⅱ</span></button>
             </div>
           </div>
         </div>

@@ -17,9 +17,9 @@ works:
 
   - title: Mind-Omni
     date: "2026-05-12"
-    image: /assets/files/mindvla-u1.png
-    image_alt: MindVLA-U1 streaming architecture within the Mind-Omni project series
-    image_source: https://mind-omni.github.io/projects/u1/arxiv_final_figs/Framework6.png
+    image: /assets/projects/mind-omni-overview.png
+    image_alt: Mind-Omni overview connecting MindLabel, MindVLA-U1, Streaming Intent, DIAL, MindSim, and AnyScene
+    image_source: User-provided Mind-Omni overview
     summary_en: A Physical AI project series spanning streaming VLA, intent-conditioned planning, world simulation, and data engines.
     summary_zh: 覆盖 streaming VLA、意图条件规划、世界模拟与数据引擎的 Physical AI 项目系列。
     primary_url: https://mind-omni.github.io/

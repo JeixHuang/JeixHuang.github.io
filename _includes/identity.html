@@ -2,6 +2,7 @@
         {% assign avatar_path = site.avatar | replace: './', '/' %}
         <div class="avatar-frame">
           <img class="avatar" src="{{ avatar_path | relative_url }}" alt="{{ site.title | escape }} portrait">
+          <span class="avatar-orbit" aria-hidden="true"></span>
         </div>
 
         <div class="identity-copy">
