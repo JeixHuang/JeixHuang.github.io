@@ -51,8 +51,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="{{ "/assets/css/homepage-v6.css" | relative_url }}?v=ee1b90fa">
-    <link rel="stylesheet" href="/assets/css/site-shell.css?v=20261016c">
-    <script src="{{ "/assets/js/ambient-field-v1.js" | relative_url }}?v=20261016c" defer></script>
+    <link rel="stylesheet" href="/assets/css/site-shell.css?v=20261016d">
+    <script src="{{ "/assets/js/ambient-field-v1.js" | relative_url }}?v=20261016d" defer></script>
     <script src="/assets/js/site-shell.js?v=20261016" defer></script>
     <script src="{{ "/assets/js/homepage-v6.js" | relative_url }}?v=20261016" defer></script>
     <script src="{{ "/assets/js/favicon-switcher.js" | relative_url }}" defer></script>
@@ -69,6 +69,7 @@
 
         <div class="nav-right">
           <div class="nav-links">
+            <a href="/#about-me" {% if page.section == 'about' %}aria-current="page"{% endif %}>About</a>
             <a href="/publications/" {% if page.section == 'publications' %}aria-current="page"{% endif %}>Publications</a>
             <a href="/projects/" {% if page.section == 'projects' %}aria-current="page"{% endif %}>Projects</a>
             <a href="/blog/" data-blog-link>Blog</a>

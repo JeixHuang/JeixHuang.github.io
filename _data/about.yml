@@ -1,0 +1,31 @@
+research:
+  - title_en: Agents
+    title_zh: 智能体
+    scope_en: Reasoning, planning, memory, and tool use, with an emphasis on reinforcement learning and learning from interaction and experience.
+    scope_zh: 推理、规划、记忆与工具使用，重点关注强化学习，以及从交互与经验中学习。
+  - title_en: Physical AI & World Models
+    title_zh: 物理智能与世界模型
+    scope_en: Learning representations of physical dynamics and action consequences, and using world models for simulation, planning, and embodied decision-making.
+    scope_zh: 学习物理动态与动作后果的表示，利用世界模型进行模拟、规划与具身决策。
+
+# Dates and status follow the primary sources recorded in selected_publications.yml.
+# Month granularity avoids treating the conference page date as an exact decision day.
+updates:
+  - month: "2026-09"
+    date_en: Sep 2026
+    date_zh: 2026 年 9 月
+    text_en: '[Reward Is Not a Universal Interface for Generative Reinforcement Learning](https://openreview.net/forum?id=gbYg6VGblU#discussion) was accepted to **NeurIPS 2026**.'
+    text_zh: '[Reward Is Not a Universal Interface for Generative Reinforcement Learning](https://openreview.net/forum?id=gbYg6VGblU#discussion) 被 **NeurIPS 2026** 接收。'
+    source: https://nips.cc/virtual/2026/poster/150638
+  - month: "2026-05"
+    date_en: May 2026
+    date_zh: 2026 年 5 月
+    text_en: '[DIAL](https://arxiv.org/abs/2605.12625) is available on arXiv.'
+    text_zh: '[DIAL](https://arxiv.org/abs/2605.12625) 预印本已公开。'
+    source: https://arxiv.org/abs/2605.12625
+  - month: "2026-03"
+    date_en: Mar 2026
+    date_zh: 2026 年 3 月
+    text_en: '[TIDE](https://ojs.aaai.org/index.php/AAAI/article/view/37006) was published in the **AAAI 2026** proceedings.'
+    text_zh: '[TIDE](https://ojs.aaai.org/index.php/AAAI/article/view/37006) 发表于 **AAAI 2026** 论文集。'
+    source: https://ojs.aaai.org/index.php/AAAI/article/view/37006

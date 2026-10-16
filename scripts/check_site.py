@@ -45,7 +45,9 @@ for route in ('index.html', 'publications/index.html', 'projects/index.html', 'b
     page = pages.get(ROOT / route)
     if not page or page.h1 != 1 or 'identity-rail' not in page.classes:
         errors.append(f'{route}: missing page, profile, or unique main heading')
-for route in ('index.html', 'publications/index.html'):
+if not {'about-me', 'research', 'updates'} <= pages[ROOT / 'index.html'].ids:
+    errors.append('index.html: missing About, Research, or Updates section')
+for route in ('publications/index.html',):
     if pages[ROOT / route].classes.count('publication-card') != 5:
         errors.append(f'{route}: expected the five selected papers')
 for route in ('blog/index.html', 'blog/en/index.html'):
@@ -61,4 +63,4 @@ for path in ROOT.rglob('*'):
 if errors:
     print('\n'.join(errors))
     raise SystemExit(1)
-print(f'OK: {len(pages)} pages; internal links, fragments, five papers, Blog TL;DR, and draft exclusion.')
+print(f'OK: {len(pages)} pages; internal links, About sections, five papers, Blog TL;DR, and draft exclusion.')

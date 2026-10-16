@@ -60,9 +60,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" />
     <link rel="stylesheet" href="{{ "assets/style.css" | relURL }}?v=9d62f5a1" />
     <link rel="stylesheet" href="/assets/css/homepage-v6.css?v=ee1b90fa" />
-    <link rel="stylesheet" href="/assets/css/site-shell.css?v=20261016c" />
+    <link rel="stylesheet" href="/assets/css/site-shell.css?v=20261016d" />
     <link rel="stylesheet" href="{{ "assets/blog-shell.css" | relURL }}?v=20261016b" />
-    <script defer src="/assets/js/ambient-field-v1.js?v=20261016c"></script>
+    <script defer src="/assets/js/ambient-field-v1.js?v=20261016d"></script>
     <script defer src="{{ "assets/blog-shell.js" | relURL }}?v=20261016"></script>
 
     <!-- KaTeX (math) -->
@@ -80,6 +80,7 @@
         </a>
         <div class="nav-right">
           <div class="nav-links">
+            <a href="/#about-me">About</a>
             <a href="/publications/">Publications</a>
             <a href="/projects/">Projects</a>
             <a href="{{ if eq .Site.Language.Lang "en" }}/blog/en/{{ else }}/blog/{{ end }}" data-blog-link aria-current="page">Blog</a>

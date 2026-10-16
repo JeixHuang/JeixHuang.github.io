@@ -4,7 +4,8 @@ Source for [jeixhuang.github.io](https://jeixhuang.github.io/).
 
 ## Site structure
 
-- `/` and `/publications/`: the five selected papers, newest first. Each paper has its own `/publications/<slug>/` page, figure, summary, source links, and copyable/downloadable BibTeX.
+- `/`: About me, Research, and Updates. The brief biography lives in `index.html`; bilingual research scope and dated updates are maintained in `_data/about.yml`. Keep updates tied to their recorded sources and use only confirmed dates.
+- `/publications/`: the five selected papers, newest first. Each paper has its own `/publications/<slug>/` page, figure, summary, source links, and copyable/downloadable BibTeX.
 - `/projects/`: research projects, code, and resources with real project figures; maintained in `_data/homepage.yml`. Each entry includes `image`, descriptive `image_alt`, and the original `image_source` for maintenance. Figures are displayed in full without cropping.
 - `/blog/` and `/blog/en/`: writing, with image / TL;DR / Read / Citation cards. Both indexes include available originals, preferring real translations when present.
 - All collections and detail pages retain the same author sidebar and primary navigation. Article contents sit on the right on wide screens and collapse above the text on smaller screens.

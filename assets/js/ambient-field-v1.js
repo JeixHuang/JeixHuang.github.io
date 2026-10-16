@@ -179,7 +179,7 @@
     }
 
     function measureProtectors() {
-      var nodes = Array.prototype.slice.call(document.querySelectorAll(".avatar-frame, .identity-copy, .profile-links, .intro-copy, .work-entry, .collection-heading, .publication-card, .project-card, .post-card, .post-header, .post-content, .post-toc"));
+      var nodes = Array.prototype.slice.call(document.querySelectorAll(".avatar-frame, .identity-copy, .profile-links, .intro-copy, .work-entry, .collection-heading, .about-section, .publication-card, .project-card, .post-card, .post-header, .post-content, .post-toc"));
       protectors = nodes.map(function (node) {
         var rect = node.getBoundingClientRect();
         return {
