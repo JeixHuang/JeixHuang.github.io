@@ -1,12 +1,12 @@
 research:
   - title_en: Agents
     title_zh: 智能体
-    scope_en: Reasoning, planning, memory, and tool use, with an emphasis on reinforcement learning and learning from interaction and experience.
-    scope_zh: 推理、规划、记忆与工具使用，重点关注强化学习，以及从交互与经验中学习。
+    scope_en: I study how agents reason, act, and improve through experience, with particular attention to the interaction between reinforcement learning, memory, and tool use. The goal is to develop agents whose capabilities grow through sustained interaction and remain reliable over long task horizons.
+    scope_zh: 我研究智能体如何推理、行动并从经验中持续改进，重点关注强化学习、记忆与工具使用之间的相互作用，探索如何让智能体在持续交互中积累能力，并在长程任务中保持可靠性。
   - title_en: Physical AI & World Models
     title_zh: 物理智能与世界模型
-    scope_en: Learning representations of physical dynamics and action consequences, and using world models for simulation, planning, and embodied decision-making.
-    scope_zh: 学习物理动态与动作后果的表示，利用世界模型进行模拟、规划与具身决策。
+    scope_en: I study world models as a basis for physical intelligence, connecting multimodal representation learning and generative dynamics with simulation, planning, and control. A central question is how predictive models can be learned, evaluated, and integrated into embodied systems to improve decisions and actions.
+    scope_zh: 我研究以世界模型为基础的物理智能，将多模态表征学习、生成式动力学与模拟、规划和控制联系起来，核心问题是如何学习和评估预测模型，并将其融入具身系统，改善实际决策与行动。
 
 # Dates and status follow the primary sources recorded in selected_publications.yml.
 # Month granularity avoids treating the conference page date as an exact decision day.

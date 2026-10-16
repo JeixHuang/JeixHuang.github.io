@@ -6,14 +6,14 @@ section: about
 <section class="about-section about-introduction" id="about-me" aria-labelledby="about-heading">
   <h1 id="about-heading">About me</h1>
   <p class="about-bio">
-    <span data-lang="en">I am a first-year Ph.D. student at <a href="{{ site.subaffiliation_link }}">MMLab</a>, <a href="{{ site.affiliation_link }}">The Chinese University of Hong Kong (CUHK)</a>. I received my B.E. degree in 2026.</span>
-    <span data-lang="zh">我是<a href="{{ site.affiliation_link }}">香港中文大学（CUHK）</a> <a href="{{ site.subaffiliation_link }}">MMLab</a> 的一年级博士生，于 2026 年获得工学学士学位。</span>
+    <span data-lang="en">I am a first-year Ph.D. student at <a href="{{ site.subaffiliation_link }}">MMLab</a>, <a href="{{ site.affiliation_link }}">The Chinese University of Hong Kong (CUHK)</a>, after receiving my B.E. degree in 2026.</span>
+    <span data-lang="zh">我于 2026 年获得工学学士学位，现为<a href="{{ site.affiliation_link }}">香港中文大学（CUHK）</a> <a href="{{ site.subaffiliation_link }}">MMLab</a> 的一年级博士生。</span>
   </p>
 </section>
 
 <section class="about-section" id="research" aria-labelledby="research-heading">
   <h2 id="research-heading">Research</h2>
-  <p><span data-lang="en">My research focuses on agents and physical AI:</span><span data-lang="zh">我的研究主要关注智能体与物理智能：</span></p>
+  <p><span data-lang="en">My research spans the foundations and systems of agents and physical intelligence, from data and model design to learning algorithms, inference, and evaluation.</span><span data-lang="zh">我的研究围绕智能体与物理智能的基础方法和系统展开，涵盖数据与模型设计、学习算法、推理与评估。</span></p>
   <ul class="research-scope">
     {% for area in site.data.about.research %}
     <li><span data-lang="en"><strong>{{ area.title_en }}:</strong> {{ area.scope_en }}</span><span data-lang="zh"><strong>{{ area.title_zh }}：</strong>{{ area.scope_zh }}</span></li>
