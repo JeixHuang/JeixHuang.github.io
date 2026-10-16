@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -5,6 +8,11 @@
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
+  <url><loc>{{ '/publications/' | absolute_url }}</loc></url>
+  <url><loc>{{ '/projects/' | absolute_url }}</loc></url>
+  {% for paper in site.data.selected_publications %}
+  <url><loc>{{ '/publications/' | append: paper.slug | append: '/' | absolute_url }}</loc></url>
+  {% endfor %}
   <url>
     <loc>https://jeixhuang.github.io/blog/</loc>
     <priority>0.8</priority>

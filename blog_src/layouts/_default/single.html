@@ -1,11 +1,15 @@
 {{ define "main" }}
   {{ $toc := .TableOfContents }}
-  {{ $hasToc := and (not .Params.disable_toc) (in $toc "<li>") }}
+  {{ $hasToc := and (not .Params.disable_toc) (or (in $toc "<li>") (eq .Section "posts")) }}
   <article class="post{{ if $hasToc }} post-with-toc{{ end }}{{ if .Params.weekly_report }} weekly-post{{ end }}{{ if and .Params.weekly_report (not .Params.weekly_paper_detail) }} weekly-overview{{ end }}{{ if .Params.weekly_paper_detail }} weekly-paper-standalone{{ end }}">
-    <header class="post-header">
+    <header class="post-header" id="post-introduction">
+      <a class="post-back-link" href="{{ if eq .Site.Language.Lang "en" }}/blog/en/{{ else }}/blog/{{ end }}" data-blog-link>← Blog</a>
       <h1 class="post-h1">{{ .Title }}</h1>
       <div class="post-meta">
+        <a class="post-author" href="/">{{ or .Params.author hugo.Data.profile.title }}</a>
+        <span aria-hidden="true">·</span>
         <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+        <span aria-hidden="true">·</span><span>{{ .ReadingTime }} min read</span>
         {{ if .Params.weekly_report }}
           <span class="dot">·</span>
           <span class="weekly-label">{{ .Params.weekly_field }}</span>
@@ -32,18 +36,24 @@
         </div>
       {{ end }}
     </header>
+    {{ with .Params.tldr }}<p class="post-tldr"><strong>TL;DR</strong> {{ . }}</p>{{ end }}
     <div class="post-body{{ if $hasToc }} has-toc{{ end }}">
+      <div class="post-content" lang="{{ or .Params.content_lang .Site.Language.Lang }}">
+        {{ .Content }}
+        {{ if eq .Section "posts" }}{{ partial "citation.html" . }}{{ end }}
+      </div>
       {{ if $hasToc }}
         <aside class="post-toc" aria-label="Table of contents">
-          <div class="post-toc-inner">
-            <div class="post-toc-kicker">Contents</div>
-            {{ $toc }}
-          </div>
+          <details class="post-toc-inner" open>
+            <summary class="post-toc-kicker">On this page</summary>
+            <div class="post-toc-links">
+              <a href="#post-introduction">Overview</a>
+              {{ $toc }}
+              {{ if eq .Section "posts" }}<a href="#citation">Citation</a>{{ end }}
+            </div>
+          </details>
         </aside>
       {{ end }}
-      <div class="post-content">
-        {{ .Content }}
-      </div>
     </div>
     {{ if $hasToc }}
       <script>

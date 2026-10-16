@@ -1,0 +1,23 @@
+---
+layout: homepage
+title: Projects
+section: projects
+---
+<header class="collection-heading">
+  <p class="eyebrow">Open source · Research &amp; tools</p>
+  <div class="collection-title-row"><h1>Projects</h1><span class="collection-count">{{ site.data.homepage.works | size }} projects</span></div>
+  <p class="collection-description"><span data-lang="en">Models, tools, and resources I work on.</span><span data-lang="zh">参与构建的模型、工具与开放研究资源。</span></p>
+</header>
+<div class="project-list">
+  {% for item in site.data.homepage.works %}
+  <article class="project-card" id="{{ item.title | slugify }}">
+    <div class="project-index"><span>0{{ forloop.index }}</span><time datetime="{{ item.date }}">{{ item.date | date: '%Y.%m' }}</time></div>
+    <div>
+      <h2><a href="{{ item.primary_url | escape }}">{{ item.title }}</a></h2>
+      <p><span data-lang="en">{{ item.summary_en }}</span><span data-lang="zh">{{ item.summary_zh }}</span></p>
+      <ul class="topic-labels">{% for tag in item.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
+      <div class="resource-links">{% for link in item.links %}<a class="resource-link" href="{{ link.url | escape }}">{% if link.label_en == 'Repo' %}Code{% else %}{{ link.label_en }}{% endif %} <span aria-hidden="true">↗</span></a>{% endfor %}</div>
+    </div>
+  </article>
+  {% endfor %}
+</div>

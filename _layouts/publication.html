@@ -1,0 +1,23 @@
+---
+layout: homepage
+---
+{% assign paper = site.data.selected_publications | where: 'slug', page.paper_slug | first %}
+<article class="publication-detail">
+  <a class="back-link" href="/publications/">← Publications</a>
+  <header class="detail-heading">
+    <div class="publication-meta"><span class="venue-label">{{ paper.venue }}</span>{% assign venue_year = paper.year | append: '' %}{% unless paper.venue contains venue_year %}<span>{{ paper.year }}</span>{% endunless %}<span class="status-label">{{ paper.status }}</span></div>
+    <h1>{{ paper.title }}</h1>
+    <p class="publication-authors">{{ paper.authors | escape | replace: 'Victor Shea-Jay Huang', '<strong>Victor Shea-Jay Huang</strong>' | replace: 'Xijie Huang', '<strong>Xijie Huang</strong>' }}</p>
+    {% include paper-links.html paper=paper %}
+  </header>
+  <figure class="paper-hero"><img src="{{ paper.image | escape }}" alt="{{ paper.image_alt | escape }}"><figcaption>{{ paper.image_alt }}</figcaption></figure>
+  <section class="paper-summary">
+    <h2>TL;DR</h2>
+    <p><span data-lang="en">{{ paper.tldr_en }}</span><span data-lang="zh">{{ paper.tldr_zh }}</span></p>
+  </section>
+  <section class="citation-section" id="citation">
+    <div class="citation-heading"><h2>Citation</h2><div class="resource-links"><a class="resource-link" href="{{ paper.citation_url }}" download>Download .bib</a><button type="button" class="resource-link" data-copy-citation="paper-citation"><span data-lang="en">Copy BibTeX</span><span data-lang="zh">复制 BibTeX</span></button></div></div>
+    <pre><code id="paper-citation">{{ paper.citation | escape }}</code></pre>
+    <p class="citation-feedback" role="status" aria-live="polite"></p>
+  </section>
+</article>

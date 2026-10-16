@@ -1,0 +1,156 @@
+# The five works selected from the owner's full English CV.
+# Metadata checked against the linked primary sources on 2026-10-16.
+# Ordered by the dated publication / public conference record, newest first.
+# Author names and order follow the public paper; * denotes equal contribution.
+
+- slug: reward-interface
+  title: "Reward Is Not a Universal Interface for Generative Reinforcement Learning"
+  authors: "Victor Shea-Jay Huang, Poodar Chu, Hongsheng Li"
+  venue: "NeurIPS 2026"
+  year: 2026
+  sort_date: "2026-09-25"
+  status: "Accepted"
+  tldr_en: "MindRL translates a shared reward into updates suited to autoregressive, parallel discrete, flow, and hybrid policies, with explicit controls on update reliability."
+  tldr_zh: "MindRL 将共同奖励转化为适合自回归、并行离散、Flow 及混合策略的更新，并显式控制更新的可靠性。"
+  image: "/assets/files/mindrl-overview.png"
+  image_alt: "MindRL routes reward through branch-specific score objects and controls granularity, anchors, clipping, and branch weights."
+  paper_url: "https://openreview.net/forum?id=gbYg6VGblU#discussion"
+  paper_label: "OpenReview"
+  arxiv_url: ""
+  code_url: ""
+  project_url: ""
+  citation_url: "/assets/citations/reward-interface.bib"
+  source: "https://nips.cc/virtual/2026/poster/150638"
+  note: "Sorted by the NeurIPS page's datePublished (2026-09-25), not the future poster date. The official author list includes Poodar Chu, absent from the older CV. The method figure is the owner's existing overview for this same title and OpenReview ID; the draft blog text is not published."
+  citation: |
+    @inproceedings{huang2026reward,
+      title = {Reward Is Not a Universal Interface for Generative Reinforcement Learning},
+      author = {Huang, Victor Shea-Jay and Chu, Poodar and Li, Hongsheng},
+      booktitle = {Advances in Neural Information Processing Systems},
+      year = {2026},
+      note = {Accepted},
+      url = {https://openreview.net/forum?id=gbYg6VGblU}
+    }
+
+- slug: dial
+  title: "Driving Intents Amplify Planning-Oriented Reinforcement Learning"
+  authors: "Hengtong Lu*, Victor Shea-Jay Huang*, Chengmin Yang, Pengfei Jing, Jifeng Dai, Yan Xie, Benjin Zhu*"
+  venue: "arXiv"
+  year: 2026
+  sort_date: "2026-05-12"
+  status: "Preprint"
+  tldr_en: "Intent-conditioned proposals and multi-intent GRPO expand and preserve diverse driving maneuvers for preference-based reinforcement learning."
+  tldr_zh: "通过意图条件采样与多意图 GRPO，扩展并保留多样驾驶行为，为基于偏好的强化学习提供更丰富的候选轨迹。"
+  image: "/assets/files/dial.png"
+  image_alt: "DIAL contrasts collapsed trajectory samples with diverse intent-conditioned proposals and plots their best-of-K preference scores."
+  paper_url: "https://arxiv.org/abs/2605.12625"
+  paper_label: "arXiv"
+  arxiv_url: "https://arxiv.org/abs/2605.12625"
+  code_url: ""
+  project_url: "https://mind-omni.github.io/projects/dial/index.html"
+  citation_url: "/assets/citations/dial.bib"
+  source: "https://mind-omni.github.io/projects/dial/index.html"
+  note: "Sorted by the first arXiv submission (2026-05-12). The project page confirms equal contribution; no conference acceptance is claimed."
+  citation: |
+    @article{lu2026driving,
+      title = {Driving Intents Amplify Planning-Oriented Reinforcement Learning},
+      author = {Lu, Hengtong and Huang, Victor Shea-Jay and Yang, Chengmin and Jing, Pengfei and Dai, Jifeng and Xie, Yan and Zhu, Benjin},
+      journal = {arXiv preprint arXiv:2605.12625},
+      year = {2026},
+      url = {https://arxiv.org/abs/2605.12625}
+    }
+
+- slug: tide
+  title: "TIDE: Temporal-Aware Sparse Autoencoders for Interpretable Diffusion Transformers in Image Generation"
+  authors: "Victor Shea-Jay Huang*, Le Zhuo*, Yi Xin, Zhaokai Wang, Fu-Yun Wang, Yuchi Wang, Renrui Zhang, Peng Gao, Hongsheng Li"
+  venue: "AAAI 2026"
+  year: 2026
+  sort_date: "2026-03-14"
+  status: "Published"
+  tldr_en: "Temporal-aware sparse autoencoders reveal hierarchical concepts across diffusion timesteps, making diffusion transformers easier to interpret and control."
+  tldr_zh: "用时间感知的稀疏自编码器提取扩散各时间步中的层次化概念，理解并控制 Diffusion Transformer 的生成过程。"
+  image: "/assets/files/tide.png"
+  image_alt: "TIDE visualizes spatial, semantic, and class-level sparse features for generated house and bird images."
+  paper_url: "https://ojs.aaai.org/index.php/AAAI/article/view/37006"
+  paper_label: "AAAI"
+  arxiv_url: "https://arxiv.org/abs/2503.07050"
+  code_url: ""
+  project_url: ""
+  citation_url: "/assets/citations/tide.bib"
+  source: "https://ojs.aaai.org/index.php/AAAI/article/view/37006"
+  note: "Sorted by the official AAAI proceedings publication date (2026-03-14); the preprint first appeared in 2025."
+  citation: |
+    @article{huang2026tide,
+      title = {{TIDE}: Temporal-Aware Sparse Autoencoders for Interpretable Diffusion Transformers in Image Generation},
+      author = {Huang, Victor Shea-Jay and Zhuo, Le and Xin, Yi and Wang, Zhaokai and Wang, Fu-Yun and Wang, Yuchi and Zhang, Renrui and Gao, Peng and Li, Hongsheng},
+      journal = {Proceedings of the AAAI Conference on Artificial Intelligence},
+      volume = {40},
+      number = {1},
+      pages = {435--443},
+      year = {2026},
+      doi = {10.1609/aaai.v40i1.37006},
+      url = {https://ojs.aaai.org/index.php/AAAI/article/view/37006}
+    }
+
+- slug: blackdan
+  title: "BlackDAN: A Black-Box Multi-Objective Approach for Effective and Contextual Jailbreaking of Large Language Models"
+  authors: "Xinyuan Wang*, Victor Shea-Jay Huang*, Renmiao Chen, Hao Wang, Chengwei Pan, Lei Sha, Minlie Huang"
+  venue: "ICML 2025 · New In ML"
+  year: 2025
+  sort_date: "2025-07-15"
+  status: "Workshop poster"
+  tldr_en: "A black-box evaluation framework uses multi-objective optimization to study jailbreak success, contextual relevance, and detectability together."
+  tldr_zh: "以多目标优化联合考察越狱成功率、上下文相关性与可检测性，构建黑盒大语言模型安全评测框架。"
+  image: "/assets/files/Blackdan.png"
+  image_alt: "BlackDAN's framework combines black-box model responses, judge models, and NSGA-II multi-objective optimization."
+  paper_url: "https://icml.cc/virtual/2025/50654"
+  paper_label: "ICML"
+  arxiv_url: "https://arxiv.org/abs/2410.09804"
+  code_url: "https://github.com/MantaAI/BlackDAN"
+  project_url: ""
+  citation_url: "/assets/citations/blackdan.bib"
+  source: "https://icml.cc/virtual/2025/50654"
+  note: "Sorted by the New In ML workshop date (2025-07-15), confirmed at https://newinml.github.io/NewInML2025ICML/. This was a non-archival affinity-event poster, so the citation identifies the 2024 arXiv paper and notes the 2025 presentation. Author order follows the public paper rather than the CV's display order."
+  citation: |
+    @misc{wang2024blackdan,
+      title = {{BlackDAN}: A Black-Box Multi-Objective Approach for Effective and Contextual Jailbreaking of Large Language Models},
+      author = {Wang, Xinyuan and Huang, Victor Shea-Jay and Chen, Renmiao and Wang, Hao and Pan, Chengwei and Sha, Lei and Huang, Minlie},
+      year = {2024},
+      eprint = {2410.09804},
+      archivePrefix = {arXiv},
+      primaryClass = {cs.CR},
+      note = {Presented at the ICML 2025 New In ML affinity workshop},
+      url = {https://arxiv.org/abs/2410.09804}
+    }
+
+- slug: medical-mllm
+  title: "Medical MLLM Is Vulnerable: Cross-Modality Jailbreak and Mismatched Attacks on Medical Multimodal Large Language Models"
+  authors: "Xijie Huang*, Xinyuan Wang*, Hantao Zhang*, Yinghao Zhu*, Jiawen Xi, Jingkun An, Hao Wang, Hao Liang, Chengwei Pan"
+  venue: "AAAI 2025"
+  year: 2025
+  sort_date: "2025-04-11"
+  status: "Published"
+  tldr_en: "The 3MAD dataset and MCM optimization expose cross-modal safety weaknesses in medical multimodal language models."
+  tldr_zh: "通过 3MAD 数据集与 MCM 优化，揭示医疗多模态大语言模型在图文错配及跨模态攻击下的安全薄弱点。"
+  image: "/assets/files/O2M-attack.png"
+  image_alt: "The 3MAD dataset spans medical imaging modalities and question types used to evaluate medical multimodal model safety."
+  paper_url: "https://ojs.aaai.org/index.php/AAAI/article/view/32396"
+  paper_label: "AAAI"
+  arxiv_url: "https://arxiv.org/abs/2405.20775"
+  code_url: "https://github.com/JeixHuang/MCM"
+  project_url: ""
+  citation_url: "/assets/citations/medical-mllm.bib"
+  source: "https://ojs.aaai.org/index.php/AAAI/article/view/32396"
+  note: "Sorted by the official AAAI proceedings publication date (2025-04-11). The published author name is Xijie Huang; this is the homepage owner's name, as confirmed in the supplied CV."
+  citation: |
+    @article{huang2025medical,
+      title = {Medical {MLLM} Is Vulnerable: Cross-Modality Jailbreak and Mismatched Attacks on Medical Multimodal Large Language Models},
+      author = {Huang, Xijie and Wang, Xinyuan and Zhang, Hantao and Zhu, Yinghao and Xi, Jiawen and An, Jingkun and Wang, Hao and Liang, Hao and Pan, Chengwei},
+      journal = {Proceedings of the AAAI Conference on Artificial Intelligence},
+      volume = {39},
+      number = {4},
+      pages = {3797--3805},
+      year = {2025},
+      doi = {10.1609/aaai.v39i4.32396},
+      url = {https://ojs.aaai.org/index.php/AAAI/article/view/32396}
+    }

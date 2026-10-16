@@ -1,0 +1,19 @@
+{{- /* List available writing in either language. Prefer a real translation in
+     the current UI language; otherwise keep the original and label its language. */ -}}
+{{- $preferredLanguage := .Site.Language.Lang -}}
+{{- $chosen := newScratch -}}
+{{- range hugo.Sites -}}
+  {{- $pages := partial "public-posts.html" (where .RegularPages "Section" "posts") -}}
+  {{- range $pages -}}
+    {{- $key := .TranslationKey -}}
+    {{- $language := or .Params.content_lang .Site.Language.Lang -}}
+    {{- if or (not ($chosen.Get $key)) (eq $language $preferredLanguage) -}}
+      {{- $chosen.Set $key . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $pages := slice -}}
+{{- range $chosen.Values -}}
+  {{- $pages = $pages | append . -}}
+{{- end -}}
+{{- return $pages -}}

@@ -1,0 +1,19 @@
+{{ $profile := hugo.Data.profile }}
+<div class="avatar-frame">
+  <img class="avatar" src="{{ $profile.avatar }}" alt="{{ $profile.title }} portrait" />
+  <span class="avatar-orbit" aria-hidden="true"></span>
+</div>
+<div class="identity-copy">
+  <p class="identity-kicker"><span data-lang="en">Researcher / Builder</span><span data-lang="zh">研究者 / 构建者</span></p>
+  <p class="name"><a href="/">{{ $profile.title }}</a></p>
+  <p class="role"><span data-lang="en">Year-1 Ph.D. student</span><span data-lang="zh">一年级博士生</span></p>
+  <p class="affiliation"><a href="{{ $profile.subaffiliation_link }}">MMLab</a> · <a href="{{ $profile.affiliation_link }}">CUHK</a></p>
+  <p class="profile-date">Ph.D. · Aug 2026—</p>
+</div>
+<nav class="profile-links" aria-label="Profile links">
+  <a href="{{ $profile.google_scholar }}"><span class="profile-link-icon"><i class="ai ai-google-scholar" aria-hidden="true"></i></span><span>Google Scholar</span><span class="external-mark" aria-hidden="true">↗</span></a>
+  <a href="{{ $profile.github_link }}"><span class="profile-link-icon"><i class="fa-brands fa-github" aria-hidden="true"></i></span><span>GitHub</span><span class="external-mark" aria-hidden="true">↗</span></a>
+  <a href="{{ $profile.linkedin }}"><span class="profile-link-icon"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></span><span>LinkedIn</span><span class="external-mark" aria-hidden="true">↗</span></a>
+  <a href="{{ $profile.twitter }}"><span class="profile-link-icon"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></span><span>X / Twitter</span><span class="external-mark" aria-hidden="true">↗</span></a>
+  <a href="mailto:{{ $profile.email }}"><span class="profile-link-icon"><i class="fa-regular fa-envelope" aria-hidden="true"></i></span><span>Email</span><span class="external-mark" aria-hidden="true">↗</span></a>
+</nav>

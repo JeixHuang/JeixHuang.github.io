@@ -4,7 +4,10 @@ date: 2026-01-29T12:00:00+08:00
 tags: ["blog"]
 summary: "Why I write this blog."
 slug: "why-the-blog"
-hide_from_lists: true
+hide_from_lists: false
+content_lang: en
+tldr: "A place for research questions, implementation details, and open-source experiments that become clearer through writing."
+cover: "why the blog.png"
 ---
 
 ![demo](./why%20the%20blog.png)

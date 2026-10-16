@@ -1,0 +1,13 @@
+{{- $citationKey := printf "huang%s%s" (.Date.Format "2006") (.Slug | default (.Title | urlize) | replaceRE "[^a-zA-Z0-9]" "") -}}
+{{- $citationTitle := .Title | replaceRE "[{}]" "" -}}
+{{- $citationAuthor := or .Params.author hugo.Data.profile.title -}}
+{{- $bibtex := printf "@misc{%s,\n  author = {%s},\n  title = {%s},\n  year = {%s},\n  month = {%s},\n  url = {%s%s}\n}" $citationKey $citationAuthor $citationTitle (.Date.Format "2006") (.Date.Format "01") hugo.Data.profile.site_url .RelPermalink -}}
+<section class="post-citation" id="citation" aria-labelledby="citation-heading">
+  <div class="citation-heading">
+    <h2 id="citation-heading">Cite this post</h2>
+    <button type="button" class="copy-citation" data-copy-citation="post-bibtex">Copy BibTeX</button>
+  </div>
+  <p>{{ $citationAuthor }}. “{{ .Title }}.” {{ .Date.Format "2006" }}.</p>
+  <pre><code id="post-bibtex">{{ $bibtex }}</code></pre>
+  <p class="copy-status" role="status" aria-live="polite"></p>
+</section>

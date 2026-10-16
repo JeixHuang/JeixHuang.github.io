@@ -1,36 +1,15 @@
 {{ define "main" }}
-  <h1 class="page-title">{{ .Title }}</h1>
-
+  <header class="blog-index-head">
+    <p class="blog-index-kicker">WRITING INDEX</p>
+    <h1 class="page-title">{{ .Title }}</h1>
+    <p class="blog-index-description"><span data-lang="en">Research notes, technical ideas, and things learned by building.</span><span data-lang="zh">研究笔记、技术思考，与动手构建中的收获。</span></p>
+  </header>
   <ul class="post-list">
     {{ $pages := partial "public-posts.html" .Pages }}
     {{ range $pages.ByDate.Reverse }}
-      {{- $excerpt := (or .Params.summary .Summary) | plainify | htmlUnescape | replaceRE "\\s+" " " | trim " " | truncate 180 -}}
-      <li class="post-item">
-        <article class="post-card">
-          <div class="post-card-header">
-            <h2 class="post-title">
-              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            </h2>
-            <div class="post-meta">
-              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
-              <span class="dot">·</span>
-              <span class="reading">{{ .ReadingTime }} min read</span>
-              {{ with .Params.tags }}
-                <span class="tags">
-                  {{ range . }}
-                    {{ if and (not (hasPrefix (lower .) "paper")) (not (hasPrefix (lower .) "project")) }}
-                      <a class="tag" href="{{ (printf "tags/%s/" (. | urlize)) | relURL }}">#{{ . }}</a>
-                    {{ end }}
-                  {{ end }}
-                </span>
-              {{ end }}
-            </div>
-          </div>
-          {{ if $excerpt }}
-            <p class="post-excerpt">{{ $excerpt }}</p>
-          {{ end }}
-        </article>
-      </li>
+      {{ partial "post-card.html" . }}
+    {{ else }}
+      <li class="blog-empty-state"><p><span data-lang="en">No public posts here yet.</span><span data-lang="zh">这里暂时还没有公开文章。</span></p></li>
     {{ end }}
   </ul>
 {{ end }}

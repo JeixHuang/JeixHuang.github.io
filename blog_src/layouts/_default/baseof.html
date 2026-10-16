@@ -1,11 +1,15 @@
 {{ $readingField := and .IsPage (eq .Section "posts") }}
 <!doctype html>
-<html lang="{{ .Site.Language.Lang }}">
+<html lang="{{ .Site.Language.Lang }}" data-locale="{{ .Site.Language.Lang }}">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
     <meta name="color-scheme" content="light dark" />
+    <meta name="author" content="{{ hugo.Data.profile.title }}" />
+    <meta name="description" content="{{ or .Params.tldr .Params.summary .Description site.Title | plainify }}" />
+    <link rel="canonical" href="{{ hugo.Data.profile.site_url }}{{ .RelPermalink }}" />
+    <link rel="icon" href="/assets/img/avatar3.jpg" type="image/jpeg" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ "rss.xml" | relURL }}" />
     {{ if .IsTranslated }}
       {{ range .Translations }}
@@ -18,10 +22,17 @@
         var root = document.documentElement;
         var choice = 'dark';
         var motionChoice = 'active';
+        var locale = '{{ .Site.Language.Lang }}';
+        var isArticle = {{ $readingField }};
 
         try {
           choice = localStorage.getItem(key) || 'dark';
           motionChoice = localStorage.getItem('jeix-motion-choice') || 'active';
+          if (isArticle) {
+            locale = localStorage.getItem('jeix-locale') || locale;
+          } else {
+            localStorage.setItem('jeix-locale', locale);
+          }
         } catch (error) {}
 
         if (choice !== 'light' && choice !== 'dark' && choice !== 'system') {
@@ -37,63 +48,69 @@
         }
 
         var theme = resolveTheme(choice);
+        root.dataset.locale = locale === 'zh' ? 'zh' : 'en';
+        root.lang = root.dataset.locale === 'zh' ? 'zh-CN' : 'en-US';
         root.dataset.theme = theme;
         root.dataset.themeChoice = choice;
         root.dataset.userMotion = motionChoice === 'paused' ? 'paused' : 'active';
         root.style.colorScheme = theme;
       })();
     </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" />
     <link rel="stylesheet" href="{{ "assets/style.css" | relURL }}?v=9d62f5a1" />
-    {{ if $readingField }}
-      <script defer src="{{ "/assets/js/ambient-field-v1.js" | relURL }}?v=2d5e18a8"></script>
-    {{ end }}
+    <link rel="stylesheet" href="/assets/css/homepage-v6.css?v=ee1b90fa" />
+    <link rel="stylesheet" href="/assets/css/site-shell.css?v=20261016" />
+    <link rel="stylesheet" href="{{ "assets/blog-shell.css" | relURL }}?v=20261016" />
+    <script defer src="/assets/js/ambient-field-v1.js?v=2d5e18a8"></script>
+    <script defer src="{{ "assets/blog-shell.js" | relURL }}?v=20261016"></script>
 
     <!-- KaTeX (math) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
   </head>
-  <body{{ if $readingField }} class="has-reading-field"{{ end }}>
-    {{ if $readingField }}
-      <div class="reading-field-shell" aria-hidden="true">
-        <canvas id="reading-field" class="reading-field" aria-hidden="true"></canvas>
-      </div>
-    {{ end }}
-    <header class="site-header">
-      <div class="container">
-        <div class="brand">
-          <a class="brand-link" href="{{ "" | relURL }}">Blog</a>
-        </div>
-        <div class="header-actions">
-          <nav class="nav">
-            <a href="{{ "" | relURL }}">Latest</a>
-            <a href="{{ "tags/" | relURL }}">Tags</a>
-            <a href="{{ "archive/" | relURL }}">Archive</a>
-            <a href="{{ "rss.xml" | relURL }}">RSS</a>
-            <a href="/" rel="noopener">Home</a>
-          </nav>
-          {{ partial "language-switch.html" . }}
-          <div class="theme-switch" role="group" aria-label="Theme">
-            <button type="button" data-theme-option="light" aria-label="Use light theme">Light</button>
-            <button type="button" data-theme-option="dark" aria-label="Use dark theme">Dark</button>
-            <button type="button" data-theme-option="system" aria-label="Use system theme">System</button>
+  <body class="blog-site{{ if $readingField }} blog-reading{{ end }}">
+    <canvas class="flow-field" id="flow-field" aria-hidden="true"></canvas>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a class="brand" href="/" aria-label="{{ hugo.Data.profile.title }} home">
+          <span class="brand-mark" aria-hidden="true">VH</span>
+          <span class="brand-copy"><span data-lang="en">Notes &amp; Builds</span><span data-lang="zh">精读与构建</span></span>
+        </a>
+        <div class="nav-right">
+          <div class="nav-links">
+            <a href="/publications/">Publications</a>
+            <a href="/projects/">Projects</a>
+            <a href="{{ if eq .Site.Language.Lang "en" }}/blog/en/{{ else }}/blog/{{ end }}" data-blog-link aria-current="page">Blog</a>
           </div>
-          {{ if $readingField }}
-            <button class="motion-toggle" type="button" data-motion-toggle aria-label="Pause ambient motion" aria-pressed="false"><span data-motion-icon aria-hidden="true">Ⅱ</span></button>
-          {{ end }}
+          <div class="nav-controls" aria-label="Display controls">
+            {{ partial "language-switch.html" . }}
+            <div class="segmented-control theme-control" role="group" aria-label="Theme">
+              <button type="button" data-theme-option="light" aria-label="Light theme"><i class="fa-regular fa-sun" aria-hidden="true"></i></button>
+              <button type="button" data-theme-option="dark" aria-label="Dark theme"><i class="fa-regular fa-moon" aria-hidden="true"></i></button>
+              <button type="button" data-theme-option="system" aria-label="System theme"><i class="fa-solid fa-display" aria-hidden="true"></i></button>
+            </div>
+            <div class="segmented-control motion-control" aria-label="Ambient motion">
+              <button type="button" data-motion-toggle aria-label="Pause ambient motion" aria-pressed="false"><span data-motion-icon aria-hidden="true">Ⅱ</span></button>
+            </div>
+          </div>
         </div>
       </div>
-    </header>
-
-    <main class="container">
-      {{ block "main" . }}{{ end }}
-    </main>
-
-    <footer class="site-footer">
-      <div class="container">
-        <small>© {{ now.Format "2006" }}</small>
+    </nav>
+    <main class="site-shell" id="content">
+      <aside class="identity-rail" aria-label="Profile">
+        {{ partial "identity.html" . }}
+      </aside>
+      <div class="content-column">
+        {{ block "main" . }}{{ end }}
+        <footer class="site-footer">
+          <p>© {{ now.Format "2006" }} {{ hugo.Data.profile.title }}</p>
+          <p><a href="/blog/archive/">Archive</a> · <a href="/blog/tags/">Tags</a> · <a href="/blog/rss.xml">RSS</a></p>
+        </footer>
       </div>
-    </footer>
+    </main>
 
     <script>
       (function () {

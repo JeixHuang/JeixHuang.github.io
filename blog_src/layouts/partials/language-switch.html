@@ -1,27 +1,21 @@
 {{- $page := . -}}
+{{- $currentLanguage := or .Params.content_lang .Site.Language.Lang -}}
 {{- $translations := .AllTranslations -}}
-<nav class="language-switch" aria-label="Language">
-  {{- range sort hugo.Sites "Language.Name" "asc" -}}
-    {{- $language := .Language -}}
+<nav class="segmented-control language-switch" aria-label="{{ if and .IsPage (eq .Section "posts") }}Article language{{ else }}Language{{ end }}">
+  {{- range slice "en" "zh" -}}
+    {{- $language := . -}}
     {{- $target := false -}}
     {{- range $translations -}}
-      {{- if eq .Language.Name $language.Name -}}
+      {{- if eq (or .Params.content_lang .Site.Language.Lang) $language -}}
         {{- $target = . -}}
       {{- end -}}
     {{- end -}}
-    {{- $label := upper $language.Name -}}
-    {{- $name := $language.Name -}}
-    {{- if eq $language.Name "zh" -}}
-      {{- $label = "中" -}}
-      {{- $name = "中文" -}}
-    {{- else if eq $language.Name "en" -}}
-      {{- $label = "EN" -}}
-      {{- $name = "English" -}}
-    {{- end -}}
-    {{- if eq $language.Name $page.Site.Language.Name -}}
+    {{- $label := cond (eq $language "zh") "中" "EN" -}}
+    {{- $name := cond (eq $language "zh") "中文" "English" -}}
+    {{- if eq $language $currentLanguage -}}
       <span class="language-current" aria-current="page" aria-label="Current language: {{ $name }}">{{ $label }}</span>
     {{- else if $target -}}
-      <a href="{{ $target.RelPermalink }}" hreflang="{{ $language.Locale }}" lang="{{ $language.Name }}" aria-label="Switch to {{ $name }}">{{ $label }}</a>
+      <a href="{{ $target.RelPermalink }}" hreflang="{{ $language }}" lang="{{ $language }}" data-article-language="{{ $language }}" aria-label="Switch to {{ $name }}">{{ $label }}</a>
     {{- else -}}
       <span class="language-unavailable" aria-disabled="true" aria-label="{{ $name }} translation unavailable" title="{{ $name }} translation unavailable">{{ $label }}</span>
     {{- end -}}

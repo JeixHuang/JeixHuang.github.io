@@ -1,27 +1,15 @@
 {{ define "main" }}
-  <header class="blog-index-head blog-taxonomy-head">
+  <header class="blog-index-head">
     <p class="blog-index-kicker">WRITING INDEX</p>
     <h1 class="page-title">#{{ .Title }}</h1>
+    <p class="blog-index-description"><span data-lang="en">Research notes, technical ideas, and things learned by building.</span><span data-lang="zh">研究笔记、技术思考，与动手构建中的收获。</span></p>
   </header>
-
   <ul class="post-list">
     {{ $pages := partial "public-posts.html" .Pages }}
-    {{ if gt (len $pages) 0 }}
-      {{ range $pages.ByDate.Reverse }}
-      <li class="post-item">
-        <article class="post-card">
-          <div class="post-meta">
-            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
-            <span class="dot">·</span>
-            <span class="reading">{{ .ReadingTime }} min read</span>
-          </div>
-          <h2 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-          <p class="post-excerpt">{{ (or .Params.summary .Summary) | plainify | htmlUnescape }}</p>
-        </article>
-      </li>
-      {{ end }}
+    {{ range $pages.ByDate.Reverse }}
+      {{ partial "post-card.html" . }}
     {{ else }}
-      <li class="blog-empty-state">No public posts here yet.</li>
+      <li class="blog-empty-state"><p><span data-lang="en">No public posts here yet.</span><span data-lang="zh">这里暂时还没有公开文章。</span></p></li>
     {{ end }}
   </ul>
 {{ end }}

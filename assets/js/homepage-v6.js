@@ -55,6 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
     localeButtons.forEach((button) => {
       button.setAttribute("aria-pressed", String(button.dataset.localeOption === safeLocale));
     });
+    document.querySelectorAll('[data-blog-link]').forEach((link) => {
+      link.href = safeLocale === 'en' ? '/blog/en/' : '/blog/';
+    });
     if (shouldPersist) persist(localeKey, safeLocale);
   }
 
