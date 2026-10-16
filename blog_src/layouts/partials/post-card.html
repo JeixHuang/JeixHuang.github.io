@@ -13,20 +13,19 @@
       {{ if $cover }}
         <img src="{{ $cover }}" alt="" loading="lazy" decoding="async" />
       {{ else }}
-        <span class="post-cover-fallback"><span>Notes &amp; Builds</span><strong>{{ .Title }}</strong><span>{{ .Date.Format "2006" }} · VH</span></span>
+        <span class="post-cover-fallback"><strong>{{ .Title }}</strong><span>{{ .Date.Format "2006" }} · VH</span></span>
       {{ end }}
     </a>
     <div class="post-card-copy">
       <div class="post-meta">
         <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02, 2006" }}</time>
-        <span aria-hidden="true">·</span><span>{{ .ReadingTime }} min read</span>
         <span aria-hidden="true">·</span><span>{{ if eq (or .Params.content_lang .Site.Language.Lang) "en" }}English{{ else }}中文{{ end }}</span>
       </div>
       <h2 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
       {{ if $excerpt }}<p class="post-excerpt"><strong>TL;DR</strong> {{ $excerpt }}</p>{{ end }}
-      <div class="post-card-links">
-        <a href="{{ .RelPermalink }}">Read <span aria-hidden="true">↗</span></a>
-        <a href="{{ .RelPermalink }}#citation">Citation <span aria-hidden="true">↗</span></a>
+      <div class="post-card-links resource-links">
+        <a class="resource-link resource-primary" href="{{ .RelPermalink }}">Read <span aria-hidden="true">↗</span></a>
+        <a class="resource-link citation-link" href="{{ .RelPermalink }}#citation">Citation <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </article>

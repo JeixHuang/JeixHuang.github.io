@@ -7,7 +7,7 @@ layout: homepage
   <header class="detail-heading">
     <div class="publication-meta"><span class="venue-label">{{ paper.venue }}</span>{% assign venue_year = paper.year | append: '' %}{% unless paper.venue contains venue_year %}<span>{{ paper.year }}</span>{% endunless %}<span class="status-label">{{ paper.status }}</span></div>
     <h1>{{ paper.title }}</h1>
-    <p class="publication-authors">{{ paper.authors | escape | replace: 'Victor Shea-Jay Huang', '<strong>Victor Shea-Jay Huang</strong>' | replace: 'Xijie Huang', '<strong>Xijie Huang</strong>' }}</p>
+    <p class="publication-authors">{{ paper.authors | escape | replace: '*', '<sup title="Equal contribution"><span aria-hidden="true">*</span><span class="visually-hidden"> (equal contribution)</span></sup>' | replace: 'Victor Shea-Jay Huang', '<strong>Victor Shea-Jay Huang</strong>' | replace: 'Xijie Huang', '<strong>Xijie Huang</strong>' }}</p>
     {% include paper-links.html paper=paper %}
   </header>
   <figure class="paper-hero"><img src="{{ paper.image | escape }}" alt="{{ paper.image_alt | escape }}"><figcaption>{{ paper.image_alt }}</figcaption></figure>

@@ -9,7 +9,6 @@
         <a class="post-author" href="/">{{ or .Params.author hugo.Data.profile.title }}</a>
         <span aria-hidden="true">·</span>
         <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
-        <span aria-hidden="true">·</span><span>{{ .ReadingTime }} min read</span>
         {{ if .Params.weekly_report }}
           <span class="dot">·</span>
           <span class="weekly-label">{{ .Params.weekly_field }}</span>

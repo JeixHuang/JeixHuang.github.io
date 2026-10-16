@@ -1,8 +1,6 @@
 {{ define "main" }}
   <header class="blog-index-head">
-    <p class="blog-index-kicker">READ DEEPLY · BUILD OPENLY</p>
     <h1 class="page-title">Blog</h1>
-    <p class="blog-index-description"><span data-lang="en">Research notes, technical ideas, and things learned by building.</span><span data-lang="zh">研究笔记、技术思考，与动手构建中的收获。</span></p>
   </header>
   <ul class="post-list">
     {{ $pages := partial "blog-index-posts.html" . }}

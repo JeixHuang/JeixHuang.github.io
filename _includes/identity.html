@@ -2,18 +2,15 @@
         {% assign avatar_path = site.avatar | replace: './', '/' %}
         <div class="avatar-frame">
           <img class="avatar" src="{{ avatar_path | relative_url }}" alt="{{ site.title | escape }} portrait">
-          <span class="avatar-orbit" aria-hidden="true"></span>
         </div>
 
         <div class="identity-copy">
-          <p class="identity-kicker"><span data-lang="en">Researcher / Builder</span><span data-lang="zh">研究者 / 构建者</span></p>
-          <p class="name"><a href="/">{{ site.title }}</a></p>
+          <p class="name"><a href="/"><span class="name-line">{{ site.title | split: " " | first }}</span> <span class="name-line">{{ site.title | remove_first: "Victor " }}</span></a></p>
           <p class="role">
             <span data-lang="en">Year-1 Ph.D. student</span>
             <span data-lang="zh">一年级博士生</span>
           </p>
           <p class="affiliation"><a href="{{ site.subaffiliation_link | escape }}">MMLab</a> · <a href="{{ site.affiliation_link | escape }}">CUHK</a></p>
-          <p class="profile-date">Ph.D. · Aug 2026—</p>
         </div>
 
         <nav class="profile-links" aria-label="Profile links">

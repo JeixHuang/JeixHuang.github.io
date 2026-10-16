@@ -1,11 +1,8 @@
 <header class="collection-heading">
-  <p class="eyebrow">Research · Selected papers</p>
   <div class="collection-title-row">
     <h1>Publications</h1>
-    <span class="collection-count">{{ site.data.selected_publications | size }} papers</span>
   </div>
   <p class="collection-description"><span data-lang="en">Reinforcement learning, multimodal generation, LLMs &amp; agents, and physical AI.</span><span data-lang="zh">强化学习、多模态生成、LLMs &amp; Agents 与 Physical AI。</span></p>
-  <p class="collection-note"><span data-lang="en">Newest first. * Equal contribution.</span><span data-lang="zh">按时间从新到旧。* 表示共同贡献。</span></p>
 </header>
 <div class="publication-list">
   {% assign papers = site.data.selected_publications | sort: 'sort_date' | reverse %}
@@ -17,7 +14,7 @@
     <div class="publication-copy">
       <div class="publication-meta"><span class="venue-label">{{ paper.venue }}</span>{% assign venue_year = paper.year | append: '' %}{% unless paper.venue contains venue_year %}<span>{{ paper.year }}</span>{% endunless %}{% if paper.status %}<span class="status-label">{{ paper.status }}</span>{% endif %}</div>
       <h2><a href="/publications/{{ paper.slug }}/">{{ paper.title }}</a></h2>
-      <p class="publication-authors">{{ paper.authors | escape | replace: 'Victor Shea-Jay Huang', '<strong>Victor Shea-Jay Huang</strong>' | replace: 'Xijie Huang', '<strong>Xijie Huang</strong>' }}</p>
+      <p class="publication-authors">{{ paper.authors | escape | replace: '*', '<sup title="Equal contribution"><span aria-hidden="true">*</span><span class="visually-hidden"> (equal contribution)</span></sup>' | replace: 'Victor Shea-Jay Huang', '<strong>Victor Shea-Jay Huang</strong>' | replace: 'Xijie Huang', '<strong>Xijie Huang</strong>' }}</p>
       <p class="publication-tldr"><span class="tldr-label">TL;DR</span> <span data-lang="en">{{ paper.tldr_en }}</span><span data-lang="zh">{{ paper.tldr_zh }}</span></p>
       {% include paper-links.html paper=paper %}
     </div>
