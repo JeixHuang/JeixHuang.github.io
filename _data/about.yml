@@ -1,12 +1,12 @@
 research:
   - title_en: Agents
     title_zh: 智能体
-    scope_en: I study how agents reason, act, and improve through experience, with particular attention to the interaction between reinforcement learning, memory, and tool use. The goal is to develop agents whose capabilities grow through sustained interaction and remain reliable over long task horizons.
-    scope_zh: 我研究智能体如何推理、行动并从经验中持续改进，重点关注强化学习、记忆与工具使用之间的相互作用，探索如何让智能体在持续交互中积累能力，并在长程任务中保持可靠性。
+    scope_en: Reasoning and planning, reinforcement learning, memory and tool use, data and training, inference systems, and evaluation. Toward self-improving agents.
+    scope_zh: 推理与规划、强化学习、记忆与工具使用、数据与训练、推理系统和评估。面向持续自我改进的智能体。
   - title_en: Physical AI & World Models
     title_zh: 物理智能与世界模型
-    scope_en: I study world models as a basis for physical intelligence, connecting multimodal representation learning and generative dynamics with simulation, planning, and control. A central question is how predictive models can be learned, evaluated, and integrated into embodied systems to improve decisions and actions.
-    scope_zh: 我研究以世界模型为基础的物理智能，将多模态表征学习、生成式动力学与模拟、规划和控制联系起来，核心问题是如何学习和评估预测模型，并将其融入具身系统，改善实际决策与行动。
+    scope_en: Multimodal representations, generative and action-conditioned world models, simulation, embodied learning, planning, and control. Toward general-purpose physical intelligence.
+    scope_zh: 多模态表征、生成式与动作条件世界模型、模拟、具身学习、规划与控制。面向通用物理智能。
 
 # Dates and status follow the primary sources recorded in selected_publications.yml.
 # Month granularity avoids treating the conference page date as an exact decision day.
@@ -17,12 +17,6 @@ updates:
     text_en: '[Reward Is Not a Universal Interface for Generative Reinforcement Learning](https://openreview.net/forum?id=gbYg6VGblU#discussion) was accepted to **NeurIPS 2026**.'
     text_zh: '[Reward Is Not a Universal Interface for Generative Reinforcement Learning](https://openreview.net/forum?id=gbYg6VGblU#discussion) 被 **NeurIPS 2026** 接收。'
     source: https://nips.cc/virtual/2026/poster/150638
-  - month: "2026-05"
-    date_en: May 2026
-    date_zh: 2026 年 5 月
-    text_en: '[DIAL](https://arxiv.org/abs/2605.12625) is available on arXiv.'
-    text_zh: '[DIAL](https://arxiv.org/abs/2605.12625) 预印本已公开。'
-    source: https://arxiv.org/abs/2605.12625
   - month: "2026-03"
     date_en: Mar 2026
     date_zh: 2026 年 3 月

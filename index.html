@@ -13,7 +13,6 @@ section: about
 
 <section class="about-section" id="research" aria-labelledby="research-heading">
   <h2 id="research-heading">Research</h2>
-  <p><span data-lang="en">My research spans the foundations and systems of agents and physical intelligence, from data and model design to learning algorithms, inference, and evaluation.</span><span data-lang="zh">我的研究围绕智能体与物理智能的基础方法和系统展开，涵盖数据与模型设计、学习算法、推理与评估。</span></p>
   <ul class="research-scope">
     {% for area in site.data.about.research %}
     <li><span data-lang="en"><strong>{{ area.title_en }}:</strong> {{ area.scope_en }}</span><span data-lang="zh"><strong>{{ area.title_zh }}：</strong>{{ area.scope_zh }}</span></li>
