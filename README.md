@@ -32,7 +32,7 @@ Open <http://127.0.0.1:4000/>. Rebuild Jekyll and then Hugo after edits.
 
 A new paper needs a data entry, a real figure, a matching `assets/citations/<slug>.bib`, and a small `publications/<slug>/index.html` file selecting `layout: publication`, `section: publications`, and `paper_slug`. Resource buttons appear only when their URL exists. Keep the inline citation and downloadable BibTeX identical.
 
-Optional `video_url` and `video_label` fields replace the static figure with a player in Publications, Projects, and the paper detail page. Collection players retain the other works' thumbnail dimensions and two-column layout; native controls support playback and fullscreen viewing. The `image` remains a lightweight poster. Videos play inline on mobile and load only on request. SWE-Shift uses the owner's two-minute `SWE-Shift-refined-audio.mp4`; its arXiv metadata follows [v1](https://arxiv.org/abs/2610.32196v1).
+Optional `video_url` and `video_label` fields replace the static figure with a player in Publications, Projects, and the paper detail page. Collection players retain the other works' thumbnail dimensions and two-column layout; native controls support playback, sound, and fullscreen viewing. The `image` remains a lightweight poster. Videos autoplay muted, loop continuously, and play inline on mobile. SWE-Shift uses the owner's two-minute `SWE-Shift-refined-audio.mp4`; its arXiv metadata follows [v1](https://arxiv.org/abs/2610.32196v1).
 
 `_layouts/homepage.html`, `_includes/identity.html`, and `assets/css/site-shell.css` provide the Jekyll shell. Hugo uses the same stylesheet and matching `blog_src/layouts/partials/identity.html`. Public profile values in `_config.yml` and `blog_src/data/profile.yaml` should stay synchronized.
 

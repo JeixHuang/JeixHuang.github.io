@@ -59,8 +59,8 @@ for route in ('publications/index.html', 'projects/index.html', 'publications/sw
         errors.append(f'{route}: expected the SWE-Shift video player')
         continue
     video = page.videos[0]
-    if not {'controls', 'playsinline', 'poster', 'aria-label'} <= video.keys() or 'autoplay' in video or video.get('preload') != 'none':
-        errors.append(f'{route}: video must have accessible native controls and load on request')
+    if not {'controls', 'autoplay', 'muted', 'loop', 'playsinline', 'poster', 'aria-label'} <= video.keys() or video.get('preload') != 'auto':
+        errors.append(f'{route}: video must autoplay muted, loop, and retain accessible native controls')
     for resource in ('https://arxiv.org/abs/2610.32196', 'https://arxiv.org/pdf/2610.32196', 'https://github.com/JeixHuang/SWE-Shift'):
         if resource not in page.refs:
             errors.append(f'{route}: missing SWE-Shift resource {resource}')
