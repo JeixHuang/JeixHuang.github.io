@@ -1,4 +1,29 @@
 works:
+  - title: SWE-Shift
+    date: "2026-10-23"
+    image: /assets/projects/swe-shift-video-poster.jpg
+    image_alt: SWE-Shift video overview of coding agents in evolving workspaces
+    image_source: Frame at 00:06 from the owner's SWE-Shift-refined-audio.mp4
+    video_url: /assets/videos/swe-shift.mp4
+    video_label: "SWE-Shift: two-minute research overview"
+    summary_en: A benchmark for coding agents in evolving workspaces, pairing unchanged and changed continuations from the same saved state across 120 scenarios, 12 change families, and nine intervention positions.
+    summary_zh: 面向持续变化工作环境的 Coding Agent 评测。从同一保存状态出发，对比保持原样与引入变化后的执行，覆盖 120 个场景、12 类变化及 9 个干预位置。
+    primary_url: /publications/swe-shift/
+    tags: [Coding Agents, Evaluation, Adaptation]
+    links:
+      - label_en: arXiv
+        label_zh: 论文
+        url: https://arxiv.org/abs/2610.32196
+      - label_en: PDF
+        label_zh: PDF
+        url: https://arxiv.org/pdf/2610.32196
+      - label_en: Code
+        label_zh: 代码
+        url: https://github.com/JeixHuang/SWE-Shift
+      - label_en: Details
+        label_zh: 详情
+        url: /publications/swe-shift/
+
   # Hidden from the public homepage on 2026-08-24. Keep this entry as a
   # reference for a future Blog + Paper work item.
   # - title: Reward Is Not a Universal Interface for Generative Reinforcement Learning

@@ -11,6 +11,7 @@ class Page(HTMLParser):
     def __init__(self, text):
         super().__init__()
         self.ids, self.refs, self.classes, self.h1 = set(), [], [], 0
+        self.videos = []
         self.feed(text)
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -18,7 +19,9 @@ class Page(HTMLParser):
             self.ids.add(attrs['id'])
         self.classes.extend(attrs.get('class', '').split())
         self.h1 += tag == 'h1'
-        for attr in ('href', 'src'):
+        if tag == 'video':
+            self.videos.append(attrs)
+        for attr in ('href', 'src', 'poster'):
             if attr in attrs:
                 self.refs.append(attrs[attr])
 
@@ -48,8 +51,19 @@ for route in ('index.html', 'publications/index.html', 'projects/index.html', 'b
 if not {'about-me', 'research', 'updates'} <= pages[ROOT / 'index.html'].ids:
     errors.append('index.html: missing About, Research, or Updates section')
 for route in ('publications/index.html',):
-    if pages[ROOT / route].classes.count('publication-card') != 5:
-        errors.append(f'{route}: expected the five selected papers')
+    if pages[ROOT / route].classes.count('publication-card') != 6:
+        errors.append(f'{route}: expected the six selected papers')
+for route in ('publications/index.html', 'projects/index.html', 'publications/swe-shift/index.html'):
+    page = pages.get(ROOT / route)
+    if not page or len(page.videos) != 1:
+        errors.append(f'{route}: expected the SWE-Shift video player')
+        continue
+    video = page.videos[0]
+    if not {'controls', 'playsinline', 'poster', 'aria-label'} <= video.keys() or 'autoplay' in video or video.get('preload') != 'none':
+        errors.append(f'{route}: video must have accessible native controls and load on request')
+    for resource in ('https://arxiv.org/abs/2610.32196', 'https://arxiv.org/pdf/2610.32196', 'https://github.com/JeixHuang/SWE-Shift'):
+        if resource not in page.refs:
+            errors.append(f'{route}: missing SWE-Shift resource {resource}')
 for route in ('blog/index.html', 'blog/en/index.html'):
     page = pages[ROOT / route]
     if page.classes.count('post-card') != 1 or page.classes.count('post-excerpt') != 1:
@@ -63,4 +77,4 @@ for path in ROOT.rglob('*'):
 if errors:
     print('\n'.join(errors))
     raise SystemExit(1)
-print(f'OK: {len(pages)} pages; internal links, About sections, five papers, Blog TL;DR, and draft exclusion.')
+print(f'OK: {len(pages)} pages; internal links, About sections, six papers, Blog TL;DR, and draft exclusion.')

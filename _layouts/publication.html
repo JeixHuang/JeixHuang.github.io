@@ -10,7 +10,11 @@ layout: homepage
     <p class="publication-authors">{{ paper.authors | escape | replace: '*', '<sup title="Equal contribution"><span aria-hidden="true">*</span><span class="visually-hidden"> (equal contribution)</span></sup>' | replace: 'Victor Shea-Jay Huang', '<strong>Victor Shea-Jay Huang</strong>' | replace: 'Xijie Huang', '<strong>Xijie Huang</strong>' }}</p>
     {% include paper-links.html paper=paper %}
   </header>
+  {% if paper.video_url %}
+  <div class="paper-hero">{% include research-video.html item=paper %}</div>
+  {% else %}
   <figure class="paper-hero"><img src="{{ paper.image | escape }}" alt="{{ paper.image_alt | escape }}"><figcaption>{{ paper.image_alt }}</figcaption></figure>
+  {% endif %}
   <section class="paper-summary">
     <h2>TL;DR</h2>
     <p><span data-lang="en">{{ paper.tldr_en }}</span><span data-lang="zh">{{ paper.tldr_zh }}</span></p>

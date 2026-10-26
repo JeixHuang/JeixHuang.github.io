@@ -9,9 +9,13 @@ section: projects
 <div class="project-list">
   {% for item in site.data.homepage.works %}
   <article class="project-card" id="{{ item.title | slugify }}">
+    {% if item.video_url %}
+    {% include research-video.html item=item %}
+    {% else %}
     <a class="project-figure" href="{{ item.primary_url | escape }}" aria-label="{{ item.title | escape }}">
       <img src="{{ item.image | escape }}" alt="{{ item.image_alt | escape }}" loading="lazy" width="640" height="400">
     </a>
+    {% endif %}
     <div class="project-copy">
       <h2><a href="{{ item.primary_url | escape }}">{{ item.title }}</a></h2>
       <p><span data-lang="en">{{ item.summary_en }}</span><span data-lang="zh">{{ item.summary_zh }}</span></p>

@@ -5,7 +5,7 @@ Source for [jeixhuang.github.io](https://jeixhuang.github.io/).
 ## Site structure
 
 - `/`: About me, Research, and Updates. The brief biography lives in `index.html`; bilingual research scope and dated updates are maintained in `_data/about.yml`. Keep updates tied to their recorded sources and use only confirmed dates.
-- `/publications/`: the five selected papers, newest first. Each paper has its own `/publications/<slug>/` page, figure, summary, source links, and copyable/downloadable BibTeX.
+- `/publications/`: the six selected papers, newest first. Each paper has its own `/publications/<slug>/` page, video or figure, summary, source links, and copyable/downloadable BibTeX.
 - `/projects/`: research projects, code, and resources with real project figures; maintained in `_data/homepage.yml`. Each entry includes `image`, descriptive `image_alt`, and the original `image_source` for maintenance. Figures are displayed in full without cropping.
 - `/blog/` and `/blog/en/`: writing, with image / TL;DR / Read / Citation cards. Both indexes include available originals, preferring real translations when present.
 - All collections and detail pages retain the same author sidebar and primary navigation. Article contents sit on the right on wide screens and collapse above the text on smaller screens.
@@ -31,6 +31,8 @@ Open <http://127.0.0.1:4000/>. Rebuild Jekyll and then Hugo after edits.
 `_data/selected_publications.yml` is the content source. `sort_date` records the dated proceedings, public acceptance record, or first preprint date, with a source and explanation in `note`. It is deliberately distinct from an unverified future presentation date. Keep official author order and venue provenance; the owner's name is highlighted in both published forms.
 
 A new paper needs a data entry, a real figure, a matching `assets/citations/<slug>.bib`, and a small `publications/<slug>/index.html` file selecting `layout: publication`, `section: publications`, and `paper_slug`. Resource buttons appear only when their URL exists. Keep the inline citation and downloadable BibTeX identical.
+
+Optional `video_url` and `video_label` fields replace the static figure with a player in Publications, Projects, and the paper detail page. Collection players retain the other works' thumbnail dimensions and two-column layout; native controls support playback and fullscreen viewing. The `image` remains a lightweight poster. Videos play inline on mobile and load only on request. SWE-Shift uses the owner's two-minute `SWE-Shift-refined-audio.mp4`; its arXiv metadata follows [v1](https://arxiv.org/abs/2610.32196v1).
 
 `_layouts/homepage.html`, `_includes/identity.html`, and `assets/css/site-shell.css` provide the Jekyll shell. Hugo uses the same stylesheet and matching `blog_src/layouts/partials/identity.html`. Public profile values in `_config.yml` and `blog_src/data/profile.yaml` should stay synchronized.
 

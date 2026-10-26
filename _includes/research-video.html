@@ -1,0 +1,10 @@
+<figure class="research-video">
+  <video controls playsinline preload="none" poster="{{ include.item.image | escape }}" width="1920" height="1080" aria-label="{{ include.item.video_label | default: include.item.title | escape }}">
+    <source src="{{ include.item.video_url | escape }}" type="video/mp4">
+    <a href="{{ include.item.video_url | escape }}">Watch the video</a>
+  </video>
+  <figcaption>
+    <span data-lang="en">2-minute research overview</span><span data-lang="zh">两分钟研究介绍</span>
+    <a href="{{ include.item.video_url | escape }}"><span data-lang="en">Open video ↗</span><span data-lang="zh">打开视频 ↗</span></a>
+  </figcaption>
+</figure>

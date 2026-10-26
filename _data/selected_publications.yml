@@ -1,7 +1,39 @@
-# The five works selected from the owner's full English CV.
+# Selected publications, including new works supplied by the owner.
 # Metadata checked against the linked primary sources on 2026-10-16.
 # Ordered by the dated publication / public conference record, newest first.
 # Author names and order follow the public paper; * denotes equal contribution.
+
+- slug: swe-shift
+  title: "SWE-Shift: Evaluating Coding Agents in Evolving Workspaces"
+  authors: "Victor Shea-Jay Huang, Rongqing Li, Zhangyue Yin, Kelong Mao, Yaqi Zhao, Xinyuan Wang, Yao Yin, Lirui Luo, Renrui Zhang, Hongsheng Li"
+  venue: "arXiv"
+  year: 2026
+  sort_date: "2026-10-23"
+  status: "Preprint"
+  tldr_en: "A benchmark for coding agents facing mid-execution changes. Across 120 scenarios and 12 change families, all 17 evaluated systems have lower success after the workspace changes."
+  tldr_zh: "评测 Coding Agent 在执行过程中应对变化的能力。覆盖 120 个场景、12 类变化，17 个受测系统在工作环境变化后的成功率均下降。"
+  image: "/assets/projects/swe-shift-video-poster.jpg"
+  image_alt: "SWE-Shift video overview: evaluating coding agents as code, goals, tools, and evidence change during execution."
+  video_url: "/assets/videos/swe-shift.mp4"
+  video_label: "SWE-Shift: two-minute research overview"
+  paper_url: "https://arxiv.org/abs/2610.32196"
+  paper_label: "arXiv"
+  arxiv_url: "https://arxiv.org/abs/2610.32196"
+  pdf_url: "https://arxiv.org/pdf/2610.32196"
+  code_url: "https://github.com/JeixHuang/SWE-Shift"
+  citation_url: "/assets/citations/swe-shift.bib"
+  source: "https://arxiv.org/abs/2610.32196v1"
+  note: "Title, author order, first submission date, and code URL checked against arXiv v1 on 2026-10-26. Video supplied by the owner: SWE-Shift-refined-audio.mp4, 120 seconds. No conference acceptance is claimed."
+  citation: |
+    @misc{huang2026sweshift,
+      title = {{SWE-Shift}: Evaluating Coding Agents in Evolving Workspaces},
+      author = {Huang, Victor Shea-Jay and Li, Rongqing and Yin, Zhangyue and Mao, Kelong and Zhao, Yaqi and Wang, Xinyuan and Yin, Yao and Luo, Lirui and Zhang, Renrui and Li, Hongsheng},
+      year = {2026},
+      eprint = {2610.32196},
+      archivePrefix = {arXiv},
+      primaryClass = {cs.AI},
+      url = {https://arxiv.org/abs/2610.32196}
+    }
 
 - slug: reward-interface
   title: "Reward Is Not a Universal Interface for Generative Reinforcement Learning"

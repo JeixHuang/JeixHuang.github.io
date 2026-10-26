@@ -1,6 +1,7 @@
 <div class="resource-links" aria-label="Paper resources">
   {% if include.paper.paper_url %}<a class="resource-link resource-primary" href="{{ include.paper.paper_url | escape }}">{{ include.paper.paper_label | default: 'Paper' }} <span aria-hidden="true">↗</span></a>{% endif %}
   {% if include.paper.arxiv_url and include.paper.arxiv_url != '' and include.paper.arxiv_url != include.paper.paper_url %}<a class="resource-link" href="{{ include.paper.arxiv_url | escape }}">arXiv <span aria-hidden="true">↗</span></a>{% endif %}
+  {% if include.paper.pdf_url %}<a class="resource-link" href="{{ include.paper.pdf_url | escape }}">PDF <span aria-hidden="true">↗</span></a>{% endif %}
   {% if include.paper.code_url and include.paper.code_url != '' %}<a class="resource-link" href="{{ include.paper.code_url | escape }}">Code <span aria-hidden="true">↗</span></a>{% endif %}
   {% if include.paper.project_url and include.paper.project_url != '' %}<a class="resource-link" href="{{ include.paper.project_url | escape }}">Project <span aria-hidden="true">↗</span></a>{% endif %}
   <a class="resource-link citation-link" href="/publications/{{ include.paper.slug }}/#citation">Citation <span aria-hidden="true">↘</span></a>
