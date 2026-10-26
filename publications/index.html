@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en-US" data-locale="en" data-theme="dark" data-theme-choice="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Publications · Victor Shea-Jay Huang</title>
+    <meta name="description" content="Victor Shea-Jay Huang is a first-year Ph.D. student at MMLab, CUHK, researching agents and physical AI, with a focus on world models.">
+    <meta name="keywords" content="xijie huang, Xijie Huang, Victor Shea-Jay Huang, Victor Shea Jay Huang, Victor Ché-Jay Huang, Victor Ché Jay Huang, Ché-Jay Huang, Victor Huang, Huang Xijie, Victor Shea Huang, Victor Ché Huang">
+    <meta name="color-scheme" content="light dark">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Publications">
+    <meta property="og:url" content="https://jeixhuang.github.io/publications/">
+    <meta property="og:site_name" content="Victor Shea-Jay Huang">
+    <meta property="og:description" content="Victor Shea-Jay Huang is a first-year Ph.D. student at MMLab, CUHK, researching agents and physical AI, with a focus on world models.">
+    <meta property="og:image" content="/assets/img/avatar-aug-2026.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Victor Shea-Jay Huang">
+    <meta name="twitter:description" content="Victor Shea-Jay Huang is a first-year Ph.D. student at MMLab, CUHK, researching agents and physical AI, with a focus on world models.">
+    <meta name="twitter:image" content="/assets/img/avatar-aug-2026.jpg">
+    <link rel="canonical" href="https://jeixhuang.github.io/publications/">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/assets/img/avatar3.jpg" type="image/png">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/assets/img/avatar3.jpg" type="image/png">
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var themeKey = "jeix-theme-choice";
+        var localeKey = "jeix-locale";
+        var media = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+        var themeChoice = "dark";
+        var locale = "en";
+        var motionChoice = "active";
+
+        try {
+          themeChoice = localStorage.getItem(themeKey) || "dark";
+          locale = localStorage.getItem(localeKey) || "en";
+          motionChoice = localStorage.getItem("jeix-motion-choice") || "active";
+        } catch (error) {}
+
+        if (themeChoice !== "light" && themeChoice !== "dark" && themeChoice !== "system") themeChoice = "dark";
+        if (locale !== "en" && locale !== "zh") locale = "en";
+
+        var theme = themeChoice === "system" ? (media && media.matches ? "dark" : "light") : themeChoice;
+        root.dataset.theme = theme;
+        root.dataset.themeChoice = themeChoice;
+        root.dataset.locale = locale;
+        root.dataset.userMotion = motionChoice === "paused" ? "paused" : "active";
+        root.lang = locale === "zh" ? "zh-CN" : "en-US";
+        root.style.colorScheme = theme;
+      })();
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="/assets/css/homepage-v6.css?v=ee1b90fa">
+    <link rel="stylesheet" href="/assets/css/site-shell.css?v=20261026">
+    <script src="/assets/js/ambient-field-v1.js?v=20261016d" defer></script>
+    <script src="/assets/js/site-shell.js?v=20261016" defer></script>
+    <script src="/assets/js/homepage-v6.js?v=20261016" defer></script>
+    <script src="/assets/js/favicon-switcher.js" defer></script>
+  </head>
+  <body>
+    <canvas class="flow-field" id="flow-field" aria-hidden="true"></canvas>
+    <a class="skip-link" href="#content"><span data-lang="en">Skip to content</span><span data-lang="zh">跳到正文</span></a>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a class="brand" href="/" aria-label="Victor Shea-Jay Huang home">
+          <span class="brand-mark" aria-hidden="true">VH</span>
+        </a>
+
+        <div class="nav-right">
+          <div class="nav-links">
+            <a href="/#about-me" >About</a>
+            <a href="/publications/" aria-current="page">Publications</a>
+            <a href="/projects/" >Projects</a>
+            <a href="/blog/" data-blog-link>Blog</a>
+          </div>
+
+          <div class="nav-controls" aria-label="Display controls">
+            <div class="segmented-control" aria-label="Language">
+              <button type="button" data-locale-option="en">EN</button>
+              <button type="button" data-locale-option="zh">中</button>
+            </div>
+            <div class="segmented-control theme-control" aria-label="Theme">
+              <button type="button" data-theme-option="light" aria-label="Light theme"><i class="fa-regular fa-sun" aria-hidden="true"></i></button>
+              <button type="button" data-theme-option="dark" aria-label="Dark theme"><i class="fa-regular fa-moon" aria-hidden="true"></i></button>
+              <button type="button" data-theme-option="system" aria-label="System theme"><i class="fa-solid fa-display" aria-hidden="true"></i></button>
+            </div>
+            <div class="segmented-control motion-control" aria-label="Ambient motion">
+              <button type="button" data-motion-toggle aria-label="Pause ambient motion" aria-pressed="false"><span data-motion-icon aria-hidden="true">Ⅱ</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="site-shell" id="content">
+            <aside class="identity-rail" aria-label="Profile">
+        
+        <div class="avatar-frame">
+          <img class="avatar" src="/assets/img/avatar-aug-2026.jpg" alt="Victor Shea-Jay Huang portrait">
+          <span class="avatar-orbit" aria-hidden="true"></span>
+        </div>
+
+        <div class="identity-copy">
+          <p class="name"><a href="/"><span class="name-line">Victor</span> <span class="name-line">Shea-Jay Huang</span></a></p>
+          <p class="role">
+            <span data-lang="en">Year-1 Ph.D. student</span>
+            <span data-lang="zh">一年级博士生</span>
+          </p>
+          <p class="affiliation"><a href="https://mmlab.ie.cuhk.edu.hk/">MMLab</a> · <a href="https://www.cuhk.edu.hk/">CUHK</a></p>
+        </div>
+
+        <nav class="profile-links" aria-label="Profile links">
+          
+          <a href="https://scholar.google.com/citations?hl=zh-CN&amp;user=pL5W9z4AAAAJ">
+            <span class="profile-link-icon"><i class="ai ai-google-scholar" aria-hidden="true"></i></span>
+            <span>Google Scholar</span>
+            <span class="external-mark" aria-hidden="true">↗</span>
+          </a>
+          
+          
+          <a href="https://github.com/JeixHuang">
+            <span class="profile-link-icon"><i class="fa-brands fa-github" aria-hidden="true"></i></span>
+            <span>GitHub</span>
+            <span class="external-mark" aria-hidden="true">↗</span>
+          </a>
+          
+          
+          <a href="https://www.linkedin.com/in/%E5%B8%8C%E6%9D%B0-%E9%BB%84-53a491322/">
+            <span class="profile-link-icon"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></span>
+            <span>LinkedIn</span>
+            <span class="external-mark" aria-hidden="true">↗</span>
+          </a>
+          
+          
+          <a href="https://x.com/Xijie358">
+            <span class="profile-link-icon"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></span>
+            <span>X / Twitter</span>
+            <span class="external-mark" aria-hidden="true">↗</span>
+          </a>
+          
+          
+          <a href="mailto:jeix782@gmail.com">
+            <span class="profile-link-icon"><i class="fa-regular fa-envelope" aria-hidden="true"></i></span>
+            <span>Email</span>
+            <span class="external-mark" aria-hidden="true">↗</span>
+          </a>
+          
+        </nav>
+      </aside>
+
+
+      <div class="content-column">
+        <header class="collection-heading">
+  <div class="collection-title-row">
+    <h1>Publications</h1>
+  </div>
+  <p class="collection-description"><span data-lang="en">Reinforcement learning, multimodal generation, LLMs &amp; agents, and physical AI.</span><span data-lang="zh">强化学习、多模态生成、LLMs &amp; Agents 与 Physical AI。</span></p>
+</header>
+<div class="publication-list">
+  
+  
+  <article class="publication-card" id="swe-shift">
+    
+    <figure class="research-video">
+  <video controls autoplay muted loop playsinline preload="auto" poster="/assets/projects/swe-shift-video-poster.jpg" width="1920" height="1080" aria-label="SWE-Shift: two-minute research overview">
+    <source src="/assets/videos/swe-shift.mp4" type="video/mp4">
+    <a href="/assets/videos/swe-shift.mp4">Watch the video</a>
+  </video>
+  <figcaption>
+    <span data-lang="en">2-minute research overview</span><span data-lang="zh">两分钟研究介绍</span>
+    <a href="/assets/videos/swe-shift.mp4"><span data-lang="en">Open video ↗</span><span data-lang="zh">打开视频 ↗</span></a>
+  </figcaption>
+</figure>
+
+    
+    <div class="publication-copy">
+      <div class="publication-meta"><span class="venue-label">arXiv</span><span>2026</span><span class="status-label">Preprint</span></div>
+      <h2><a href="/publications/swe-shift/">SWE-Shift: Evaluating Coding Agents in Evolving Workspaces</a></h2>
+      <p class="publication-authors"><strong>Victor Shea-Jay Huang</strong>, Rongqing Li, Zhangyue Yin, Kelong Mao, Yaqi Zhao, Xinyuan Wang, Yao Yin, Lirui Luo, Renrui Zhang, Hongsheng Li</p>
+      <p class="publication-tldr"><span class="tldr-label">TL;DR</span> <span data-lang="en">A benchmark for coding agents facing mid-execution changes. Across 120 scenarios and 12 change families, all 17 evaluated systems have lower success after the workspace changes.</span><span data-lang="zh">评测 Coding Agent 在执行过程中应对变化的能力。覆盖 120 个场景、12 类变化，17 个受测系统在工作环境变化后的成功率均下降。</span></p>
+      <div class="resource-links" aria-label="Paper resources">
+  <a class="resource-link resource-primary" href="https://arxiv.org/abs/2610.32196">arXiv <span aria-hidden="true">↗</span></a>
+  
+  <a class="resource-link" href="https://arxiv.org/pdf/2610.32196">PDF <span aria-hidden="true">↗</span></a>
+  <a class="resource-link" href="https://github.com/JeixHuang/SWE-Shift">Code <span aria-hidden="true">↗</span></a>
+  
+  <a class="resource-link citation-link" href="/publications/swe-shift/#citation">Citation <span aria-hidden="true">↘</span></a>
+</div>
+
+    </div>
+  </article>
+  
+  <article class="publication-card" id="reward-interface">
+    
+    <a class="publication-figure" href="/publications/reward-interface/" aria-label="Reward Is Not a Universal Interface for Generative Reinforcement Learning — details">
+      <img src="/assets/files/mindrl-overview.png" alt="MindRL routes reward through branch-specific score objects and controls granularity, anchors, clipping, and branch weights." loading="lazy" width="640" height="400">
+    </a>
+    
+    <div class="publication-copy">
+      <div class="publication-meta"><span class="venue-label">NeurIPS 2026</span><span class="status-label">Accepted</span></div>
+      <h2><a href="/publications/reward-interface/">Reward Is Not a Universal Interface for Generative Reinforcement Learning</a></h2>
+      <p class="publication-authors"><strong>Victor Shea-Jay Huang</strong>, Poodar Chu, Hongsheng Li</p>
+      <p class="publication-tldr"><span class="tldr-label">TL;DR</span> <span data-lang="en">MindRL translates a shared reward into updates suited to autoregressive, parallel discrete, flow, and hybrid policies, with explicit controls on update reliability.</span><span data-lang="zh">MindRL 将共同奖励转化为适合自回归、并行离散、Flow 及混合策略的更新，并显式控制更新的可靠性。</span></p>
+      <div class="resource-links" aria-label="Paper resources">
+  <a class="resource-link resource-primary" href="https://openreview.net/forum?id=gbYg6VGblU#discussion">OpenReview <span aria-hidden="true">↗</span></a>
+  
+  
+  
+  
+  <a class="resource-link citation-link" href="/publications/reward-interface/#citation">Citation <span aria-hidden="true">↘</span></a>
+</div>
+
+    </div>
+  </article>
+  
+  <article class="publication-card" id="dial">
+    
+    <a class="publication-figure" href="/publications/dial/" aria-label="Driving Intents Amplify Planning-Oriented Reinforcement Learning — details">
+      <img src="/assets/files/dial.png" alt="DIAL contrasts collapsed trajectory samples with diverse intent-conditioned proposals and plots their best-of-K preference scores." loading="lazy" width="640" height="400">
+    </a>
+    
+    <div class="publication-copy">
+      <div class="publication-meta"><span class="venue-label">arXiv</span><span>2026</span><span class="status-label">Preprint</span></div>
+      <h2><a href="/publications/dial/">Driving Intents Amplify Planning-Oriented Reinforcement Learning</a></h2>
+      <p class="publication-authors">Hengtong Lu<sup title="Equal contribution"><span aria-hidden="true">*</span><span class="visually-hidden"> (equal contribution)</span></sup>, <strong>Victor Shea-Jay Huang</strong><sup title="Equal contribution"><span aria-hidden="true">*</span><span class="visually-hidden"> (equal contribution)</span></sup>, Chengmin Yang, Pengfei Jing, Jifeng Dai, Yan Xie, Benjin Zhu<sup title="Equal contribution"><span aria-hidden="true">*</span><span class="visually-hidden"> (equal contribution)</span></sup></p>
+      <p class="publication-tldr"><span class="tldr-label">TL;DR</span> <span data-lang="en">Intent-conditioned proposals and multi-intent GRPO expand and preserve diverse driving maneuvers for preference-based reinforcement learning.</span><span data-lang="zh">通过意图条件采样与多意图 GRPO，扩展并保留多样驾驶行为，为基于偏好的强化学习提供更丰富的候选轨迹。</span></p>
+      <div class="resource-links" aria-label="Paper resources">
+  <a class="resource-link resource-primary" href="https://arxiv.org/abs/2605.12625">arXiv <span aria-hidden="true">↗</span></a>
+  
+  
+  
+  <a class="resource-link" href="https://mind-omni.github.io/projects/dial/index.html">Project <span aria-hidden="true">↗</span></a>
+  <a class="resource-link citation-link" href="/publications/dial/#citation">Citation <span aria-hidden="true">↘</span></a>
+</div>
+
+    </div>
+  </article>
+  
+  <article class="publication-card" id="tide">
+    
+    <a class="publication-figure" href="/publications/tide/" aria-label="TIDE: Temporal-Aware Sparse Autoencoders for Interpretable Diffusion Transformers in Image Generation — details">
+      <img src="/assets/files/tide.png" alt="TIDE visualizes spatial, semantic, and class-level sparse features for generated house and bird images." loading="lazy" width="640" height="400">
+    </a>
+    
+    <div class="publication-copy">
+      <div class="publication-meta"><span class="venue-label">AAAI 2026</span><span class="status-label">Published</span></div>
+      <h2><a href="/publications/tide/">TIDE: Temporal-Aware Sparse Autoencoders for Interpretable Diffusion Transformers in Image Generation</a></h2>
+      <p class="publication-authors"><strong>Victor Shea-Jay Huang</strong><sup title="Equal contribution"><span aria-hidden="true">*</span><span class="visually-hidden"> (equal contribution)</span></sup>, Le Zhuo<sup title="Equal contribution"><span aria-hidden="true">*</span><span class="visually-hidden"> (equal contribution)</span></sup>, Yi Xin, Zhaokai Wang, Fu-Yun Wang, Yuchi Wang, Renrui Zhang, Peng Gao, Hongsheng Li</p>
+      <p class="publication-tldr"><span class="tldr-label">TL;DR</span> <span data-lang="en">Temporal-aware sparse autoencoders reveal hierarchical concepts across diffusion timesteps, making diffusion transformers easier to interpret and control.</span><span data-lang="zh">用时间感知的稀疏自编码器提取扩散各时间步中的层次化概念，理解并控制 Diffusion Transformer 的生成过程。</span></p>
+      <div class="resource-links" aria-label="Paper resources">
+  <a class="resource-link resource-primary" href="https://ojs.aaai.org/index.php/AAAI/article/view/37006">AAAI <span aria-hidden="true">↗</span></a>
+  <a class="resource-link" href="https://arxiv.org/abs/2503.07050">arXiv <span aria-hidden="true">↗</span></a>
+  
+  
+  
+  <a class="resource-link citation-link" href="/publications/tide/#citation">Citation <span aria-hidden="true">↘</span></a>
+</div>
+
+    </div>
+  </article>
+  
+  <article class="publication-card" id="blackdan">
+    
+    <a class="publication-figure" href="/publications/blackdan/" aria-label="BlackDAN: A Black-Box Multi-Objective Approach for Effective and Contextual Jailbreaking of Large Language Models — details">
+      <img src="/assets/files/Blackdan.png" alt="BlackDAN&#39;s framework combines black-box model responses, judge models, and NSGA-II multi-objective optimization." loading="lazy" width="640" height="400">
+    </a>
+    
+    <div class="publication-copy">
+      <div class="publication-meta"><span class="venue-label">ICML 2025 · New In ML</span><span class="status-label">Workshop poster</span></div>
+      <h2><a href="/publications/blackdan/">BlackDAN: A Black-Box Multi-Objective Approach for Effective and Contextual Jailbreaking of Large Language Models</a></h2>
+      <p class="publication-authors">Xinyuan Wang<sup title="Equal contribution"><span aria-hidden="true">*</span><span class="visually-hidden"> (equal contribution)</span></sup>, <strong>Victor Shea-Jay Huang</strong><sup title="Equal contribution"><span aria-hidden="true">*</span><span class="visually-hidden"> (equal contribution)</span></sup>, Renmiao Chen, Hao Wang, Chengwei Pan, Lei Sha, Minlie Huang</p>
+      <p class="publication-tldr"><span class="tldr-label">TL;DR</span> <span data-lang="en">A black-box evaluation framework uses multi-objective optimization to study jailbreak success, contextual relevance, and detectability together.</span><span data-lang="zh">以多目标优化联合考察越狱成功率、上下文相关性与可检测性，构建黑盒大语言模型安全评测框架。</span></p>
+      <div class="resource-links" aria-label="Paper resources">
+  <a class="resource-link resource-primary" href="https://icml.cc/virtual/2025/50654">ICML <span aria-hidden="true">↗</span></a>
+  <a class="resource-link" href="https://arxiv.org/abs/2410.09804">arXiv <span aria-hidden="true">↗</span></a>
+  
+  <a class="resource-link" href="https://github.com/MantaAI/BlackDAN">Code <span aria-hidden="true">↗</span></a>
+  
+  <a class="resource-link citation-link" href="/publications/blackdan/#citation">Citation <span aria-hidden="true">↘</span></a>
+</div>
+
+    </div>
+  </article>
+  
+  <article class="publication-card" id="medical-mllm">
+    
+    <a class="publication-figure" href="/publications/medical-mllm/" aria-label="Medical MLLM Is Vulnerable: Cross-Modality Jailbreak and Mismatched Attacks on Medical Multimodal Large Language Models — details">
+      <img src="/assets/files/O2M-attack.png" alt="The 3MAD dataset spans medical imaging modalities and question types used to evaluate medical multimodal model safety." loading="lazy" width="640" height="400">
+    </a>
+    
+    <div class="publication-copy">
+      <div class="publication-meta"><span class="venue-label">AAAI 2025</span><span class="status-label">Published</span></div>
+      <h2><a href="/publications/medical-mllm/">Medical MLLM Is Vulnerable: Cross-Modality Jailbreak and Mismatched Attacks on Medical Multimodal Large Language Models</a></h2>
+      <p class="publication-authors"><strong>Xijie Huang</strong><sup title="Equal contribution"><span aria-hidden="true">*</span><span class="visually-hidden"> (equal contribution)</span></sup>, Xinyuan Wang<sup title="Equal contribution"><span aria-hidden="true">*</span><span class="visually-hidden"> (equal contribution)</span></sup>, Hantao Zhang<sup title="Equal contribution"><span aria-hidden="true">*</span><span class="visually-hidden"> (equal contribution)</span></sup>, Yinghao Zhu<sup title="Equal contribution"><span aria-hidden="true">*</span><span class="visually-hidden"> (equal contribution)</span></sup>, Jiawen Xi, Jingkun An, Hao Wang, Hao Liang, Chengwei Pan</p>
+      <p class="publication-tldr"><span class="tldr-label">TL;DR</span> <span data-lang="en">The 3MAD dataset and MCM optimization expose cross-modal safety weaknesses in medical multimodal language models.</span><span data-lang="zh">通过 3MAD 数据集与 MCM 优化，揭示医疗多模态大语言模型在图文错配及跨模态攻击下的安全薄弱点。</span></p>
+      <div class="resource-links" aria-label="Paper resources">
+  <a class="resource-link resource-primary" href="https://ojs.aaai.org/index.php/AAAI/article/view/32396">AAAI <span aria-hidden="true">↗</span></a>
+  <a class="resource-link" href="https://arxiv.org/abs/2405.20775">arXiv <span aria-hidden="true">↗</span></a>
+  
+  <a class="resource-link" href="https://github.com/JeixHuang/MCM">Code <span aria-hidden="true">↗</span></a>
+  
+  <a class="resource-link citation-link" href="/publications/medical-mllm/#citation">Citation <span aria-hidden="true">↘</span></a>
+</div>
+
+    </div>
+  </article>
+  
+</div>
+
+
+
+        <footer class="site-footer">
+          <p>© 2026 Victor Shea-Jay Huang</p>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>
