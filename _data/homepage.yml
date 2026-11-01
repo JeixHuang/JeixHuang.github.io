@@ -1,4 +1,20 @@
 works:
+  - title: Awesome Robot Use Agent
+    image: /assets/projects/awesome-robot-use-agent-overview.png
+    image_alt: Awesome Robot Use Agent overview connecting AI agents, robot interfaces, and physical embodiments through tool calls and execution feedback
+    image_source: Owner-provided Awesome Robot Use Agent overview, selected on 2026-11-01
+    summary_en: A curated collection of papers, tools, benchmarks, and demos on AI agents that use robots to act in the physical world.
+    summary_zh: 面向 Robot-Use Agent 的精选论文、工具、评测基准与演示，关注 AI 智能体如何调用机器人完成物理世界任务。
+    primary_url: https://github.com/kairunwen/Awesome-Robot-Use-Agent
+    tags: [Robot Use, Embodied AI, Resources]
+    links:
+      - label_en: GitHub
+        label_zh: GitHub
+        url: https://github.com/kairunwen/Awesome-Robot-Use-Agent
+      - label_en: Website
+        label_zh: 网站
+        url: https://kairunwen.github.io/Awesome-Robot-Use-Agent/
+
   - title: SWE-Shift
     date: "2026-10-23"
     image: /assets/projects/swe-shift-video-poster.jpg
