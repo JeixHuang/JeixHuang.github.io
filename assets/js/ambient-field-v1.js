@@ -14,11 +14,6 @@
     return "rgba(" + color[0] + ", " + color[1] + ", " + color[2] + ", " + alpha + ")";
   }
 
-  function pseudoRandom(seed) {
-    var value = Math.sin(seed * 917.371 + 41.73) * 43758.5453;
-    return value - Math.floor(value);
-  }
-
   function pathSeed() {
     var path = window.location.pathname || "/";
     var hash = 2166136261;
@@ -78,26 +73,6 @@
     };
   }
 
-  function homePalette() {
-    return root.dataset.theme === "dark"
-      ? {
-          primary: [120, 232, 219],
-          blue: [111, 134, 255],
-          violet: [154, 98, 255],
-          highlight: [233, 252, 255],
-          warm: [242, 182, 109],
-          energy: 1,
-        }
-      : {
-          primary: [7, 122, 113],
-          blue: [52, 73, 171],
-          violet: [101, 70, 153],
-          highlight: [16, 72, 78],
-          warm: [154, 91, 25],
-          energy: 0.72,
-        };
-  }
-
   function readingPalette() {
     return root.dataset.theme === "dark"
       ? {
@@ -116,6 +91,118 @@
           warm: [152, 40, 51],
           energy: 0.62,
         };
+  }
+
+  function setupHomeField(canvas, isUserPaused) {
+    const context = canvas.getContext("2d");
+    if (!context) return;
+
+    // Engrave one closed line around the twisted band at each offset.
+    // Cache the 3D paths; only the camera changes between frames.
+    const small = canvas.closest(".brand") !== null;
+    const lineCount = small ? 12 : 46;
+    const points = small ? 64 : 160;
+    const tau = 2 * Math.PI;
+    const rings = Array.from({ length: lineCount }, (_, i) => {
+      const offset = ((i / (lineCount - 1)) - 0.5) * 0.77;
+      return Array.from({ length: points }, (_, j) => {
+        const u = j * tau / points;
+        const tilt = 2 * u - 0.55;
+        const r = 0.86 + 0.08 * Math.sin(3 * u) + offset * Math.cos(tilt);
+        const z = 0.27 * Math.sin(2 * u + 0.4) + offset * Math.sin(tilt);
+        return [r * Math.cos(u), r * Math.sin(u), z];
+      });
+    });
+
+    let phase = 0, last = 0, frame = 0, count = 0;
+    let width = 0, height = 0, inView = true;
+    let ink, accent;
+
+    function palette() {
+      const style = getComputedStyle(canvas);
+      ink = style.getPropertyValue("--text-soft").trim();
+      accent = style.getPropertyValue("--accent").trim();
+    }
+
+    function draw() {
+      if (!width || !height) return;
+      const yaw = -0.27 + phase;
+      const pitch = 0.78 + 0.17 * Math.sin(phase * 1.3);
+      const cy = Math.cos(yaw), sy = Math.sin(yaw);
+      const cp = Math.cos(pitch), sp = Math.sin(pitch);
+      const scale = Math.min(width * 0.365, height * 0.43);
+      context.clearRect(0, 0, width, height);
+      context.save();
+      context.translate(width / 2, height / 2);
+      context.rotate(-0.20);
+      context.lineJoin = "round";
+      rings.forEach((ring, i) => {
+        const depth = (Math.cos(i * tau / lineCount) + 1) / 2;
+        const indexLine = i === 0 || i === lineCount - 1;
+        context.strokeStyle = indexLine ? accent : ink;
+        context.globalAlpha = indexLine ? 0.94 : 0.34 + depth * 0.45;
+        context.lineWidth = small ? 0.55 : indexLine ? 1.25 : 0.77;
+        context.beginPath();
+        ring.forEach(([x, y, z], j) => {
+          const px = scale * (x * cy - y * sy);
+          const py = scale * ((x * sy + y * cy) * cp - z * sp);
+          if (j === 0) context.moveTo(px, py);
+          else context.lineTo(px, py);
+        });
+        context.closePath();
+        context.stroke();
+      });
+      context.restore();
+      canvas.dataset.frame = String(++count);
+    }
+
+    function tick(now) {
+      const elapsed = now - last;
+      if (elapsed >= 1000 / 30) {
+        phase += Math.min(elapsed, 64) * 0.00016;
+        draw();
+        last = now;
+      }
+      frame = requestAnimationFrame(tick);
+    }
+
+    function sync() {
+      cancelAnimationFrame(frame);
+      const still = isUserPaused() || reduceMotion?.matches || saveData;
+      canvas.dataset.state = still ? "static" : document.hidden || !inView ? "paused" : "active";
+      if (canvas.dataset.state === "active") {
+        last = performance.now();
+        frame = requestAnimationFrame(tick);
+      }
+    }
+
+    function resize() {
+      const box = canvas.getBoundingClientRect();
+      width = box.width;
+      height = box.height;
+      const ratio = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.round(width * ratio);
+      canvas.height = Math.round(height * ratio);
+      context.setTransform(ratio, 0, 0, ratio, 0, 0);
+      draw();
+    }
+
+    canvas.dataset.render = "engraved-ring";
+    palette();
+    resize();
+    sync();
+    if ("ResizeObserver" in window) new ResizeObserver(resize).observe(canvas);
+    else window.addEventListener("resize", resize, { passive: true });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(([entry]) => {
+        inView = entry.isIntersecting;
+        sync();
+      }).observe(canvas);
+    }
+    document.addEventListener("visibilitychange", sync);
+    root.addEventListener("jeix:themechange", () => { palette(); draw(); });
+    root.addEventListener("jeix:motionchange", sync);
+    addMediaListener(reduceMotion, sync);
   }
 
   function pointOnManifold(u, strand, fold) {
@@ -145,332 +232,6 @@
       z: zX,
       u: point.u,
     };
-  }
-
-  function setupHomeField(canvas, isUserPaused) {
-    var context = canvas.getContext("2d", { alpha: true });
-    if (!context) return;
-
-    var compact = window.matchMedia ? window.matchMedia("(max-width: 720px)") : null;
-    var finePointer = window.matchMedia ? window.matchMedia("(hover: hover) and (pointer: fine)") : null;
-    var width = 1;
-    var height = 1;
-    var pixelRatio = 1;
-    var frameId = 0;
-    var frameCount = 0;
-    var lastPaint = 0;
-    var scrollOffset = window.scrollY || 0;
-    var protectors = [];
-    var stars = [];
-    var pointer = { targetX: 0, targetY: 0, x: 0, y: 0, active: false };
-
-    canvas.dataset.render = "latent-loom";
-
-    function seedStars() {
-      var count = compact && compact.matches ? 18 : 38;
-      stars = Array.from({ length: count }, function (_, index) {
-        return {
-          x: pseudoRandom(index + 9),
-          y: pseudoRandom(index + 71),
-          size: 0.45 + pseudoRandom(index + 117) * 1.05,
-          phase: pseudoRandom(index + 193) * Math.PI * 2,
-        };
-      });
-    }
-
-    function measureProtectors() {
-      var nodes = Array.prototype.slice.call(document.querySelectorAll(".avatar-frame, .identity-copy, .profile-links, .intro-copy, .work-entry, .collection-heading, .about-section, .publication-card, .project-card, .post-card, .post-header, .post-content, .post-toc"));
-      protectors = nodes.map(function (node) {
-        var rect = node.getBoundingClientRect();
-        return {
-          x: rect.left,
-          y: rect.top,
-          width: rect.width,
-          height: rect.height,
-          strength: node.matches(".work-entry, .publication-card, .project-card, .post-card, .post-content") ? 0.82 : 0.74,
-        };
-      });
-    }
-
-    function resize() {
-      width = Math.max(1, window.innerWidth);
-      height = Math.max(1, window.innerHeight);
-      var mobile = Boolean(compact && compact.matches);
-      var pixelBudget = mobile ? 1000000 : 3000000;
-      var ratioFromBudget = Math.sqrt(pixelBudget / Math.max(width * height, 1));
-      pixelRatio = clamp(Math.min(window.devicePixelRatio || 1, ratioFromBudget, mobile ? 1.25 : 1.6), 0.8, mobile ? 1.25 : 1.6);
-      canvas.width = Math.round(width * pixelRatio);
-      canvas.height = Math.round(height * pixelRatio);
-      canvas.style.width = width + "px";
-      canvas.style.height = height + "px";
-      context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
-      canvas.dataset.dpr = pixelRatio.toFixed(2);
-      canvas.dataset.backingPixels = String(canvas.width * canvas.height);
-      canvas.dataset.primitives = String(mobile ? 26 : 51);
-      seedStars();
-      measureProtectors();
-    }
-
-    function drawStarfield(time, colors, energy) {
-      stars.forEach(function (star, index) {
-        var pulse = 0.48 + Math.sin(time * 0.00044 + star.phase) * 0.24;
-        var drift = ((time * 0.0018 * (0.4 + (index % 5) * 0.1)) % (height + 40)) - 20;
-        var y = (star.y * height + drift) % (height + 40) - 20;
-        var color = index % 7 === 0 ? colors.violet : colors.primary;
-        context.fillStyle = rgba(color, pulse * 0.16 * colors.energy * energy);
-        context.beginPath();
-        context.arc(star.x * width, y, star.size, 0, Math.PI * 2);
-        context.fill();
-      });
-    }
-
-    function drawHalo(centerX, centerY, radius, colors, energy) {
-      var glow = context.createRadialGradient(centerX, centerY, radius * 0.05, centerX, centerY, radius * 1.42);
-      glow.addColorStop(0, rgba(colors.highlight, 0.085 * colors.energy * energy));
-      glow.addColorStop(0.3, rgba(colors.violet, 0.075 * colors.energy * energy));
-      glow.addColorStop(0.62, rgba(colors.primary, 0.045 * colors.energy * energy));
-      glow.addColorStop(1, rgba(colors.primary, 0));
-      context.fillStyle = glow;
-      context.beginPath();
-      context.arc(centerX, centerY, radius * 1.42, 0, Math.PI * 2);
-      context.fill();
-    }
-
-    function drawTelemetry(centerX, centerY, radius, time, colors, energy) {
-      context.save();
-      context.translate(centerX, centerY);
-      context.rotate(-0.16);
-      context.setLineDash([3, 12]);
-      context.lineDashOffset = -time * 0.006;
-      [0.9, 1.12].forEach(function (scale, index) {
-        context.strokeStyle = rgba(index ? colors.blue : colors.primary, (index ? 0.075 : 0.11) * colors.energy * energy);
-        context.lineWidth = index ? 0.7 : 0.9;
-        context.beginPath();
-        context.ellipse(0, 0, radius * scale, radius * scale * 0.42, 0, -0.7 + index, 3.7 + index);
-        context.stroke();
-      });
-      context.restore();
-    }
-
-    function drawManifold(time, colors, energy) {
-      var mobile = Boolean(compact && compact.matches);
-      var strandCount = mobile ? 6 : 10;
-      var samples = mobile ? 72 : 108;
-      var scrollProgress = clamp(scrollOffset / Math.max(height * 0.92, 1), 0, 1);
-      var fieldEnergy = energy * (1 - scrollProgress * 0.58);
-      var centerX = width * (mobile ? 0.76 : 0.755);
-      var centerY = height * (mobile ? 0.235 : 0.295) - Math.min(scrollOffset, height * 1.8) * 0.017;
-      var radius = Math.min(width, height) * (mobile ? 0.31 : 0.36);
-      var fold = Math.sin(time * Math.PI * 2 / 12600) * 0.82;
-      var rotateY = time * Math.PI * 2 / 30000 + 0.18 + pointer.x * 0.12;
-      var rotateX = -0.24 + Math.sin(time * Math.PI * 2 / 17400) * 0.08 + pointer.y * 0.1;
-      var options = {
-        centerX: centerX,
-        centerY: centerY,
-        radius: radius,
-        rotateX: rotateX,
-        rotateY: rotateY,
-        expand: 1 + scrollProgress * 0.13,
-      };
-      var segments = [];
-      var strands = [];
-      var signalPhase = (time % 8200) / 8200;
-
-      drawHalo(centerX, centerY, radius, colors, fieldEnergy);
-      drawTelemetry(centerX, centerY, radius, time, colors, fieldEnergy);
-
-      for (var strandIndex = 0; strandIndex < strandCount; strandIndex += 1) {
-        var strand = strandIndex - (strandCount - 1) / 2;
-        var points = [];
-        for (var sample = 0; sample <= samples; sample += 1) {
-          var u = sample / samples * Math.PI * 2;
-          points.push(rotateAndProject(pointOnManifold(u, strand, fold), options));
-        }
-        strands.push(points);
-        for (var segmentIndex = 1; segmentIndex < points.length; segmentIndex += 1) {
-          var first = points[segmentIndex - 1];
-          var second = points[segmentIndex];
-          var normalizedU = second.u / (Math.PI * 2);
-          var signalDistance = Math.abs(normalizedU - signalPhase);
-          signalDistance = Math.min(signalDistance, 1 - signalDistance);
-          segments.push({
-            first: first,
-            second: second,
-            depth: (first.z + second.z) * 0.5,
-            strand: strandIndex,
-            signal: Math.exp(-(signalDistance * signalDistance) / 0.0018),
-          });
-        }
-      }
-
-      context.save();
-      context.globalCompositeOperation = root.dataset.theme === "dark" ? "lighter" : "source-over";
-      context.lineCap = "round";
-
-      for (var rung = 9; rung < samples; rung += 14) {
-        context.strokeStyle = rgba(colors.violet, 0.055 * colors.energy * fieldEnergy);
-        context.lineWidth = 0.55;
-        context.beginPath();
-        strands.forEach(function (strandPoints, index) {
-          var point = strandPoints[rung];
-          if (index === 0) context.moveTo(point.x, point.y);
-          else context.lineTo(point.x, point.y);
-        });
-        context.stroke();
-      }
-
-      segments.sort(function (a, b) { return a.depth - b.depth; });
-      segments.forEach(function (segment) {
-        var depth = clamp((segment.depth + 0.85) / 1.7, 0, 1);
-        var strandDistance = Math.abs(segment.strand - (strandCount - 1) / 2);
-        var color = segment.strand % 3 === 0 ? colors.violet : segment.strand % 2 === 0 ? colors.blue : colors.primary;
-        var alpha = (0.026 + depth * 0.15 + Math.max(0, 2.8 - strandDistance) * 0.014 + segment.signal * 0.2) * colors.energy * fieldEnergy;
-        context.strokeStyle = rgba(color, alpha);
-        context.lineWidth = 0.42 + depth * 0.92 + segment.signal * 0.74;
-        context.beginPath();
-        context.moveTo(segment.first.x, segment.first.y);
-        context.lineTo(segment.second.x, segment.second.y);
-        context.stroke();
-      });
-
-      var centerStrand = strands[Math.floor(strands.length / 2)];
-      [0, 0.42].forEach(function (offset, packetIndex) {
-        var packetProgress = (signalPhase + offset) % 1;
-        var pointIndex = Math.floor(packetProgress * samples);
-        var packet = centerStrand[pointIndex];
-        var packetColor = packetIndex === 0 ? colors.highlight : colors.warm;
-        context.shadowBlur = packetIndex === 0 ? 18 : 12;
-        context.shadowColor = rgba(packetColor, 0.72 * fieldEnergy);
-        context.fillStyle = rgba(packetColor, (packetIndex === 0 ? 0.88 : 0.66) * colors.energy * fieldEnergy);
-        context.beginPath();
-        context.arc(packet.x, packet.y, packetIndex === 0 ? 2.5 : 1.8, 0, Math.PI * 2);
-        context.fill();
-      });
-      context.shadowBlur = 0;
-
-      for (var nodeIndex = 7; nodeIndex < samples; nodeIndex += 17) {
-        var node = centerStrand[nodeIndex];
-        var nodeDepth = clamp((node.z + 0.8) / 1.6, 0, 1);
-        context.fillStyle = rgba(nodeIndex % 3 ? colors.primary : colors.warm, (0.18 + nodeDepth * 0.32) * colors.energy * fieldEnergy);
-        context.beginPath();
-        context.arc(node.x, node.y, 0.8 + nodeDepth * 0.9, 0, Math.PI * 2);
-        context.fill();
-      }
-
-      context.restore();
-    }
-
-    function eraseProtectedContent() {
-      context.save();
-      context.globalCompositeOperation = "destination-out";
-      context.filter = "blur(28px)";
-      protectors.forEach(function (rect) {
-        if (rect.y > height + 100 || rect.y + rect.height < -100) return;
-        context.fillStyle = "rgba(0, 0, 0, " + rect.strength + ")";
-        context.fillRect(rect.x - 8, rect.y - 8, rect.width + 16, rect.height + 16);
-      });
-      context.filter = "none";
-      context.restore();
-    }
-
-    function paint(timestamp, singleFrame) {
-      timestamp = timestamp || 0;
-      var mobile = Boolean(compact && compact.matches);
-      var minimumFrameTime = mobile ? 42 : 32;
-      if (!singleFrame && timestamp - lastPaint < minimumFrameTime) {
-        frameId = window.requestAnimationFrame(paint);
-        return;
-      }
-
-      var paintStart = performance.now();
-      lastPaint = timestamp;
-      pointer.x += (pointer.targetX - pointer.x) * 0.045;
-      pointer.y += (pointer.targetY - pointer.y) * 0.045;
-      context.clearRect(0, 0, width, height);
-      var colors = homePalette();
-      var energy = 1;
-      drawStarfield(timestamp, colors, energy);
-      drawManifold(timestamp, colors, energy);
-      eraseProtectedContent();
-      frameCount += 1;
-      if (frameCount === 1 || frameCount % 4 === 0) canvas.dataset.frame = String(frameCount);
-      if (frameCount === 1 || frameCount % 12 === 0) canvas.dataset.paintMs = (performance.now() - paintStart).toFixed(2);
-      canvas.dataset.palette = root.dataset.theme || "dark";
-      if (!singleFrame) frameId = window.requestAnimationFrame(paint);
-    }
-
-    function stop() {
-      if (frameId) window.cancelAnimationFrame(frameId);
-      frameId = 0;
-    }
-
-    function isStatic() {
-      return Boolean((reduceMotion && reduceMotion.matches) || saveData || isUserPaused());
-    }
-
-    function sync() {
-      stop();
-      if (isStatic()) {
-        canvas.dataset.state = "static";
-        paint(performance.now(), true);
-      } else if (document.hidden) {
-        canvas.dataset.state = "paused";
-      } else {
-        canvas.dataset.state = "active";
-        frameId = window.requestAnimationFrame(paint);
-      }
-    }
-
-    var resizeFrame = 0;
-    window.addEventListener("resize", function () {
-      if (resizeFrame) window.cancelAnimationFrame(resizeFrame);
-      resizeFrame = window.requestAnimationFrame(function () {
-        resize();
-        sync();
-        resizeFrame = 0;
-      });
-    }, { passive: true });
-
-    var measureFrame = 0;
-    window.addEventListener("scroll", function () {
-      scrollOffset = window.scrollY || 0;
-      if (measureFrame) return;
-      measureFrame = window.requestAnimationFrame(function () {
-        measureProtectors();
-        measureFrame = 0;
-      });
-    }, { passive: true });
-
-    if (finePointer && finePointer.matches) {
-      document.addEventListener("pointermove", function (event) {
-        pointer.targetX = clamp((event.clientX / Math.max(width, 1) - 0.5) * 2, -1, 1);
-        pointer.targetY = clamp((event.clientY / Math.max(height, 1) - 0.5) * 2, -1, 1);
-        if (!pointer.active) {
-          pointer.active = true;
-          canvas.dataset.pointer = "active";
-        }
-      }, { passive: true });
-      document.addEventListener("pointerleave", function () {
-        pointer.targetX = 0;
-        pointer.targetY = 0;
-        pointer.active = false;
-        canvas.dataset.pointer = "idle";
-      }, { passive: true });
-    }
-
-    document.addEventListener("visibilitychange", sync);
-    root.addEventListener("jeix:themechange", function () {
-      if (isStatic()) paint(performance.now(), true);
-    });
-    root.addEventListener("jeix:motionchange", sync);
-    addMediaListener(reduceMotion, sync);
-    addMediaListener(compact, function () {
-      resize();
-      sync();
-    });
-
-    resize();
-    sync();
   }
 
   function setupReadingField(canvas, isUserPaused) {

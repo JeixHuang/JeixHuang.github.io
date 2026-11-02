@@ -7,7 +7,7 @@
 <div class="publication-list">
   {% assign papers = site.data.selected_publications | sort: 'sort_date' | reverse %}
   {% for paper in papers %}
-  <article class="publication-card" id="{{ paper.slug }}">
+  <article class="publication-card" style="--entry-plate: plate-{{ paper.slug }}; --entry-title: title-{{ paper.slug }}" id="{{ paper.slug }}">
     {% if paper.video_url %}
     {% include research-video.html item=paper %}
     {% else %}

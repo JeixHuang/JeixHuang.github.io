@@ -8,7 +8,7 @@
   {{- end -}}
 {{- end -}}
 <li class="post-item">
-  <article class="post-card">
+  <article style="--entry-title: post-{{ md5 .RelPermalink }}" class="post-card">
     <a class="post-cover" href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true">
       {{ if $cover }}
         <img src="{{ $cover }}" alt="" loading="lazy" decoding="async" />

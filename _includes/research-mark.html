@@ -1,0 +1,19 @@
+{% case include.area %}
+{% when 'Agents' %}
+<svg class="research-mark" viewBox="0 0 88 40" fill="none" aria-hidden="true" focusable="false">
+  <g class="mark-guide">
+    <path d="M5 20C24 20 19 6 42 6S64 20 83 20M5 20C24 20 19 34 42 34S64 20 83 20"/>
+    <path d="M5 20H83"/>
+  </g>
+  <path class="mark-ink" pathLength="1" d="M5 20C24 20 19 6 42 6S64 20 83 20"/>
+  <g class="mark-node"><circle cx="5" cy="20" r="2.3"/><circle cx="42" cy="6" r="2.3"/><circle cx="83" cy="20" r="2.3"/></g>
+</svg>
+{% when 'Physical AI & World Models' %}
+<svg class="research-mark" viewBox="0 0 88 40" fill="none" aria-hidden="true" focusable="false">
+  <g class="mark-guide">
+    <path d="m10 23 23-15 31 7-23 15zM17 26l23-15 31 7-23 15zM24 29l23-15 31 7-23 15z"/>
+    <path d="m10 23 14 6m9-21 14 6m17 1 14 6"/>
+  </g>
+  <path class="mark-ink" pathLength="1" d="m24 29 23-15 31 7-23 15z"/>
+</svg>
+{% endcase %}

@@ -60,9 +60,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" />
     <link rel="stylesheet" href="{{ "assets/style.css" | relURL }}?v=9d62f5a1" />
     <link rel="stylesheet" href="/assets/css/homepage-v6.css?v=ee1b90fa" />
-    <link rel="stylesheet" href="/assets/css/site-shell.css?v=20261016d" />
-    <link rel="stylesheet" href="{{ "assets/blog-shell.css" | relURL }}?v=20261016b" />
-    <script defer src="/assets/js/ambient-field-v1.js?v=20261016d"></script>
+    <link rel="stylesheet" href="/assets/css/site-shell.css?v=20261102b" />
+    <link rel="stylesheet" href="{{ "assets/blog-shell.css" | relURL }}?v=20261102b" />
+    <script defer src="/assets/js/site-shell.js?v=20261102b"></script>
+    <script defer src="/assets/js/ambient-field-v1.js?v=20261102"></script>
     <script defer src="{{ "assets/blog-shell.js" | relURL }}?v=20261016"></script>
 
     <!-- KaTeX (math) -->
@@ -71,12 +72,12 @@
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
   </head>
   <body class="blog-site{{ if $readingField }} blog-reading{{ end }}">
-    <canvas class="flow-field" id="flow-field" aria-hidden="true"></canvas>
     <a class="skip-link" href="#content">Skip to content</a>
     <nav class="site-nav" aria-label="Primary navigation">
       <div class="nav-inner">
         <a class="brand" href="/" aria-label="{{ hugo.Data.profile.title }} home">
           <span class="brand-mark" aria-hidden="true">VH</span>
+          <canvas class="flow-field" id="flow-field" aria-hidden="true"></canvas>
         </a>
         <div class="nav-right">
           <div class="nav-links">
@@ -150,7 +151,7 @@
               try {
                 localStorage.setItem(key, choice);
               } catch (error) {}
-              applyTheme(choice);
+              turnTheme(button, resolveTheme(choice), function () { applyTheme(choice); });
             });
           });
         });

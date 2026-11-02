@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return choice === "light" ? "light" : "dark";
   }
 
-  function applyTheme(choice, shouldPersist = false) {
+  function applyTheme(choice) {
     const safeChoice = ["light", "dark", "system"].includes(choice) ? choice : "dark";
     const theme = resolvedTheme(safeChoice);
     root.dataset.themeChoice = safeChoice;
@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
     themeButtons.forEach((button) => {
       button.setAttribute("aria-pressed", String(button.dataset.themeOption === safeChoice));
     });
-    if (shouldPersist) persist(themeKey, safeChoice);
     root.dispatchEvent(new CustomEvent("jeix:themechange", { detail: { theme } }));
   }
 
@@ -62,7 +61,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   themeButtons.forEach((button) => {
-    button.addEventListener("click", () => applyTheme(button.dataset.themeOption, true));
+    button.addEventListener("click", () => {
+      const choice = button.dataset.themeOption;
+      persist(themeKey, choice);
+      turnTheme(button, resolvedTheme(choice), () => applyTheme(choice));
+    });
   });
 
   localeButtons.forEach((button) => {

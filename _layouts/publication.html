@@ -2,7 +2,7 @@
 layout: homepage
 ---
 {% assign paper = site.data.selected_publications | where: 'slug', page.paper_slug | first %}
-<article class="publication-detail">
+<article class="publication-detail" style="--entry-plate: plate-{{ paper.slug }}; --entry-title: title-{{ paper.slug }}">
   <a class="back-link" href="/publications/">← Publications</a>
   <header class="detail-heading">
     <div class="publication-meta"><span class="venue-label">{{ paper.venue }}</span>{% assign venue_year = paper.year | append: '' %}{% unless paper.venue contains venue_year %}<span>{{ paper.year }}</span>{% endunless %}<span class="status-label">{{ paper.status }}</span></div>
