@@ -46,9 +46,9 @@
   overflow-wrap: break-word;
   text-wrap: balance;
   color: var(--text);
-  font-family: var(--display);
+  font-family: var(--serif);
   font-weight: 400;
-  letter-spacing: -.035em;
+  letter-spacing: -.02em;
 }
 
 .blog-index-head {
@@ -61,11 +61,12 @@
   box-shadow: none;
 }
 .blog-index-head::after { content: none; }
-.blog-site .page-title, .blog-site .post-h1 { font-variation-settings: "opsz" 96; }
-.blog-site .page-title {
+.blog-site .content-column .page-title {
   margin: 0;
-  font-size: clamp(46px, 5.3vw, 80px);
-  line-height: 1.02;
+  font-family: var(--display);
+  font-size: var(--type-page);
+  line-height: 1.1;
+  letter-spacing: -.035em;
 }
 .blog-site .content-column > .page-title {
   padding-bottom: 24px;
@@ -114,7 +115,7 @@
   background: var(--surface);
   border-inline-start: 2px solid var(--accent);
 }
-.post-cover-fallback strong { font: 400 clamp(24px, 2.5vw, 38px)/1.1 var(--serif); }
+.post-cover-fallback strong { font: 400 var(--type-entry)/1.22 var(--serif); }
 .post-cover-fallback span { color: var(--muted); font: 13px/1.5 var(--sans); }
 .blog-site .post-meta {
   align-items: baseline;
@@ -123,7 +124,7 @@
   font: 400 13px/1.6 var(--sans);
 }
 .blog-site time { font-variant-numeric: tabular-nums; }
-.blog-site .post-title { margin: 12px 0 16px; font-size: clamp(29px, 3.5vw, 52px); line-height: 1.06; }
+.blog-site .post-title { margin: 10px 0 12px; font-size: var(--type-section); line-height: 1.2; }
 .blog-site .post-title a, .post-author { color: inherit; text-decoration: none; }
 .blog-site .post-title a:hover, .post-author:hover { color: var(--accent); }
 .blog-site .post-excerpt { margin: 0; color: var(--text-soft); font: 16px/1.65 var(--sans); }
@@ -150,7 +151,7 @@
   box-shadow: none;
   transform: none;
 }
-.blog-site .archive-year-title { margin: 0; font-size: 30px; }
+.blog-site .archive-year-title { margin: 0; font-size: var(--type-section); }
 .archive-item { align-items: baseline; gap: 16px; }
 .archive-item time, .tag-count { color: var(--muted); font: 13px/1.6 var(--sans); }
 .archive-item a, .tag-item a { color: var(--text); font: 22px/1.35 var(--serif); text-underline-offset: .18em; }
@@ -168,8 +169,8 @@
 .blog-site .post-h1 {
   max-width: 24ch;
   margin: 20px 0;
-  font-size: clamp(42px, 5vw, 72px);
-  line-height: 1.02;
+  font-size: var(--type-article);
+  line-height: 1.12;
 }
 .blog-site .post-meta .tag {
   padding: 0;
@@ -182,7 +183,7 @@
   max-width: 58ch;
   margin: 0 0 32px;
   color: var(--text-soft);
-  font: 400 clamp(19px, 1.8vw, 24px)/1.46 var(--serif);
+  font: 400 var(--type-lead)/1.5 var(--serif);
 }
 .blog-site .post-body, .blog-site .post-body.has-toc {
   display: grid;
@@ -211,10 +212,10 @@
   text-wrap: balance;
   margin: 1.5em 0 .5em;
   color: var(--text);
-  font: 400 clamp(27px, 2.6vw, 38px)/1.18 var(--serif);
+  font: 400 var(--type-section)/1.2 var(--serif);
   letter-spacing: -.02em;
 }
-.blog-site .post-content h3 { font-size: 24px; }
+.blog-site .post-content h3 { font-size: var(--type-entry); }
 .blog-site .post-content h2:first-child { margin-top: 0; }
 .blog-site .post-content a { color: var(--accent); text-underline-offset: .18em; }
 .blog-site .post-content blockquote, .blog-site .sidenote {
@@ -265,7 +266,7 @@
   scroll-margin-top: 112px;
 }
 .post-citation .citation-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
-.blog-site .post-content .post-citation h2 { margin: 0; font-size: 28px; }
+.blog-site .post-content .post-citation h2 { margin: 0; font-size: var(--type-section); }
 .blog-site .post-content .post-citation p { color: var(--muted); font: 14px/1.6 var(--sans); }
 .post-citation pre { margin: 0; font: 13px/1.6 var(--mono); }
 .blog-site .post-citation pre code { white-space: pre-wrap; overflow-wrap: anywhere; }
