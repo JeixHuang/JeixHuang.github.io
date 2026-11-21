@@ -69,6 +69,18 @@ ICONS: Dict[str, str] = {
         '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>'
         "</svg>"
     ),
+    "motion_on": (
+        '<svg class="icon-motion-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+        '<path d="M10.5 3.5L12.1 8.4L17 10L12.1 11.6L10.5 16.5L8.9 11.6L4 10L8.9 8.4Z"/>'
+        '<path d="M18.2 14.2L19 16.6L21.4 17.4L19 18.2L18.2 20.6L17.4 18.2L15 17.4L17.4 16.6Z"/>'
+        "</svg>"
+    ),
+    "motion_off": (
+        '<svg class="icon-motion-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+        '<path d="M12 4.5L13.5 9.1L18.1 10.6L13.5 12.1L12 16.7L10.5 12.1L5.9 10.6L10.5 9.1Z" opacity="0.55"/>'
+        '<path d="M4.5 19.5L19.5 4.5"/>'
+        "</svg>"
+    ),
     "agents": (
         '<svg class="research-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
         '<circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6.5" r="2.5"/><circle cx="18" cy="17.5" r="2.5"/>'
@@ -514,10 +526,24 @@ def extract_and_id_headings(body_html: str) -> Tuple[str, List[Dict[str, Any]]]:
 
 
 # ---------------------------------------------------------------------------
-# Deterministic Generative SVG Card Artwork Engine (6 Styles × 6 Mineral Palettes)
+# Deterministic 3D / Luminous SVG Card Artwork Engine (6 Styles × 6 Palettes)
 # ---------------------------------------------------------------------------
-ART_STYLES: Tuple[str, ...] = ("strata", "contour", "blocks", "meridian", "ribbon", "terrace")
-ART_PALETTES: Tuple[str, ...] = ("cobalt", "pine", "terracotta", "plum", "slate", "indigo")
+ART_STYLES: Tuple[str, ...] = ("aurora", "manifold", "ridge", "prism", "orbital", "caustic")
+ART_PALETTES: Tuple[str, ...] = ("aurora", "cobalt", "terracotta", "emerald", "violet", "slate")
+
+ART_STYLE_ALIASES: Dict[str, str] = {
+    "strata": "ridge",
+    "contour": "aurora",
+    "blocks": "prism",
+    "meridian": "manifold",
+    "ribbon": "caustic",
+    "terrace": "orbital",
+}
+ART_PALETTE_ALIASES: Dict[str, str] = {
+    "pine": "emerald",
+    "plum": "violet",
+    "indigo": "aurora",
+}
 
 
 def _art_seed_bytes(seed: str) -> bytes:
@@ -528,222 +554,635 @@ def _art_unit(raw: bytes, idx: int) -> float:
     return raw[idx % len(raw)] / 255.0
 
 
-def _art_strata(raw: bytes) -> str:
-    """Layered topographic / flow-field ridgelines with dashed strata and mineral band."""
-    p0 = _art_unit(raw, 0) * math.tau
-    p1 = _art_unit(raw, 1) * math.tau
-    freq1 = 0.017 + _art_unit(raw, 2) * 0.008
-    freq2 = 0.036 + _art_unit(raw, 3) * 0.012
+def _lerp_rgb(c0: Tuple[int, int, int], c1: Tuple[int, int, int], t: float) -> Tuple[int, int, int]:
+    t = max(0.0, min(1.0, t))
+    return (
+        int(round(c0[0] + (c1[0] - c0[0]) * t)),
+        int(round(c0[1] + (c1[1] - c0[1]) * t)),
+        int(round(c0[2] + (c1[2] - c0[2]) * t)),
+    )
+
+
+def _elevation_hex(val: float, shade: float) -> str:
+    """Smooth scientific elevation colormap (deep cobalt -> cerulean -> warm sand -> terracotta peak)."""
+    stops = [
+        (0.00, (24, 52, 128)),
+        (0.32, (46, 108, 188)),
+        (0.58, (112, 166, 206)),
+        (0.78, (226, 174, 122)),
+        (1.00, (216, 92, 42)),
+    ]
+    v = max(0.0, min(1.0, val))
+    rgb = stops[-1][1]
+    for idx in range(len(stops) - 1):
+        t0, col0 = stops[idx]
+        t1, col1 = stops[idx + 1]
+        if v <= t1:
+            local = (v - t0) / max(1e-6, t1 - t0)
+            rgb = _lerp_rgb(col0, col1, local)
+            break
+    # Directional lighting modulation
+    lit = max(0.76, min(1.16, shade))
+    r = max(0, min(255, int(round(rgb[0] * lit))))
+    g = max(0, min(255, int(round(rgb[1] * lit))))
+    b = max(0, min(255, int(round(rgb[2] * lit))))
+    return f"#{r:02x}{g:02x}{b:02x}"
+
+
+def _art_aurora(raw: bytes, gid: str) -> str:
+    """Luminous optical aurora ribbons, radiant caustics, and subtle photographic grain."""
+    ph = _art_unit(raw, 0) * math.tau
+    dx = (_art_unit(raw, 1) - 0.5) * 60.0
+    dy = (_art_unit(raw, 2) - 0.5) * 40.0
+
+    defs = (
+        f"<defs>"
+        f'<linearGradient id="{gid}-bg" x1="0%" y1="0%" x2="100%" y2="100%">'
+        f'<stop offset="0%" stop-color="var(--a-bg0)"/>'
+        f'<stop offset="55%" stop-color="var(--a-bg1)"/>'
+        f'<stop offset="100%" stop-color="var(--a-deep)"/>'
+        f"</linearGradient>"
+        f'<radialGradient id="{gid}-g1" cx="26%" cy="32%" r="58%">'
+        f'<stop offset="0%" stop-color="var(--a-c1)" stop-opacity="0.88"/>'
+        f'<stop offset="55%" stop-color="var(--a-c2)" stop-opacity="0.34"/>'
+        f'<stop offset="100%" stop-color="var(--a-deep)" stop-opacity="0"/>'
+        f"</radialGradient>"
+        f'<radialGradient id="{gid}-g2" cx="76%" cy="28%" r="54%">'
+        f'<stop offset="0%" stop-color="var(--a-c2)" stop-opacity="0.78"/>'
+        f'<stop offset="52%" stop-color="var(--a-c1)" stop-opacity="0.28"/>'
+        f'<stop offset="100%" stop-color="var(--a-deep)" stop-opacity="0"/>'
+        f"</radialGradient>"
+        f'<radialGradient id="{gid}-g3" cx="62%" cy="76%" r="52%">'
+        f'<stop offset="0%" stop-color="var(--a-c3)" stop-opacity="0.62"/>'
+        f'<stop offset="55%" stop-color="var(--a-c2)" stop-opacity="0.22"/>'
+        f'<stop offset="100%" stop-color="var(--a-deep)" stop-opacity="0"/>'
+        f"</radialGradient>"
+        f'<linearGradient id="{gid}-r1" x1="0%" y1="80%" x2="100%" y2="15%">'
+        f'<stop offset="0%" stop-color="var(--a-c1)" stop-opacity="0.1"/>'
+        f'<stop offset="32%" stop-color="var(--a-c1)" stop-opacity="0.78"/>'
+        f'<stop offset="68%" stop-color="var(--a-c2)" stop-opacity="0.85"/>'
+        f'<stop offset="100%" stop-color="var(--a-c3)" stop-opacity="0.62"/>'
+        f"</linearGradient>"
+        f'<linearGradient id="{gid}-r2" x1="10%" y1="90%" x2="95%" y2="10%">'
+        f'<stop offset="0%" stop-color="var(--a-c2)" stop-opacity="0.12"/>'
+        f'<stop offset="45%" stop-color="var(--a-hi)" stop-opacity="0.68"/>'
+        f'<stop offset="78%" stop-color="var(--a-c3)" stop-opacity="0.76"/>'
+        f'<stop offset="100%" stop-color="var(--a-c1)" stop-opacity="0.18"/>'
+        f"</linearGradient>"
+        f'<filter id="{gid}-blur" x="-20%" y="-20%" width="140%" height="140%">'
+        f'<feGaussianBlur stdDeviation="24"/>'
+        f"</filter>"
+        f'<filter id="{gid}-soft" x="-15%" y="-15%" width="130%" height="130%">'
+        f'<feGaussianBlur stdDeviation="8"/>'
+        f"</filter>"
+        f'<filter id="{gid}-grain">'
+        f'<feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>'
+        f'<feColorMatrix type="saturate" values="0"/>'
+        f"</filter>"
+        f"</defs>"
+    )
+
     parts: List[str] = [
-        '<line x1="22" y1="18" x2="22" y2="182" stroke="var(--a-grid)" stroke-width="0.75"/>',
-        '<line x1="298" y1="18" x2="298" y2="182" stroke="var(--a-grid)" stroke-width="0.75"/>',
-        '<path d="M18 18h8M22 14v8M294 182h8M298 178v8" stroke="var(--a-ink)" stroke-opacity="0.32" stroke-width="0.8"/>',
+        defs,
+        f'<rect width="640" height="400" fill="url(#{gid}-bg)"/>',
+        # Soft luminous atmospheric blooms
+        f'<ellipse cx="{190 + dx * 0.5:.1f}" cy="{140 + dy * 0.4:.1f}" rx="280" ry="190" fill="url(#{gid}-g1)" filter="url(#{gid}-blur)"/>',
+        f'<ellipse cx="{470 - dx * 0.4:.1f}" cy="{130 - dy * 0.3:.1f}" rx="250" ry="185" fill="url(#{gid}-g2)" filter="url(#{gid}-blur)"/>',
+        f'<ellipse cx="{390 + dx * 0.3:.1f}" cy="{300 + dy * 0.3:.1f}" rx="240" ry="150" fill="url(#{gid}-g3)" filter="url(#{gid}-blur)"/>',
+        # Diagonal refracted light beams
+        f'<polygon points="-40,360 220,0 315,0 60,400" fill="var(--a-hi)" opacity="0.08" filter="url(#{gid}-soft)"/>',
+        f'<polygon points="210,400 470,0 560,0 320,400" fill="var(--a-c3)" opacity="0.09" filter="url(#{gid}-soft)"/>',
     ]
 
-    hero_pts: List[Tuple[float, float]] = []
-    for k in range(11):
-        base_y = 38.0 + k * 13.0
-        amp1 = 8.5 + (k % 3) * 3.8
-        amp2 = 3.2 + ((k + 1) % 2) * 2.4
+    # 5 layered optical aurora curtains
+    curtains = [
+        (268.0, 58.0, 86.0, 0.0, f"url(#{gid}-r1)", 0.52, "var(--a-hi)", 1.3, 0.36),
+        (225.0, 64.0, 74.0, 0.9, f"url(#{gid}-r2)", 0.48, "var(--a-hi)", 1.9, 0.58),
+        (192.0, 52.0, 60.0, 1.8, f"url(#{gid}-r1)", 0.62, "var(--a-hi)", 2.2, 0.72),
+        (158.0, 44.0, 42.0, 2.7, f"url(#{gid}-r2)", 0.42, "var(--a-c3)", 1.5, 0.62),
+        (296.0, 38.0, 48.0, 3.6, f"url(#{gid}-r1)", 0.38, "var(--a-c2)", 1.1, 0.44),
+    ]
+    for cy, amp, thick, off, fill_ref, fill_op, rim_col, rim_w, rim_op in curtains:
+        top_pts: List[Tuple[float, float]] = []
+        bot_pts: List[Tuple[float, float]] = []
+        for s in range(0, 37):
+            u = s / 36.0
+            x = -24.0 + u * 688.0
+            diag = (0.5 - u) * 120.0
+            wave = math.sin(u * 4.4 + ph + off) * amp + math.cos(u * 2.6 - off * 0.8) * (amp * 0.42)
+            y = cy + diag + wave
+            w = thick * (0.65 + 0.55 * math.sin(u * math.pi + off * 0.35))
+            top_pts.append((x, y - w * 0.48))
+            bot_pts.append((x, y + w * 0.52))
+        top_d = "M" + " ".join(f"{x:.1f},{y:.1f}" for x, y in top_pts)
+        poly_d = top_d + " L" + " ".join(f"{x:.1f},{y:.1f}" for x, y in reversed(bot_pts)) + " Z"
+        parts.append(f'<path d="{poly_d}" fill="{fill_ref}" fill-opacity="{fill_op:.2f}"/>')
+        parts.append(f'<path d="{top_d}" fill="none" stroke="{rim_col}" stroke-width="{rim_w:.1f}" stroke-opacity="{rim_op:.2f}" stroke-linecap="round"/>')
+
+    # Delicate optical dust motes
+    for i in range(14):
+        mx = 40.0 + _art_unit(raw, i + 3) * 560.0
+        my = 36.0 + _art_unit(raw, i + 17) * 328.0
+        mr = 1.2 + _art_unit(raw, i + 9) * 2.4
+        op = 0.25 + _art_unit(raw, i + 13) * 0.55
+        parts.append(f'<circle cx="{mx:.1f}" cy="{my:.1f}" r="{mr:.1f}" fill="var(--a-hi)" fill-opacity="{op:.2f}"/>')
+
+    # Subtle tactile film grain overlay
+    parts.append(f'<rect width="640" height="400" filter="url(#{gid}-grain)" opacity="0.045"/>')
+    return "".join(parts)
+
+
+def _art_manifold(raw: bytes, gid: str) -> str:
+    """True 3D isometric energy surface with painter's algorithm shading & 45-deg cutaway hatching."""
+    p0 = (_art_unit(raw, 0) - 0.5) * 0.55
+    p1 = (_art_unit(raw, 1) - 0.5) * 0.55
+    grid_n = 17
+    z_base = -0.82
+
+    def height_fn(u: float, v: float) -> float:
+        peak = 0.92 * math.exp(-2.3 * ((u - 0.26 - p0 * 0.3) ** 2 + (v + 0.24 - p1 * 0.3) ** 2))
+        trough = -0.62 * math.exp(-2.5 * ((u + 0.34 + p0 * 0.25) ** 2 + (v - 0.26 + p1 * 0.25) ** 2))
+        saddle = 0.24 * math.sin(u * 2.5 + p0) * math.cos(v * 2.3 - p1)
+        return peak + trough + saddle
+
+    def proj(u: float, v: float, z: float) -> Tuple[float, float]:
+        px = 326.0 + (u - v) * 192.0
+        py = 212.0 + (u + v) * 86.0 - z * 82.0
+        return px, py
+
+    # Precompute 3D grid heights & projected coordinates
+    coords: List[List[Tuple[float, float, float]]] = []
+    zs: List[float] = []
+    max_z = -999.0
+    max_pt = (0.0, 0.0)
+    for r in range(grid_n):
+        row: List[Tuple[float, float, float]] = []
+        v = -1.0 + 2.0 * (r / (grid_n - 1))
+        for c in range(grid_n):
+            u = -1.0 + 2.0 * (c / (grid_n - 1))
+            z = height_fn(u, v)
+            px, py = proj(u, v, z)
+            row.append((px, py, z))
+            zs.append(z)
+            if z > max_z:
+                max_z = z
+                max_pt = (px, py)
+        coords.append(row)
+
+    z_min, z_max = min(zs), max(zs)
+    z_span = max(1e-5, z_max - z_min)
+
+    defs = (
+        f"<defs>"
+        f'<linearGradient id="{gid}-bg" x1="0%" y1="0%" x2="100%" y2="100%">'
+        f'<stop offset="0%" stop-color="var(--a-bg0)"/>'
+        f'<stop offset="100%" stop-color="var(--a-bg1)"/>'
+        f"</linearGradient>"
+        f'<pattern id="{gid}-hatch-l" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">'
+        f'<rect width="8" height="8" fill="var(--a-bg1)"/>'
+        f'<line x1="0" y1="0" x2="0" y2="8" stroke="var(--a-ink)" stroke-opacity="0.28" stroke-width="1.6"/>'
+        f"</pattern>"
+        f'<pattern id="{gid}-hatch-r" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">'
+        f'<rect width="8" height="8" fill="var(--a-bg0)"/>'
+        f'<line x1="0" y1="0" x2="0" y2="8" stroke="var(--a-ink)" stroke-opacity="0.2" stroke-width="1.4"/>'
+        f"</pattern>"
+        f'<radialGradient id="{gid}-peak" cx="50%" cy="50%" r="50%">'
+        f'<stop offset="0%" stop-color="#FFE0B5" stop-opacity="0.95"/>'
+        f'<stop offset="45%" stop-color="var(--a-c3)" stop-opacity="0.55"/>'
+        f'<stop offset="100%" stop-color="var(--a-c3)" stop-opacity="0"/>'
+        f"</radialGradient>"
+        f'<filter id="{gid}-sh" x="-20%" y="-20%" width="140%" height="140%">'
+        f'<feGaussianBlur stdDeviation="12"/>'
+        f"</filter>"
+        f"</defs>"
+    )
+
+    parts: List[str] = [
+        defs,
+        f'<rect width="640" height="400" fill="url(#{gid}-bg)"/>',
+    ]
+
+    # Soft cast floor shadow beneath the 3D slab
+    b00 = proj(-1.0, -1.0, z_base)
+    b10 = proj(1.0, -1.0, z_base)
+    b11 = proj(1.0, 1.0, z_base)
+    b01 = proj(-1.0, 1.0, z_base)
+    shadow_pts = " ".join(f"{x:.1f},{y + 14:.1f}" for x, y in (b00, b10, b11, b01))
+    parts.append(f'<polygon points="{shadow_pts}" fill="var(--a-deep)" fill-opacity="0.18" filter="url(#{gid}-sh)"/>')
+
+    # Painter's algorithm surface quads sorted back-to-front by (r + c)
+    quads: List[Tuple[int, str]] = []
+    for r in range(grid_n - 1):
+        for c in range(grid_n - 1):
+            p00 = coords[r][c]
+            p10 = coords[r][c + 1]
+            p11 = coords[r + 1][c + 1]
+            p01 = coords[r + 1][c]
+            avg_z = (p00[2] + p10[2] + p11[2] + p01[2]) * 0.25
+            norm_z = (avg_z - z_min) / z_span
+            # Finite-difference slope for directional shading
+            dz_u = (p10[2] - p00[2]) + (p11[2] - p01[2])
+            dz_v = (p01[2] - p00[2]) + (p11[2] - p10[2])
+            shade = 0.96 - dz_u * 0.65 + dz_v * 0.48
+            fill_hex = _elevation_hex(norm_z, shade)
+            pts_str = f"{p00[0]:.1f},{p00[1]:.1f} {p10[0]:.1f},{p10[1]:.1f} {p11[0]:.1f},{p11[1]:.1f} {p01[0]:.1f},{p01[1]:.1f}"
+            quads.append((
+                r + c,
+                f'<polygon points="{pts_str}" fill="{fill_hex}" stroke="var(--a-hi)" stroke-opacity="0.24" stroke-width="0.65" stroke-linejoin="round"/>',
+            ))
+
+    quads.sort(key=lambda item: item[0])
+    parts.extend(svg_el for _, svg_el in quads)
+
+    # Front-left extruded 3D cutaway wall (v = +1, r = grid_n - 1) with 45-deg hatching
+    left_top = [(coords[grid_n - 1][c][0], coords[grid_n - 1][c][1]) for c in range(grid_n)]
+    left_bot = [proj(1.0, 1.0, z_base), proj(-1.0, 1.0, z_base)]
+    left_wall_pts = " ".join(f"{x:.1f},{y:.1f}" for x, y in left_top + left_bot)
+    parts.append(f'<polygon points="{left_wall_pts}" fill="url(#{gid}-hatch-l)" stroke="var(--a-ink)" stroke-opacity="0.58" stroke-width="1.35" stroke-linejoin="round"/>')
+
+    # Front-right extruded 3D cutaway wall (u = +1, c = grid_n - 1) with counter-45-deg hatching
+    right_top = [(coords[r][grid_n - 1][0], coords[r][grid_n - 1][1]) for r in range(grid_n)]
+    right_bot = [proj(1.0, 1.0, z_base), proj(1.0, -1.0, z_base)]
+    right_wall_pts = " ".join(f"{x:.1f},{y:.1f}" for x, y in right_top + right_bot)
+    parts.append(f'<polygon points="{right_wall_pts}" fill="url(#{gid}-hatch-r)" stroke="var(--a-ink)" stroke-opacity="0.52" stroke-width="1.35" stroke-linejoin="round"/>')
+
+    # Glowing summit anchor node
+    parts.append(f'<circle cx="{max_pt[0]:.1f}" cy="{max_pt[1]:.1f}" r="20" fill="url(#{gid}-peak)"/>')
+    parts.append(f'<circle cx="{max_pt[0]:.1f}" cy="{max_pt[1]:.1f}" r="4.6" fill="#FFFFFF" stroke="var(--a-c3)" stroke-width="2.1"/>')
+
+    # Miniature 3-axis isometric triad in bottom-left
+    ox, oy = 68.0, 342.0
+    parts.append(
+        f'<g stroke="var(--a-ink)" stroke-opacity="0.52" stroke-width="1.25" stroke-linecap="round">'
+        f'<line x1="{ox}" y1="{oy}" x2="{ox}" y2="{oy - 38}"/>'
+        f'<line x1="{ox}" y1="{oy}" x2="{ox + 34}" y2="{oy + 15}"/>'
+        f'<line x1="{ox}" y1="{oy}" x2="{ox - 34}" y2="{oy + 15}"/>'
+        f"</g>"
+        f'<circle cx="{ox}" cy="{oy}" r="2.2" fill="var(--a-c1)"/>'
+    )
+    return "".join(parts)
+
+
+def _art_ridge(raw: bytes, gid: str) -> str:
+    """High-density 3D topographic ribbons with heavy foreground occlusion and catchlights."""
+    p0 = _art_unit(raw, 0) * math.tau
+    p1 = _art_unit(raw, 1) * math.tau
+    f1 = 0.0085 + _art_unit(raw, 2) * 0.0035
+    f2 = 0.021 + _art_unit(raw, 3) * 0.007
+
+    defs = (
+        f"<defs>"
+        f'<linearGradient id="{gid}-bg" x1="0%" y1="0%" x2="0%" y2="100%">'
+        f'<stop offset="0%" stop-color="var(--a-bg0)"/>'
+        f'<stop offset="100%" stop-color="var(--a-bg1)"/>'
+        f"</linearGradient>"
+        f'<linearGradient id="{gid}-hero" x1="0%" y1="0%" x2="100%" y2="0%">'
+        f'<stop offset="0%" stop-color="var(--a-deep)"/>'
+        f'<stop offset="52%" stop-color="var(--a-c1)"/>'
+        f'<stop offset="100%" stop-color="var(--a-deep)"/>'
+        f"</linearGradient>"
+        f'<linearGradient id="{gid}-mid" x1="0%" y1="0%" x2="100%" y2="0%">'
+        f'<stop offset="0%" stop-color="var(--a-c2)"/>'
+        f'<stop offset="55%" stop-color="var(--a-c1)"/>'
+        f'<stop offset="100%" stop-color="var(--a-c3)"/>'
+        f"</linearGradient>"
+        f"</defs>"
+    )
+
+    parts: List[str] = [
+        defs,
+        f'<rect width="640" height="400" fill="url(#{gid}-bg)"/>',
+        # Architectural calibration hairlines
+        '<line x1="36" y1="24" x2="36" y2="376" stroke="var(--a-grid)" stroke-width="1"/>',
+        '<line x1="604" y1="24" x2="604" y2="376" stroke="var(--a-grid)" stroke-width="1"/>',
+    ]
+
+    # 16 stratified depth bands from far (thin gray) -> mid (colored) -> near (10-18px occluding bold bands)
+    total = 16
+    for k in range(total):
+        depth = k / (total - 1)  # 0 = far, 1 = foreground
+        base_y = 54.0 + depth * 296.0
+        amp1 = 12.0 + depth * 28.0
+        amp2 = 5.0 + depth * 12.0
         pts: List[Tuple[float, float]] = []
-        for s in range(0, 33):
-            x = 12.0 + s * (296.0 / 32.0)
+        for s in range(0, 41):
+            x = -16.0 + s * (672.0 / 40.0)
             y = (
                 base_y
-                + math.sin(x * freq1 + p0 + k * 0.42) * amp1
-                + math.cos(x * freq2 + p1 - k * 0.28) * amp2
+                + math.sin(x * f1 + p0 + k * 0.44) * amp1
+                + math.cos(x * f2 + p1 - k * 0.33) * amp2
             )
             pts.append((x, y))
 
-        d = "M" + " ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
-        if k == 4:
-            hero_pts = pts
-            fill_d = d + " L308.0,192.0 L12.0,192.0 Z"
-            parts.append(f'<path d="{fill_d}" fill="var(--a-3)" fill-opacity="0.46"/>')
-            parts.append(f'<path d="{d}" fill="none" stroke="var(--a-1)" stroke-width="1.9" stroke-linecap="round"/>')
-        elif k == 7:
-            parts.append(f'<path d="{d}" fill="none" stroke="var(--a-2)" stroke-width="1.45" stroke-linecap="round"/>')
-        elif k in (2, 5, 8):
-            parts.append(f'<path d="{d}" fill="none" stroke="var(--a-ink)" stroke-opacity="0.28" stroke-width="0.9" stroke-dasharray="5 4"/>')
+        line_d = "M" + " ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+        # Opaque occluding skirt behind mid & foreground ridges so near ridges genuinely block distant ones!
+        if k >= 5:
+            skirt_d = line_d + " L656.0,420.0 L-16.0,420.0 Z"
+            parts.append(f'<path d="{skirt_d}" fill="url(#{gid}-bg)"/>')
+
+        if k < 6:
+            # Far distant hills: crisp subtle gray hairlines
+            op = 0.16 + depth * 0.25
+            parts.append(f'<path d="{line_d}" fill="none" stroke="var(--a-ink)" stroke-opacity="{op:.2f}" stroke-width="{1.0 + depth * 1.4:.1f}"/>')
+        elif k < 12:
+            # Mid saturated folded bands
+            sw = 4.2 + (k - 6) * 0.85
+            dash = ' stroke-dasharray="110 14 48 12"' if k in (8, 10) else ""
+            parts.append(f'<path d="{line_d}" fill="none" stroke="url(#{gid}-mid)" stroke-opacity="{0.74 + (k - 6) * 0.04:.2f}" stroke-width="{sw:.1f}" stroke-linecap="round"{dash}/>')
         else:
-            parts.append(f'<path d="{d}" fill="none" stroke="var(--a-ink)" stroke-opacity="0.18" stroke-width="0.85"/>')
+            # Foreground sculptural 11-18px dominant bands + luminous upper catchlight
+            sw = 10.5 + (k - 12) * 2.4
+            dash = ' stroke-dasharray="180 18 76 16"' if k in (13, 15) else ""
+            stroke_ref = f"url(#{gid}-hero)" if k % 2 == 0 else "var(--a-deep)"
+            parts.append(f'<path d="{line_d}" fill="none" stroke="{stroke_ref}" stroke-width="{sw:.1f}" stroke-linecap="round"{dash}/>')
+            rim_d = "M" + " ".join(f"{x:.1f},{y - sw * 0.42:.1f}" for x, y in pts)
+            parts.append(f'<path d="{rim_d}" fill="none" stroke="var(--a-hi)" stroke-opacity="0.48" stroke-width="1.3" stroke-linecap="round"{dash}/>')
 
-    if hero_pts:
-        nx, ny = hero_pts[19]
-        parts.append(f'<circle cx="{nx:.1f}" cy="{ny:.1f}" r="5.5" fill="var(--a-bg)" stroke="var(--a-1)" stroke-width="1.4"/>')
-        parts.append(f'<circle cx="{nx:.1f}" cy="{ny:.1f}" r="2.1" fill="var(--a-1)"/>')
     return "".join(parts)
 
 
-def _art_contour(raw: bytes) -> str:
-    """Sweeping laminar trajectories and wave-interference hairlines."""
-    shift = (_art_unit(raw, 4) - 0.5) * 28.0
-    lift = (_art_unit(raw, 5) - 0.5) * 24.0
-    parts: List[str] = [
-        '<line x1="0" y1="100" x2="320" y2="100" stroke="var(--a-grid)" stroke-width="0.75" stroke-dasharray="3 4"/>',
-        f'<ellipse cx="{196 + shift * 0.4:.1f}" cy="{98 + lift * 0.4:.1f}" rx="84" ry="52" fill="var(--a-3)" fill-opacity="0.4"/>',
-    ]
+def _art_prism(raw: bytes, gid: str) -> str:
+    """3D floating refractive glass slabs with floor shadows, crisp bevels, and chromatic dispersion."""
+    dx = (_art_unit(raw, 4) - 0.5) * 32.0
+    dy = (_art_unit(raw, 5) - 0.5) * 22.0
 
-    for k in range(13):
-        t = (k - 6) / 6.0
-        y0 = 148.0 + t * 44.0
-        cy1 = 36.0 + t * 52.0 + lift
-        cy2 = 166.0 + t * 38.0 - lift * 0.6
-        y3 = 52.0 + t * 42.0
-        cx1 = 98.0 + shift + t * 14.0
-        cx2 = 222.0 - shift * 0.5 + t * 10.0
-        d = f"M-12,{y0:.1f} C{cx1:.1f},{cy1:.1f} {cx2:.1f},{cy2:.1f} 332,{y3:.1f}"
-        if k == 6:
-            parts.append(f'<path d="{d}" fill="none" stroke="var(--a-1)" stroke-width="2.1" stroke-linecap="round"/>')
-        elif k in (4, 8):
-            parts.append(f'<path d="{d}" fill="none" stroke="var(--a-2)" stroke-width="1.35" stroke-opacity="0.88"/>')
-        else:
-            op = 0.32 - abs(t) * 0.16
-            parts.append(f'<path d="{d}" fill="none" stroke="var(--a-ink)" stroke-opacity="{op:.2f}" stroke-width="0.8"/>')
+    defs = (
+        f"<defs>"
+        f'<linearGradient id="{gid}-bg" x1="0%" y1="0%" x2="100%" y2="100%">'
+        f'<stop offset="0%" stop-color="var(--a-bg0)"/>'
+        f'<stop offset="100%" stop-color="var(--a-bg1)"/>'
+        f"</linearGradient>"
+        f'<radialGradient id="{gid}-disp" cx="50%" cy="50%" r="50%">'
+        f'<stop offset="0%" stop-color="var(--a-c2)" stop-opacity="0.58"/>'
+        f'<stop offset="52%" stop-color="var(--a-c1)" stop-opacity="0.24"/>'
+        f'<stop offset="100%" stop-color="var(--a-c3)" stop-opacity="0"/>'
+        f"</radialGradient>"
+        f'<linearGradient id="{gid}-glass1" x1="0%" y1="0%" x2="100%" y2="100%">'
+        f'<stop offset="0%" stop-color="var(--a-hi)" stop-opacity="0.88"/>'
+        f'<stop offset="48%" stop-color="var(--a-c1)" stop-opacity="0.32"/>'
+        f'<stop offset="100%" stop-color="var(--a-c2)" stop-opacity="0.58"/>'
+        f"</linearGradient>"
+        f'<linearGradient id="{gid}-glass2" x1="100%" y1="0%" x2="0%" y2="100%">'
+        f'<stop offset="0%" stop-color="var(--a-hi)" stop-opacity="0.82"/>'
+        f'<stop offset="45%" stop-color="var(--a-c3)" stop-opacity="0.36"/>'
+        f'<stop offset="100%" stop-color="var(--a-c1)" stop-opacity="0.46"/>'
+        f"</linearGradient>"
+        f'<linearGradient id="{gid}-beam" x1="0%" y1="100%" x2="100%" y2="0%">'
+        f'<stop offset="0%" stop-color="var(--a-c1)" stop-opacity="0.0"/>'
+        f'<stop offset="38%" stop-color="var(--a-c2)" stop-opacity="0.65"/>'
+        f'<stop offset="68%" stop-color="var(--a-c3)" stop-opacity="0.72"/>'
+        f'<stop offset="100%" stop-color="var(--a-hi)" stop-opacity="0.0"/>'
+        f"</linearGradient>"
+        f'<filter id="{gid}-sh" x="-25%" y="-25%" width="150%" height="150%">'
+        f'<feGaussianBlur stdDeviation="11"/>'
+        f"</filter>"
+        f"</defs>"
+    )
 
-    # Focal nodes along laminar spine
-    for cx, cy, r in ((94.0 + shift * 0.4, 108.0 + lift * 0.3, 3.6), (178.0, 99.0, 4.5), (248.0 - shift * 0.3, 83.0 - lift * 0.25, 3.0)):
-        parts.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r + 3.2:.1f}" fill="none" stroke="var(--a-1)" stroke-opacity="0.32" stroke-width="0.9"/>')
-        parts.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r:.1f}" fill="var(--a-1)"/>')
-    return "".join(parts)
-
-
-def _art_blocks(raw: bytes) -> str:
-    """Minimalist Swiss/Bauhaus architectural planes, calibration rules, and arc anchor."""
-    dx = (_art_unit(raw, 6) - 0.5) * 26.0
-    dy = (_art_unit(raw, 7) - 0.5) * 18.0
-    x1 = 44.0 + dx
-    y1 = 30.0 + dy
-    parts: List[str] = [
-        '<g stroke="var(--a-grid)" stroke-width="0.8">',
-        '<line x1="0" y1="66" x2="320" y2="66"/><line x1="0" y1="134" x2="320" y2="134"/>',
-        '<line x1="106" y1="0" x2="106" y2="200"/><line x1="214" y1="0" x2="214" y2="200"/>',
-        "</g>",
-        f'<rect x="{x1:.1f}" y="{y1:.1f}" width="136" height="92" rx="3" fill="var(--a-3)" fill-opacity="0.88"/>',
-        f'<rect x="{x1 + 88:.1f}" y="{y1 + 48:.1f}" width="124" height="78" rx="3" fill="var(--a-2)" fill-opacity="0.28" stroke="var(--a-2)" stroke-width="1"/>',
-        f'<rect x="{x1 + 18:.1f}" y="{y1 + 78:.1f}" width="54" height="54" rx="2" fill="var(--a-1)" fill-opacity="0.92"/>',
-        f'<path d="M{x1 + 136:.1f},{y1 + 20:.1f} A64,64 0 0,1 {x1 + 200:.1f},{y1 + 84:.1f}" fill="none" stroke="var(--a-1)" stroke-width="1.9"/>',
-        f'<line x1="24" y1="{y1 + 92:.1f}" x2="296" y2="{y1 + 92:.1f}" stroke="var(--a-ink)" stroke-opacity="0.34" stroke-width="0.9"/>',
-        f'<circle cx="{x1 + 200:.1f}" cy="{y1 + 84:.1f}" r="4.2" fill="var(--a-bg)" stroke="var(--a-ink)" stroke-width="1.4"/>',
-    ]
-    return "".join(parts)
-
-
-def _art_meridian(raw: bytes) -> str:
-    """Parametric curved 3D manifold wireframe with saddle intersections."""
-    phase = _art_unit(raw, 8) * math.tau
-    tilt = 0.24 + _art_unit(raw, 9) * 0.14
-    rows, cols = 9, 13
-
-    def proj(u: float, v: float) -> Tuple[float, float]:
-        z = (
-            math.sin(u * 2.5 + phase) * 14.0
-            + math.cos(v * 2.3 - phase * 0.7) * 12.0
-            + math.sin((u + v) * 1.8) * 7.0
+    def iso_slab(cx: float, cy: float, rx: float, ry: float, thick: float, grad: str, edge_col: str) -> str:
+        top = (cx, cy - ry)
+        right = (cx + rx, cy)
+        bot = (cx, cy + ry)
+        left = (cx - rx, cy)
+        # Drop shadow projected below
+        sh_pts = " ".join(f"{x:.1f},{y + thick + 24:.1f}" for x, y in (top, right, bot, left))
+        # Left & right extruded thickness facets
+        left_face = (
+            f"{left[0]:.1f},{left[1]:.1f} {bot[0]:.1f},{bot[1]:.1f} "
+            f"{bot[0]:.1f},{bot[1] + thick:.1f} {left[0]:.1f},{left[1] + thick:.1f}"
         )
-        px = 160.0 + (u - 0.5) * 250.0 + (v - 0.5) * 58.0
-        py = 104.0 + (v - 0.5) * 112.0 - z * (0.85 + tilt * v)
-        return px, py
+        right_face = (
+            f"{bot[0]:.1f},{bot[1]:.1f} {right[0]:.1f},{right[1]:.1f} "
+            f"{right[0]:.1f},{right[1] + thick:.1f} {bot[0]:.1f},{bot[1] + thick:.1f}"
+        )
+        top_face = " ".join(f"{x:.1f},{y:.1f}" for x, y in (top, right, bot, left))
+        return (
+            f'<polygon points="{sh_pts}" fill="var(--a-deep)" fill-opacity="0.16" filter="url(#{gid}-sh)"/>'
+            f'<polygon points="{left_face}" fill="{edge_col}" fill-opacity="0.54" stroke="var(--a-hi)" stroke-opacity="0.35" stroke-width="0.9"/>'
+            f'<polygon points="{right_face}" fill="var(--a-deep)" fill-opacity="0.38" stroke="var(--a-hi)" stroke-opacity="0.3" stroke-width="0.9"/>'
+            f'<polygon points="{top_face}" fill="url(#{grad})" stroke="var(--a-hi)" stroke-opacity="0.86" stroke-width="1.4" stroke-linejoin="round"/>'
+            f'<line x1="{left[0]:.1f}" y1="{left[1]:.1f}" x2="{top[0]:.1f}" y2="{top[1]:.1f}" stroke="#FFFFFF" stroke-opacity="0.72" stroke-width="1.6"/>'
+        )
 
-    grid = [[proj(c / (cols - 1), r / (rows - 1)) for c in range(cols)] for r in range(rows)]
-    parts: List[str] = []
-
-    # Longitudinal curves
-    for c in range(cols):
-        d = "M" + " ".join(f"{grid[r][c][0]:.1f},{grid[r][c][1]:.1f}" for r in range(rows))
-        if c == cols // 2:
-            parts.append(f'<path d="{d}" fill="none" stroke="var(--a-2)" stroke-width="1.35" stroke-opacity="0.9"/>')
-        else:
-            parts.append(f'<path d="{d}" fill="none" stroke="var(--a-ink)" stroke-opacity="0.18" stroke-width="0.75"/>')
-
-    # Latitudinal curves
-    for r in range(rows):
-        d = "M" + " ".join(f"{grid[r][c][0]:.1f},{grid[r][c][1]:.1f}" for c in range(cols))
-        if r == 4:
-            parts.append(f'<path d="{d}" fill="none" stroke="var(--a-1)" stroke-width="1.95" stroke-linecap="round"/>')
-        elif r in (2, 6):
-            parts.append(f'<path d="{d}" fill="none" stroke="var(--a-2)" stroke-width="1.2" stroke-opacity="0.72"/>')
-        else:
-            parts.append(f'<path d="{d}" fill="none" stroke="var(--a-ink)" stroke-opacity="0.22" stroke-width="0.8"/>')
-
-    # Intersection highlight nodes
-    for r, c in ((4, 3), (4, 6), (4, 9), (2, 6), (6, 6)):
-        x, y = grid[r][c]
-        rad = 3.4 if (r, c) == (4, 6) else 2.2
-        fill = "var(--a-1)" if r == 4 else "var(--a-2)"
-        parts.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{rad:.1f}" fill="{fill}"/>')
+    parts: List[str] = [
+        defs,
+        f'<rect width="640" height="400" fill="url(#{gid}-bg)"/>',
+        # Fine isometric reference grid
+        '<g stroke="var(--a-grid)" stroke-width="0.9">',
+        '<line x1="0" y1="260" x2="640" y2="60"/><line x1="0" y1="340" x2="640" y2="140"/>',
+        '<line x1="0" y1="140" x2="640" y2="340"/><line x1="0" y1="60" x2="640" y2="260"/>',
+        "</g>",
+        # Chromatic dispersion glow behind prisms
+        f'<ellipse cx="{330 + dx * 0.5:.1f}" cy="{190 + dy * 0.4:.1f}" rx="210" ry="125" fill="url(#{gid}-disp)" filter="url(#{gid}-sh)"/>',
+        # Refracted dispersion ray
+        f'<polygon points="80,320 530,85 568,125 118,358" fill="url(#{gid}-beam)"/>',
+        # Three stacked 3D glass plates (back -> mid -> front)
+        iso_slab(254.0 + dx * 0.5, 224.0 + dy * 0.4, 146.0, 68.0, 18.0, f"{gid}-glass1", "var(--a-c1)"),
+        iso_slab(348.0 - dx * 0.3, 186.0 - dy * 0.3, 152.0, 72.0, 22.0, f"{gid}-glass2", "var(--a-c2)"),
+        iso_slab(308.0 + dx * 0.2, 132.0 + dy * 0.2, 108.0, 50.0, 15.0, f"{gid}-glass1", "var(--a-c3)"),
+    ]
     return "".join(parts)
 
 
-def _art_ribbon(raw: bytes) -> str:
-    """Interwoven translucent editorial ribbons with crisp mineral crest strokes."""
-    ph = _art_unit(raw, 10) * math.tau
+def _art_orbital(raw: bytes, gid: str) -> str:
+    """3D tilted gravitational orbital rings and depth-scaled luminous particle field."""
+    cx, cy = 320.0, 202.0
+    base_roll = -0.34 + (_art_unit(raw, 6) - 0.5) * 0.28
+
+    defs = (
+        f"<defs>"
+        f'<radialGradient id="{gid}-bg" cx="50%" cy="50%" r="72%">'
+        f'<stop offset="0%" stop-color="var(--a-bg1)"/>'
+        f'<stop offset="100%" stop-color="var(--a-deep)"/>'
+        f"</radialGradient>"
+        f'<radialGradient id="{gid}-core" cx="50%" cy="50%" r="50%">'
+        f'<stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.98"/>'
+        f'<stop offset="28%" stop-color="var(--a-c3)" stop-opacity="0.82"/>'
+        f'<stop offset="62%" stop-color="var(--a-c1)" stop-opacity="0.38"/>'
+        f'<stop offset="100%" stop-color="var(--a-c2)" stop-opacity="0"/>'
+        f"</radialGradient>"
+        f'<radialGradient id="{gid}-halo" cx="50%" cy="50%" r="50%">'
+        f'<stop offset="0%" stop-color="var(--a-hi)" stop-opacity="0.95"/>'
+        f'<stop offset="45%" stop-color="var(--a-c2)" stop-opacity="0.5"/>'
+        f'<stop offset="100%" stop-color="var(--a-c2)" stop-opacity="0"/>'
+        f"</radialGradient>"
+        f'<filter id="{gid}-glow" x="-30%" y="-30%" width="160%" height="160%">'
+        f'<feGaussianBlur stdDeviation="12"/>'
+        f"</filter>"
+        f"</defs>"
+    )
+
+    orbits = [
+        (256.0, 82.0, base_roll - 0.22, "var(--a-c1)", 1.9, ""),
+        (220.0, 70.0, base_roll + 0.14, "var(--a-c2)", 1.5, ""),
+        (184.0, 56.0, base_roll - 0.06, "var(--a-hi)", 1.2, "6 6"),
+        (146.0, 44.0, base_roll + 0.30, "var(--a-c3)", 1.6, ""),
+        (108.0, 34.0, base_roll - 0.36, "var(--a-c2)", 1.25, ""),
+        (286.0, 96.0, base_roll + 0.04, "var(--a-c1)", 1.0, "3 7"),
+    ]
+
+    back_arcs: List[str] = []
+    front_arcs: List[str] = []
+    back_dots: List[Tuple[float, str]] = []
+    front_dots: List[Tuple[float, str]] = []
+
+    def orbit_pt(rx: float, ry: float, roll: float, theta: float) -> Tuple[float, float, float]:
+        lx = rx * math.cos(theta)
+        ly = ry * math.sin(theta)
+        # Depth z > 0 means front half (theta in (0, pi))
+        z = math.sin(theta)
+        cr, sr = math.cos(roll), math.sin(roll)
+        return cx + lx * cr - ly * sr, cy + lx * sr + ly * cr, z
+
+    for oidx, (rx, ry, roll, col, sw, dash) in enumerate(orbits):
+        dash_attr = f' stroke-dasharray="{dash}"' if dash else ""
+        # Back hemisphere: theta in [pi, 2*pi]
+        b_pts = [orbit_pt(rx, ry, roll, math.pi + s * (math.pi / 28.0)) for s in range(29)]
+        b_d = "M" + " ".join(f"{x:.1f},{y:.1f}" for x, y, _ in b_pts)
+        back_arcs.append(
+            f'<path d="{b_d}" fill="none" stroke="{col}" stroke-opacity="0.28" stroke-width="{sw * 0.78:.1f}"{dash_attr}/>'
+        )
+        # Front hemisphere: theta in [0, pi]
+        f_pts = [orbit_pt(rx, ry, roll, s * (math.pi / 28.0)) for s in range(29)]
+        f_d = "M" + " ".join(f"{x:.1f},{y:.1f}" for x, y, _ in f_pts)
+        front_arcs.append(
+            f'<path d="{f_d}" fill="none" stroke="{col}" stroke-opacity="0.82" stroke-width="{sw:.1f}" stroke-linecap="round"{dash_attr}/>'
+        )
+
+        # Depth-scaled particles along each orbit
+        for k in range(5):
+            theta = (_art_unit(raw, oidx * 5 + k) * math.tau + k * 1.25) % math.tau
+            px, py, z = orbit_pt(rx, ry, roll, theta)
+            depth01 = (z + 1.0) * 0.5  # 0 far, 1 near
+            rad = 1.4 + depth01 * 4.2
+            op = 0.25 + depth01 * 0.72
+            p_col = "var(--a-c3)" if (oidx + k) % 3 == 0 else ("var(--a-hi)" if depth01 > 0.65 else col)
+            if z < 0:
+                back_dots.append((z, f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{rad:.1f}" fill="{p_col}" fill-opacity="{op:.2f}"/>'))
+            else:
+                halo_el = f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{rad * 2.8:.1f}" fill="url(#{gid}-halo)" opacity="{0.45 * depth01:.2f}"/>'
+                core_el = f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{rad:.1f}" fill="{p_col}" fill-opacity="{op:.2f}"/>'
+                front_dots.append((z, halo_el + core_el))
+
+    back_dots.sort(key=lambda t: t[0])
+    front_dots.sort(key=lambda t: t[0])
+
     parts: List[str] = [
-        '<g stroke="var(--a-grid)" stroke-width="0.75">',
-        '<line x1="16" y1="42" x2="304" y2="42"/><line x1="16" y1="100" x2="304" y2="100"/><line x1="16" y1="158" x2="304" y2="158"/>',
-        "</g>",
+        defs,
+        f'<rect width="640" height="400" fill="url(#{gid}-bg)"/>',
+        *back_arcs,
+        *(d for _, d in back_dots),
+        # Central luminous gravitational core
+        f'<circle cx="{cx}" cy="{cy}" r="96" fill="url(#{gid}-core)" filter="url(#{gid}-glow)"/>',
+        f'<ellipse cx="{cx}" cy="{cy}" rx="84" ry="4.5" fill="var(--a-hi)" fill-opacity="0.34"/>',
+        f'<circle cx="{cx}" cy="{cy}" r="22" fill="url(#{gid}-core)"/>',
+        f'<circle cx="{cx}" cy="{cy}" r="6.5" fill="#FFFFFF"/>',
+        *front_arcs,
+        *(d for _, d in front_dots),
     ]
-    bands = [
-        (78.0, 26.0, 24.0, 0.0, "var(--a-3)", 0.82, "var(--a-2)", 1.15),
-        (106.0, 22.0, 20.0, 1.35, "var(--a-2)", 0.28, "var(--a-2)", 1.35),
-        (124.0, 18.0, 18.0, 2.6, "var(--a-1)", 0.22, "var(--a-1)", 2.0),
+    return "".join(parts)
+
+
+def _art_caustic(raw: bytes, gid: str) -> str:
+    """Luminous optical water caustics, refracted light shafts, and radiant wave crests."""
+    ph = _art_unit(raw, 8) * math.tau
+    defs = (
+        f"<defs>"
+        f'<linearGradient id="{gid}-bg" x1="0%" y1="0%" x2="100%" y2="100%">'
+        f'<stop offset="0%" stop-color="var(--a-deep)"/>'
+        f'<stop offset="48%" stop-color="var(--a-bg1)"/>'
+        f'<stop offset="100%" stop-color="var(--a-bg0)"/>'
+        f"</linearGradient>"
+        f'<linearGradient id="{gid}-w1" x1="0%" y1="0%" x2="100%" y2="100%">'
+        f'<stop offset="0%" stop-color="var(--a-c1)" stop-opacity="0.72"/>'
+        f'<stop offset="55%" stop-color="var(--a-c2)" stop-opacity="0.54"/>'
+        f'<stop offset="100%" stop-color="var(--a-c3)" stop-opacity="0.35"/>'
+        f"</linearGradient>"
+        f'<linearGradient id="{gid}-w2" x1="100%" y1="0%" x2="0%" y2="100%">'
+        f'<stop offset="0%" stop-color="var(--a-c3)" stop-opacity="0.62"/>'
+        f'<stop offset="50%" stop-color="var(--a-c2)" stop-opacity="0.48"/>'
+        f'<stop offset="100%" stop-color="var(--a-c1)" stop-opacity="0.22"/>'
+        f"</linearGradient>"
+        f'<linearGradient id="{gid}-crest" x1="0%" y1="0%" x2="100%" y2="0%">'
+        f'<stop offset="0%" stop-color="var(--a-c2)" stop-opacity="0.2"/>'
+        f'<stop offset="45%" stop-color="#FFFFFF" stop-opacity="0.88"/>'
+        f'<stop offset="78%" stop-color="var(--a-c3)" stop-opacity="0.82"/>'
+        f'<stop offset="100%" stop-color="var(--a-c1)" stop-opacity="0.18"/>'
+        f"</linearGradient>"
+        f'<filter id="{gid}-glow" x="-15%" y="-15%" width="130%" height="130%">'
+        f'<feGaussianBlur stdDeviation="5"/>'
+        f"</filter>"
+        f"</defs>"
+    )
+
+    parts: List[str] = [
+        defs,
+        f'<rect width="640" height="400" fill="url(#{gid}-bg)"/>',
+        # Soft diagonal aquatic light shafts
+        f'<polygon points="90,0 190,0 320,400 185,400" fill="var(--a-hi)" opacity="0.09" filter="url(#{gid}-glow)"/>',
+        f'<polygon points="340,0 445,0 590,400 455,400" fill="var(--a-c2)" opacity="0.1" filter="url(#{gid}-glow)"/>',
     ]
-    for cy, amp, thick, off, fill_col, fill_op, stroke_col, sw in bands:
+
+    # 6 layered caustic wave sheets + glowing bright refraction crests
+    waves = [
+        (96.0, 28.0, 62.0, 0.0, f"url(#{gid}-w1)", 0.44),
+        (148.0, 34.0, 68.0, 1.1, f"url(#{gid}-w2)", 0.48),
+        (198.0, 38.0, 74.0, 2.2, f"url(#{gid}-w1)", 0.56),
+        (246.0, 32.0, 70.0, 3.3, f"url(#{gid}-w2)", 0.54),
+        (292.0, 26.0, 64.0, 4.4, f"url(#{gid}-w1)", 0.48),
+        (338.0, 22.0, 56.0, 5.4, f"url(#{gid}-w2)", 0.42),
+    ]
+    for idx, (cy, amp, thick, off, fill_ref, fill_op) in enumerate(waves):
         top_pts: List[Tuple[float, float]] = []
         bot_pts: List[Tuple[float, float]] = []
-        for s in range(0, 33):
-            x = -6.0 + s * (332.0 / 32.0)
-            y = cy + math.sin(x * 0.017 + ph + off) * amp + math.cos(x * 0.009 - off) * 7.0
-            w = thick * (0.75 + 0.35 * math.sin(x * 0.014 + off))
-            top_pts.append((x, y - w * 0.5))
-            bot_pts.append((x, y + w * 0.5))
+        for s in range(0, 37):
+            u = s / 36.0
+            x = -20.0 + u * 680.0
+            y = cy + math.sin(u * 6.2 + ph + off) * amp + math.cos(u * 10.5 - off * 1.4) * (amp * 0.34)
+            w = thick * (0.72 + 0.38 * math.sin(u * 4.8 + off))
+            top_pts.append((x, y - w * 0.45))
+            bot_pts.append((x, y + w * 0.55))
         top_d = "M" + " ".join(f"{x:.1f},{y:.1f}" for x, y in top_pts)
         poly_d = top_d + " L" + " ".join(f"{x:.1f},{y:.1f}" for x, y in reversed(bot_pts)) + " Z"
-        parts.append(f'<path d="{poly_d}" fill="{fill_col}" fill-opacity="{fill_op:.2f}"/>')
-        parts.append(f'<path d="{top_d}" fill="none" stroke="{stroke_col}" stroke-width="{sw:.2f}" stroke-linecap="round"/>')
-    return "".join(parts)
+        parts.append(f'<path d="{poly_d}" fill="{fill_ref}" fill-opacity="{fill_op:.2f}"/>')
+        if idx in (1, 2, 3):
+            parts.append(f'<path d="{top_d}" fill="none" stroke="url(#{gid}-crest)" stroke-width="5.5" stroke-opacity="0.4" filter="url(#{gid}-glow)"/>')
+            parts.append(f'<path d="{top_d}" fill="none" stroke="url(#{gid}-crest)" stroke-width="1.9" stroke-linecap="round"/>')
+        else:
+            parts.append(f'<path d="{top_d}" fill="none" stroke="var(--a-hi)" stroke-opacity="0.32" stroke-width="1.1"/>')
 
-
-def _art_terrace(raw: bytes) -> str:
-    """Rhythmic architectural stepped color strata with calibrated vertical ticks."""
-    skew = (_art_unit(raw, 11) - 0.5) * 14.0
-    parts: List[str] = [
-        '<line x1="20" y1="168" x2="300" y2="168" stroke="var(--a-ink)" stroke-opacity="0.34" stroke-width="0.95"/>',
-    ]
-    # Calibrated baseline ticks
-    for x in range(28, 300, 16):
-        h = 6 if (x - 28) % 64 == 0 else 3
-        parts.append(f'<line x1="{x}" y1="168" x2="{x}" y2="{168 + h}" stroke="var(--a-ink)" stroke-opacity="0.32" stroke-width="0.8"/>')
-
-    # Stepped architectural plateaus
-    steps = [
-        (26, 126, 56, 42, "var(--a-3)", 0.72),
-        (74, 104, 66, 64, "var(--a-3)", 0.92),
-        (132, 78, 74, 90, "var(--a-2)", 0.34),
-        (196, 54, 68, 114, "var(--a-1)", 0.24),
-        (246, 36, 48, 132, "var(--a-1)", 0.88),
-    ]
-    last_x, last_y = 246, 36.0
-    for idx, (x, y, w, h, fill_col, op) in enumerate(steps):
-        yy = max(24.0, y + (skew if idx % 2 else -skew * 0.5))
-        hh = 168.0 - yy
-        last_x, last_y = x, yy
-        parts.append(f'<rect x="{x}" y="{yy:.1f}" width="{w}" height="{hh:.1f}" rx="2" fill="{fill_col}" fill-opacity="{op:.2f}"/>')
-        parts.append(f'<line x1="{x}" y1="{yy:.1f}" x2="{x + w}" y2="{yy:.1f}" stroke="var(--a-ink)" stroke-opacity="0.4" stroke-width="1"/>')
-        parts.append(f'<line x1="{x}" y1="20" x2="{x}" y2="{yy:.1f}" stroke="var(--a-grid)" stroke-width="0.75" stroke-dasharray="2 3"/>')
-
-    parts.append(f'<circle cx="{last_x}" cy="{last_y:.1f}" r="3.4" fill="var(--a-bg)" stroke="var(--a-1)" stroke-width="1.6"/>')
+    # Caustic optical interference rings
+    for cx, cy, rx, ry in ((220.0, 178.0, 62.0, 24.0), (432.0, 232.0, 74.0, 28.0)):
+        parts.append(f'<ellipse cx="{cx}" cy="{cy}" rx="{rx}" ry="{ry}" fill="none" stroke="var(--a-hi)" stroke-opacity="0.36" stroke-width="1.2"/>')
     return "".join(parts)
 
 
 ART_BUILDERS = {
-    "strata": _art_strata,
-    "contour": _art_contour,
-    "blocks": _art_blocks,
-    "meridian": _art_meridian,
-    "ribbon": _art_ribbon,
-    "terrace": _art_terrace,
+    "aurora": _art_aurora,
+    "manifold": _art_manifold,
+    "ridge": _art_ridge,
+    "prism": _art_prism,
+    "orbital": _art_orbital,
+    "caustic": _art_caustic,
 }
+
+
+def resolve_art_style(style: Optional[str], raw: bytes) -> str:
+    if style:
+        s = style.strip().lower()
+        s = ART_STYLE_ALIASES.get(s, s)
+        if s in ART_BUILDERS:
+            return s
+    return ART_STYLES[raw[12] % len(ART_STYLES)]
+
+
+def resolve_art_palette(palette: Optional[str], raw: bytes) -> str:
+    if palette:
+        p = palette.strip().lower()
+        p = ART_PALETTE_ALIASES.get(p, p)
+        if p in ART_PALETTES:
+            return p
+    return ART_PALETTES[raw[13] % len(ART_PALETTES)]
 
 
 def render_card_art(
@@ -752,17 +1191,18 @@ def render_card_art(
     palette: Optional[str] = None,
     *,
     aria_label: str = "",
+    uid: str = "",
 ) -> str:
-    """Render a deterministic, Light/Dark-adaptive 16:10 inline SVG generative artwork."""
+    """Render a deterministic, Light/Dark-adaptive 640x400 3D/luminous inline SVG artwork."""
     raw = _art_seed_bytes(seed or "article")
-    chosen_style = style if style in ART_BUILDERS else ART_STYLES[raw[12] % len(ART_STYLES)]
-    chosen_palette = palette if palette in ART_PALETTES else ART_PALETTES[raw[13] % len(ART_PALETTES)]
-    inner = ART_BUILDERS[chosen_style](raw)
+    chosen_style = resolve_art_style(style, raw)
+    chosen_palette = resolve_art_palette(palette, raw)
+    gid = "a" + hashlib.sha256(f"{seed}:{chosen_style}:{chosen_palette}:{uid}".encode("utf-8")).hexdigest()[:8]
+    inner = ART_BUILDERS[chosen_style](raw, gid)
     aria = f' role="img" aria-label="{esc(aria_label)}"' if aria_label else ' aria-hidden="true"'
     return (
-        f'<svg class="art-svg art-pal-{chosen_palette}" viewBox="0 0 320 200" width="320" height="200"'
+        f'<svg class="art-svg art-pal-{chosen_palette} art-style-{chosen_style}" viewBox="0 0 640 400" width="640" height="400"'
         f' xmlns="http://www.w3.org/2000/svg"{aria}>'
-        f'<rect width="320" height="200" fill="var(--a-bg)"/>'
         f"{inner}"
         f"</svg>"
     )
@@ -777,13 +1217,17 @@ ART_PLACEHOLDER_RE = re.compile(
 
 def expand_art_placeholders(body_html: str) -> str:
     """Expand <!--art:style:palette[:seed]--> tokens outside script/code blocks into inline SVG art."""
+    occ = 0
+
     def repl(m: re.Match) -> str:
+        nonlocal occ
         if m.group("inert") is not None:
             return m.group(0)
+        occ += 1
         st = m.group(4).lower()
         pal = m.group(5).lower()
         sd = m.group(6) or f"{st}-{pal}"
-        return render_card_art(sd, style=st, palette=pal)
+        return render_card_art(sd, style=st, palette=pal, uid=f"p{occ}")
 
     return ART_PLACEHOLDER_RE.sub(repl, body_html)
 
@@ -924,7 +1368,7 @@ def render_head(
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\\\(',right:'\\\\)',display:false},{left:'\\\\[',right:'\\\\]',display:true}],throwOnError:false});"></script>"""
 
     return f"""<!doctype html>
-<html lang="en-US" data-locale="en" data-theme="light">
+<html lang="en-US" data-locale="en" data-theme="light" data-motion="active">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -950,14 +1394,19 @@ def render_head(
         var root = document.documentElement;
         var theme = "light";
         var locale = "en";
+        var motion = "active";
         try {{
           var savedTheme = localStorage.getItem("jeix-theme-choice");
           if (savedTheme === "dark" || savedTheme === "light") theme = savedTheme;
           var savedLocale = localStorage.getItem("jeix-locale");
           if (savedLocale === "zh" || savedLocale === "en") locale = savedLocale;
+          var savedMotion = localStorage.getItem("jeix-motion");
+          var prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          if (savedMotion === "off" || (!savedMotion && prefersReduced)) motion = "reduced";
         }} catch (e) {{}}
         root.dataset.theme = theme;
         root.dataset.locale = locale;
+        root.dataset.motion = motion;
         root.lang = locale === "zh" ? "zh-CN" : "en-US";
         root.style.colorScheme = theme;
       }})();
@@ -970,12 +1419,22 @@ def render_head(
   </head>"""
 
 
-def render_nav(data: Dict[str, Any], active_section: str) -> str:
+def render_nav(data: Dict[str, Any], active_section: str, *, show_progress: bool = False) -> str:
     def cur(sec: str) -> str:
         return ' aria-current="page"' if active_section == sec else ""
 
-    return f"""    <a class="skip-link" href="#content"><span data-lang="en">Skip to content</span><span data-lang="zh">跳到正文</span></a>
-    <header class="site-nav">
+    progress_html = (
+        '\n      <div class="read-progress" aria-hidden="true"><span class="read-progress-bar"></span></div>'
+        if show_progress
+        else ""
+    )
+
+    return f"""    <div class="ambient-stage" aria-hidden="true">
+      <div class="ambient-glow"></div>
+      <canvas class="ambient-field"></canvas>
+    </div>
+    <a class="skip-link" href="#content"><span data-lang="en">Skip to content</span><span data-lang="zh">跳到正文</span></a>
+    <header class="site-nav topbar">
       <div class="nav-inner">
         <a class="brand" href="/" aria-label="{esc(data['site']['title'])} home">Victor <span class="brand-middle">Shea-Jay </span>Huang</a>
         <div class="nav-right">
@@ -989,13 +1448,17 @@ def render_nav(data: Dict[str, Any], active_section: str) -> str:
               <button type="button" data-locale-option="en" aria-pressed="true">EN</button>
               <button type="button" data-locale-option="zh" aria-pressed="false">中</button>
             </div>
-            <button type="button" class="theme-btn" data-theme-toggle aria-pressed="false" aria-label="Switch to dark theme" title="Dark mode">
+            <button type="button" class="icon-btn motion-btn" data-motion-toggle aria-pressed="false" aria-label="Pause ambient motion" title="Ambient motion">
+              {ICONS['motion_on']}
+              {ICONS['motion_off']}
+            </button>
+            <button type="button" class="icon-btn theme-btn" data-theme-toggle aria-pressed="false" aria-label="Switch to dark theme" title="Dark mode">
               {ICONS['moon']}
               {ICONS['sun']}
             </button>
           </div>
         </div>
-      </div>
+      </div>{progress_html}
     </header>"""
 
 
@@ -1524,7 +1987,7 @@ def render_article_page(data: Dict[str, Any], post: Dict[str, Any], css_ver: str
         og_image_path=post["cover_url"] or site["avatar"],
         include_math=post["math"],
     )
-    nav = render_nav(data, "blog")
+    nav = render_nav(data, "blog", show_progress=True)
     rail = render_profile_rail(data)
     footer = render_footer(data)
 

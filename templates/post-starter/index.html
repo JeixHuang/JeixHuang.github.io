@@ -5,9 +5,9 @@
   "date": "2026-11-21",
   "slug": "html-post-showcase",
   "tags": ["template", "interactive", "demo"],
-  "art": {"style": "meridian", "palette": "slate"},
-  "summary": "An official starter template showcasing native HTML/Canvas animations, smooth interactive SVG plots, KaTeX math, Booktabs tables, syntax-styled code, hover footnotes, and deterministic SVG card artwork.",
-  "summary_zh": "官方富 HTML 博文母版，完整演示原生 Canvas 动效、平滑贝塞尔交互图表、KaTeX 公式、Booktabs 学术表格、轻量语法着色代码、悬停脚注与 6 套生成式线条色块艺术卡。",
+  "art": {"style": "manifold", "palette": "cobalt"},
+  "summary": "An official starter template showcasing native HTML/Canvas animations, smooth interactive SVG plots, KaTeX math, Booktabs tables, syntax-styled code, hover footnotes, and deterministic 3D/optical SVG card artwork.",
+  "summary_zh": "官方富 HTML 博文母版，完整演示原生 Canvas 动效、平滑贝塞尔交互图表、KaTeX 公式、Booktabs 学术表格、轻量语法着色代码、悬停脚注与 6 套立体光场生成艺术卡。",
   "tldr": "Copy this folder into content/posts/<your-slug>/ to publish any research note, experiment log, or interactive visual essay directly in clean HTML.",
   "tldr_zh": "将本目录复制到 content/posts/<your-slug>/，即可用原生 HTML 无损编写研究笔记、开源实验或交互式可视化长文。",
   "content_lang": "en",
@@ -190,7 +190,7 @@ $$\operatorname{Var}\!\left(\hat{\Delta}_k\right) = \operatorname{Var}(R') + \op
 </div>
 
 <a class="read-more-card" href="/blog/why-the-blog/">
-  <span class="read-more-thumb" aria-hidden="true"><!--art:strata:cobalt:why-the-blog--></span>
+  <span class="read-more-thumb" aria-hidden="true"><!--art:aurora:aurora:why-the-blog--></span>
   <span class="read-more-copy">
     <span class="read-more-kicker"><span data-lang="en">Related Note</span><span data-lang="zh">延伸阅读</span></span>
     <span class="read-more-title">Why the blog</span>
@@ -254,39 +254,39 @@ $$\operatorname{Var}\!\left(\hat{\Delta}_k\right) = \operatorname{Var}(R') + \op
 </div>
 
 <h2 id="artwork-presets">
-  <span data-lang="en">7. Card Artwork Presets (6 Styles × 6 Mineral Palettes)</span>
-  <span data-lang="zh">7. 卡片生成艺术预设（6 构图 × 6 矿物色盘）</span>
+  <span data-lang="en">7. Card Artwork Presets (6 Spatial &amp; Optical Styles × 6 Palettes)</span>
+  <span data-lang="zh">7. 卡片生成艺术预设（6 套立体与光场构图 × 6 色盘）</span>
 </h2>
 
 <p>
-  <span data-lang="en">On the homepage and <code>/blog/</code>, every post card displays a compact <code>16:10</code> deterministic inline SVG print seeded from its slug (adapting automatically to Light and Dark themes). You can also pick any combination explicitly via <code>"art": {"style": "...", "palette": "..."}</code>, or opt into a custom image/GIF card with <code>"cover_mode": "image"</code>:</span>
-  <span data-lang="zh">在首页与 <code>/blog/</code> 的 3 列画廊网格中，每篇文章默认展示一枚按 <code>slug</code> 确定性生成的 <code>16:10</code> 矢量线条/色块艺术卡（自动适配浅色与暗色主题）。你可以在元数据中用 <code>"art": {"style": "...", "palette": "..."}</code> 手动选型，或设 <code>"cover_mode": "image"</code> 改用自选封面图：</span>
+  <span data-lang="en">On the homepage and <code>/blog/</code>, every post card displays a compact <code>16:10</code> deterministic 3D/optical inline SVG print seeded from its slug (adapting automatically to Light and Dark themes). You can also pick any combination explicitly via <code>"art": {"style": "...", "palette": "..."}</code>, or opt into a custom image/GIF card with <code>"cover_mode": "image"</code>:</span>
+  <span data-lang="zh">在首页与 <code>/blog/</code> 的 3 列画廊网格中，每篇文章默认展示一枚按 <code>slug</code> 确定性生成的 <code>16:10</code> 立体几何或光学极光矢量封面（自动适配浅色与暗色主题）。你可以在元数据中用 <code>"art": {"style": "...", "palette": "..."}</code> 手动选型，或设 <code>"cover_mode": "image"</code> 改用自选封面图：</span>
 </p>
 
 <div class="preset-grid">
   <div class="preset-card">
-    <div class="post-art-frame"><!--art:strata:cobalt:preset-strata--></div>
-    <div class="preset-meta"><strong>Strata</strong><code>strata · cobalt</code></div>
+    <div class="post-art-frame"><!--art:aurora:aurora:preset-aurora--></div>
+    <div class="preset-meta"><strong>Aurora</strong><code>aurora · aurora</code></div>
   </div>
   <div class="preset-card">
-    <div class="post-art-frame"><!--art:contour:pine:preset-contour--></div>
-    <div class="preset-meta"><strong>Contour</strong><code>contour · pine</code></div>
+    <div class="post-art-frame"><!--art:manifold:cobalt:preset-manifold--></div>
+    <div class="preset-meta"><strong>Manifold</strong><code>manifold · cobalt</code></div>
   </div>
   <div class="preset-card">
-    <div class="post-art-frame"><!--art:blocks:terracotta:preset-blocks--></div>
-    <div class="preset-meta"><strong>Blocks</strong><code>blocks · terracotta</code></div>
+    <div class="post-art-frame"><!--art:ridge:terracotta:preset-ridge--></div>
+    <div class="preset-meta"><strong>Ridge</strong><code>ridge · terracotta</code></div>
   </div>
   <div class="preset-card">
-    <div class="post-art-frame"><!--art:meridian:slate:preset-meridian--></div>
-    <div class="preset-meta"><strong>Meridian</strong><code>meridian · slate</code></div>
+    <div class="post-art-frame"><!--art:prism:violet:preset-prism--></div>
+    <div class="preset-meta"><strong>Prism</strong><code>prism · violet</code></div>
   </div>
   <div class="preset-card">
-    <div class="post-art-frame"><!--art:ribbon:plum:preset-ribbon--></div>
-    <div class="preset-meta"><strong>Ribbon</strong><code>ribbon · plum</code></div>
+    <div class="post-art-frame"><!--art:orbital:slate:preset-orbital--></div>
+    <div class="preset-meta"><strong>Orbital</strong><code>orbital · slate</code></div>
   </div>
   <div class="preset-card">
-    <div class="post-art-frame"><!--art:terrace:indigo:preset-terrace--></div>
-    <div class="preset-meta"><strong>Terrace</strong><code>terrace · indigo</code></div>
+    <div class="post-art-frame"><!--art:caustic:emerald:preset-caustic--></div>
+    <div class="preset-meta"><strong>Caustic</strong><code>caustic · emerald</code></div>
   </div>
 </div>
 
@@ -344,7 +344,9 @@ $$\operatorname{Var}\!\left(\hat{\Delta}_k\right) = \operatorname{Var}(R') + \op
     var pullVal = document.getElementById("sim-pull-val");
     var readout = document.getElementById("sim-readout");
 
-    var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var reduceMotion =
+      document.documentElement.dataset.motion === "reduced" ||
+      (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
     var running = !reduceMotion;
     if (!running && toggleBtn) toggleBtn.textContent = "Play";
 
@@ -519,6 +521,12 @@ $$\operatorname{Var}\!\left(\hat{\Delta}_k\right) = \operatorname{Var}(R') + \op
       });
     }
     window.addEventListener("jeix:themechange", drawSimulation);
+    window.addEventListener("jeix:motionchange", function (ev) {
+      if (ev.detail && ev.detail.motion === "reduced") {
+        running = false;
+        if (toggleBtn) toggleBtn.textContent = "Play";
+      }
+    });
   }
 
   /* ========================================================================

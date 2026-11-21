@@ -12,7 +12,7 @@ Source for [jeixhuang.github.io](https://jeixhuang.github.io/), built with a zer
 ├── templates/post-starter/        # Copy-paste rich HTML post starter & interactive showcase
 ├── assets/
 │   ├── css/site.css               # Unified editorial design system (Light default + Dark mode)
-│   ├── js/site.js                 # Locale, theme, News scroll fades, sliding TOC, footnotes, copy
+│   ├── js/site.js                 # Locale, theme, ambient motion, progress bar, card tilt, TOC, footnotes, copy
 │   ├── fonts/                     # Self-hosted Geist fallback
 │   ├── img/                       # Portrait avatar & favicon
 │   ├── projects/                  # Active project figures & video poster
@@ -57,7 +57,7 @@ Blog unifies essays, research notes, open-source experiments, and interactive de
    ```
 2. **Edit `content/posts/my-new-note/index.html`**:
    - Update the top `<!--meta { ... } -->` JSON block (`title`, `date`, `slug`, `tags`, `tldr`, optional `math: true`, `bilingual: true`, and optional `x_post` for the right-hand companion X card below the sliding TOC).
-   - **Card artwork**: Homepage & `/blog/` cards automatically render a deterministic `16:10` inline SVG print seeded from `slug`. You can also pick a style/palette explicitly via `"art": {"style": "strata|contour|blocks|meridian|ribbon|terrace", "palette": "cobalt|pine|terracotta|plum|slate|indigo"}`, or set `"cover_mode": "image"` with `"cover": "fig.png"` to display a custom image/GIF on cards.
+   - **Card artwork**: Homepage & `/blog/` cards automatically render a deterministic `16:10` inline 3D/optical SVG print seeded from `slug`. You can also pick a style/palette explicitly via `"art": {"style": "aurora|manifold|ridge|prism|orbital|caustic", "palette": "aurora|cobalt|terracotta|emerald|violet|slate"}`, or set `"cover_mode": "image"` with `"cover": "fig.png"` to display a custom image/GIF on cards.
    - Drop any GIFs, MP4 clips, PNGs, SVGs, or JSON data directly into `content/posts/my-new-note/` and reference them with `./filename`.
    - Write standard HTML directly — `<canvas>`, `<svg>`, `<video>`, `.viz`, `.media-stage`, `.callout`, `.fn-ref` hover footnotes, and `<script>` blocks render verbatim.
    - *(Prefer plain Markdown? Create `index.md` with YAML frontmatter instead — both formats work seamlessly.)*
