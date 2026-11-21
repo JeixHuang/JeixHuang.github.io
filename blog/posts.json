@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Why the blog",
+    "slug": "why-the-blog",
+    "date": "2026-01-29",
+    "url": "https://jeixhuang.github.io/blog/why-the-blog/",
+    "permalink": "/blog/why-the-blog/",
+    "tags": [
+      "blog"
+    ],
+    "summary": "Why I write this blog.",
+    "tldr": "A place for research questions, implementation details, and open-source experiments that become clearer through writing.",
+    "reading_minutes": 1,
+    "cover": "/blog/why-the-blog/why-the-blog.png"
+  }
+]

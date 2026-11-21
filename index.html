@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en-US" data-locale="en" data-theme="light" data-motion="active">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Victor Shea-Jay Huang</title>
+    <meta name="description" content="Victor Shea-Jay Huang is a first-year Ph.D. student at MMLab, CUHK, researching agents and physical AI, with a focus on world models.">
+    <meta name="keywords" content="xijie huang, Xijie Huang, Victor Shea-Jay Huang, Victor Shea Jay Huang, Victor Ché-Jay Huang, Victor Ché Jay Huang, Ché-Jay Huang, Victor Huang, Huang Xijie, Victor Shea Huang, Victor Ché Huang">
+    <meta name="color-scheme" content="light dark">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Victor Shea-Jay Huang">
+    <meta property="og:url" content="https://jeixhuang.github.io/">
+    <meta property="og:site_name" content="Victor Shea-Jay Huang">
+    <meta property="og:description" content="Victor Shea-Jay Huang is a first-year Ph.D. student at MMLab, CUHK, researching agents and physical AI, with a focus on world models.">
+    <meta property="og:image" content="https://jeixhuang.github.io/assets/img/avatar-aug-2026.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Victor Shea-Jay Huang">
+    <meta name="twitter:description" content="Victor Shea-Jay Huang is a first-year Ph.D. student at MMLab, CUHK, researching agents and physical AI, with a focus on world models.">
+    <meta name="twitter:image" content="https://jeixhuang.github.io/assets/img/avatar-aug-2026.jpg">
+    <link rel="canonical" href="https://jeixhuang.github.io/">
+    <link rel="alternate" type="application/rss+xml" title="Victor Shea-Jay Huang · Blog RSS" href="/blog/rss.xml">
+    <link rel="icon" href="/assets/img/avatar3.jpg" type="image/jpeg">
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var theme = "light";
+        var locale = "en";
+        var motion = "active";
+        try {
+          var savedTheme = localStorage.getItem("jeix-theme-choice");
+          if (savedTheme === "dark" || savedTheme === "light") theme = savedTheme;
+          var savedLocale = localStorage.getItem("jeix-locale");
+          if (savedLocale === "zh" || savedLocale === "en") locale = savedLocale;
+          var savedMotion = localStorage.getItem("jeix-motion");
+          var prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          if (savedMotion === "off" || (!savedMotion && prefersReduced)) motion = "reduced";
+        } catch (e) {}
+        root.dataset.theme = theme;
+        root.dataset.locale = locale;
+        root.dataset.motion = motion;
+        root.lang = locale === "zh" ? "zh-CN" : "en-US";
+        root.style.colorScheme = theme;
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/assets/css/site.css?v=ac930f59">
+    <script src="/assets/js/site.js?v=64888324" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  </head>
+  <body>
+    <div class="ambient-stage" aria-hidden="true">
+      <div class="ambient-glow"></div>
+      <canvas class="ambient-field"></canvas>
+    </div>
+    <a class="skip-link" href="#content"><span data-lang="en">Skip to content</span><span data-lang="zh">跳到正文</span></a>
+    <header class="site-nav topbar">
+      <div class="nav-inner">
+        <a class="brand" href="/" aria-label="Victor Shea-Jay Huang home">Victor <span class="brand-middle">Shea-Jay </span>Huang</a>
+        <div class="nav-right">
+          <nav class="nav-links" aria-label="Primary navigation">
+            <a href="/" aria-current="page">About</a>
+            <a href="/projects/">Projects</a>
+            <a href="/blog/">Blog</a>
+          </nav>
+          <div class="nav-controls" aria-label="Display controls">
+            <div class="lang-pill" role="group" aria-label="Language">
+              <button type="button" data-locale-option="en" aria-pressed="true">EN</button>
+              <button type="button" data-locale-option="zh" aria-pressed="false">中</button>
+            </div>
+            <button type="button" class="icon-btn motion-btn" data-motion-toggle aria-pressed="false" aria-label="Pause ambient motion" title="Ambient motion">
+              <svg class="icon-motion-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.5 3.5L12.1 8.4L17 10L12.1 11.6L10.5 16.5L8.9 11.6L4 10L8.9 8.4Z"/><path d="M18.2 14.2L19 16.6L21.4 17.4L19 18.2L18.2 20.6L17.4 18.2L15 17.4L17.4 16.6Z"/></svg>
+              <svg class="icon-motion-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4.5L13.5 9.1L18.1 10.6L13.5 12.1L12 16.7L10.5 12.1L5.9 10.6L10.5 9.1Z" opacity="0.55"/><path d="M4.5 19.5L19.5 4.5"/></svg>
+            </button>
+            <button type="button" class="icon-btn theme-btn" data-theme-toggle aria-pressed="false" aria-label="Switch to dark theme" title="Dark mode">
+              <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+              <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="page-shell" id="content">
+      <aside class="profile-rail" aria-label="Profile">
+        <div class="profile-header">
+          <a class="profile-avatar-link" href="/" aria-label="Victor Shea-Jay Huang">
+            <img class="profile-avatar" src="/assets/img/avatar-aug-2026.jpg" alt="Victor Shea-Jay Huang portrait" width="800" height="800">
+          </a>
+          <div class="profile-identity">
+            <p class="profile-name"><a href="/">Victor Shea-Jay Huang</a></p>
+            <p class="profile-role">
+              <span data-lang="en">Year-1 Ph.D. student</span>
+              <span data-lang="zh">一年级博士生</span>
+            </p>
+            <p class="profile-affiliation">
+              <a href="https://mmlab.ie.cuhk.edu.hk/" target="_blank" rel="noopener noreferrer">MMLab</a>
+              ·
+              <a href="https://www.cuhk.edu.hk/" target="_blank" rel="noopener noreferrer">CUHK</a>
+            </p>
+          </div>
+        </div>
+        <nav class="profile-links" aria-label="Profile links">
+          <a href="https://scholar.google.com/citations?hl=zh-CN&amp;user=pL5W9z4AAAAJ" target="_blank" rel="noopener noreferrer"><span class="profile-link-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3 1 9l4 2.18v6L12 21l7-3.82v-6L23 9 12 3zm0 2.27L18.82 9 12 12.73 5.18 9 12 5.27zM7 12.4l5 2.73 5-2.73v3.52L12 18.65l-5-2.73V12.4z"/></svg></span><span>Google Scholar</span><span class="profile-link-arrow" aria-hidden="true">↗</span></a>
+          <a href="https://github.com/JeixHuang" target="_blank" rel="noopener noreferrer"><span class="profile-link-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.54 2.87 8.39 6.84 9.75.5.09.68-.22.68-.49 0-.24-.01-.88-.01-1.72-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.35 1.12 2.92.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0 1 12 6.84c.85 0 1.71.12 2.51.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.64 1.03 2.76 0 3.95-2.34 4.82-4.57 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.59.69.49A10.26 10.26 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"/></svg></span><span>GitHub</span><span class="profile-link-arrow" aria-hidden="true">↗</span></a>
+          <a href="https://www.linkedin.com/in/%E5%B8%8C%E6%9D%B0-%E9%BB%84-53a491322/" target="_blank" rel="noopener noreferrer"><span class="profile-link-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg></span><span>LinkedIn</span><span class="profile-link-arrow" aria-hidden="true">↗</span></a>
+          <a href="https://x.com/Xijie358" target="_blank" rel="noopener noreferrer"><span class="profile-link-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></span><span>X / Twitter</span><span class="profile-link-arrow" aria-hidden="true">↗</span></a>
+          <a href="mailto:jeix782@gmail.com"><span class="profile-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span>Email</span><span class="profile-link-arrow" aria-hidden="true">↗</span></a>
+        </nav>
+      </aside>
+      <div class="content-column">
+        <section class="home-section" id="about-me" aria-labelledby="about-heading">
+          <h1 class="page-title" id="about-heading"><span data-lang="en">About</span><span data-lang="zh">关于</span></h1>
+          <p class="about-bio">
+            <span data-lang="en">I am a first-year Ph.D. student at <a href="https://mmlab.ie.cuhk.edu.hk/">MMLab</a>, <a href="https://www.cuhk.edu.hk/">The Chinese University of Hong Kong (CUHK)</a>, after receiving my B.E. degree in 2026.</span>
+            <span data-lang="zh">我于 2026 年获得工学学士学位，现为<a href="https://www.cuhk.edu.hk/">香港中文大学（CUHK）</a><a href="https://mmlab.ie.cuhk.edu.hk/">MMLab</a> 的一年级博士生。</span>
+          </p>
+        </section>
+
+        <section class="home-section" id="research" aria-labelledby="research-heading">
+          <div class="section-head">
+            <h2 id="research-heading"><span data-lang="en">Research</span><span data-lang="zh">研究方向</span></h2>
+          </div>
+          <div class="research-grid">
+          <article class="research-card">
+            <div class="research-card-head">
+              <h3><span data-lang="en">Agents</span><span data-lang="zh">智能体</span></h3>
+              <svg class="research-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6.5" r="2.5"/><circle cx="18" cy="17.5" r="2.5"/><path d="M8.3 10.9 15.6 7.5M8.3 13.1l7.3 3.4"/></svg>
+            </div>
+            <p><span data-lang="en">Reasoning and planning, reinforcement learning, memory and tool use, data and training, inference systems, and evaluation. Toward self-improving agents.</span><span data-lang="zh">推理与规划、强化学习、记忆与工具使用、数据与训练、推理系统和评估。面向持续自我改进的智能体。</span></p>
+          </article>
+          <article class="research-card">
+            <div class="research-card-head">
+              <h3><span data-lang="en">Physical AI &amp; World Models</span><span data-lang="zh">物理智能与世界模型</span></h3>
+              <svg class="research-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><ellipse cx="12" cy="12" rx="8.5" ry="3.4"/><path d="M12 3.5a12 12 0 0 1 0 17M12 3.5a12 12 0 0 0 0 17"/></svg>
+            </div>
+            <p><span data-lang="en">Multimodal representations, generative and action-conditioned world models, simulation, embodied learning, planning, and control. Toward general-purpose physical intelligence.</span><span data-lang="zh">多模态表征、生成式与动作条件世界模型、模拟、具身学习、规划与控制。面向通用物理智能。</span></p>
+          </article>
+          </div>
+        </section>
+
+        <section class="home-section" id="news" aria-labelledby="news-heading">
+          <div class="section-head">
+            <h2 id="news-heading"><span data-lang="en">News</span><span data-lang="zh">动态</span></h2>
+            <span class="section-meta"><span data-lang="en">7 updates · scroll ↕</span><span data-lang="zh">7 条动态 · 可滚动 ↕</span></span>
+          </div>
+          <div class="news-box has-more-bottom">
+            <div class="news-scroll" tabindex="0" aria-label="Scrollable news timeline">
+              <ul class="news-list">
+            <li class="news-item">
+              <time class="news-date" datetime="2026-10"><span data-lang="en">Oct 2026</span><span data-lang="zh">2026 年 10 月</span></time>
+              <div class="news-copy">
+                <span data-lang="en">Released <a href="https://arxiv.org/abs/2610.32196">SWE-Shift</a>, a benchmark for coding agents in evolving workspaces (<a href="https://github.com/JeixHuang/SWE-Shift">Code</a>).</span>
+                <span data-lang="zh">发布 <a href="https://arxiv.org/abs/2610.32196">SWE-Shift</a>，面向持续变化工作环境的 Coding Agent 评测基准（<a href="https://github.com/JeixHuang/SWE-Shift">代码</a>）。</span>
+              </div>
+            </li>
+            <li class="news-item">
+              <time class="news-date" datetime="2026-09"><span data-lang="en">Sep 2026</span><span data-lang="zh">2026 年 9 月</span></time>
+              <div class="news-copy">
+                <span data-lang="en"><a href="https://openreview.net/forum?id=gbYg6VGblU#discussion">Reward Is Not a Universal Interface for Generative Reinforcement Learning</a> was accepted to <strong>NeurIPS 2026</strong>.</span>
+                <span data-lang="zh"><a href="https://openreview.net/forum?id=gbYg6VGblU#discussion">Reward Is Not a Universal Interface for Generative Reinforcement Learning</a> 被 <strong>NeurIPS 2026</strong> 接收。</span>
+              </div>
+            </li>
+            <li class="news-item">
+              <time class="news-date" datetime="2026-05"><span data-lang="en">May 2026</span><span data-lang="zh">2026 年 5 月</span></time>
+              <div class="news-copy">
+                <span data-lang="en">Released <a href="https://mind-omni.github.io/">Mind-Omni</a> and <a href="https://arxiv.org/abs/2605.12625">DIAL</a> on Physical AI, VLA, and intent-conditioned planning.</span>
+                <span data-lang="zh">发布面向物理智能、VLA 与意图条件规划的 <a href="https://mind-omni.github.io/">Mind-Omni</a> 与 <a href="https://arxiv.org/abs/2605.12625">DIAL</a>。</span>
+              </div>
+            </li>
+            <li class="news-item">
+              <time class="news-date" datetime="2026-03"><span data-lang="en">Mar 2026</span><span data-lang="zh">2026 年 3 月</span></time>
+              <div class="news-copy">
+                <span data-lang="en"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/37006">TIDE</a> was published in the <strong>AAAI 2026</strong> proceedings.</span>
+                <span data-lang="zh"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/37006">TIDE</a> 发表于 <strong>AAAI 2026</strong> 论文集。</span>
+              </div>
+            </li>
+            <li class="news-item">
+              <time class="news-date" datetime="2026-01"><span data-lang="en">Jan 2026</span><span data-lang="zh">2026 年 1 月</span></time>
+              <div class="news-copy">
+                <span data-lang="en">Launched this <a href="/blog/why-the-blog/">Blog</a> for research notes, open-source experiments, and technical ideas.</span>
+                <span data-lang="zh">启动个人 <a href="/blog/why-the-blog/">Blog</a>，记录研究笔记、开源实验与技术思考。</span>
+              </div>
+            </li>
+            <li class="news-item" data-year-break="true">
+              <time class="news-date" datetime="2025-07"><span data-lang="en">Jul 2025</span><span data-lang="zh">2025 年 7 月</span></time>
+              <div class="news-copy">
+                <span data-lang="en">Presented <a href="https://icml.cc/virtual/2025/50654">BlackDAN</a> at the <strong>ICML 2025</strong> New In ML workshop.</span>
+                <span data-lang="zh">在 <strong>ICML 2025</strong> New In ML Workshop 展示 <a href="https://icml.cc/virtual/2025/50654">BlackDAN</a>。</span>
+              </div>
+            </li>
+            <li class="news-item">
+              <time class="news-date" datetime="2025-04"><span data-lang="en">Apr 2025</span><span data-lang="zh">2025 年 4 月</span></time>
+              <div class="news-copy">
+                <span data-lang="en"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/32396">Medical MLLM Is Vulnerable</a> was published in the <strong>AAAI 2025</strong> proceedings, and co-released <a href="https://github.com/Alpha-VLLM/Lumina-mGPT-2.0">Lumina-mGPT 2.0</a>.</span>
+                <span data-lang="zh"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/32396">Medical MLLM Is Vulnerable</a> 发表于 <strong>AAAI 2025</strong> 论文集，并共同发布 <a href="https://github.com/Alpha-VLLM/Lumina-mGPT-2.0">Lumina-mGPT 2.0</a>。</span>
+              </div>
+            </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="home-section" id="writing" aria-labelledby="writing-heading">
+          <div class="section-head">
+            <h2 id="writing-heading"><span data-lang="en">Recent Writing</span><span data-lang="zh">近期写作</span></h2>
+            <a class="section-link" href="/blog/"><span data-lang="en">All posts →</span><span data-lang="zh">全部文章 →</span></a>
+          </div>
+          <div class="writing-grid">
+        <article class="post-card" data-tags="blog">
+          <a class="post-art-frame" href="/blog/why-the-blog/" aria-label="Why the blog">
+            <svg class="art-svg art-pal-aurora art-style-aurora" viewBox="0 0 640 400" width="640" height="400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="a28101ab5-bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="var(--a-bg0)"/><stop offset="55%" stop-color="var(--a-bg1)"/><stop offset="100%" stop-color="var(--a-deep)"/></linearGradient><radialGradient id="a28101ab5-g1" cx="26%" cy="32%" r="58%"><stop offset="0%" stop-color="var(--a-c1)" stop-opacity="0.88"/><stop offset="55%" stop-color="var(--a-c2)" stop-opacity="0.34"/><stop offset="100%" stop-color="var(--a-deep)" stop-opacity="0"/></radialGradient><radialGradient id="a28101ab5-g2" cx="76%" cy="28%" r="54%"><stop offset="0%" stop-color="var(--a-c2)" stop-opacity="0.78"/><stop offset="52%" stop-color="var(--a-c1)" stop-opacity="0.28"/><stop offset="100%" stop-color="var(--a-deep)" stop-opacity="0"/></radialGradient><radialGradient id="a28101ab5-g3" cx="62%" cy="76%" r="52%"><stop offset="0%" stop-color="var(--a-c3)" stop-opacity="0.62"/><stop offset="55%" stop-color="var(--a-c2)" stop-opacity="0.22"/><stop offset="100%" stop-color="var(--a-deep)" stop-opacity="0"/></radialGradient><linearGradient id="a28101ab5-r1" x1="0%" y1="80%" x2="100%" y2="15%"><stop offset="0%" stop-color="var(--a-c1)" stop-opacity="0.1"/><stop offset="32%" stop-color="var(--a-c1)" stop-opacity="0.78"/><stop offset="68%" stop-color="var(--a-c2)" stop-opacity="0.85"/><stop offset="100%" stop-color="var(--a-c3)" stop-opacity="0.62"/></linearGradient><linearGradient id="a28101ab5-r2" x1="10%" y1="90%" x2="95%" y2="10%"><stop offset="0%" stop-color="var(--a-c2)" stop-opacity="0.12"/><stop offset="45%" stop-color="var(--a-hi)" stop-opacity="0.68"/><stop offset="78%" stop-color="var(--a-c3)" stop-opacity="0.76"/><stop offset="100%" stop-color="var(--a-c1)" stop-opacity="0.18"/></linearGradient><filter id="a28101ab5-blur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="24"/></filter><filter id="a28101ab5-soft" x="-15%" y="-15%" width="130%" height="130%"><feGaussianBlur stdDeviation="8"/></filter><filter id="a28101ab5-grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter></defs><rect width="640" height="400" fill="url(#a28101ab5-bg)"/><ellipse cx="189.2" cy="135.9" rx="280" ry="190" fill="url(#a28101ab5-g1)" filter="url(#a28101ab5-blur)"/><ellipse cx="470.6" cy="133.1" rx="250" ry="185" fill="url(#a28101ab5-g2)" filter="url(#a28101ab5-blur)"/><ellipse cx="389.5" cy="296.9" rx="240" ry="150" fill="url(#a28101ab5-g3)" filter="url(#a28101ab5-blur)"/><polygon points="-40,360 220,0 315,0 60,400" fill="var(--a-hi)" opacity="0.08" filter="url(#a28101ab5-soft)"/><polygon points="210,400 470,0 560,0 320,400" fill="var(--a-c3)" opacity="0.09" filter="url(#a28101ab5-soft)"/><path d="M-24.0,337.6 -4.9,325.2 14.2,312.6 33.3,300.0 52.4,287.4 71.6,275.0 90.7,262.9 109.8,251.2 128.9,240.0 148.0,229.4 167.1,219.5 186.2,210.4 205.3,202.1 224.4,194.7 243.6,188.2 262.7,182.7 281.8,178.2 300.9,174.6 320.0,172.0 339.1,170.3 358.2,169.5 377.3,169.6 396.4,170.4 415.6,171.9 434.7,174.0 453.8,176.7 472.9,179.7 492.0,183.1 511.1,186.7 530.2,190.4 549.3,194.1 568.4,197.7 587.6,201.1 606.7,204.2 625.8,206.8 644.9,209.0 664.0,210.6 L664.0,266.5 644.9,269.0 625.8,270.9 606.7,272.3 587.6,273.2 568.4,273.6 549.3,273.7 530.2,273.5 511.1,273.0 492.0,272.5 472.9,271.9 453.8,271.3 434.7,270.9 415.6,270.7 396.4,270.7 377.3,271.2 358.2,272.0 339.1,273.4 320.0,275.2 300.9,277.6 281.8,280.7 262.7,284.3 243.6,288.6 224.4,293.5 205.3,299.0 186.2,305.0 167.1,311.7 148.0,318.8 128.9,326.3 109.8,334.2 90.7,342.5 71.6,350.9 52.4,359.5 33.3,368.1 14.2,376.7 -4.9,385.2 -24.0,393.5 Z" fill="url(#a28101ab5-r1)" fill-opacity="0.52"/><path d="M-24.0,337.6 -4.9,325.2 14.2,312.6 33.3,300.0 52.4,287.4 71.6,275.0 90.7,262.9 109.8,251.2 128.9,240.0 148.0,229.4 167.1,219.5 186.2,210.4 205.3,202.1 224.4,194.7 243.6,188.2 262.7,182.7 281.8,178.2 300.9,174.6 320.0,172.0 339.1,170.3 358.2,169.5 377.3,169.6 396.4,170.4 415.6,171.9 434.7,174.0 453.8,176.7 472.9,179.7 492.0,183.1 511.1,186.7 530.2,190.4 549.3,194.1 568.4,197.7 587.6,201.1 606.7,204.2 625.8,206.8 644.9,209.0 664.0,210.6" fill="none" stroke="var(--a-hi)" stroke-width="1.3" stroke-opacity="0.36" stroke-linecap="round"/><path d="M-24.0,235.3 -4.9,225.9 14.2,217.1 33.3,209.1 52.4,201.8 71.6,195.4 90.7,189.9 109.8,185.3 128.9,181.6 148.0,178.9 167.1,177.0 186.2,176.1 205.3,176.1 224.4,176.8 243.6,178.3 262.7,180.5 281.8,183.2 300.9,186.4 320.0,189.9 339.1,193.7 358.2,197.7 377.3,201.7 396.4,205.6 415.6,209.3 434.7,212.8 453.8,215.7 472.9,218.2 492.0,220.1 511.1,221.2 530.2,221.6 549.3,221.2 568.4,219.9 587.6,217.6 606.7,214.5 625.8,210.3 644.9,205.3 664.0,199.3 L664.0,234.8 644.9,244.2 625.8,252.7 606.7,260.4 587.6,267.1 568.4,272.9 549.3,277.7 530.2,281.6 511.1,284.6 492.0,286.6 472.9,287.9 453.8,288.3 434.7,288.1 415.6,287.2 396.4,285.8 377.3,283.9 358.2,281.7 339.1,279.3 320.0,276.7 300.9,274.1 281.8,271.6 262.7,269.2 243.6,267.1 224.4,265.3 205.3,264.0 186.2,263.2 167.1,262.9 148.0,263.2 128.9,264.2 109.8,265.9 90.7,268.2 71.6,271.3 52.4,275.0 33.3,279.4 14.2,284.4 -4.9,289.9 -24.0,296.0 Z" fill="url(#a28101ab5-r2)" fill-opacity="0.48"/><path d="M-24.0,235.3 -4.9,225.9 14.2,217.1 33.3,209.1 52.4,201.8 71.6,195.4 90.7,189.9 109.8,185.3 128.9,181.6 148.0,178.9 167.1,177.0 186.2,176.1 205.3,176.1 224.4,176.8 243.6,178.3 262.7,180.5 281.8,183.2 300.9,186.4 320.0,189.9 339.1,193.7 358.2,197.7 377.3,201.7 396.4,205.6 415.6,209.3 434.7,212.8 453.8,215.7 472.9,218.2 492.0,220.1 511.1,221.2 530.2,221.6 549.3,221.2 568.4,219.9 587.6,217.6 606.7,214.5 625.8,210.3 644.9,205.3 664.0,199.3" fill="none" stroke="var(--a-hi)" stroke-width="1.9" stroke-opacity="0.58" stroke-linecap="round"/><path d="M-24.0,174.8 -4.9,172.5 14.2,170.9 33.3,170.2 52.4,170.3 71.6,171.1 90.7,172.5 109.8,174.6 128.9,177.2 148.0,180.3 167.1,183.8 186.2,187.6 205.3,191.5 224.4,195.5 243.6,199.5 262.7,203.5 281.8,207.2 300.9,210.5 320.0,213.5 339.1,216.0 358.2,218.0 377.3,219.3 396.4,219.9 415.6,219.8 434.7,218.8 453.8,217.1 472.9,214.5 492.0,211.1 511.1,206.8 530.2,201.7 549.3,195.8 568.4,189.1 587.6,181.7 606.7,173.7 625.8,165.0 644.9,155.9 664.0,146.3 L664.0,165.9 644.9,177.9 625.8,189.5 606.7,200.8 587.6,211.5 568.4,221.7 549.3,231.3 530.2,240.0 511.1,248.0 492.0,255.2 472.9,261.4 453.8,266.8 434.7,271.2 415.6,274.7 396.4,277.3 377.3,279.0 358.2,279.9 339.1,279.9 320.0,279.2 300.9,277.8 281.8,275.8 262.7,273.2 243.6,270.3 224.4,266.9 205.3,263.3 186.2,259.5 167.1,255.7 148.0,251.9 128.9,248.3 109.8,244.8 90.7,241.7 71.6,239.0 52.4,236.7 33.3,234.9 14.2,233.7 -4.9,233.2 -24.0,233.2 Z" fill="url(#a28101ab5-r1)" fill-opacity="0.62"/><path d="M-24.0,174.8 -4.9,172.5 14.2,170.9 33.3,170.2 52.4,170.3 71.6,171.1 90.7,172.5 109.8,174.6 128.9,177.2 148.0,180.3 167.1,183.8 186.2,187.6 205.3,191.5 224.4,195.5 243.6,199.5 262.7,203.5 281.8,207.2 300.9,210.5 320.0,213.5 339.1,216.0 358.2,218.0 377.3,219.3 396.4,219.9 415.6,219.8 434.7,218.8 453.8,217.1 472.9,214.5 492.0,211.1 511.1,206.8 530.2,201.7 549.3,195.8 568.4,189.1 587.6,181.7 606.7,173.7 625.8,165.0 644.9,155.9 664.0,146.3" fill="none" stroke="var(--a-hi)" stroke-width="2.2" stroke-opacity="0.72" stroke-linecap="round"/><path d="M-24.0,159.0 -4.9,160.7 14.2,162.9 33.3,165.5 52.4,168.3 71.6,171.4 90.7,174.6 109.8,177.9 128.9,181.1 148.0,184.2 167.1,187.0 186.2,189.6 205.3,191.9 224.4,193.7 243.6,195.0 262.7,195.8 281.8,196.0 300.9,195.5 320.0,194.4 339.1,192.7 358.2,190.3 377.3,187.1 396.4,183.4 415.6,178.9 434.7,173.9 453.8,168.3 472.9,162.2 492.0,155.5 511.1,148.5 530.2,141.1 549.3,133.4 568.4,125.5 587.6,117.5 606.7,109.4 625.8,101.3 644.9,93.3 664.0,85.5 L664.0,94.1 644.9,103.2 625.8,112.6 606.7,122.1 587.6,131.9 568.4,141.6 549.3,151.3 530.2,160.8 511.1,170.2 492.0,179.2 472.9,187.8 453.8,195.9 434.7,203.6 415.6,210.6 396.4,217.0 377.3,222.7 358.2,227.6 339.1,231.8 320.0,235.3 300.9,237.9 281.8,239.8 262.7,241.0 243.6,241.4 224.4,241.2 205.3,240.3 186.2,238.8 167.1,236.7 148.0,234.3 128.9,231.4 109.8,228.3 90.7,224.9 71.6,221.4 52.4,217.8 33.3,214.4 14.2,211.0 -4.9,207.8 -24.0,205.0 Z" fill="url(#a28101ab5-r2)" fill-opacity="0.42"/><path d="M-24.0,159.0 -4.9,160.7 14.2,162.9 33.3,165.5 52.4,168.3 71.6,171.4 90.7,174.6 109.8,177.9 128.9,181.1 148.0,184.2 167.1,187.0 186.2,189.6 205.3,191.9 224.4,193.7 243.6,195.0 262.7,195.8 281.8,196.0 300.9,195.5 320.0,194.4 339.1,192.7 358.2,190.3 377.3,187.1 396.4,183.4 415.6,178.9 434.7,173.9 453.8,168.3 472.9,162.2 492.0,155.5 511.1,148.5 530.2,141.1 549.3,133.4 568.4,125.5 587.6,117.5 606.7,109.4 625.8,101.3 644.9,93.3 664.0,85.5" fill="none" stroke="var(--a-c3)" stroke-width="1.5" stroke-opacity="0.62" stroke-linecap="round"/><path d="M-24.0,322.9 -4.9,324.0 14.2,325.1 33.3,326.1 52.4,327.0 71.6,327.6 90.7,328.0 109.8,328.0 128.9,327.7 148.0,327.0 167.1,325.9 186.2,324.4 205.3,322.4 224.4,320.0 243.6,317.1 262.7,313.7 281.8,310.0 300.9,305.8 320.0,301.3 339.1,296.4 358.2,291.3 377.3,285.9 396.4,280.3 415.6,274.5 434.7,268.7 453.8,262.9 472.9,257.0 492.0,251.3 511.1,245.7 530.2,240.2 549.3,235.0 568.4,230.1 587.6,225.5 606.7,221.2 625.8,217.2 644.9,213.7 664.0,210.5 L664.0,216.6 644.9,220.5 625.8,225.1 606.7,230.2 587.6,235.8 568.4,241.9 549.3,248.5 530.2,255.5 511.1,262.8 492.0,270.4 472.9,278.3 453.8,286.3 434.7,294.3 415.6,302.4 396.4,310.5 377.3,318.4 358.2,326.0 339.1,333.5 320.0,340.5 300.9,347.2 281.8,353.5 262.7,359.2 243.6,364.4 224.4,369.1 205.3,373.2 186.2,376.6 167.1,379.5 148.0,381.7 128.9,383.4 109.8,384.5 90.7,385.0 71.6,385.0 52.4,384.6 33.3,383.7 14.2,382.5 -4.9,381.0 -24.0,379.2 Z" fill="url(#a28101ab5-r1)" fill-opacity="0.38"/><path d="M-24.0,322.9 -4.9,324.0 14.2,325.1 33.3,326.1 52.4,327.0 71.6,327.6 90.7,328.0 109.8,328.0 128.9,327.7 148.0,327.0 167.1,325.9 186.2,324.4 205.3,322.4 224.4,320.0 243.6,317.1 262.7,313.7 281.8,310.0 300.9,305.8 320.0,301.3 339.1,296.4 358.2,291.3 377.3,285.9 396.4,280.3 415.6,274.5 434.7,268.7 453.8,262.9 472.9,257.0 492.0,251.3 511.1,245.7 530.2,240.2 549.3,235.0 568.4,230.1 587.6,225.5 606.7,221.2 625.8,217.2 644.9,213.7 664.0,210.5" fill="none" stroke="var(--a-c2)" stroke-width="1.1" stroke-opacity="0.44" stroke-linecap="round"/><circle cx="516.5" cy="246.9" r="2.2" fill="var(--a-hi)" fill-opacity="0.80"/><circle cx="536.3" cy="41.1" r="1.3" fill="var(--a-hi)" fill-opacity="0.39"/><circle cx="209.1" cy="45.0" r="1.5" fill="var(--a-hi)" fill-opacity="0.29"/><circle cx="408.9" cy="280.4" r="1.7" fill="var(--a-hi)" fill-opacity="0.41"/><circle cx="393.6" cy="109.3" r="3.6" fill="var(--a-hi)" fill-opacity="0.60"/><circle cx="400.2" cy="167.2" r="1.8" fill="var(--a-hi)" fill-opacity="0.26"/><circle cx="281.6" cy="306.1" r="1.4" fill="var(--a-hi)" fill-opacity="0.27"/><circle cx="66.4" cy="325.4" r="1.9" fill="var(--a-hi)" fill-opacity="0.66"/><circle cx="105.9" cy="176.2" r="2.7" fill="var(--a-hi)" fill-opacity="0.37"/><circle cx="147.6" cy="252.1" r="1.2" fill="var(--a-hi)" fill-opacity="0.47"/><circle cx="597.8" cy="210.9" r="1.3" fill="var(--a-hi)" fill-opacity="0.70"/><circle cx="180.5" cy="52.7" r="3.0" fill="var(--a-hi)" fill-opacity="0.74"/><circle cx="81.7" cy="231.5" r="1.7" fill="var(--a-hi)" fill-opacity="0.49"/><circle cx="204.7" cy="235.4" r="2.2" fill="var(--a-hi)" fill-opacity="0.61"/><rect width="640" height="400" filter="url(#a28101ab5-grain)" opacity="0.045"/></svg>
+          </a>
+          <div class="post-card-body">
+            <div class="post-card-meta">
+              <time datetime="2026-01-29"><span data-lang="en">Jan 29, 2026</span><span data-lang="zh">2026 年 1 月 29 日</span></time>
+              <span class="meta-sep" aria-hidden="true">·</span>
+              <span><span data-lang="en">1 min</span><span data-lang="zh">1 分钟</span></span>
+            </div>
+            <h3 class="post-card-title"><a href="/blog/why-the-blog/">Why the blog</a></h3>
+            <p class="post-excerpt">A place for research questions, implementation details, and open-source experiments that become clearer through writing.</p>
+          </div>
+        </article>
+          </div>
+          <p class="writing-note">
+            <span data-lang="en">Blog brings together essays, research notes, and open-source experiments in one place.</span>
+            <span data-lang="zh">Blog 统一承载研究笔记、开源实验与交互式技术记录。</span>
+          </p>
+        </section>
+
+        <section class="home-section" id="selected-projects" aria-labelledby="projects-heading">
+          <div class="section-head">
+            <h2 id="projects-heading"><span data-lang="en">Selected Projects</span><span data-lang="zh">精选项目</span></h2>
+            <a class="section-link" href="/projects/"><span data-lang="en">All 6 projects →</span><span data-lang="zh">全部 6 个项目 →</span></a>
+          </div>
+          <div class="selected-projects-grid">
+          <article class="mini-project-card">
+            <a class="mini-project-thumb" href="https://github.com/kairunwen/Awesome-Robot-Use-Agent" target="_blank" rel="noopener noreferrer" aria-label="Awesome Robot Use Agent">
+              <img src="/assets/projects/awesome-robot-use-agent-overview.png" alt="Awesome Robot Use Agent overview connecting AI agents, robot interfaces, and physical embodiments through tool calls and execution feedback" width="1672" height="941" loading="lazy">
+              
+            </a>
+            <div class="mini-project-body">
+              <h3><a href="https://github.com/kairunwen/Awesome-Robot-Use-Agent" target="_blank" rel="noopener noreferrer">Awesome Robot Use Agent</a></h3>
+              <p><span data-lang="en">A curated collection of papers, tools, benchmarks, and demos on AI agents that use robots to act in the physical world.</span><span data-lang="zh">面向 Robot-Use Agent 的精选论文、工具、评测基准与演示，关注 AI 智能体如何调用机器人完成物理世界任务。</span></p>
+              <div class="resource-links"><a class="resource-link" href="https://github.com/kairunwen/Awesome-Robot-Use-Agent" target="_blank" rel="noopener noreferrer"><span data-lang="en">GitHub</span><span data-lang="zh">GitHub</span> <span aria-hidden="true">↗</span></a><a class="resource-link" href="https://kairunwen.github.io/Awesome-Robot-Use-Agent/" target="_blank" rel="noopener noreferrer"><span data-lang="en">Website</span><span data-lang="zh">网站</span> <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </article>
+          <article class="mini-project-card">
+            <a class="mini-project-thumb is-video" href="https://arxiv.org/abs/2610.32196" target="_blank" rel="noopener noreferrer" aria-label="SWE-Shift">
+              <img src="/assets/projects/swe-shift-video-poster.jpg" alt="SWE-Shift video overview of coding agents in evolving workspaces" width="1280" height="720" loading="lazy">
+              <span class="video-badge">▶ Video</span>
+            </a>
+            <div class="mini-project-body">
+              <h3><a href="https://arxiv.org/abs/2610.32196" target="_blank" rel="noopener noreferrer">SWE-Shift</a></h3>
+              <p><span data-lang="en">A benchmark for coding agents in evolving workspaces, pairing unchanged and changed continuations from the same saved state across 120 scenarios, 12 change families, and nine intervention positions.</span><span data-lang="zh">面向持续变化工作环境的 Coding Agent 评测。从同一保存状态出发，对比保持原样与引入变化后的执行，覆盖 120 个场景、12 类变化及 9 个干预位置。</span></p>
+              <div class="resource-links"><a class="resource-link" href="https://arxiv.org/abs/2610.32196" target="_blank" rel="noopener noreferrer"><span data-lang="en">arXiv</span><span data-lang="zh">论文</span> <span aria-hidden="true">↗</span></a><a class="resource-link" href="https://arxiv.org/pdf/2610.32196" target="_blank" rel="noopener noreferrer"><span data-lang="en">PDF</span><span data-lang="zh">PDF</span> <span aria-hidden="true">↗</span></a><a class="resource-link" href="https://github.com/JeixHuang/SWE-Shift" target="_blank" rel="noopener noreferrer"><span data-lang="en">Code</span><span data-lang="zh">代码</span> <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </article>
+          <article class="mini-project-card">
+            <a class="mini-project-thumb" href="https://mind-omni.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Mind-Omni">
+              <img src="/assets/projects/mind-omni-overview.png" alt="Mind-Omni overview connecting MindLabel, MindVLA-U1, Streaming Intent, DIAL, MindSim, and AnyScene" width="2834" height="986" loading="lazy">
+              
+            </a>
+            <div class="mini-project-body">
+              <h3><a href="https://mind-omni.github.io/" target="_blank" rel="noopener noreferrer">Mind-Omni</a></h3>
+              <p><span data-lang="en">A Physical AI project series spanning streaming VLA, intent-conditioned planning, world simulation, and data engines.</span><span data-lang="zh">覆盖 streaming VLA、意图条件规划、世界模拟与数据引擎的 Physical AI 项目系列。</span></p>
+              <div class="resource-links"><a class="resource-link" href="https://mind-omni.github.io/" target="_blank" rel="noopener noreferrer"><span data-lang="en">Project</span><span data-lang="zh">项目</span> <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </article>
+          <article class="mini-project-card">
+            <a class="mini-project-thumb" href="https://github.com/Alpha-VLLM/Lumina-mGPT-2.0" target="_blank" rel="noopener noreferrer" aria-label="Lumina-mGPT 2.0">
+              <img src="/assets/projects/lumina-mgpt-2-architecture.png" alt="Lumina-mGPT 2.0 decoder-only architecture for text and reference-image conditioned generation" width="2990" height="1296" loading="lazy">
+              
+            </a>
+            <div class="mini-project-body">
+              <h3><a href="https://github.com/Alpha-VLLM/Lumina-mGPT-2.0" target="_blank" rel="noopener noreferrer">Lumina-mGPT 2.0</a></h3>
+              <p><span data-lang="en">An open autoregressive model for image generation, editing, and visual prediction.</span><span data-lang="zh">面向图像生成、编辑与视觉预测的开放自回归模型。</span></p>
+              <div class="resource-links"><a class="resource-link" href="https://github.com/Alpha-VLLM/Lumina-mGPT-2.0" target="_blank" rel="noopener noreferrer"><span data-lang="en">Code</span><span data-lang="zh">代码</span> <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </article>
+          </div>
+        </section>
+        <footer class="site-footer">
+          <p>© 2026 Victor Shea-Jay Huang</p>
+          <p><a href="/blog/rss.xml">RSS</a> · <a href="https://github.com/JeixHuang" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>
