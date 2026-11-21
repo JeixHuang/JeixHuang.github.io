@@ -1,19 +1,11 @@
 .DS_Store
+__pycache__/
+*.py[cod]
 
-# Jekyll
+# Generated static output (deployed to gh-pages via CI)
 /_site/
-/.jekyll-cache/
-/.jekyll-metadata
-/.sass-cache/
-/.bundle/
-/vendor/
+/_site_preview/
 
-# Hugo (the blog is generated into _site/blog during deployment)
-/blog/
-/blog_src/public/
-/blog_src/resources/
-**/.hugo_build.lock
-
-# Local work
+# Local scratch
 /.local/
 /tmp/

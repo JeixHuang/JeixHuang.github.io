@@ -1,0 +1,277 @@
+{
+  "site": {
+    "title": "Victor Shea-Jay Huang",
+    "url": "https://jeixhuang.github.io",
+    "description_en": "Victor Shea-Jay Huang is a first-year Ph.D. student at MMLab, CUHK, researching agents and physical AI, with a focus on world models.",
+    "description_zh": "Victor Shea-Jay Huang（黄希杰）是香港中文大学（CUHK）MMLab 一年级博士生，研究方向为智能体与物理智能（重点关注世界模型）。",
+    "keywords": "xijie huang, Xijie Huang, Victor Shea-Jay Huang, Victor Shea Jay Huang, Victor Ché-Jay Huang, Victor Ché Jay Huang, Ché-Jay Huang, Victor Huang, Huang Xijie, Victor Shea Huang, Victor Ché Huang",
+    "avatar": "/assets/img/avatar-aug-2026.jpg",
+    "avatar_width": 800,
+    "avatar_height": 800,
+    "favicon": "/assets/img/avatar3.jpg",
+    "favicon_type": "image/jpeg",
+    "copyright_year": 2026
+  },
+  "profile": {
+    "name": "Victor Shea-Jay Huang",
+    "handle": "@Xijie358",
+    "role_en": "Year-1 Ph.D. student",
+    "role_zh": "一年级博士生",
+    "subaffiliation": "MMLab",
+    "subaffiliation_full": "Multimedia Laboratory (MMLab)",
+    "subaffiliation_link": "https://mmlab.ie.cuhk.edu.hk/",
+    "affiliation": "CUHK",
+    "affiliation_full_en": "The Chinese University of Hong Kong (CUHK)",
+    "affiliation_full_zh": "香港中文大学（CUHK）",
+    "affiliation_link": "https://www.cuhk.edu.hk/",
+    "email": "jeix782@gmail.com",
+    "about_html_en": "I am a first-year Ph.D. student at <a href=\"https://mmlab.ie.cuhk.edu.hk/\">MMLab</a>, <a href=\"https://www.cuhk.edu.hk/\">The Chinese University of Hong Kong (CUHK)</a>, after receiving my B.E. degree in 2026.",
+    "about_html_zh": "我于 2026 年获得工学学士学位，现为<a href=\"https://www.cuhk.edu.hk/\">香港中文大学（CUHK）</a><a href=\"https://mmlab.ie.cuhk.edu.hk/\">MMLab</a> 的一年级博士生。",
+    "links": [
+      {
+        "id": "scholar",
+        "label": "Google Scholar",
+        "url": "https://scholar.google.com/citations?hl=zh-CN&user=pL5W9z4AAAAJ"
+      },
+      {
+        "id": "github",
+        "label": "GitHub",
+        "url": "https://github.com/JeixHuang"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/%E5%B8%8C%E6%9D%B0-%E9%BB%84-53a491322/"
+      },
+      {
+        "id": "x",
+        "label": "X / Twitter",
+        "url": "https://x.com/Xijie358"
+      },
+      {
+        "id": "email",
+        "label": "Email",
+        "url": "mailto:jeix782@gmail.com"
+      }
+    ]
+  },
+  "research": [
+    {
+      "id": "agents",
+      "title_en": "Agents",
+      "title_zh": "智能体",
+      "scope_en": "Reasoning and planning, reinforcement learning, memory and tool use, data and training, inference systems, and evaluation. Toward self-improving agents.",
+      "scope_zh": "推理与规划、强化学习、记忆与工具使用、数据与训练、推理系统和评估。面向持续自我改进的智能体。"
+    },
+    {
+      "id": "physical-ai",
+      "title_en": "Physical AI & World Models",
+      "title_zh": "物理智能与世界模型",
+      "scope_en": "Multimodal representations, generative and action-conditioned world models, simulation, embodied learning, planning, and control. Toward general-purpose physical intelligence.",
+      "scope_zh": "多模态表征、生成式与动作条件世界模型、模拟、具身学习、规划与控制。面向通用物理智能。"
+    }
+  ],
+  "news": [
+    {
+      "month": "2026-10",
+      "year": 2026,
+      "date_en": "Oct 2026",
+      "date_zh": "2026 年 10 月",
+      "html_en": "Released <a href=\"https://arxiv.org/abs/2610.32196\">SWE-Shift</a>, a benchmark for coding agents in evolving workspaces (<a href=\"https://github.com/JeixHuang/SWE-Shift\">Code</a>).",
+      "html_zh": "发布 <a href=\"https://arxiv.org/abs/2610.32196\">SWE-Shift</a>，面向持续变化工作环境的 Coding Agent 评测基准（<a href=\"https://github.com/JeixHuang/SWE-Shift\">代码</a>）。"
+    },
+    {
+      "month": "2026-09",
+      "year": 2026,
+      "date_en": "Sep 2026",
+      "date_zh": "2026 年 9 月",
+      "html_en": "<a href=\"https://openreview.net/forum?id=gbYg6VGblU#discussion\">Reward Is Not a Universal Interface for Generative Reinforcement Learning</a> was accepted to <strong>NeurIPS 2026</strong>.",
+      "html_zh": "<a href=\"https://openreview.net/forum?id=gbYg6VGblU#discussion\">Reward Is Not a Universal Interface for Generative Reinforcement Learning</a> 被 <strong>NeurIPS 2026</strong> 接收。"
+    },
+    {
+      "month": "2026-05",
+      "year": 2026,
+      "date_en": "May 2026",
+      "date_zh": "2026 年 5 月",
+      "html_en": "Released <a href=\"https://mind-omni.github.io/\">Mind-Omni</a> and <a href=\"https://arxiv.org/abs/2605.12625\">DIAL</a> on Physical AI, VLA, and intent-conditioned planning.",
+      "html_zh": "发布面向物理智能、VLA 与意图条件规划的 <a href=\"https://mind-omni.github.io/\">Mind-Omni</a> 与 <a href=\"https://arxiv.org/abs/2605.12625\">DIAL</a>。"
+    },
+    {
+      "month": "2026-03",
+      "year": 2026,
+      "date_en": "Mar 2026",
+      "date_zh": "2026 年 3 月",
+      "html_en": "<a href=\"https://ojs.aaai.org/index.php/AAAI/article/view/37006\">TIDE</a> was published in the <strong>AAAI 2026</strong> proceedings.",
+      "html_zh": "<a href=\"https://ojs.aaai.org/index.php/AAAI/article/view/37006\">TIDE</a> 发表于 <strong>AAAI 2026</strong> 论文集。"
+    },
+    {
+      "month": "2026-01",
+      "year": 2026,
+      "date_en": "Jan 2026",
+      "date_zh": "2026 年 1 月",
+      "html_en": "Launched this <a href=\"/blog/why-the-blog/\">Blog</a> for research notes, open-source experiments, and technical ideas.",
+      "html_zh": "启动个人 <a href=\"/blog/why-the-blog/\">Blog</a>，记录研究笔记、开源实验与技术思考。"
+    },
+    {
+      "month": "2025-07",
+      "year": 2025,
+      "date_en": "Jul 2025",
+      "date_zh": "2025 年 7 月",
+      "html_en": "Presented <a href=\"https://icml.cc/virtual/2025/50654\">BlackDAN</a> at the <strong>ICML 2025</strong> New In ML workshop.",
+      "html_zh": "在 <strong>ICML 2025</strong> New In ML Workshop 展示 <a href=\"https://icml.cc/virtual/2025/50654\">BlackDAN</a>。"
+    },
+    {
+      "month": "2025-04",
+      "year": 2025,
+      "date_en": "Apr 2025",
+      "date_zh": "2025 年 4 月",
+      "html_en": "<a href=\"https://ojs.aaai.org/index.php/AAAI/article/view/32396\">Medical MLLM Is Vulnerable</a> was published in the <strong>AAAI 2025</strong> proceedings, and co-released <a href=\"https://github.com/Alpha-VLLM/Lumina-mGPT-2.0\">Lumina-mGPT 2.0</a>.",
+      "html_zh": "<a href=\"https://ojs.aaai.org/index.php/AAAI/article/view/32396\">Medical MLLM Is Vulnerable</a> 发表于 <strong>AAAI 2025</strong> 论文集，并共同发布 <a href=\"https://github.com/Alpha-VLLM/Lumina-mGPT-2.0\">Lumina-mGPT 2.0</a>。"
+    }
+  ],
+  "projects": [
+    {
+      "slug": "awesome-robot-use-agent",
+      "title": "Awesome Robot Use Agent",
+      "date": "",
+      "featured": true,
+      "image": "/assets/projects/awesome-robot-use-agent-overview.png",
+      "image_width": 1672,
+      "image_height": 941,
+      "image_alt": "Awesome Robot Use Agent overview connecting AI agents, robot interfaces, and physical embodiments through tool calls and execution feedback",
+      "summary_en": "A curated collection of papers, tools, benchmarks, and demos on AI agents that use robots to act in the physical world.",
+      "summary_zh": "面向 Robot-Use Agent 的精选论文、工具、评测基准与演示，关注 AI 智能体如何调用机器人完成物理世界任务。",
+      "primary_url": "https://github.com/kairunwen/Awesome-Robot-Use-Agent",
+      "tags": ["Robot Use", "Embodied AI", "Resources"],
+      "links": [
+        {
+          "label_en": "GitHub",
+          "label_zh": "GitHub",
+          "url": "https://github.com/kairunwen/Awesome-Robot-Use-Agent"
+        },
+        {
+          "label_en": "Website",
+          "label_zh": "网站",
+          "url": "https://kairunwen.github.io/Awesome-Robot-Use-Agent/"
+        }
+      ]
+    },
+    {
+      "slug": "swe-shift",
+      "title": "SWE-Shift",
+      "date": "2026-10-23",
+      "featured": true,
+      "image": "/assets/projects/swe-shift-video-poster.jpg",
+      "image_width": 1280,
+      "image_height": 720,
+      "image_alt": "SWE-Shift video overview of coding agents in evolving workspaces",
+      "video_url": "/assets/videos/swe-shift.mp4",
+      "video_label": "SWE-Shift: two-minute research overview",
+      "summary_en": "A benchmark for coding agents in evolving workspaces, pairing unchanged and changed continuations from the same saved state across 120 scenarios, 12 change families, and nine intervention positions.",
+      "summary_zh": "面向持续变化工作环境的 Coding Agent 评测。从同一保存状态出发，对比保持原样与引入变化后的执行，覆盖 120 个场景、12 类变化及 9 个干预位置。",
+      "primary_url": "https://arxiv.org/abs/2610.32196",
+      "tags": ["Coding Agents", "Evaluation", "Adaptation"],
+      "links": [
+        {
+          "label_en": "arXiv",
+          "label_zh": "论文",
+          "url": "https://arxiv.org/abs/2610.32196"
+        },
+        {
+          "label_en": "PDF",
+          "label_zh": "PDF",
+          "url": "https://arxiv.org/pdf/2610.32196"
+        },
+        {
+          "label_en": "Code",
+          "label_zh": "代码",
+          "url": "https://github.com/JeixHuang/SWE-Shift"
+        }
+      ]
+    },
+    {
+      "slug": "mind-omni",
+      "title": "Mind-Omni",
+      "date": "2026-05-12",
+      "featured": true,
+      "image": "/assets/projects/mind-omni-overview.png",
+      "image_width": 2834,
+      "image_height": 986,
+      "image_alt": "Mind-Omni overview connecting MindLabel, MindVLA-U1, Streaming Intent, DIAL, MindSim, and AnyScene",
+      "summary_en": "A Physical AI project series spanning streaming VLA, intent-conditioned planning, world simulation, and data engines.",
+      "summary_zh": "覆盖 streaming VLA、意图条件规划、世界模拟与数据引擎的 Physical AI 项目系列。",
+      "primary_url": "https://mind-omni.github.io/",
+      "tags": ["Physical AI", "VLA", "World Model"],
+      "links": [
+        {
+          "label_en": "Project",
+          "label_zh": "项目",
+          "url": "https://mind-omni.github.io/"
+        }
+      ]
+    },
+    {
+      "slug": "lumina-mgpt-2-0",
+      "title": "Lumina-mGPT 2.0",
+      "date": "2025-04-03",
+      "featured": true,
+      "image": "/assets/projects/lumina-mgpt-2-architecture.png",
+      "image_width": 2990,
+      "image_height": 1296,
+      "image_alt": "Lumina-mGPT 2.0 decoder-only architecture for text and reference-image conditioned generation",
+      "summary_en": "An open autoregressive model for image generation, editing, and visual prediction.",
+      "summary_zh": "面向图像生成、编辑与视觉预测的开放自回归模型。",
+      "primary_url": "https://github.com/Alpha-VLLM/Lumina-mGPT-2.0",
+      "tags": ["Multimodal", "Generation", "LLM"],
+      "links": [
+        {
+          "label_en": "Code",
+          "label_zh": "代码",
+          "url": "https://github.com/Alpha-VLLM/Lumina-mGPT-2.0"
+        }
+      ]
+    },
+    {
+      "slug": "awesome-vision-to-music",
+      "title": "Awesome Vision-to-Music",
+      "date": "2025-03-24",
+      "featured": false,
+      "image": "/assets/files/V2M.png",
+      "image_width": 1606,
+      "image_height": 587,
+      "image_alt": "Vision-to-music overview of datasets, generation methods, evaluation, and challenges",
+      "summary_en": "A curated map of datasets, methods, and evaluation resources for vision-to-music generation.",
+      "summary_zh": "面向 Vision-to-Music Generation 的数据集、方法与评测资源索引。",
+      "primary_url": "https://github.com/wzk1015/Awesome-Vision-to-Music-Generation",
+      "tags": ["Multimodal", "Music", "Generation"],
+      "links": [
+        {
+          "label_en": "Code",
+          "label_zh": "代码",
+          "url": "https://github.com/wzk1015/Awesome-Vision-to-Music-Generation"
+        }
+      ]
+    },
+    {
+      "slug": "aisafetylab",
+      "title": "AISafetyLab",
+      "date": "2024-10-25",
+      "featured": false,
+      "image": "/assets/files/aisafetylab.png",
+      "image_width": 1816,
+      "image_height": 964,
+      "image_alt": "AISafetyLab framework connecting model attacks, defenses, and safety evaluation",
+      "summary_en": "A framework for evaluating attacks, defenses, and safety risks across large language models.",
+      "summary_zh": "面向大语言模型攻击、防御与安全风险评测的一体化框架。",
+      "primary_url": "https://github.com/thu-coai/AISafetyLab",
+      "tags": ["LLM", "Safety", "Evaluation"],
+      "links": [
+        {
+          "label_en": "Code",
+          "label_zh": "代码",
+          "url": "https://github.com/thu-coai/AISafetyLab"
+        }
+      ]
+    }
+  ]
+}

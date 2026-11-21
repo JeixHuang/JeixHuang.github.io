@@ -1,0 +1,796 @@
+<!--meta
+{
+  "title": "Rich HTML Post Starter: Motion, Interactive Plots & Card Artwork",
+  "title_zh": "富 HTML 博文母版：原生动效、交互图表与生成艺术卡",
+  "date": "2026-11-21",
+  "slug": "html-post-showcase",
+  "tags": ["template", "interactive", "demo"],
+  "art": {"style": "meridian", "palette": "slate"},
+  "summary": "An official starter template showcasing native HTML/Canvas animations, smooth interactive SVG plots, KaTeX math, Booktabs tables, syntax-styled code, hover footnotes, and deterministic SVG card artwork.",
+  "summary_zh": "官方富 HTML 博文母版，完整演示原生 Canvas 动效、平滑贝塞尔交互图表、KaTeX 公式、Booktabs 学术表格、轻量语法着色代码、悬停脚注与 6 套生成式线条色块艺术卡。",
+  "tldr": "Copy this folder into content/posts/<your-slug>/ to publish any research note, experiment log, or interactive visual essay directly in clean HTML.",
+  "tldr_zh": "将本目录复制到 content/posts/<your-slug>/，即可用原生 HTML 无损编写研究笔记、开源实验或交互式可视化长文。",
+  "content_lang": "en",
+  "bilingual": true,
+  "math": true,
+  "draft": false,
+  "x_post": {
+    "url": "https://x.com/Xijie358",
+    "handle": "@Xijie358",
+    "date": "Nov 21, 2026",
+    "text_en": "Upgraded my site so Blog posts can be authored directly in clean HTML — native Canvas animations, smooth interactive SVG plots, KaTeX math, Booktabs tables, hover footnotes, and a sliding TOC alongside the thread.",
+    "text_zh": "主页博客升级为原生 HTML 一等公民：支持直接写 Canvas 动效、平滑交互式 SVG 图表、KaTeX 公式、学术表格、悬停脚注，以及右侧随滚滑动目录与推文联动卡片。"
+  }
+}
+-->
+
+<h2 id="why-html">
+  <span data-lang="en">1. Why Native HTML First</span>
+  <span data-lang="zh">1. 为什么原生 HTML 是一等公民</span>
+</h2>
+
+<p>
+  <span data-lang="en">Short research notes, open-source experiments, and interactive demos often lose clarity when forced through rigid Markdown shortcodes. In this unified <strong>Blog</strong> pipeline, every entry lives in its own folder under <code>content/posts/&lt;slug&gt;/</code>, and <code>index.html</code> renders verbatim without mangling inline <code>&lt;svg&gt;</code>, <code>&lt;canvas&gt;</code>, <code>&lt;video&gt;</code>, GIFs, or scoped scripts.<button type="button" class="fn-ref" data-fn="1">1</button></span>
+  <span data-lang="zh">许多研究笔记、开源实验与交互演示一旦硬塞进受限的 Markdown 短代码，就会失去表现力。在这套统一的 <strong>Blog</strong> 构建管线中，每篇文章独立存放在 <code>content/posts/&lt;slug&gt;/</code> 目录下，<code>index.html</code> 会原样直出，不会破坏内联 <code>&lt;svg&gt;</code>、<code>&lt;canvas&gt;</code>、<code>&lt;video&gt;</code>、GIF 动图或局部交互脚本。<button type="button" class="fn-ref" data-fn="1">1</button></span>
+</p>
+
+<p>
+  <span data-lang="en">Meanwhile, the outer layout keeps the author rail anchored on the left, centers readable prose at a quiet 740&nbsp;px measure, and mounts a scroll-spy table of contents plus an optional companion X post card on the right.</span>
+  <span data-lang="zh">与此同时，外层版式始终保持左侧个人栏吸顶、中间 740&nbsp;px 静谧阅读宽，并在右侧自动挂载随滚动位置平滑追踪的滑动目录与可选的对应 X 帖子联动卡片。</span>
+</p>
+
+<h2 id="interactive-canvas">
+  <span data-lang="en">2. Native Canvas Motion &amp; Live Controls</span>
+  <span data-lang="zh">2. 原生 Canvas 动效与实时参数控制</span>
+</h2>
+
+<p>
+  <span data-lang="en">Rather than capturing bulky videos for every parameter sweep, embed a crisp Canvas simulation inside <code>.media-stage</code>. Figure&nbsp;1 illustrates synthetic branching trajectories converging from a saved checkpoint toward a target manifold under adjustable spread and pull rates.</span>
+  <span data-lang="zh">无需每次调参都录制庞大的录屏，你可以直接在 <code>.media-stage</code> 中嵌入轻量的原生 Canvas 模拟。图&nbsp;1 展示了模板示意场景：从同一检查点出发的多分支轨迹在可调扩散与收敛参数下向目标流形汇合。</span>
+</p>
+
+<figure class="media-stage" id="rollout-stage">
+  <div class="media-stage-head">
+    <div>
+      <span class="plate-eyebrow">Figure 1 · Interactive Canvas</span>
+      <p class="media-stage-title">
+        <span data-lang="en">Branching Rollout Flow (Synthetic Template Data)</span>
+        <span data-lang="zh">多分支采样轨迹流（模板示意数据）</span>
+      </p>
+    </div>
+    <div class="viz-legend" style="margin: 4px 0 0;">
+      <span class="viz-legend-item"><span class="viz-swatch" style="background: var(--viz-accent);"></span><span data-lang="en">Guided Branch</span><span data-lang="zh">引导分支</span></span>
+      <span class="viz-legend-item"><span class="viz-swatch" style="background: var(--viz-secondary);"></span><span data-lang="en">Unconstrained</span><span data-lang="zh">自由扩散</span></span>
+    </div>
+  </div>
+  <div class="media-stage-viewport">
+    <canvas id="rollout-canvas" width="700" height="270" aria-label="Animated branching rollout trajectories converging toward a target manifold"></canvas>
+  </div>
+  <div class="stage-controls">
+    <button type="button" class="stage-btn" id="sim-toggle">Pause</button>
+    <button type="button" class="stage-btn" id="sim-reset">Reset</button>
+    <label class="stage-slider">
+      <span><span data-lang="en">Spread σ</span><span data-lang="zh">扩散 σ</span></span>
+      <input type="range" id="sim-spread" min="0.15" max="1.20" step="0.05" value="0.45">
+      <strong id="sim-spread-val">0.45</strong>
+    </label>
+    <label class="stage-slider">
+      <span><span data-lang="en">Pull η</span><span data-lang="zh">收敛 η</span></span>
+      <input type="range" id="sim-pull" min="0.30" max="1.40" step="0.05" value="0.80">
+      <strong id="sim-pull-val">0.80</strong>
+    </label>
+    <span class="stage-readout" id="sim-readout">t = 0.0 · near target 0/18</span>
+  </div>
+  <figcaption class="plate-caption">
+    <span data-lang="en"><strong>Figure 1.</strong> Real-time 60&nbsp;fps Canvas simulation using the Warm Mineral sub-palette. Automatically adapts its surface and stroke colors when toggling Light and Dark themes.</span>
+    <span data-lang="zh"><strong>图 1.</strong> 采用暖矿物色盘的 60&nbsp;fps 原生 Canvas 模拟，切换浅色与暗色主题时自动重绘画布与轨迹颜色。</span>
+  </figcaption>
+</figure>
+
+<h2 id="interactive-plot">
+  <span data-lang="en">3. Smooth Interactive Mineral-Palette Plot</span>
+  <span data-lang="zh">3. 暖矿物色盘平滑交互式图表</span>
+</h2>
+
+<p>
+  <span data-lang="en">Analytical figures sit on warm archival paper (<code>#FAF8F4</code>) paired with warm copper (<code>#C45B28</code>), mineral slate (<code>#39607A</code>), and a dashed neutral baseline. Hover or tap any step on Figure&nbsp;2 to inspect exact readings, or switch metrics via the segmented toggle.<button type="button" class="fn-ref" data-fn="2">2</button></span>
+  <span data-lang="zh">分析图表采用微暖画纸底（<code>#FAF8F4</code>），搭配暖铜主线（<code>#C45B28</code>）、矿岩蓝灰辅助线（<code>#39607A</code>）与中性虚线基线。悬停或轻点图&nbsp;2 任意步数即可查看精确数值，并可通过嵌槽分段控件切换指标。<button type="button" class="fn-ref" data-fn="2">2</button></span>
+</p>
+
+<figure class="viz" id="demo-viz">
+  <div class="viz-header">
+    <div>
+      <span class="plate-eyebrow">Figure 2 · Interactive Plot</span>
+      <p class="viz-title">
+        <span data-lang="en">Trajectory Stability vs. Rollout Budget (Template Illustration)</span>
+        <span data-lang="zh">采样预算与轨迹稳定性对比（模板示意图）</span>
+      </p>
+      <p class="viz-subtitle">
+        <span data-lang="en">Hover or tap along the curve to inspect values; switch between Convergence Rate and Relative Variance.</span>
+        <span data-lang="zh">悬停或点选曲线查看三组对照数值；支持在收敛率与相对方差之间切换。</span>
+      </p>
+    </div>
+    <div class="seg-toggle" role="group" aria-label="Chart metric selector">
+      <button type="button" class="viz-btn is-active" data-metric="convergence" aria-pressed="true">
+        <span data-lang="en">Convergence</span><span data-lang="zh">收敛率</span>
+      </button>
+      <button type="button" class="viz-btn" data-metric="variance" aria-pressed="false">
+        <span data-lang="en">Variance</span><span data-lang="zh">相对方差</span>
+      </button>
+    </div>
+  </div>
+  <div class="viz-legend">
+    <span class="viz-legend-item"><span class="viz-swatch" style="background: var(--viz-accent);"></span><span data-lang="en">Structured Update</span><span data-lang="zh">结构化更新</span></span>
+    <span class="viz-legend-item"><span class="viz-swatch" style="background: var(--viz-secondary);"></span><span data-lang="en">Anchored Surrogate</span><span data-lang="zh">锚定代理</span></span>
+    <span class="viz-legend-item"><span class="viz-swatch is-dashed"></span><span data-lang="en">Scalar Baseline</span><span data-lang="zh">标量基线</span></span>
+  </div>
+  <div class="viz-stage" id="demo-viz-stage">
+    <svg id="demo-viz-svg" viewBox="0 0 660 272" width="660" height="272" role="img" aria-label="Interactive three-series smooth Bézier comparison chart in Warm Mineral palette"></svg>
+    <div class="viz-tooltip" id="demo-viz-tip" aria-hidden="true"></div>
+  </div>
+  <figcaption class="plate-caption">
+    <span data-lang="en"><strong>Figure 2.</strong> Illustrative synthetic curves only — swap the <code>DATASETS</code> table in the script block with real experiment logs or fetch a sibling <code>results.json</code> file.</span>
+    <span data-lang="zh"><strong>图 2.</strong> 以上为模板示意数据——在正式博文中，将脚本里的 <code>DATASETS</code> 替换为真实实验日志或读取同目录的 <code>results.json</code> 即可。</span>
+  </figcaption>
+</figure>
+
+<h2 id="math-formulation">
+  <span data-lang="en">4. Equations &amp; Notation (KaTeX)</span>
+  <span data-lang="zh">4. 数学公式与符号（KaTeX）</span>
+</h2>
+
+<p>
+  <span data-lang="en">Enabling <code>"math": true</code> in post metadata loads KaTeX on demand for crisp inline and display equations without adding overhead to plain essays.</span>
+  <span data-lang="zh">在文章元数据中设置 <code>"math": true</code> 即可按需加载 KaTeX，实现清晰的行内与独立公式排版，同时不增加普通随笔的加载负担。</span>
+</p>
+
+<h3 id="local-score-update">
+  <span data-lang="en">4.1 Branch-Conditioned Score Objective</span>
+  <span data-lang="zh">4.1 分支条件得分目标</span>
+</h3>
+
+<p>
+  <span data-lang="en">Consider a trajectory $\tau = (s_0, a_0, \dots, s_T)$ branched from a saved checkpoint $s_k$. Comparing an unchanged continuation against a perturbed environment $E'$ yields a paired advantage estimate:</span>
+  <span data-lang="zh">考虑从同一已保存检查点 $s_k$ 出发的分支轨迹 $\tau = (s_0, a_0, \dots, s_T)$。将保持原样与引入变化 $E'$ 后的续写配对比较，可写出如下局部优势估计：</span>
+</p>
+
+$$\Delta_k(\pi) = \mathbb{E}_{\tau \sim \pi(\cdot \mid s_k, E')}\!\left[R(\tau)\right] - \mathbb{E}_{\tau \sim \pi(\cdot \mid s_k, E)}\!\left[R(\tau)\right]$$
+
+<h3 id="variance-bound">
+  <span data-lang="en">4.2 Controlled Gradient Variance</span>
+  <span data-lang="zh">4.2 可控梯度方差界</span>
+</h3>
+
+<p>
+  <span data-lang="en">Coupling both continuations at checkpoint $s_k$ cancels prefix variance before intervention step $k$, isolating adaptation error strictly to post-shift decisions:<button type="button" class="fn-ref" data-fn="3">3</button></span>
+  <span data-lang="zh">在检查点 $s_k$ 处耦合两条续写轨迹，可抵消干预步 $k$ 之前的前缀方差，将适应误差精确隔离到变化发生之后的决策阶段：<button type="button" class="fn-ref" data-fn="3">3</button></span>
+</p>
+
+$$\operatorname{Var}\!\left(\hat{\Delta}_k\right) = \operatorname{Var}(R') + \operatorname{Var}(R) - 2\,\operatorname{Cov}\!\left(R', R \mid s_k\right)$$
+
+<h2 id="editorial-components">
+  <span data-lang="en">5. Callouts &amp; Embedded Read-More Cards</span>
+  <span data-lang="zh">5. 学术提示块与延伸阅读卡片</span>
+</h2>
+
+<div class="callout callout-warm">
+  <p class="callout-title"><span data-lang="en">Color Discipline</span><span data-lang="zh">色彩克制原则</span></p>
+  <p>
+    <span data-lang="en">Keep reading surfaces pure white (<code>#FFFFFF</code>), reserve Prussian blue (<code>#2452B8</code>) for navigation and structural controls, and keep warm copper (<code>#C45B28</code>) and mineral slate (<code>#39607A</code>) for analytical figures and focal takeaways.</span>
+    <span data-lang="zh">保持正文画布纯白（<code>#FFFFFF</code>），将普鲁士编辑蓝（<code>#2452B8</code>）专用于导航与交互控件，而暖铜（<code>#C45B28</code>）与矿岩蓝灰（<code>#39607A</code>）留给分析图表与核心洞见。</span>
+  </p>
+</div>
+
+<div class="callout">
+  <p class="callout-title"><span data-lang="en">Drop-In Media</span><span data-lang="zh">多媒体无损嵌入</span></p>
+  <p>
+    <span data-lang="en">GIFs, animated WebP, looping MP4 clips (<code>&lt;video autoplay muted loop playsinline&gt;</code>), high-DPI diagrams, and custom Canvas/WebGL embeds live right next to <code>index.html</code> via relative paths like <code>./demo.gif</code>.</span>
+    <span data-lang="zh">GIF、动态 WebP、循环 MP4 短片（<code>&lt;video autoplay muted loop playsinline&gt;</code>）、高清架构图与自定义 Canvas/WebGL 组件，均可直接放在 <code>index.html</code> 同目录并用 <code>./demo.gif</code> 相对路径引用。</span>
+  </p>
+</div>
+
+<a class="read-more-card" href="/blog/why-the-blog/">
+  <span class="read-more-thumb" aria-hidden="true"><!--art:strata:cobalt:why-the-blog--></span>
+  <span class="read-more-copy">
+    <span class="read-more-kicker"><span data-lang="en">Related Note</span><span data-lang="zh">延伸阅读</span></span>
+    <span class="read-more-title">Why the blog</span>
+    <span class="read-more-desc"><span data-lang="en">A place for research questions, implementation details, and open-source experiments that become clearer through writing.</span><span data-lang="zh">记录研究问题、实现细节与开源实验的写作空间。</span></span>
+  </span>
+  <span class="read-more-arrow" aria-hidden="true">→</span>
+</a>
+
+<h2 id="code-and-tables">
+  <span data-lang="en">6. Syntax-Styled Code &amp; Booktabs Tables</span>
+  <span data-lang="zh">6. 轻量着色代码块与 Booktabs 学术表格</span>
+</h2>
+
+<p>
+  <span data-lang="en">Code blocks sit on a warm archival surface with a quiet top bar and one-click copy. Optional mineral token spans (<code>.tok-kw</code>, <code>.tok-fn</code>, <code>.tok-str</code>, <code>.tok-num</code>, <code>.tok-cm</code>) provide crisp syntax hierarchy with zero third-party JS dependencies:</span>
+  <span data-lang="zh">代码块采用微暖纸面与极简顶栏一键复制，可选内置矿物色语法标记类（<code>.tok-kw</code> / <code>.tok-fn</code> / <code>.tok-str</code> / <code>.tok-num</code> / <code>.tok-cm</code>），无需引入外部高亮库：</span>
+</p>
+
+<pre><code class="language-python"><span class="tok-kw">def</span> <span class="tok-fn">paired_continuation_delta</span>(baseline, shifted):
+    <span class="tok-cm">"""Compute checkpoint-coupled adaptation shift."""</span>
+    <span class="tok-kw">assert</span> <span class="tok-fn">len</span>(baseline) == <span class="tok-fn">len</span>(shifted), <span class="tok-str">"Mismatched rollout count"</span>
+    diffs = [s - b <span class="tok-kw">for</span> b, s <span class="tok-kw">in</span> <span class="tok-fn">zip</span>(baseline, shifted)]
+    <span class="tok-kw">return</span> <span class="tok-fn">sum</span>(diffs) / <span class="tok-fn">max</span>(<span class="tok-num">1</span>, <span class="tok-fn">len</span>(diffs))</code></pre>
+
+<p>
+  <span data-lang="en">Tables follow clean academic <em>Booktabs</em> conventions — crisp top, mid, and bottom rules, zero vertical borders, and right-aligned tabular numerals (<code>class="num"</code>):</span>
+  <span data-lang="zh">表格遵循经典学术 <em>Booktabs</em> 排版规范——仅保留顶、中、底三条精细横线、零竖线，数值列使用 <code>class="num"</code> 右对齐等宽数字：</span>
+</p>
+
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr>
+        <th><span data-lang="en">Method (Synthetic)</span><span data-lang="zh">方法（模板示意）</span></th>
+        <th class="num"><span data-lang="en">Success (%)</span><span data-lang="zh">成功率 (%)</span></th>
+        <th class="num"><span data-lang="en">Rel. Var (×)</span><span data-lang="zh">相对方差 (×)</span></th>
+        <th class="num"><span data-lang="en">Drift ↓</span><span data-lang="zh">漂移 ↓</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Scalar Baseline</td>
+        <td class="num">71.0</td>
+        <td class="num">0.65</td>
+        <td class="num">0.42</td>
+      </tr>
+      <tr>
+        <td>Anchored Surrogate</td>
+        <td class="num">82.4</td>
+        <td class="num">0.34</td>
+        <td class="num">0.21</td>
+      </tr>
+      <tr>
+        <td><strong>Structured Update</strong></td>
+        <td class="num"><strong>91.2</strong></td>
+        <td class="num"><strong>0.19</strong></td>
+        <td class="num"><strong>0.11</strong></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id="artwork-presets">
+  <span data-lang="en">7. Card Artwork Presets (6 Styles × 6 Mineral Palettes)</span>
+  <span data-lang="zh">7. 卡片生成艺术预设（6 构图 × 6 矿物色盘）</span>
+</h2>
+
+<p>
+  <span data-lang="en">On the homepage and <code>/blog/</code>, every post card displays a compact <code>16:10</code> deterministic inline SVG print seeded from its slug (adapting automatically to Light and Dark themes). You can also pick any combination explicitly via <code>"art": {"style": "...", "palette": "..."}</code>, or opt into a custom image/GIF card with <code>"cover_mode": "image"</code>:</span>
+  <span data-lang="zh">在首页与 <code>/blog/</code> 的 3 列画廊网格中，每篇文章默认展示一枚按 <code>slug</code> 确定性生成的 <code>16:10</code> 矢量线条/色块艺术卡（自动适配浅色与暗色主题）。你可以在元数据中用 <code>"art": {"style": "...", "palette": "..."}</code> 手动选型，或设 <code>"cover_mode": "image"</code> 改用自选封面图：</span>
+</p>
+
+<div class="preset-grid">
+  <div class="preset-card">
+    <div class="post-art-frame"><!--art:strata:cobalt:preset-strata--></div>
+    <div class="preset-meta"><strong>Strata</strong><code>strata · cobalt</code></div>
+  </div>
+  <div class="preset-card">
+    <div class="post-art-frame"><!--art:contour:pine:preset-contour--></div>
+    <div class="preset-meta"><strong>Contour</strong><code>contour · pine</code></div>
+  </div>
+  <div class="preset-card">
+    <div class="post-art-frame"><!--art:blocks:terracotta:preset-blocks--></div>
+    <div class="preset-meta"><strong>Blocks</strong><code>blocks · terracotta</code></div>
+  </div>
+  <div class="preset-card">
+    <div class="post-art-frame"><!--art:meridian:slate:preset-meridian--></div>
+    <div class="preset-meta"><strong>Meridian</strong><code>meridian · slate</code></div>
+  </div>
+  <div class="preset-card">
+    <div class="post-art-frame"><!--art:ribbon:plum:preset-ribbon--></div>
+    <div class="preset-meta"><strong>Ribbon</strong><code>ribbon · plum</code></div>
+  </div>
+  <div class="preset-card">
+    <div class="post-art-frame"><!--art:terrace:indigo:preset-terrace--></div>
+    <div class="preset-meta"><strong>Terrace</strong><code>terrace · indigo</code></div>
+  </div>
+</div>
+
+<h2 id="authoring-workflow">
+  <span data-lang="en">8. Three-Step Publishing Workflow</span>
+  <span data-lang="zh">8. 三步发布新博文工作流</span>
+</h2>
+
+<h3 id="metadata-block">
+  <span data-lang="en">8.1 Metadata &amp; Artwork</span>
+  <span data-lang="zh">8.1 元数据与卡片艺术</span>
+</h3>
+
+<p>
+  <span data-lang="en">Start every HTML post with a JSON <code>&lt;!--meta { ... } --&gt;</code> block (or a sibling <code>meta.json</code>). Keep <code>"draft": true</code> while iterating locally, and flip it to <code>false</code> only when ready to publish.</span>
+  <span data-lang="zh">每篇 HTML 文章顶部写入 JSON 格式的 <code>&lt;!--meta { ... } --&gt;</code> 注释块（或同目录放 <code>meta.json</code>）。本地打磨阶段可设为 <code>"draft": true</code>，准备公开时再改为 <code>false</code>。</span>
+</p>
+
+<h3 id="companion-assets">
+  <span data-lang="en">8.2 Companion Assets &amp; Verification</span>
+  <span data-lang="zh">8.2 伴生素材与自动校验</span>
+</h3>
+
+<p>
+  <span data-lang="en">Drop figures, GIFs, MP4 clips, or JSON logs directly next to <code>index.html</code> inside the post folder, then run <code>python3 scripts/build.py &amp;&amp; python3 scripts/check_site.py _site</code> to verify every internal link, anchor, DOM ID, and draft boundary.</span>
+  <span data-lang="zh">将图片、GIF、MP4 短片或 JSON 数据放在文章目录的 <code>index.html</code> 旁，随后执行 <code>python3 scripts/build.py &amp;&amp; python3 scripts/check_site.py _site</code> 校验全部内链、锚点、DOM ID 与草稿边界。</span>
+</p>
+
+<h2 id="references">
+  <span data-lang="en">9. References</span>
+  <span data-lang="zh">9. 参考文献</span>
+</h2>
+
+<ol class="references-list">
+  <li id="ref-1">Zero-dependency Python 3 static build pipeline (<code>scripts/build.py</code>) supporting native HTML pass-through alongside Markdown notes.</li>
+  <li id="ref-2">Warm Mineral analytical sub-palette pairing archival off-white surfaces (<code>#FAF8F4</code>) with copper (<code>#C45B28</code>) and mineral slate (<code>#39607A</code>) curves.</li>
+  <li id="ref-3">Paired-checkpoint evaluation formulation used here strictly as synthetic equations to verify KaTeX typesetting.</li>
+</ol>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ========================================================================
+     A. Figure 1 — Interactive Canvas Branching Rollout Simulation
+     ======================================================================== */
+  var canvas = document.getElementById("rollout-canvas");
+  if (canvas && canvas.getContext) {
+    var ctx = canvas.getContext("2d");
+    var toggleBtn = document.getElementById("sim-toggle");
+    var resetBtn = document.getElementById("sim-reset");
+    var spreadInput = document.getElementById("sim-spread");
+    var pullInput = document.getElementById("sim-pull");
+    var spreadVal = document.getElementById("sim-spread-val");
+    var pullVal = document.getElementById("sim-pull-val");
+    var readout = document.getElementById("sim-readout");
+
+    var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var running = !reduceMotion;
+    if (!running && toggleBtn) toggleBtn.textContent = "Play";
+
+    var W = canvas.width;
+    var H = canvas.height;
+    var particles = [];
+    var simTime = 0;
+
+    function getThemeColors() {
+      var cs = getComputedStyle(document.documentElement);
+      return {
+        bg: cs.getPropertyValue("--viz-stage").trim() || "#FFFFFF",
+        grid: cs.getPropertyValue("--viz-grid").trim() || "#EFE9DF",
+        axis: cs.getPropertyValue("--viz-axis").trim() || "#D8CFC2",
+        ink3: cs.getPropertyValue("--viz-ink-3").trim() || "#7A6B5E",
+        accent: cs.getPropertyValue("--viz-accent").trim() || "#C45B28",
+        secondary: cs.getPropertyValue("--viz-secondary").trim() || "#39607A"
+      };
+    }
+
+    function seedParticles() {
+      particles = [];
+      simTime = 0;
+      var count = 18;
+      for (var i = 0; i < count; i++) {
+        var frac = (i / (count - 1)) - 0.5;
+        particles.push({
+          x: 64,
+          y: H * 0.5 + frac * 144,
+          vx: 1.55 + (i % 4) * 0.14,
+          vy: frac * 0.48,
+          trail: [{ x: 64, y: H * 0.5 + frac * 144 }],
+          isAccent: i % 2 === 0,
+          phase: i * 1.37
+        });
+      }
+    }
+
+    function stepSimulation(dt) {
+      var spread = parseFloat(spreadInput.value);
+      var pull = parseFloat(pullInput.value);
+      simTime += dt;
+
+      var targetX = W - 78;
+      var targetY = H * 0.5;
+      var converged = 0;
+
+      particles.forEach(function (p) {
+        var dy = targetY - p.y;
+        var progress = Math.max(0, Math.min(1, (p.x - 64) / (targetX - 64)));
+        var guide = p.isAccent ? pull * 1.15 : pull * 0.62;
+        var wobble = Math.sin(simTime * 3.0 + p.phase + p.x * 0.024) * spread * (p.isAccent ? 0.52 : 1.04);
+
+        p.vy = p.vy * 0.9 + (dy * 0.0085 * guide) + wobble * 0.18;
+        p.x += p.vx * (0.95 + 0.25 * progress);
+        p.y = Math.max(22, Math.min(H - 22, p.y + p.vy));
+
+        p.trail.push({ x: p.x, y: p.y });
+        if (p.trail.length > 90) p.trail.shift();
+
+        if (Math.hypot(targetX - p.x, targetY - p.y) < 34) converged += 1;
+        if (p.x > targetX + 12) {
+          p.x = 64;
+          p.y = H * 0.5 + (Math.sin(p.phase + simTime) * 0.5) * 144;
+          p.vy = 0;
+          p.trail = [{ x: p.x, y: p.y }];
+        }
+      });
+
+      if (readout) {
+        readout.textContent = "t = " + simTime.toFixed(1) + " · near target " + converged + "/" + particles.length;
+      }
+    }
+
+    function drawSimulation() {
+      var c = getThemeColors();
+      ctx.fillStyle = c.bg;
+      ctx.fillRect(0, 0, W, H);
+
+      ctx.strokeStyle = c.grid;
+      ctx.lineWidth = 1;
+      for (var gx = 64; gx < W; gx += 64) {
+        ctx.beginPath();
+        ctx.moveTo(gx, 16);
+        ctx.lineTo(gx, H - 16);
+        ctx.stroke();
+      }
+      for (var gy = 40; gy < H; gy += 48) {
+        ctx.beginPath();
+        ctx.moveTo(20, gy);
+        ctx.lineTo(W - 20, gy);
+        ctx.stroke();
+      }
+
+      var targetX = W - 78;
+      var targetY = H * 0.5;
+      ctx.strokeStyle = c.axis;
+      ctx.setLineDash([4, 4]);
+      ctx.beginPath();
+      ctx.moveTo(64, 24);
+      ctx.lineTo(64, H - 24);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      ctx.beginPath();
+      ctx.arc(targetX, targetY, 30, 0, Math.PI * 2);
+      ctx.fillStyle = c.accent + "1A";
+      ctx.fill();
+      ctx.strokeStyle = c.accent;
+      ctx.lineWidth = 1.4;
+      ctx.stroke();
+
+      ctx.fillStyle = c.ink3;
+      ctx.font = '600 11px "JetBrains Mono", monospace';
+      ctx.fillText("s_k", 52, 18);
+      ctx.fillText("manifold", targetX - 28, 18);
+
+      particles.forEach(function (p) {
+        if (p.trail.length < 2) return;
+        ctx.beginPath();
+        ctx.moveTo(p.trail[0].x, p.trail[0].y);
+        for (var i = 1; i < p.trail.length; i++) {
+          ctx.lineTo(p.trail[i].x, p.trail[i].y);
+        }
+        ctx.strokeStyle = p.isAccent ? c.accent : c.secondary;
+        ctx.globalAlpha = p.isAccent ? 0.78 : 0.45;
+        ctx.lineWidth = p.isAccent ? 1.8 : 1.35;
+        ctx.stroke();
+
+        ctx.globalAlpha = 1;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.isAccent ? 3.2 : 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = p.isAccent ? c.accent : c.secondary;
+        ctx.fill();
+      });
+    }
+
+    seedParticles();
+    for (var warm = 0; warm < 45; warm++) stepSimulation(0.05);
+    drawSimulation();
+
+    function tick() {
+      if (running) {
+        stepSimulation(0.04);
+        drawSimulation();
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener("click", function () {
+        running = !running;
+        toggleBtn.textContent = running ? "Pause" : "Play";
+      });
+    }
+    if (resetBtn) {
+      resetBtn.addEventListener("click", function () {
+        seedParticles();
+        for (var k = 0; k < 20; k++) stepSimulation(0.04);
+        drawSimulation();
+      });
+    }
+    if (spreadInput && spreadVal) {
+      spreadInput.addEventListener("input", function () {
+        spreadVal.textContent = parseFloat(spreadInput.value).toFixed(2);
+      });
+    }
+    if (pullInput && pullVal) {
+      pullInput.addEventListener("input", function () {
+        pullVal.textContent = parseFloat(pullInput.value).toFixed(2);
+      });
+    }
+    window.addEventListener("jeix:themechange", drawSimulation);
+  }
+
+  /* ========================================================================
+     B. Figure 2 — Smooth Cubic Bézier Interactive Three-Series SVG Plot
+     ======================================================================== */
+  var svg = document.getElementById("demo-viz-svg");
+  var stage = document.getElementById("demo-viz-stage");
+  var tip = document.getElementById("demo-viz-tip");
+  if (svg && stage && tip) {
+    var DATASETS = {
+      convergence: {
+        yMin: 30,
+        yMax: 95,
+        unit: "%",
+        steps: [1, 2, 4, 8, 16, 32, 64],
+        structured: [44, 57, 68, 77, 84, 89, 91.2],
+        anchored:   [43, 53, 62, 70, 76, 80, 82.4],
+        baseline:   [42, 49, 55, 61, 66, 69, 71.0]
+      },
+      variance: {
+        yMin: 0.1,
+        yMax: 1.05,
+        unit: "×",
+        steps: [1, 2, 4, 8, 16, 32, 64],
+        structured: [0.92, 0.70, 0.52, 0.39, 0.29, 0.23, 0.19],
+        anchored:   [0.95, 0.79, 0.65, 0.53, 0.44, 0.38, 0.34],
+        baseline:   [0.98, 0.89, 0.81, 0.75, 0.70, 0.67, 0.65]
+      }
+    };
+
+    var currentMetric = "convergence";
+    var pad = { left: 54, right: 24, top: 20, bottom: 38 };
+    var W2 = 660;
+    var H2 = 272;
+    var plotW = W2 - pad.left - pad.right;
+    var plotH = H2 - pad.top - pad.bottom;
+
+    function ns(tag, attrs) {
+      var el = document.createElementNS("http://www.w3.org/2000/svg", tag);
+      Object.keys(attrs || {}).forEach(function (k) {
+        el.setAttribute(k, String(attrs[k]));
+      });
+      return el;
+    }
+
+    function smoothPath(points) {
+      if (points.length < 2) return "";
+      var d = "M" + points[0][0].toFixed(1) + "," + points[0][1].toFixed(1);
+      for (var i = 0; i < points.length - 1; i++) {
+        var p0 = points[Math.max(0, i - 1)];
+        var p1 = points[i];
+        var p2 = points[i + 1];
+        var p3 = points[Math.min(points.length - 1, i + 2)];
+        var c1x = p1[0] + (p2[0] - p0[0]) / 6;
+        var c1y = p1[1] + (p2[1] - p0[1]) / 6;
+        var c2x = p2[0] - (p3[0] - p1[0]) / 6;
+        var c2y = p2[1] - (p3[1] - p1[1]) / 6;
+        d += " C" + c1x.toFixed(1) + "," + c1y.toFixed(1) +
+             " " + c2x.toFixed(1) + "," + c2y.toFixed(1) +
+             " " + p2[0].toFixed(1) + "," + p2[1].toFixed(1);
+      }
+      return d;
+    }
+
+    function renderChart(metric, animate) {
+      currentMetric = metric;
+      var d = DATASETS[metric];
+      svg.innerHTML = "";
+
+      function xPos(idx) {
+        return pad.left + (idx / (d.steps.length - 1)) * plotW;
+      }
+      function yPos(val) {
+        return pad.top + (1 - (val - d.yMin) / (d.yMax - d.yMin)) * plotH;
+      }
+
+      // Horizontal grid & Y labels
+      for (var t = 0; t <= 4; t++) {
+        var frac = t / 4;
+        var val = d.yMin + (d.yMax - d.yMin) * frac;
+        var y = yPos(val);
+        svg.appendChild(ns("line", {
+          x1: pad.left, y1: y, x2: W2 - pad.right, y2: y,
+          stroke: "var(--viz-grid)", "stroke-width": 1
+        }));
+        var lbl = ns("text", {
+          x: pad.left - 10, y: y + 4,
+          "text-anchor": "end", fill: "var(--viz-ink-3)",
+          "font-size": 11, "font-family": "var(--font-mono)"
+        });
+        lbl.textContent = d.unit === "%" ? Math.round(val) + "%" : val.toFixed(2);
+        svg.appendChild(lbl);
+      }
+
+      // X axis & ticks
+      svg.appendChild(ns("line", {
+        x1: pad.left, y1: pad.top + plotH, x2: W2 - pad.right, y2: pad.top + plotH,
+        stroke: "var(--viz-axis)", "stroke-width": 1.15
+      }));
+      d.steps.forEach(function (s, idx) {
+        var x = xPos(idx);
+        var xl = ns("text", {
+          x: x, y: pad.top + plotH + 22,
+          "text-anchor": "middle", fill: "var(--viz-ink-3)",
+          "font-size": 11, "font-family": "var(--font-mono)"
+        });
+        xl.textContent = s + "k";
+        svg.appendChild(xl);
+      });
+
+      var ptsStruct = d.structured.map(function (v, idx) { return [xPos(idx), yPos(v)]; });
+      var ptsAnchor = d.anchored.map(function (v, idx) { return [xPos(idx), yPos(v)]; });
+      var ptsBase   = d.baseline.map(function (v, idx) { return [xPos(idx), yPos(v)]; });
+
+      var structD = smoothPath(ptsStruct);
+      var anchorD = smoothPath(ptsAnchor);
+      var baseD   = smoothPath(ptsBase);
+
+      // Soft warm wash under lead curve
+      var areaD = structD +
+        " L" + xPos(d.steps.length - 1).toFixed(1) + "," + (pad.top + plotH).toFixed(1) +
+        " L" + xPos(0).toFixed(1) + "," + (pad.top + plotH).toFixed(1) + " Z";
+      svg.appendChild(ns("path", { d: areaD, fill: "var(--viz-accent-soft)" }));
+
+      // Curves: dashed baseline -> mineral slate surrogate -> warm copper primary
+      svg.appendChild(ns("path", {
+        d: baseD, fill: "none", stroke: "var(--viz-baseline)",
+        "stroke-width": 1.8, "stroke-dasharray": "5 4", "stroke-linecap": "round"
+      }));
+      svg.appendChild(ns("path", {
+        d: anchorD, fill: "none", stroke: "var(--viz-secondary)",
+        "stroke-width": 2.1, "stroke-linecap": "round"
+      }));
+      var accPath = ns("path", {
+        d: structD, fill: "none", stroke: "var(--viz-accent)",
+        "stroke-width": 2.6, "stroke-linecap": "round"
+      });
+      svg.appendChild(accPath);
+
+      if (animate && accPath.getTotalLength && accPath.animate) {
+        var len = accPath.getTotalLength();
+        accPath.style.strokeDasharray = len + " " + len;
+        var anim = accPath.animate(
+          [{ strokeDashoffset: len }, { strokeDashoffset: 0 }],
+          { duration: 520, easing: "cubic-bezier(0.22, 1, 0.36, 1)", fill: "forwards" }
+        );
+        anim.onfinish = function () {
+          accPath.style.strokeDasharray = "";
+          accPath.style.strokeDashoffset = "";
+        };
+      }
+
+      // Vertical hover crosshair
+      var guide = ns("line", {
+        x1: pad.left, y1: pad.top, x2: pad.left, y2: pad.top + plotH,
+        stroke: "var(--viz-axis)", "stroke-width": 1, "stroke-dasharray": "3 3",
+        opacity: 0
+      });
+      svg.appendChild(guide);
+
+      // Data points
+      d.steps.forEach(function (s, idx) {
+        svg.appendChild(ns("circle", {
+          cx: xPos(idx), cy: yPos(d.baseline[idx]), r: 3.1,
+          fill: "var(--viz-stage)", stroke: "var(--viz-baseline)", "stroke-width": 1.6
+        }));
+        svg.appendChild(ns("circle", {
+          cx: xPos(idx), cy: yPos(d.anchored[idx]), r: 3.6,
+          fill: "var(--viz-stage)", stroke: "var(--viz-secondary)", "stroke-width": 1.9
+        }));
+        svg.appendChild(ns("circle", {
+          cx: xPos(idx), cy: yPos(d.structured[idx]), r: 4.3,
+          fill: "var(--viz-stage)", stroke: "var(--viz-accent)", "stroke-width": 2.3
+        }));
+      });
+
+      // Interactive hover & tap columns
+      var pinnedIdx = -1;
+
+      function fmtVal(v) {
+        return d.unit === "%" ? v.toFixed(1).replace(/\.0$/, "") + "%" : v.toFixed(2) + "×";
+      }
+
+      function showPoint(idx, pin) {
+        var s = d.steps[idx];
+        var cx = xPos(idx);
+        guide.setAttribute("x1", String(cx));
+        guide.setAttribute("x2", String(cx));
+        guide.setAttribute("opacity", "1");
+
+        tip.innerHTML =
+          "<strong>" + s + "k steps</strong><br>" +
+          "Structured: " + fmtVal(d.structured[idx]) + "<br>" +
+          "Anchored: " + fmtVal(d.anchored[idx]) + "<br>" +
+          "Baseline: " + fmtVal(d.baseline[idx]);
+
+        var rect = stage.getBoundingClientRect();
+        var px = (cx / W2) * rect.width;
+        var py = (yPos(d.structured[idx]) / H2) * rect.height;
+        tip.classList.add("is-visible");
+        var tipH = tip.offsetHeight || 84;
+        var tipW = tip.offsetWidth || 150;
+        var halfW = tipW / 2 + 8;
+        tip.style.left = Math.max(halfW, Math.min(px, rect.width - halfW)) + "px";
+        if (py < tipH + 16) {
+          tip.style.transform = "translate(-50%, 0)";
+          tip.style.top = Math.min(rect.height - tipH - 8, py + 16) + "px";
+        } else {
+          tip.style.transform = "translate(-50%, -100%)";
+          tip.style.top = (py - 12) + "px";
+        }
+        if (pin) pinnedIdx = idx;
+      }
+
+      function hidePoint(force) {
+        if (!force && pinnedIdx !== -1) return;
+        pinnedIdx = -1;
+        guide.setAttribute("opacity", "0");
+        tip.classList.remove("is-visible");
+      }
+
+      d.steps.forEach(function (s, idx) {
+        var cx = xPos(idx);
+        var colW = plotW / (d.steps.length - 1);
+        var hit = ns("rect", {
+          x: cx - colW / 2, y: pad.top, width: colW, height: plotH,
+          fill: "transparent", style: "cursor: crosshair"
+        });
+        hit.addEventListener("mouseenter", function () { showPoint(idx, false); });
+        hit.addEventListener("mouseleave", function () { hidePoint(false); });
+        hit.addEventListener("pointerdown", function (ev) {
+          ev.stopPropagation();
+          if (pinnedIdx === idx) hidePoint(true);
+          else showPoint(idx, true);
+        });
+        svg.appendChild(hit);
+      });
+
+      stage._dismissVizTip = function () { hidePoint(true); };
+    }
+
+    document.addEventListener("pointerdown", function (ev) {
+      if (!stage.contains(ev.target) && stage._dismissVizTip) {
+        stage._dismissVizTip();
+      }
+    });
+
+    var btns = document.querySelectorAll("#demo-viz [data-metric]");
+    btns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var m = btn.getAttribute("data-metric");
+        btns.forEach(function (b) {
+          var on = b === btn;
+          b.classList.toggle("is-active", on);
+          b.setAttribute("aria-pressed", on ? "true" : "false");
+        });
+        renderChart(m, true);
+      });
+    });
+
+    var revealed = false;
+    if (window.IntersectionObserver) {
+      var vizIo = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting && !revealed) {
+          revealed = true;
+          renderChart(currentMetric, true);
+          vizIo.disconnect();
+        }
+      }, { threshold: 0.25 });
+      vizIo.observe(stage);
+    }
+    renderChart(currentMetric, false);
+  }
+})();
+</script>

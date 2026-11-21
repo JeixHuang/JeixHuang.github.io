@@ -1,4 +1,0 @@
-{{- $pages := . -}}
-{{- $pages = where $pages "Params.weekly_paper_detail" "ne" true -}}
-{{- $pages = where $pages "Params.hide_from_lists" "ne" true -}}
-{{- return $pages -}}

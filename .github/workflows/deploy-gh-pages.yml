@@ -1,4 +1,4 @@
-name: Deploy homepage and blog
+name: Build and deploy site
 
 on:
   push:
@@ -17,35 +17,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@v4
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          ruby-version: "3.1"
+          python-version: "3.11"
 
-      - name: Build homepage
-        env:
-          JEKYLL_ENV: production
-        run: |
-          gem install bundler -v 2.4.19
-          bundle lock --add-platform x86_64-linux --add-platform ruby
-          bundle install --jobs 4 --retry 3
-          bundle exec jekyll build --destination _site
+      - name: Build static site
+        run: python3 scripts/build.py --out _site
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
-        with:
-          hugo-version: "0.161.1"
-          extended: true
+      - name: Verify links, structure, and draft boundaries
+        run: python3 scripts/check_site.py _site
 
-      - name: Build blog
-        run: hugo --source blog_src --destination ../_site/blog --minify
-
-      - name: Check pages, links, and draft boundaries
-        run: python3 scripts/check_site.py
-
-      - name: Publish
+      - name: Publish to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

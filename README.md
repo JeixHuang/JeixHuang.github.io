@@ -1,71 +1,75 @@
-# Victor Shea-Jay Huang Homepage
+# Victor Shea-Jay Huang — Personal Site
 
-Source for [jeixhuang.github.io](https://jeixhuang.github.io/).
+Source for [jeixhuang.github.io](https://jeixhuang.github.io/), built with a zero-dependency Python 3 static pipeline.
 
-## Site structure
+## Repository Structure
 
-- `/`: About me, Research, and Updates. The brief biography lives in `index.html`; bilingual research scope and dated updates are maintained in `_data/about.yml`. Keep updates tied to their recorded sources and use only confirmed dates.
-- `/publications/`: the six selected papers, newest first. Each paper has its own `/publications/<slug>/` page, video or figure, summary, source links, and copyable/downloadable BibTeX.
-- `/projects/`: research projects, code, and resources with real project figures; maintained in `_data/homepage.yml`. Each entry includes `image`, descriptive `image_alt`, and the original `image_source` for maintenance. Figures are displayed in full without cropping.
-- `/blog/` and `/blog/en/`: writing, with image / TL;DR / Read / Citation cards. Both indexes include available originals, preferring real translations when present.
-- All collections and detail pages retain the same author sidebar and primary navigation. Article contents sit on the right on wide screens and collapse above the text on smaller screens.
+```text
+├── data/site.json                 # Single source of truth (profile, research, news, projects)
+├── content/
+│   ├── posts/<slug>/              # Published Blog posts & experiments (native HTML or Markdown)
+│   └── drafts/                    # Unpublished drafts (strictly excluded from production builds)
+├── templates/post-starter/        # Copy-paste rich HTML post starter & interactive showcase
+├── assets/
+│   ├── css/site.css               # Unified editorial design system (Light default + Dark mode)
+│   ├── js/site.js                 # Locale, theme, News scroll fades, sliding TOC, footnotes, copy
+│   ├── fonts/                     # Self-hosted Geist fallback
+│   ├── img/                       # Portrait avatar & favicon
+│   ├── projects/                  # Active project figures & video poster
+│   ├── files/                     # Active project overview diagrams
+│   └── videos/                    # SWE-Shift research overview video
+├── scripts/
+│   ├── build.py                   # Zero-dependency Python 3 static site generator
+│   └── check_site.py              # Automated link, layout, SEO, and draft-boundary gate
+└── .github/workflows/deploy-gh-pages.yml
+```
 
-Jekyll builds the profile and paper/project pages; Hugo builds the blog. `.github/workflows/deploy-gh-pages.yml` builds both and publishes `main` to `gh-pages`. Generated output is not committed.
+## Local Build & Preview
 
-## Local build
-
-Install Ruby, Bundler 2.4.19, and Hugo 0.161.1, then run:
+No Ruby, Hugo, or Node packages required — only Python 3.9+:
 
 ```sh
-bundle install
-LANG=en_US.UTF-8 JEKYLL_ENV=production bundle exec jekyll build --destination _site
-hugo --source blog_src --destination ../_site/blog --minify
-python3 scripts/check_site.py
+# 1. Build production site into _site/
+python3 scripts/build.py
+
+# 2. Run automated integrity & draft-exclusion checks
+python3 scripts/check_site.py _site
+
+# 3. Preview locally
 python3 -m http.server 4000 --directory _site
 ```
 
-Open <http://127.0.0.1:4000/>. Rebuild Jekyll and then Hugo after edits.
+To also inspect the rich HTML starter showcase at `/preview/html-post-showcase/` (kept strictly out of production `_site/`):
 
-## Publications
-
-`_data/selected_publications.yml` is the content source. `sort_date` records the dated proceedings, public acceptance record, or first preprint date, with a source and explanation in `note`. It is deliberately distinct from an unverified future presentation date. Keep official author order and venue provenance; the owner's name is highlighted in both published forms.
-
-A new paper needs a data entry, a real figure, a matching `assets/citations/<slug>.bib`, and a small `publications/<slug>/index.html` file selecting `layout: publication`, `section: publications`, and `paper_slug`. Resource buttons appear only when their URL exists. Keep the inline citation and downloadable BibTeX identical.
-
-Optional `video_url` and `video_label` fields replace the static figure with a player in Publications, Projects, and the paper detail page. Collection players retain the other works' thumbnail dimensions and two-column layout; native controls support playback, sound, and fullscreen viewing. The `image` remains a lightweight poster. Videos autoplay muted, loop continuously, and play inline on mobile. SWE-Shift uses the owner's two-minute `SWE-Shift-refined-audio.mp4`; its arXiv metadata follows [v1](https://arxiv.org/abs/2610.32196v1).
-
-`_layouts/homepage.html`, `_includes/identity.html`, and `assets/css/site-shell.css` provide the Jekyll shell. Hugo uses the same stylesheet and matching `blog_src/layouts/partials/identity.html`. Public profile values in `_config.yml` and `blog_src/data/profile.yaml` should stay synchronized.
-
-## Blog content
-
-A post bundle may include these optional front-matter fields:
-
-```yaml
-title: An article title
-date: 2026-10-16T12:00:00+08:00
-slug: an-article-title
-summary: A short summary.
-tldr: The main idea in one or two sentences.
-cover: figure.png
-content_lang: en
+```sh
+python3 scripts/build.py --with-showcase --out _site_preview
+python3 scripts/check_site.py _site_preview --allow-showcase
+python3 -m http.server 4001 --directory _site_preview
 ```
 
-Keep the cover inside the bundle. Without a cover, the card uses a typographic title panel. Citation is generated from the author, original title, publication date, and permanent URL. Short articles use compact Overview / Citation navigation; longer articles also list their section headings.
+## Publish a New Rich HTML Post or Experiment in 3 Steps
 
-The `EN / 中` control links to a real translation when available. If an article has no translation, that language is unavailable; an index may still list the original with an explicit language label. `content_lang` marks the original language without changing an existing URL.
+Blog unifies essays, research notes, open-source experiments, and interactive demos under `content/posts/`.
 
-For a translated bundle, keep `index.md` and `index.en.md` together. Preserve original technical terms, evidence boundaries, and meaning.
+1. **Copy the starter folder**:
+   ```sh
+   cp -R templates/post-starter content/posts/my-new-note
+   ```
+2. **Edit `content/posts/my-new-note/index.html`**:
+   - Update the top `<!--meta { ... } -->` JSON block (`title`, `date`, `slug`, `tags`, `tldr`, optional `math: true`, `bilingual: true`, and optional `x_post` for the right-hand companion X card below the sliding TOC).
+   - **Card artwork**: Homepage & `/blog/` cards automatically render a deterministic `16:10` inline SVG print seeded from `slug`. You can also pick a style/palette explicitly via `"art": {"style": "strata|contour|blocks|meridian|ribbon|terrace", "palette": "cobalt|pine|terracotta|plum|slate|indigo"}`, or set `"cover_mode": "image"` with `"cover": "fig.png"` to display a custom image/GIF on cards.
+   - Drop any GIFs, MP4 clips, PNGs, SVGs, or JSON data directly into `content/posts/my-new-note/` and reference them with `./filename`.
+   - Write standard HTML directly — `<canvas>`, `<svg>`, `<video>`, `.viz`, `.media-stage`, `.callout`, `.fn-ref` hover footnotes, and `<script>` blocks render verbatim.
+   - *(Prefer plain Markdown? Create `index.md` with YAML frontmatter instead — both formats work seamlessly.)*
+3. **Build & verify**:
+   ```sh
+   python3 scripts/build.py && python3 scripts/check_site.py _site
+   ```
 
-`draft: true` excludes a post from production rendering; `hide_from_lists: true` hides an otherwise public page from indexes. Draft prose should remain outside a public Git repository until intentionally released: `draft: true` only controls rendering. The two existing drafts remain unpublished; only `Why the blog` is listed.
+## Draft Safety
 
-Long-form source notes use:
-
-```md
-A claim with its source.{{</* sidenote url="https://example.com/paper" */>}}
-Paper title (Author et al., 2026){{</* /sidenote */>}}
-```
-
-These notes stay in the article flow so they do not collide with the right-hand contents. KaTeX continues to render mathematical notation.
+- Keep works-in-progress inside `content/drafts/` (never scanned by `scripts/build.py`), or mark `"draft": true` in post metadata.
+- `scripts/check_site.py` blocks CI deployment if any unpublished draft slug or preview showcase leaks into `_site/`.
 
 ## License
 
